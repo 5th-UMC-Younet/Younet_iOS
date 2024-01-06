@@ -16,6 +16,10 @@
 		9C4EDA7D2B47EF8C00BFDC48 /* Inter-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9C4EDA742B47EF8C00BFDC48 /* Inter-Medium.ttf */; };
 		9C4EDA7E2B47EF8C00BFDC48 /* Inter-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9C4EDA752B47EF8C00BFDC48 /* Inter-ExtraBold.ttf */; };
 		9C4EDA7F2B47EF8C00BFDC48 /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9C4EDA762B47EF8C00BFDC48 /* Inter-Bold.ttf */; };
+		9C4EDA822B47F27500BFDC48 /* ServerSelectVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C4EDA812B47F27500BFDC48 /* ServerSelectVC.storyboard */; };
+		9C4EDA842B47F27C00BFDC48 /* ServerSelectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4EDA832B47F27C00BFDC48 /* ServerSelectVC.swift */; };
+		9C4EDA872B47F2A600BFDC48 /* SignupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4EDA862B47F2A600BFDC48 /* SignupVC.swift */; };
+		9C4EDA892B47F2AE00BFDC48 /* SignupVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C4EDA882B47F2AE00BFDC48 /* SignupVC.storyboard */; };
 		9C6B45332B47D9340068FA95 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6B45322B47D9340068FA95 /* AppDelegate.swift */; };
 		9C6B45352B47D9340068FA95 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6B45342B47D9340068FA95 /* SceneDelegate.swift */; };
 		9C6B45372B47D9340068FA95 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6B45362B47D9340068FA95 /* ViewController.swift */; };
@@ -25,6 +29,7 @@
 		9C6B454A2B47D9350068FA95 /* YounetProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6B45492B47D9350068FA95 /* YounetProjectTests.swift */; };
 		9C6B45542B47D9350068FA95 /* YounetProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6B45532B47D9350068FA95 /* YounetProjectUITests.swift */; };
 		9C6B45562B47D9350068FA95 /* YounetProjectUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6B45552B47D9350068FA95 /* YounetProjectUITestsLaunchTests.swift */; };
+		9C995C762B493D6D004B22CE /* SignupInputStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C995C752B493D6D004B22CE /* SignupInputStackView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +59,10 @@
 		9C4EDA742B47EF8C00BFDC48 /* Inter-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Medium.ttf"; sourceTree = "<group>"; };
 		9C4EDA752B47EF8C00BFDC48 /* Inter-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-ExtraBold.ttf"; sourceTree = "<group>"; };
 		9C4EDA762B47EF8C00BFDC48 /* Inter-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Bold.ttf"; sourceTree = "<group>"; };
+		9C4EDA812B47F27500BFDC48 /* ServerSelectVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ServerSelectVC.storyboard; sourceTree = "<group>"; };
+		9C4EDA832B47F27C00BFDC48 /* ServerSelectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerSelectVC.swift; sourceTree = "<group>"; };
+		9C4EDA862B47F2A600BFDC48 /* SignupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupVC.swift; sourceTree = "<group>"; };
+		9C4EDA882B47F2AE00BFDC48 /* SignupVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignupVC.storyboard; sourceTree = "<group>"; };
 		9C6B452F2B47D9340068FA95 /* YounetProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YounetProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C6B45322B47D9340068FA95 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9C6B45342B47D9340068FA95 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,6 +76,7 @@
 		9C6B454F2B47D9350068FA95 /* YounetProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YounetProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C6B45532B47D9350068FA95 /* YounetProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YounetProjectUITests.swift; sourceTree = "<group>"; };
 		9C6B45552B47D9350068FA95 /* YounetProjectUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YounetProjectUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		9C995C752B493D6D004B22CE /* SignupInputStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupInputStackView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +107,8 @@
 		9C0426A62B47EB7400C693BC /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				9C4EDA852B47F29400BFDC48 /* Signup */,
+				9C4EDA802B47F26300BFDC48 /* ServerSelect */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -115,6 +127,25 @@
 				9C4EDA722B47EF8C00BFDC48 /* Inter-Thin.ttf */,
 			);
 			path = Font;
+			sourceTree = "<group>";
+		};
+		9C4EDA802B47F26300BFDC48 /* ServerSelect */ = {
+			isa = PBXGroup;
+			children = (
+				9C4EDA812B47F27500BFDC48 /* ServerSelectVC.storyboard */,
+				9C4EDA832B47F27C00BFDC48 /* ServerSelectVC.swift */,
+			);
+			path = ServerSelect;
+			sourceTree = "<group>";
+		};
+		9C4EDA852B47F29400BFDC48 /* Signup */ = {
+			isa = PBXGroup;
+			children = (
+				9C4EDA862B47F2A600BFDC48 /* SignupVC.swift */,
+				9C4EDA882B47F2AE00BFDC48 /* SignupVC.storyboard */,
+				9C995C752B493D6D004B22CE /* SignupInputStackView.swift */,
+			);
+			path = Signup;
 			sourceTree = "<group>";
 		};
 		9C6B45262B47D9340068FA95 = {
@@ -274,10 +305,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C4EDA822B47F27500BFDC48 /* ServerSelectVC.storyboard in Resources */,
 				9C6B453F2B47D9350068FA95 /* LaunchScreen.storyboard in Resources */,
 				9C4EDA7E2B47EF8C00BFDC48 /* Inter-ExtraBold.ttf in Resources */,
 				9C4EDA782B47EF8C00BFDC48 /* Inter-Regular.ttf in Resources */,
 				9C6B453C2B47D9350068FA95 /* Assets.xcassets in Resources */,
+				9C4EDA892B47F2AE00BFDC48 /* SignupVC.storyboard in Resources */,
 				9C4EDA7C2B47EF8C00BFDC48 /* Inter-SemiBold.ttf in Resources */,
 				9C6B453A2B47D9340068FA95 /* Main.storyboard in Resources */,
 				9C4EDA7F2B47EF8C00BFDC48 /* Inter-Bold.ttf in Resources */,
@@ -310,9 +343,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C995C762B493D6D004B22CE /* SignupInputStackView.swift in Sources */,
 				9C6B45372B47D9340068FA95 /* ViewController.swift in Sources */,
+				9C4EDA872B47F2A600BFDC48 /* SignupVC.swift in Sources */,
 				9C6B45332B47D9340068FA95 /* AppDelegate.swift in Sources */,
 				9C6B45352B47D9340068FA95 /* SceneDelegate.swift in Sources */,
+				9C4EDA842B47F27C00BFDC48 /* ServerSelectVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
