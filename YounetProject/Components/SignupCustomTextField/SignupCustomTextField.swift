@@ -1,0 +1,20 @@
+//
+//  SignupCustomTextField.swift
+//  YounetProject
+//
+//  Created by 김제훈 on 1/10/24.
+//
+
+import UIKit
+
+class SignupCustomTextField: UITextField {
+
+    /*
+    // Only override draw() if you perform custom drawing.
+    // An empty implementation adversely affects performance during animation.
+    override func draw(_ rect: CGRect) {
+        // Drawing code
+    }
+    */
+
+}
