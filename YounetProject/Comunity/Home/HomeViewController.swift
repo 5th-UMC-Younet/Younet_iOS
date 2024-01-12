@@ -10,10 +10,9 @@ import UIKit
 class HomeViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var sortButton: UIButton! //정렬버튼
-    //카테고리
+    //카테고리 
     @IBOutlet var category: [UIButton]!
     var index: Int?
-    
     
     
     override func viewDidLoad() {
@@ -33,6 +32,22 @@ class HomeViewController: UIViewController {
         tableView.dataSource = self
         
         super.viewDidLoad()
+    }
+    //알림
+    @IBAction func alarm(_ sender: Any) {
+        guard let alarmVC = storyboard?.instantiateViewController(identifier: "AlarmVC") as? AlarmViewController else{
+            return
+        }
+        alarmVC.modalPresentationStyle = .fullScreen
+        present(alarmVC, animated: true, completion: nil)
+    }
+    //검색
+    @IBAction func search(_ sender: Any) {
+        guard let searchVC = storyboard?.instantiateViewController(identifier: "SearchVC") as? SearchViewController else{
+            return
+        }
+        searchVC.modalPresentationStyle = .fullScreen
+        present(searchVC, animated: true, completion: nil)
     }
     //정렬
     func sortByDate(){
@@ -122,5 +137,18 @@ extension HomeViewController : UITableViewDelegate, UITableViewDataSource {
     //테이블뷰 높이
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
+    }
+    //데이터 전달
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(indexPath.row)
+        performSegue(withIdentifier: "DetailVC", sender: indexPath.row)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "DetailVC"{
+            let vc = segue.destination as? DetailViewController
+            if let index = sender as? Int{
+                vc?.num = index
+            }
+        }
     }
 }

@@ -18,6 +18,7 @@ class CountrySelectionViewController: UIViewController {
         index = country.firstIndex(of: sender)
         print(country[index!].titleLabel?.text ?? "0")
         //해당 국가로 데이터 변경하는 코드 추가 필요
+        self.dismiss(animated: true, completion: nil)
     }
     
 }
