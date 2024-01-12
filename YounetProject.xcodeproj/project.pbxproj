@@ -9,8 +9,10 @@
 /* Begin PBXBuildFile section */
 		4D4643212B4FCE8D00AE4DF2 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D46431F2B4FCE8D00AE4DF2 /* FeedCell.swift */; };
 		4D4643222B4FCE8D00AE4DF2 /* FeedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D4643202B4FCE8D00AE4DF2 /* FeedCell.xib */; };
+		4DC538BC2B516A1400CEC5B6 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC538BB2B516A1400CEC5B6 /* SearchViewController.swift */; };
+		4DC538BE2B516A3B00CEC5B6 /* AlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC538BD2B516A3B00CEC5B6 /* AlarmViewController.swift */; };
+		4DC538C22B5176C300CEC5B6 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC538C12B5176C300CEC5B6 /* DetailViewController.swift */; };
 		4DCAF0BE2B50096F00120E13 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCAF0BD2B50096F00120E13 /* TabBarController.swift */; };
-		4DCAF0C02B5034C600120E13 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCAF0BF2B5034C600120E13 /* CategoryViewController.swift */; };
 		4DDBE8322B4D7E7800B8A25A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDBE8312B4D7E7800B8A25A /* HomeViewController.swift */; };
 		4DDBE8342B4D7E8000B8A25A /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDBE8332B4D7E8000B8A25A /* PostViewController.swift */; };
 		4DDBE8362B4D7E8800B8A25A /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDBE8352B4D7E8800B8A25A /* ChatViewController.swift */; };
@@ -56,8 +58,10 @@
 /* Begin PBXFileReference section */
 		4D46431F2B4FCE8D00AE4DF2 /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		4D4643202B4FCE8D00AE4DF2 /* FeedCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedCell.xib; sourceTree = "<group>"; };
+		4DC538BB2B516A1400CEC5B6 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		4DC538BD2B516A3B00CEC5B6 /* AlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmViewController.swift; sourceTree = "<group>"; };
+		4DC538C12B5176C300CEC5B6 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		4DCAF0BD2B50096F00120E13 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
-		4DCAF0BF2B5034C600120E13 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		4DDBE8312B4D7E7800B8A25A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		4DDBE8332B4D7E8000B8A25A /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		4DDBE8352B4D7E8800B8A25A /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
@@ -112,14 +116,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4DC538BF2B51738900CEC5B6 /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				4D46431F2B4FCE8D00AE4DF2 /* FeedCell.swift */,
+				4D4643202B4FCE8D00AE4DF2 /* FeedCell.xib */,
+				4DC538C12B5176C300CEC5B6 /* DetailViewController.swift */,
+			);
+			path = Feed;
+			sourceTree = "<group>";
+		};
+		4DC538C02B51739B00CEC5B6 /* Alarm */ = {
+			isa = PBXGroup;
+			children = (
+				4DC538BD2B516A3B00CEC5B6 /* AlarmViewController.swift */,
+			);
+			path = Alarm;
+			sourceTree = "<group>";
+		};
 		4DDBE82A2B4D484F00B8A25A /* Comunity */ = {
 			isa = PBXGroup;
 			children = (
+				4DCAF0BD2B50096F00120E13 /* TabBarController.swift */,
 				4DDBE8302B4D7E6B00B8A25A /* My */,
 				4DDBE82F2B4D7E5F00B8A25A /* Chat */,
 				4DDBE82E2B4D7E5800B8A25A /* Post */,
 				4DDBE82D2B4D7E5000B8A25A /* Home */,
-				4DCAF0BD2B50096F00120E13 /* TabBarController.swift */,
 			);
 			path = Comunity;
 			sourceTree = "<group>";
@@ -127,10 +149,11 @@
 		4DDBE82D2B4D7E5000B8A25A /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				4DC538C02B51739B00CEC5B6 /* Alarm */,
+				4DC538BF2B51738900CEC5B6 /* Feed */,
 				4DDBE8312B4D7E7800B8A25A /* HomeViewController.swift */,
 				4DDBE8392B4D91A900B8A25A /* CountrySelectionViewController.swift */,
-				4D46431F2B4FCE8D00AE4DF2 /* FeedCell.swift */,
-				4D4643202B4FCE8D00AE4DF2 /* FeedCell.xib */,
+				4DC538BB2B516A1400CEC5B6 /* SearchViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -139,7 +162,6 @@
 			isa = PBXGroup;
 			children = (
 				4DDBE8332B4D7E8000B8A25A /* PostViewController.swift */,
-				4DCAF0BF2B5034C600120E13 /* CategoryViewController.swift */,
 			);
 			path = Post;
 			sourceTree = "<group>";
@@ -378,16 +400,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DC538C22B5176C300CEC5B6 /* DetailViewController.swift in Sources */,
 				4DDBE83A2B4D91A900B8A25A /* CountrySelectionViewController.swift in Sources */,
+				4DC538BC2B516A1400CEC5B6 /* SearchViewController.swift in Sources */,
 				9C6B45372B47D9340068FA95 /* ViewController.swift in Sources */,
 				9C6B45332B47D9340068FA95 /* AppDelegate.swift in Sources */,
 				4DCAF0BE2B50096F00120E13 /* TabBarController.swift in Sources */,
 				9C6B45352B47D9340068FA95 /* SceneDelegate.swift in Sources */,
 				4DDBE8382B4D7E8E00B8A25A /* MyViewController.swift in Sources */,
 				4DDBE8322B4D7E7800B8A25A /* HomeViewController.swift in Sources */,
+				4DC538BE2B516A3B00CEC5B6 /* AlarmViewController.swift in Sources */,
 				4DDBE8362B4D7E8800B8A25A /* ChatViewController.swift in Sources */,
 				4DDBE8342B4D7E8000B8A25A /* PostViewController.swift in Sources */,
-				4DCAF0C02B5034C600120E13 /* CategoryViewController.swift in Sources */,
 				4D4643212B4FCE8D00AE4DF2 /* FeedCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
