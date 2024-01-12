@@ -9,9 +9,13 @@ import UIKit
 
 class PostViewController: UIViewController {
     @IBOutlet weak var category: UIButton!
+    @IBOutlet weak var titleField: UITextField!
+    
+    var currentCategory: Int?
     
     
     override func viewDidLoad() {
+        //카테고리 메뉴
         let life = UIAction(title: "유학생활", handler: { _ in self.categorySelect(data: 1) })
         let prepare = UIAction(title: "유학준비", handler: { _ in self.categorySelect(data: 2) })
         let trade = UIAction(title: "중고거래", handler: { _ in self.categorySelect(data: 3) })
@@ -20,6 +24,15 @@ class PostViewController: UIViewController {
         let buttonMenu = UIMenu(title: "", children: [life,prepare,trade,travel,etc])
         category.menu = buttonMenu
         
+        //제목
+        titleField.borderStyle = .none
+        let border = CALayer()
+        border.frame = CGRect(x: 0, y: titleField.frame.size.height - 1, width: titleField.frame.width, height: 1)
+        border.borderColor = UIColor.darkGray.cgColor
+        border.borderWidth = 1.0 // 추가: 밑줄 두께
+        titleField.layer.addSublayer(border)
+        titleField.layer.masksToBounds = true
+
         super.viewDidLoad()
         tabBarController?.tabBar.isHidden = true
     }
@@ -56,7 +69,14 @@ class PostViewController: UIViewController {
         back.modalPresentationStyle = .fullScreen
         present(back, animated: true, completion: nil)
     }
-    
+    //등록
+    @IBAction func done(_ sender: Any) {
+        //데이터 전송 추가
+    }
+    //사진
+    @IBAction func goAlbum(_ sender: Any) {
+        //앨범 열기 추가
+    }
     
     
 }
