@@ -16,6 +16,16 @@
 		9C3925222B4F966500AEBA2F /* SignupEmailComponent.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C3925212B4F966500AEBA2F /* SignupEmailComponent.xib */; };
 		9C3DF48E2B4A943D006CE6E5 /* SignupInputComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3DF48D2B4A943D006CE6E5 /* SignupInputComponent.swift */; };
 		9C3DF4902B4A945C006CE6E5 /* SignupInputComponent.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C3DF48F2B4A945C006CE6E5 /* SignupInputComponent.xib */; };
+		4D4643212B4FCE8D00AE4DF2 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D46431F2B4FCE8D00AE4DF2 /* FeedCell.swift */; };
+		4D4643222B4FCE8D00AE4DF2 /* FeedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D4643202B4FCE8D00AE4DF2 /* FeedCell.xib */; };
+		4DCAF0BE2B50096F00120E13 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCAF0BD2B50096F00120E13 /* TabBarController.swift */; };
+		4DCAF0C02B5034C600120E13 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCAF0BF2B5034C600120E13 /* CategoryViewController.swift */; };
+		4DDBE8322B4D7E7800B8A25A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDBE8312B4D7E7800B8A25A /* HomeViewController.swift */; };
+		4DDBE8342B4D7E8000B8A25A /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDBE8332B4D7E8000B8A25A /* PostViewController.swift */; };
+		4DDBE8362B4D7E8800B8A25A /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDBE8352B4D7E8800B8A25A /* ChatViewController.swift */; };
+		4DDBE8382B4D7E8E00B8A25A /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDBE8372B4D7E8E00B8A25A /* MyViewController.swift */; };
+		4DDBE83A2B4D91A900B8A25A /* CountrySelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDBE8392B4D91A900B8A25A /* CountrySelectionViewController.swift */; };
+		9C4EDA772B47EF8C00BFDC48 /* Inter-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9C4EDA6E2B47EF8B00BFDC48 /* Inter-ExtraLight.ttf */; };
 		9C4EDA782B47EF8C00BFDC48 /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9C4EDA6F2B47EF8C00BFDC48 /* Inter-Regular.ttf */; };
 		9C4EDA7F2B47EF8C00BFDC48 /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9C4EDA762B47EF8C00BFDC48 /* Inter-Bold.ttf */; };
 		9C4EDA822B47F27500BFDC48 /* ServerSelectVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C4EDA812B47F27500BFDC48 /* ServerSelectVC.storyboard */; };
@@ -126,6 +136,16 @@
 		9C3925212B4F966500AEBA2F /* SignupEmailComponent.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignupEmailComponent.xib; sourceTree = "<group>"; };
 		9C3DF48D2B4A943D006CE6E5 /* SignupInputComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupInputComponent.swift; sourceTree = "<group>"; };
 		9C3DF48F2B4A945C006CE6E5 /* SignupInputComponent.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignupInputComponent.xib; sourceTree = "<group>"; };
+		4D46431F2B4FCE8D00AE4DF2 /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
+		4D4643202B4FCE8D00AE4DF2 /* FeedCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedCell.xib; sourceTree = "<group>"; };
+		4DCAF0BD2B50096F00120E13 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		4DCAF0BF2B5034C600120E13 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
+		4DDBE8312B4D7E7800B8A25A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		4DDBE8332B4D7E8000B8A25A /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		4DDBE8352B4D7E8800B8A25A /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		4DDBE8372B4D7E8E00B8A25A /* MyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
+		4DDBE8392B4D91A900B8A25A /* CountrySelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountrySelectionViewController.swift; sourceTree = "<group>"; };
+		9C4EDA6E2B47EF8B00BFDC48 /* Inter-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-ExtraLight.ttf"; sourceTree = "<group>"; };
 		9C4EDA6F2B47EF8C00BFDC48 /* Inter-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular.ttf"; sourceTree = "<group>"; };
 		9C4EDA762B47EF8C00BFDC48 /* Inter-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Bold.ttf"; sourceTree = "<group>"; };
 		9C4EDA812B47F27500BFDC48 /* ServerSelectVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ServerSelectVC.storyboard; sourceTree = "<group>"; };
@@ -225,6 +245,54 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4DDBE82A2B4D484F00B8A25A /* Comunity */ = {
+			isa = PBXGroup;
+			children = (
+				4DDBE8302B4D7E6B00B8A25A /* My */,
+				4DDBE82F2B4D7E5F00B8A25A /* Chat */,
+				4DDBE82E2B4D7E5800B8A25A /* Post */,
+				4DDBE82D2B4D7E5000B8A25A /* Home */,
+				4DCAF0BD2B50096F00120E13 /* TabBarController.swift */,
+			);
+			path = Comunity;
+			sourceTree = "<group>";
+		};
+		4DDBE82D2B4D7E5000B8A25A /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				4DDBE8312B4D7E7800B8A25A /* HomeViewController.swift */,
+				4DDBE8392B4D91A900B8A25A /* CountrySelectionViewController.swift */,
+				4D46431F2B4FCE8D00AE4DF2 /* FeedCell.swift */,
+				4D4643202B4FCE8D00AE4DF2 /* FeedCell.xib */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		4DDBE82E2B4D7E5800B8A25A /* Post */ = {
+			isa = PBXGroup;
+			children = (
+				4DDBE8332B4D7E8000B8A25A /* PostViewController.swift */,
+				4DCAF0BF2B5034C600120E13 /* CategoryViewController.swift */,
+			);
+			path = Post;
+			sourceTree = "<group>";
+		};
+		4DDBE82F2B4D7E5F00B8A25A /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				4DDBE8352B4D7E8800B8A25A /* ChatViewController.swift */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		4DDBE8302B4D7E6B00B8A25A /* My */ = {
+			isa = PBXGroup;
+			children = (
+				4DDBE8372B4D7E8E00B8A25A /* MyViewController.swift */,
+			);
+			path = My;
+			sourceTree = "<group>";
+		};
 		9C0426A62B47EB7400C693BC /* Scene */ = {
 			isa = PBXGroup;
 			children = (
@@ -346,6 +414,9 @@
 				B321EE9E2B6FD31000C29F4A /* seah */,
 				9CF07CAF2B6FBF2B002451C7 /* jehun */,
 				9C6B453B2B47D9350068FA95 /* Assets.xcassets */,
+				4DDBE82A2B4D484F00B8A25A /* Comunity */,
+				9C4EDA6D2B47EF7600BFDC48 /* Font */,
+				9C0426A62B47EB7400C693BC /* Scene */,
 				9C6B45322B47D9340068FA95 /* AppDelegate.swift */,
 				9C6B45342B47D9340068FA95 /* SceneDelegate.swift */,
 				9C6B45362B47D9340068FA95 /* ViewController.swift */,
@@ -690,6 +761,10 @@
 				9C1B3C2F2B5E1A6A00AB3B73 /* IdentificationInputUnit.xib in Resources */,
 				B34A9D752B73665800EA6686 /* LaunchScreenImage.png in Resources */,
 				9C50A3402B5E5D7000082229 /* SearchResultTableViewCell.xib in Resources */,
+				9C4EDA7B2B47EF8C00BFDC48 /* Inter-Thin.ttf in Resources */,
+				9C4EDA792B47EF8C00BFDC48 /* Inter-Light.ttf in Resources */,
+				4D4643222B4FCE8D00AE4DF2 /* FeedCell.xib in Resources */,
+				9C4EDA772B47EF8C00BFDC48 /* Inter-ExtraLight.ttf in Resources */,
 				9C4EDA7D2B47EF8C00BFDC48 /* Inter-Medium.ttf in Resources */,
 				9C4EDA7A2B47EF8C00BFDC48 /* Inter-Black.ttf in Resources */,
 			);
@@ -727,6 +802,7 @@
 				B321EED52B6FD31000C29F4A /* CustomTextField.swift in Sources */,
 				9CB4A8C22B6A3AAB00521184 /* NationSelectionVC.swift in Sources */,
 				9CB351862B4E774000EE36F0 /* SignupCustomTextField.swift in Sources */,
+				4DDBE83A2B4D91A900B8A25A /* CountrySelectionViewController.swift in Sources */,
 				9C6B45372B47D9340068FA95 /* ViewController.swift in Sources */,
 				9CB80B962B53B933002FD656 /* UIApplication.swift in Sources */,
 				9C4EDA872B47F2A600BFDC48 /* SignupVC.swift in Sources */,
@@ -764,6 +840,14 @@
 				B321EEC52B6FD31000C29F4A /* MyPageProfileEditViewController.swift in Sources */,
 				B321EEC02B6FD31000C29F4A /* PopupViewController.swift in Sources */,
 				B340FA242B714C2600D86FEF /* NickNameChatProfileViewController.swift in Sources */,
+				4DCAF0BE2B50096F00120E13 /* TabBarController.swift in Sources */,
+				9C6B45352B47D9340068FA95 /* SceneDelegate.swift in Sources */,
+				4DDBE8382B4D7E8E00B8A25A /* MyViewController.swift in Sources */,
+				4DDBE8322B4D7E7800B8A25A /* HomeViewController.swift in Sources */,
+				4DDBE8362B4D7E8800B8A25A /* ChatViewController.swift in Sources */,
+				4DDBE8342B4D7E8000B8A25A /* PostViewController.swift in Sources */,
+				4DCAF0C02B5034C600120E13 /* CategoryViewController.swift in Sources */,
+				4D4643212B4FCE8D00AE4DF2 /* FeedCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -865,6 +949,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -923,6 +1008,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
