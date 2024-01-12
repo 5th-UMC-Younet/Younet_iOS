@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C3925222B4F966500AEBA2F /* SignupEmailComponent.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C3925212B4F966500AEBA2F /* SignupEmailComponent.xib */; };
+		9C3DF48E2B4A943D006CE6E5 /* SignupInputComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3DF48D2B4A943D006CE6E5 /* SignupInputComponent.swift */; };
+		9C3DF4902B4A945C006CE6E5 /* SignupInputComponent.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C3DF48F2B4A945C006CE6E5 /* SignupInputComponent.xib */; };
 		9C4EDA772B47EF8C00BFDC48 /* Inter-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9C4EDA6E2B47EF8B00BFDC48 /* Inter-ExtraLight.ttf */; };
 		9C4EDA782B47EF8C00BFDC48 /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9C4EDA6F2B47EF8C00BFDC48 /* Inter-Regular.ttf */; };
 		9C4EDA792B47EF8C00BFDC48 /* Inter-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9C4EDA702B47EF8C00BFDC48 /* Inter-Light.ttf */; };
@@ -29,7 +32,9 @@
 		9C6B454A2B47D9350068FA95 /* YounetProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6B45492B47D9350068FA95 /* YounetProjectTests.swift */; };
 		9C6B45542B47D9350068FA95 /* YounetProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6B45532B47D9350068FA95 /* YounetProjectUITests.swift */; };
 		9C6B45562B47D9350068FA95 /* YounetProjectUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6B45552B47D9350068FA95 /* YounetProjectUITestsLaunchTests.swift */; };
-		9C995C762B493D6D004B22CE /* SignupInputStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C995C752B493D6D004B22CE /* SignupInputStackView.swift */; };
+		9CB351862B4E774000EE36F0 /* SignupCustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB351852B4E774000EE36F0 /* SignupCustomTextField.swift */; };
+		9CB351882B4E775000EE36F0 /* SignupCustomTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CB351872B4E775000EE36F0 /* SignupCustomTextField.xib */; };
+		9CC25CF02B4BC18A00C07086 /* SignupEmailComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC25CEF2B4BC18A00C07086 /* SignupEmailComponent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +55,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9C3925212B4F966500AEBA2F /* SignupEmailComponent.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignupEmailComponent.xib; sourceTree = "<group>"; };
+		9C3DF48D2B4A943D006CE6E5 /* SignupInputComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupInputComponent.swift; sourceTree = "<group>"; };
+		9C3DF48F2B4A945C006CE6E5 /* SignupInputComponent.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignupInputComponent.xib; sourceTree = "<group>"; };
 		9C4EDA6E2B47EF8B00BFDC48 /* Inter-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-ExtraLight.ttf"; sourceTree = "<group>"; };
 		9C4EDA6F2B47EF8C00BFDC48 /* Inter-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular.ttf"; sourceTree = "<group>"; };
 		9C4EDA702B47EF8C00BFDC48 /* Inter-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Light.ttf"; sourceTree = "<group>"; };
@@ -76,7 +84,9 @@
 		9C6B454F2B47D9350068FA95 /* YounetProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YounetProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C6B45532B47D9350068FA95 /* YounetProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YounetProjectUITests.swift; sourceTree = "<group>"; };
 		9C6B45552B47D9350068FA95 /* YounetProjectUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YounetProjectUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		9C995C752B493D6D004B22CE /* SignupInputStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupInputStackView.swift; sourceTree = "<group>"; };
+		9CB351852B4E774000EE36F0 /* SignupCustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupCustomTextField.swift; sourceTree = "<group>"; };
+		9CB351872B4E775000EE36F0 /* SignupCustomTextField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignupCustomTextField.xib; sourceTree = "<group>"; };
+		9CC25CEF2B4BC18A00C07086 /* SignupEmailComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupEmailComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +123,25 @@
 			path = Scene;
 			sourceTree = "<group>";
 		};
+		9C3DF4862B4A51CB006CE6E5 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				9CB351842B4E76F800EE36F0 /* SignupCustomTextField */,
+				9CC25CEE2B4BC17400C07086 /* SignupEmailComponent */,
+				9C3DF48C2B4A93E1006CE6E5 /* SignupInputComponent */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		9C3DF48C2B4A93E1006CE6E5 /* SignupInputComponent */ = {
+			isa = PBXGroup;
+			children = (
+				9C3DF48D2B4A943D006CE6E5 /* SignupInputComponent.swift */,
+				9C3DF48F2B4A945C006CE6E5 /* SignupInputComponent.xib */,
+			);
+			path = SignupInputComponent;
+			sourceTree = "<group>";
+		};
 		9C4EDA6D2B47EF7600BFDC48 /* Font */ = {
 			isa = PBXGroup;
 			children = (
@@ -143,7 +172,6 @@
 			children = (
 				9C4EDA862B47F2A600BFDC48 /* SignupVC.swift */,
 				9C4EDA882B47F2AE00BFDC48 /* SignupVC.storyboard */,
-				9C995C752B493D6D004B22CE /* SignupInputStackView.swift */,
 			);
 			path = Signup;
 			sourceTree = "<group>";
@@ -171,6 +199,7 @@
 		9C6B45312B47D9340068FA95 /* YounetProject */ = {
 			isa = PBXGroup;
 			children = (
+				9C3DF4862B4A51CB006CE6E5 /* Components */,
 				9C4EDA6D2B47EF7600BFDC48 /* Font */,
 				9C0426A62B47EB7400C693BC /* Scene */,
 				9C6B45322B47D9340068FA95 /* AppDelegate.swift */,
@@ -199,6 +228,24 @@
 				9C6B45552B47D9350068FA95 /* YounetProjectUITestsLaunchTests.swift */,
 			);
 			path = YounetProjectUITests;
+			sourceTree = "<group>";
+		};
+		9CB351842B4E76F800EE36F0 /* SignupCustomTextField */ = {
+			isa = PBXGroup;
+			children = (
+				9CB351852B4E774000EE36F0 /* SignupCustomTextField.swift */,
+				9CB351872B4E775000EE36F0 /* SignupCustomTextField.xib */,
+			);
+			path = SignupCustomTextField;
+			sourceTree = "<group>";
+		};
+		9CC25CEE2B4BC17400C07086 /* SignupEmailComponent */ = {
+			isa = PBXGroup;
+			children = (
+				9CC25CEF2B4BC18A00C07086 /* SignupEmailComponent.swift */,
+				9C3925212B4F966500AEBA2F /* SignupEmailComponent.xib */,
+			);
+			path = SignupEmailComponent;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -307,10 +354,13 @@
 			files = (
 				9C4EDA822B47F27500BFDC48 /* ServerSelectVC.storyboard in Resources */,
 				9C6B453F2B47D9350068FA95 /* LaunchScreen.storyboard in Resources */,
+				9C3DF4902B4A945C006CE6E5 /* SignupInputComponent.xib in Resources */,
 				9C4EDA7E2B47EF8C00BFDC48 /* Inter-ExtraBold.ttf in Resources */,
+				9CB351882B4E775000EE36F0 /* SignupCustomTextField.xib in Resources */,
 				9C4EDA782B47EF8C00BFDC48 /* Inter-Regular.ttf in Resources */,
 				9C6B453C2B47D9350068FA95 /* Assets.xcassets in Resources */,
 				9C4EDA892B47F2AE00BFDC48 /* SignupVC.storyboard in Resources */,
+				9C3925222B4F966500AEBA2F /* SignupEmailComponent.xib in Resources */,
 				9C4EDA7C2B47EF8C00BFDC48 /* Inter-SemiBold.ttf in Resources */,
 				9C6B453A2B47D9340068FA95 /* Main.storyboard in Resources */,
 				9C4EDA7F2B47EF8C00BFDC48 /* Inter-Bold.ttf in Resources */,
@@ -343,11 +393,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C995C762B493D6D004B22CE /* SignupInputStackView.swift in Sources */,
+				9CB351862B4E774000EE36F0 /* SignupCustomTextField.swift in Sources */,
 				9C6B45372B47D9340068FA95 /* ViewController.swift in Sources */,
 				9C4EDA872B47F2A600BFDC48 /* SignupVC.swift in Sources */,
+				9C3DF48E2B4A943D006CE6E5 /* SignupInputComponent.swift in Sources */,
 				9C6B45332B47D9340068FA95 /* AppDelegate.swift in Sources */,
 				9C6B45352B47D9340068FA95 /* SceneDelegate.swift in Sources */,
+				9CC25CF02B4BC18A00C07086 /* SignupEmailComponent.swift in Sources */,
 				9C4EDA842B47F27C00BFDC48 /* ServerSelectVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
