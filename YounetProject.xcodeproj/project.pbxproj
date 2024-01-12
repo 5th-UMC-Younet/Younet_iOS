@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D4643212B4FCE8D00AE4DF2 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D46431F2B4FCE8D00AE4DF2 /* FeedCell.swift */; };
+		4D4643222B4FCE8D00AE4DF2 /* FeedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D4643202B4FCE8D00AE4DF2 /* FeedCell.xib */; };
+		4DCAF0BE2B50096F00120E13 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCAF0BD2B50096F00120E13 /* TabBarController.swift */; };
+		4DCAF0C02B5034C600120E13 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCAF0BF2B5034C600120E13 /* CategoryViewController.swift */; };
+		4DDBE8322B4D7E7800B8A25A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDBE8312B4D7E7800B8A25A /* HomeViewController.swift */; };
+		4DDBE8342B4D7E8000B8A25A /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDBE8332B4D7E8000B8A25A /* PostViewController.swift */; };
+		4DDBE8362B4D7E8800B8A25A /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDBE8352B4D7E8800B8A25A /* ChatViewController.swift */; };
+		4DDBE8382B4D7E8E00B8A25A /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDBE8372B4D7E8E00B8A25A /* MyViewController.swift */; };
+		4DDBE83A2B4D91A900B8A25A /* CountrySelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDBE8392B4D91A900B8A25A /* CountrySelectionViewController.swift */; };
 		9C4EDA772B47EF8C00BFDC48 /* Inter-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9C4EDA6E2B47EF8B00BFDC48 /* Inter-ExtraLight.ttf */; };
 		9C4EDA782B47EF8C00BFDC48 /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9C4EDA6F2B47EF8C00BFDC48 /* Inter-Regular.ttf */; };
 		9C4EDA792B47EF8C00BFDC48 /* Inter-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9C4EDA702B47EF8C00BFDC48 /* Inter-Light.ttf */; };
@@ -45,6 +54,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4D46431F2B4FCE8D00AE4DF2 /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
+		4D4643202B4FCE8D00AE4DF2 /* FeedCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedCell.xib; sourceTree = "<group>"; };
+		4DCAF0BD2B50096F00120E13 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		4DCAF0BF2B5034C600120E13 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
+		4DDBE8312B4D7E7800B8A25A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		4DDBE8332B4D7E8000B8A25A /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		4DDBE8352B4D7E8800B8A25A /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		4DDBE8372B4D7E8E00B8A25A /* MyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
+		4DDBE8392B4D91A900B8A25A /* CountrySelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountrySelectionViewController.swift; sourceTree = "<group>"; };
 		9C4EDA6E2B47EF8B00BFDC48 /* Inter-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-ExtraLight.ttf"; sourceTree = "<group>"; };
 		9C4EDA6F2B47EF8C00BFDC48 /* Inter-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular.ttf"; sourceTree = "<group>"; };
 		9C4EDA702B47EF8C00BFDC48 /* Inter-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Light.ttf"; sourceTree = "<group>"; };
@@ -94,6 +112,54 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4DDBE82A2B4D484F00B8A25A /* Comunity */ = {
+			isa = PBXGroup;
+			children = (
+				4DDBE8302B4D7E6B00B8A25A /* My */,
+				4DDBE82F2B4D7E5F00B8A25A /* Chat */,
+				4DDBE82E2B4D7E5800B8A25A /* Post */,
+				4DDBE82D2B4D7E5000B8A25A /* Home */,
+				4DCAF0BD2B50096F00120E13 /* TabBarController.swift */,
+			);
+			path = Comunity;
+			sourceTree = "<group>";
+		};
+		4DDBE82D2B4D7E5000B8A25A /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				4DDBE8312B4D7E7800B8A25A /* HomeViewController.swift */,
+				4DDBE8392B4D91A900B8A25A /* CountrySelectionViewController.swift */,
+				4D46431F2B4FCE8D00AE4DF2 /* FeedCell.swift */,
+				4D4643202B4FCE8D00AE4DF2 /* FeedCell.xib */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		4DDBE82E2B4D7E5800B8A25A /* Post */ = {
+			isa = PBXGroup;
+			children = (
+				4DDBE8332B4D7E8000B8A25A /* PostViewController.swift */,
+				4DCAF0BF2B5034C600120E13 /* CategoryViewController.swift */,
+			);
+			path = Post;
+			sourceTree = "<group>";
+		};
+		4DDBE82F2B4D7E5F00B8A25A /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				4DDBE8352B4D7E8800B8A25A /* ChatViewController.swift */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		4DDBE8302B4D7E6B00B8A25A /* My */ = {
+			isa = PBXGroup;
+			children = (
+				4DDBE8372B4D7E8E00B8A25A /* MyViewController.swift */,
+			);
+			path = My;
+			sourceTree = "<group>";
+		};
 		9C0426A62B47EB7400C693BC /* Scene */ = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +206,7 @@
 		9C6B45312B47D9340068FA95 /* YounetProject */ = {
 			isa = PBXGroup;
 			children = (
+				4DDBE82A2B4D484F00B8A25A /* Comunity */,
 				9C4EDA6D2B47EF7600BFDC48 /* Font */,
 				9C0426A62B47EB7400C693BC /* Scene */,
 				9C6B45322B47D9340068FA95 /* AppDelegate.swift */,
@@ -283,6 +350,7 @@
 				9C4EDA7F2B47EF8C00BFDC48 /* Inter-Bold.ttf in Resources */,
 				9C4EDA7B2B47EF8C00BFDC48 /* Inter-Thin.ttf in Resources */,
 				9C4EDA792B47EF8C00BFDC48 /* Inter-Light.ttf in Resources */,
+				4D4643222B4FCE8D00AE4DF2 /* FeedCell.xib in Resources */,
 				9C4EDA772B47EF8C00BFDC48 /* Inter-ExtraLight.ttf in Resources */,
 				9C4EDA7D2B47EF8C00BFDC48 /* Inter-Medium.ttf in Resources */,
 				9C4EDA7A2B47EF8C00BFDC48 /* Inter-Black.ttf in Resources */,
@@ -310,9 +378,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DDBE83A2B4D91A900B8A25A /* CountrySelectionViewController.swift in Sources */,
 				9C6B45372B47D9340068FA95 /* ViewController.swift in Sources */,
 				9C6B45332B47D9340068FA95 /* AppDelegate.swift in Sources */,
+				4DCAF0BE2B50096F00120E13 /* TabBarController.swift in Sources */,
 				9C6B45352B47D9340068FA95 /* SceneDelegate.swift in Sources */,
+				4DDBE8382B4D7E8E00B8A25A /* MyViewController.swift in Sources */,
+				4DDBE8322B4D7E7800B8A25A /* HomeViewController.swift in Sources */,
+				4DDBE8362B4D7E8800B8A25A /* ChatViewController.swift in Sources */,
+				4DDBE8342B4D7E8000B8A25A /* PostViewController.swift in Sources */,
+				4DCAF0C02B5034C600120E13 /* CategoryViewController.swift in Sources */,
+				4D4643212B4FCE8D00AE4DF2 /* FeedCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,7 +496,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -477,7 +553,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
