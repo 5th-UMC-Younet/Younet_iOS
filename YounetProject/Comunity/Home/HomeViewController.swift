@@ -8,11 +8,16 @@
 import UIKit
 
 class HomeViewController: UIViewController {
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var sortButton: UIButton! //정렬버튼
     //카테고리 
     @IBOutlet var category: [UIButton]!
     var index: Int?
+    //국가 선택
+    @IBOutlet weak var countryImg: UIImageView!
+    @IBOutlet weak var countryName: UIButton!
+    
     
     
     override func viewDidLoad() {
@@ -30,6 +35,8 @@ class HomeViewController: UIViewController {
         registerXib()
         tableView.delegate = self
         tableView.dataSource = self
+        
+        
         
         super.viewDidLoad()
     }
@@ -73,7 +80,7 @@ class HomeViewController: UIViewController {
             index = category.firstIndex(of: sender)
         }
     }
-    
+    //카테고리 선택시 데이터 reload
     @IBAction func life(_ sender: Any) {
         //tableView.reloadData()
         reloadTableView(data: "life")
