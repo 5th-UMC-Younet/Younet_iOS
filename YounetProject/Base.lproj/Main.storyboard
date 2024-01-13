@@ -36,7 +36,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dg0-rC-fYa">
-                                <rect key="frame" x="157.66666666666666" y="60" width="78" height="34"/>
+                                <rect key="frame" x="181.66666666666666" y="60" width="30" height="34"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                 <menu key="menu" id="akR-7A-smQ">
                                     <children>
@@ -44,7 +44,7 @@
                                         <command title="Item 2" id="nxt-6o-xoF"/>
                                     </children>
                                 </menu>
-                                <state key="normal" title="Category">
+                                <state key="normal">
                                     <color key="titleColor" systemColor="labelColor"/>
                                 </state>
                             </button>
@@ -188,6 +188,9 @@
                         <viewLayoutGuide key="safeArea" id="Xnh-Bs-aLe"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="qyD-yV-q2A" id="6pN-vQ-Trr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kuv-rb-j3o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -834,19 +837,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zou-2h-aX6">
                                 <rect key="frame" x="0.0" y="102" width="393" height="45"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Xu-QL-zvN">
-                                        <rect key="frame" x="322" y="18" width="71" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                        <menu key="menu" id="UfX-6u-KwA">
-                                            <children>
-                                                <command title="최신순" id="T2l-AA-lX3"/>
-                                                <command title="좋아요순" id="mJL-fy-Zwf"/>
-                                            </children>
-                                        </menu>
-                                        <state key="normal" title="최신순">
-                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                    </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="43" translatesAutoresizingMaskIntoConstraints="NO" id="0RZ-5R-gkm">
                                         <rect key="frame" x="13" y="0.0" width="367" height="28"/>
                                         <subviews>
@@ -916,7 +906,7 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vSF-op-2mc">
                                                 <rect key="frame" x="337" y="0.0" width="30" height="28"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="13"/>
                                                 <color key="tintColor" systemColor="labelColor"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="기타">
@@ -932,11 +922,35 @@
                                             </button>
                                         </subviews>
                                     </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="SRP-4n-Wln">
+                                        <rect key="frame" x="340" y="21" width="44" height="28"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Xu-QL-zvN">
+                                                <rect key="frame" x="0.0" y="0.0" width="34" height="28"/>
+                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="13"/>
+                                                <menu key="menu" id="UfX-6u-KwA">
+                                                    <children>
+                                                        <command title="최신순" id="T2l-AA-lX3"/>
+                                                        <command title="좋아요순" id="mJL-fy-Zwf"/>
+                                                    </children>
+                                                </menu>
+                                                <state key="normal" title="최신순">
+                                                    <color key="titleColor" systemColor="systemGrayColor"/>
+                                                </state>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="V" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FF3-Rz-T8l">
+                                                <rect key="frame" x="35" y="0.0" width="9" height="28"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="2Xu-QL-zvN" firstAttribute="top" secondItem="Zou-2h-aX6" secondAttribute="top" constant="18" id="2F4-UW-fgM"/>
                                     <constraint firstItem="0RZ-5R-gkm" firstAttribute="top" secondItem="Zou-2h-aX6" secondAttribute="top" id="YFw-s7-RA4"/>
-                                    <constraint firstAttribute="trailing" secondItem="2Xu-QL-zvN" secondAttribute="trailing" id="kmV-zA-b2h"/>
+                                    <constraint firstAttribute="trailing" secondItem="SRP-4n-Wln" secondAttribute="trailing" constant="9" id="jAe-kN-s13"/>
+                                    <constraint firstItem="SRP-4n-Wln" firstAttribute="top" secondItem="Zou-2h-aX6" secondAttribute="top" constant="21" id="vjP-Gr-u9e"/>
                                     <constraint firstItem="0RZ-5R-gkm" firstAttribute="centerX" secondItem="Zou-2h-aX6" secondAttribute="centerX" id="zOE-PL-0Uw"/>
                                 </constraints>
                             </view>
@@ -966,6 +980,8 @@
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="countryImg" destination="c4J-cG-5JS" id="3gW-kt-nT2"/>
+                        <outlet property="countryName" destination="0cd-7E-xss" id="RGB-OK-YAu"/>
                         <outlet property="sortButton" destination="2Xu-QL-zvN" id="fZ3-35-qmb"/>
                         <outlet property="tableView" destination="DH7-0F-CTg" id="oZb-EJ-5PB"/>
                         <outletCollection property="category" destination="E8U-Ol-kWv" collectionClass="NSMutableArray" id="u1c-wr-3Zk"/>
@@ -978,7 +994,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RIC-Ea-AD0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="816" y="1245"/>
+            <point key="canvasLocation" x="814.50381679389307" y="1244.3661971830986"/>
         </scene>
         <!--CHAT-->
         <scene sceneID="yVA-L3-6ts">

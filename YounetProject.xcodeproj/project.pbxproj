@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		4D4643212B4FCE8D00AE4DF2 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D46431F2B4FCE8D00AE4DF2 /* FeedCell.swift */; };
 		4D4643222B4FCE8D00AE4DF2 /* FeedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D4643202B4FCE8D00AE4DF2 /* FeedCell.xib */; };
+		4DAD139B2B52B14800A84525 /* AlarmCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAD13992B52B14800A84525 /* AlarmCell.swift */; };
+		4DAD139C2B52B14800A84525 /* AlarmCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DAD139A2B52B14800A84525 /* AlarmCell.xib */; };
 		4DC538BC2B516A1400CEC5B6 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC538BB2B516A1400CEC5B6 /* SearchViewController.swift */; };
 		4DC538BE2B516A3B00CEC5B6 /* AlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC538BD2B516A3B00CEC5B6 /* AlarmViewController.swift */; };
 		4DC538C22B5176C300CEC5B6 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC538C12B5176C300CEC5B6 /* DetailViewController.swift */; };
@@ -58,6 +60,8 @@
 /* Begin PBXFileReference section */
 		4D46431F2B4FCE8D00AE4DF2 /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		4D4643202B4FCE8D00AE4DF2 /* FeedCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedCell.xib; sourceTree = "<group>"; };
+		4DAD13992B52B14800A84525 /* AlarmCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmCell.swift; sourceTree = "<group>"; };
+		4DAD139A2B52B14800A84525 /* AlarmCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlarmCell.xib; sourceTree = "<group>"; };
 		4DC538BB2B516A1400CEC5B6 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		4DC538BD2B516A3B00CEC5B6 /* AlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmViewController.swift; sourceTree = "<group>"; };
 		4DC538C12B5176C300CEC5B6 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -130,6 +134,8 @@
 			isa = PBXGroup;
 			children = (
 				4DC538BD2B516A3B00CEC5B6 /* AlarmViewController.swift */,
+				4DAD13992B52B14800A84525 /* AlarmCell.swift */,
+				4DAD139A2B52B14800A84525 /* AlarmCell.xib */,
 			);
 			path = Alarm;
 			sourceTree = "<group>";
@@ -368,6 +374,7 @@
 				9C4EDA782B47EF8C00BFDC48 /* Inter-Regular.ttf in Resources */,
 				9C6B453C2B47D9350068FA95 /* Assets.xcassets in Resources */,
 				9C4EDA7C2B47EF8C00BFDC48 /* Inter-SemiBold.ttf in Resources */,
+				4DAD139C2B52B14800A84525 /* AlarmCell.xib in Resources */,
 				9C6B453A2B47D9340068FA95 /* Main.storyboard in Resources */,
 				9C4EDA7F2B47EF8C00BFDC48 /* Inter-Bold.ttf in Resources */,
 				9C4EDA7B2B47EF8C00BFDC48 /* Inter-Thin.ttf in Resources */,
@@ -403,6 +410,7 @@
 				4DC538C22B5176C300CEC5B6 /* DetailViewController.swift in Sources */,
 				4DDBE83A2B4D91A900B8A25A /* CountrySelectionViewController.swift in Sources */,
 				4DC538BC2B516A1400CEC5B6 /* SearchViewController.swift in Sources */,
+				4DAD139B2B52B14800A84525 /* AlarmCell.swift in Sources */,
 				9C6B45372B47D9340068FA95 /* ViewController.swift in Sources */,
 				9C6B45332B47D9340068FA95 /* AppDelegate.swift in Sources */,
 				4DCAF0BE2B50096F00120E13 /* TabBarController.swift in Sources */,
