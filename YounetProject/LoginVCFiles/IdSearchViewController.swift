@@ -18,8 +18,9 @@ class IdSearchViewController: UIViewController {
         setKeyboard()
     }
     
-    @IBAction func backBtnDidTap(_ sender: UIBarButtonItem) {
-        self.navigationController?.popViewController(animated: true) }
+    @IBAction func backBtnDidTap(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
     
     @IBAction func IdSearchBtnDidtap(_ sender: UIButton) {
         let failAlert = UIAlertController(title: "관련된 아이디가 존재하지 않습니다.", message: nil, preferredStyle: .alert)
@@ -41,10 +42,4 @@ class IdSearchViewController: UIViewController {
         self.navigationController?.popToRootViewController(animated: true)
     }
     
-    func setKeyboard() {
-        // 터치 시 키보드 내리기
-        let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
-        tap.cancelsTouchesInView = false
-        view.addGestureRecognizer(tap)
-    }
 }

@@ -17,12 +17,21 @@
 		9C6B454A2B47D9350068FA95 /* YounetProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6B45492B47D9350068FA95 /* YounetProjectTests.swift */; };
 		9C6B45542B47D9350068FA95 /* YounetProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6B45532B47D9350068FA95 /* YounetProjectUITests.swift */; };
 		9C6B45562B47D9350068FA95 /* YounetProjectUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6B45552B47D9350068FA95 /* YounetProjectUITestsLaunchTests.swift */; };
+		B310A0ED2B5ADB5700176C77 /* MyPageProfileEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B310A0EC2B5ADB5700176C77 /* MyPageProfileEditViewController.swift */; };
+		B310A0EF2B5AE90700176C77 /* CustomSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = B310A0EE2B5AE90700176C77 /* CustomSwitch.swift */; };
+		B310A0F12B5AEB2100176C77 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B310A0F02B5AEB2100176C77 /* SettingViewController.swift */; };
+		B310A0F52B5C6BF000176C77 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B310A0F42B5C6BF000176C77 /* CustomTextField.swift */; };
 		B31811F22B53FA2900A1C8BD /* PwResetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31811F12B53FA2900A1C8BD /* PwResetViewController.swift */; };
-		B35E94612B49495C000A3AE2 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35E94602B49495C000A3AE2 /* UIViewExtension.swift */; };
+		B35A9F062B5CFB6E002E6428 /* QuitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35A9F052B5CFB6E002E6428 /* QuitViewController.swift */; };
+		B35A9F082B5D9FA1002E6428 /* IdPwSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35A9F072B5D9FA1002E6428 /* IdPwSearchViewController.swift */; };
+		B35E94612B49495C000A3AE2 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35E94602B49495C000A3AE2 /* ViewExtension.swift */; };
 		B35E94632B495B98000A3AE2 /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35E94622B495B98000A3AE2 /* CustomLabel.swift */; };
 		B3AD18982B4D06D4003D7368 /* IdSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AD18972B4D06D4003D7368 /* IdSearchViewController.swift */; };
 		B3AD189A2B4D2D4E003D7368 /* PwSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AD18992B4D2D4E003D7368 /* PwSearchViewController.swift */; };
 		B3AD189D2B5394BD003D7368 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3AD189C2B5394BD003D7368 /* LaunchScreen.storyboard */; };
+		B3DF17F52B55A7990028147A /* FeedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3DF17F32B55A7990028147A /* FeedCell.xib */; };
+		B3DF17F62B55A7990028147A /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DF17F42B55A7990028147A /* FeedCell.swift */; };
+		B3DF17F92B55ACCC0028147A /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DF17F82B55ACCC0028147A /* MyPageViewController.swift */; };
 		B3F84FB52B49C83500228BD3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F84FB42B49C83500228BD3 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -71,12 +80,21 @@
 		9C6B454F2B47D9350068FA95 /* YounetProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YounetProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C6B45532B47D9350068FA95 /* YounetProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YounetProjectUITests.swift; sourceTree = "<group>"; };
 		9C6B45552B47D9350068FA95 /* YounetProjectUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YounetProjectUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B310A0EC2B5ADB5700176C77 /* MyPageProfileEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageProfileEditViewController.swift; sourceTree = "<group>"; };
+		B310A0EE2B5AE90700176C77 /* CustomSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSwitch.swift; sourceTree = "<group>"; };
+		B310A0F02B5AEB2100176C77 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		B310A0F42B5C6BF000176C77 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		B31811F12B53FA2900A1C8BD /* PwResetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PwResetViewController.swift; sourceTree = "<group>"; };
-		B35E94602B49495C000A3AE2 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		B35A9F052B5CFB6E002E6428 /* QuitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuitViewController.swift; sourceTree = "<group>"; };
+		B35A9F072B5D9FA1002E6428 /* IdPwSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdPwSearchViewController.swift; sourceTree = "<group>"; };
+		B35E94602B49495C000A3AE2 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		B35E94622B495B98000A3AE2 /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
 		B3AD18972B4D06D4003D7368 /* IdSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdSearchViewController.swift; sourceTree = "<group>"; };
 		B3AD18992B4D2D4E003D7368 /* PwSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PwSearchViewController.swift; sourceTree = "<group>"; };
 		B3AD189C2B5394BD003D7368 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B3DF17F32B55A7990028147A /* FeedCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedCell.xib; sourceTree = "<group>"; };
+		B3DF17F42B55A7990028147A /* FeedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
+		B3DF17F82B55ACCC0028147A /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		B3F84FB42B49C83500228BD3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -128,7 +146,6 @@
 				9C6B45482B47D9350068FA95 /* YounetProjectTests */,
 				9C6B45522B47D9350068FA95 /* YounetProjectUITests */,
 				9C6B45302B47D9340068FA95 /* Products */,
-				B3F84FA92B49AA2C00228BD3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -147,13 +164,19 @@
 			children = (
 				9C4EDA6D2B47EF7600BFDC48 /* Font */,
 				9C0426A62B47EB7400C693BC /* Scene */,
-				9C6B45322B47D9340068FA95 /* AppDelegate.swift */,
-				9C6B45342B47D9340068FA95 /* SceneDelegate.swift */,
 				B35E94682B49A421000A3AE2 /* CustomClass */,
-				B3AD189B2B4D2D5A003D7368 /* ViewController */,
+				B3DF17FA2B55AD0D0028147A /* MyPageFiles */,
+				B3DF17F82B55ACCC0028147A /* MyPageViewController.swift */,
+				B3AD189B2B4D2D5A003D7368 /* LoginVCFiles */,
 				9C6B45382B47D9340068FA95 /* Main.storyboard */,
 				B3AD189C2B5394BD003D7368 /* LaunchScreen.storyboard */,
+				9C6B45362B47D9340068FA95 /* ViewController.swift */,
+				B35A9F052B5CFB6E002E6428 /* QuitViewController.swift */,
+				B310A0EC2B5ADB5700176C77 /* MyPageProfileEditViewController.swift */,
+				B310A0F02B5AEB2100176C77 /* SettingViewController.swift */,
 				9C6B453B2B47D9350068FA95 /* Assets.xcassets */,
+				9C6B45322B47D9340068FA95 /* AppDelegate.swift */,
+				9C6B45342B47D9340068FA95 /* SceneDelegate.swift */,
 				9C6B45402B47D9350068FA95 /* Info.plist */,
 			);
 			path = YounetProject;
@@ -179,29 +202,41 @@
 		B35E94682B49A421000A3AE2 /* CustomClass */ = {
 			isa = PBXGroup;
 			children = (
-				B35E94602B49495C000A3AE2 /* UIViewExtension.swift */,
+				B35E94602B49495C000A3AE2 /* ViewExtension.swift */,
+				B310A0EE2B5AE90700176C77 /* CustomSwitch.swift */,
 				B35E94622B495B98000A3AE2 /* CustomLabel.swift */,
+				B310A0F42B5C6BF000176C77 /* CustomTextField.swift */,
 			);
 			path = CustomClass;
 			sourceTree = "<group>";
 		};
-		B3AD189B2B4D2D5A003D7368 /* ViewController */ = {
+		B3AD189B2B4D2D5A003D7368 /* LoginVCFiles */ = {
 			isa = PBXGroup;
 			children = (
-				9C6B45362B47D9340068FA95 /* ViewController.swift */,
 				B3F84FB42B49C83500228BD3 /* LoginViewController.swift */,
 				B3AD18972B4D06D4003D7368 /* IdSearchViewController.swift */,
+				B35A9F072B5D9FA1002E6428 /* IdPwSearchViewController.swift */,
 				B3AD18992B4D2D4E003D7368 /* PwSearchViewController.swift */,
 				B31811F12B53FA2900A1C8BD /* PwResetViewController.swift */,
 			);
-			path = ViewController;
+			path = LoginVCFiles;
 			sourceTree = "<group>";
 		};
-		B3F84FA92B49AA2C00228BD3 /* Frameworks */ = {
+		B3DF17F72B55A7A80028147A /* Feed */ = {
 			isa = PBXGroup;
 			children = (
+				B3DF17F42B55A7990028147A /* FeedCell.swift */,
+				B3DF17F32B55A7990028147A /* FeedCell.xib */,
 			);
-			name = Frameworks;
+			path = Feed;
+			sourceTree = "<group>";
+		};
+		B3DF17FA2B55AD0D0028147A /* MyPageFiles */ = {
+			isa = PBXGroup;
+			children = (
+				B3DF17F72B55A7A80028147A /* Feed */,
+			);
+			path = MyPageFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -316,6 +351,7 @@
 				9C4EDA782B47EF8C00BFDC48 /* Inter-Regular.ttf in Resources */,
 				9C6B453C2B47D9350068FA95 /* Assets.xcassets in Resources */,
 				9C6B453A2B47D9340068FA95 /* Main.storyboard in Resources */,
+				B3DF17F52B55A7990028147A /* FeedCell.xib in Resources */,
 				B3AD189D2B5394BD003D7368 /* LaunchScreen.storyboard in Resources */,
 				9C4EDA7F2B47EF8C00BFDC48 /* Inter-Bold.ttf in Resources */,
 			);
@@ -343,14 +379,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3F84FB52B49C83500228BD3 /* LoginViewController.swift in Sources */,
+				B310A0ED2B5ADB5700176C77 /* MyPageProfileEditViewController.swift in Sources */,
+				B3DF17F62B55A7990028147A /* FeedCell.swift in Sources */,
+				B310A0F52B5C6BF000176C77 /* CustomTextField.swift in Sources */,
+				B310A0EF2B5AE90700176C77 /* CustomSwitch.swift in Sources */,
+				B35A9F062B5CFB6E002E6428 /* QuitViewController.swift in Sources */,
+				B310A0F12B5AEB2100176C77 /* SettingViewController.swift in Sources */,
 				B3AD18982B4D06D4003D7368 /* IdSearchViewController.swift in Sources */,
 				9C6B45372B47D9340068FA95 /* ViewController.swift in Sources */,
 				B35E94632B495B98000A3AE2 /* CustomLabel.swift in Sources */,
 				B3AD189A2B4D2D4E003D7368 /* PwSearchViewController.swift in Sources */,
+				B35A9F082B5D9FA1002E6428 /* IdPwSearchViewController.swift in Sources */,
+				B3DF17F92B55ACCC0028147A /* MyPageViewController.swift in Sources */,
 				B31811F22B53FA2900A1C8BD /* PwResetViewController.swift in Sources */,
 				9C6B45332B47D9340068FA95 /* AppDelegate.swift in Sources */,
 				9C6B45352B47D9340068FA95 /* SceneDelegate.swift in Sources */,
-				B35E94612B49495C000A3AE2 /* UIViewExtension.swift in Sources */,
+				B35E94612B49495C000A3AE2 /* ViewExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

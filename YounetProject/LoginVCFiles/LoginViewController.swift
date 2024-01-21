@@ -16,6 +16,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
         setKeyboard()
     }
     
@@ -25,7 +26,7 @@ class LoginViewController: UIViewController {
         // alert button 색상 설정 및 action 추가
         alertAction.setValue(UIColor.black, forKey: "titleTextColor")
         alert.addAction(alertAction)
-        self.present(alert, animated: true)
+        //self.present(alert, animated: true)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -33,12 +34,5 @@ class LoginViewController: UIViewController {
         self.navigationItem.hidesBackButton = true
    }
     
-    func setKeyboard() {
-        // 터치 시 키보드 내리기
-        let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
-        tap.cancelsTouchesInView = false
-        view.addGestureRecognizer(tap)
-    }
-
 }
 

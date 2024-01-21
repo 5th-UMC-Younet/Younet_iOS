@@ -17,19 +17,14 @@ class PwSearchViewController: UIViewController {
         setKeyboard()
     }
     
-    @IBAction func backBtnDidTap(_ sender: UIBarButtonItem) {
-        self.navigationController?.popViewController(animated: true)
+    @IBAction func backBtnDidTap(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
     }
+    
     @IBAction func confirmBtnDidtap(_ sender: Any) {
         alertAction.setValue(UIColor.black, forKey: "titleTextColor")
         alert.addAction(alertAction)
         self.present(alert, animated: true)
     }
     
-    func setKeyboard() {
-        // 터치 시 키보드 내리기
-        let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
-        tap.cancelsTouchesInView = false
-        view.addGestureRecognizer(tap)
-    }
 }

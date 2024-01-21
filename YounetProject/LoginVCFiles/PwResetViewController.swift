@@ -23,13 +23,6 @@ class PwResetViewController: UIViewController {
         
     }
     
-    func setKeyboard() {
-        // 터치 시 키보드 내리기
-        let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
-        tap.cancelsTouchesInView = false
-        view.addGestureRecognizer(tap)
-    }
-    
     func initialDesignSetting() {
         pwCheckAlert.isHidden = true
         newPwAlert.isHidden = true
@@ -37,10 +30,11 @@ class PwResetViewController: UIViewController {
         completeButton.backgroundColor = UIColor.darkGray
     }
     
-    @IBAction func backBtnDidTap(_ sender: UIBarButtonItem) {
-        self.navigationController?.popViewController(animated: true) }
+    @IBAction func backBtnDidTap(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
 
-    
+    // 비밀번호 TextField 변경 시
     @IBAction func newPwTfChanged(_ sender: UITextField) {
         let newPw = sender.text ?? ""
         let regularExpression = "^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[!@#$%^&*()_+=-]).{8,50}"
@@ -78,6 +72,11 @@ class PwResetViewController: UIViewController {
     }
     
     private func gotoRootVC(_ sender: UIAlertAction) {
-        self.navigationController?.popToRootViewController(animated: true)
+        self.view.window?.rootViewController?.dismiss(animated: false, completion: {
+            let newVC = LoginViewController()
+            newVC.modalTransitionStyle = .crossDissolve
+            newVC.modalPresentationStyle = .fullScreen
+            self.present(newVC, animated: true, completion: nil)
+        })
     }
 }
