@@ -13,6 +13,8 @@ class PostViewController: UIViewController {
     
     var currentCategory: Int?
     
+    let imagePicker = UIImagePickerController()
+    
     
     override func viewDidLoad() {
         //카테고리 메뉴
@@ -79,19 +81,23 @@ class PostViewController: UIViewController {
             alert.addAction(confirm)
             present(alert, animated: true, completion: nil)
         }else{
-            //데이터 전송 추가필요
+            //데이터 전송 추가
             let alert = UIAlertController(title: "", message: "게시글이 등록되었습니다.", preferredStyle: UIAlertController.Style.alert)
             let confirm = UIAlertAction(title: "확인", style: .default, handler: nil)
             confirm.setValue(UIColor.black, forKey: "titleTextColor")
             alert.addAction(confirm)
             present(alert, animated: true, completion: nil)
+            guard let back = storyboard?.instantiateViewController(identifier: "tabC") as? TabBarController else{
+                return
+            }
         }
-        //데이터 전송 추가
     }
     
     //사진
     @IBAction func goAlbum(_ sender: Any) {
-        //앨범 열기 추가
+        self.imagePicker.sourceType = .photoLibrary
+        self.present(imagePicker, animated: true, completion: nil)
+        //사진 등록 추가
     }
     
     

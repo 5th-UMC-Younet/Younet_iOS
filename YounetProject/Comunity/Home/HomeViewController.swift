@@ -15,12 +15,37 @@ class HomeViewController: UIViewController {
     @IBOutlet var category: [UIButton]!
     var index: Int?
     //국가 선택
-    @IBOutlet weak var countryImg: UIImageView!
     @IBOutlet weak var countryName: UIButton!
+    @IBOutlet weak var engCountryName: UILabel!
+    @IBOutlet weak var countryImg: UILabel!
+    
+    let countries: [Country] = [
+        Country(name: "네덜란드", engName: "NETHERLANDS", img: "🇳🇱"),
+        Country(name: "덴마크", engName: "DENMARK", img: "🇩🇰"),
+        Country(name: "독일", engName: "GERMANY", img: "🇩🇪"),
+        Country(name: "멕시코", engName: "MEXICO", img: "🇲🇽"),
+        Country(name: "미국", engName: "UNITED STATES", img: "🇺🇸"),
+        Country(name: "벨기에", engName: "BELGIUM", img: "🇧🇪"),
+        Country(name: "브라질", engName: "BRAZIL", img: "🇧🇷"),
+        Country(name: "스웨덴", engName: "SWEDEN", img: "🇸🇪"),
+        Country(name: "스위스", engName: "SWITZERLAND", img: "🇨🇭"),
+        Country(name: "스페인", engName: "SPAIN", img: "🇪🇸"),
+        Country(name: "영국", engName: "UNITED KINGDOM", img: "🇬🇧"),
+        Country(name: "오스트리아", engName: "AUSTRIA", img: "🇦🇹"),
+        Country(name: "이탈리아", engName: "ITALY", img: "🇮🇹"),
+        Country(name: "일본", engName: "JAPAN", img: "🇯🇵"),
+        Country(name: "중국", engName: "CHINA", img: "🇨🇳"),
+        Country(name: "캐나다", engName: "CANADA", img: "🇨🇦"),
+        Country(name: "프랑스", engName: "FRANCE", img: "🇫🇷"),
+        Country(name: "핀란드", engName: "FINLAND", img: "🇫🇮"),
+        Country(name: "호주", engName: "AUSTRALIA", img: "🇦🇺")
+    ]
     
     
     
     override func viewDidLoad() {
+        //국가 초기값
+        countryName.setTitle("캐나다", for: .normal)
         //카테고리 초기값
         category[0].isSelected = true
         index = 0
@@ -35,8 +60,6 @@ class HomeViewController: UIViewController {
         registerXib()
         tableView.delegate = self
         tableView.dataSource = self
-        
-        
         
         super.viewDidLoad()
     }
@@ -126,6 +149,7 @@ class HomeViewController: UIViewController {
         guard let countryVC = storyboard?.instantiateViewController(identifier: "CountryVC") as? CountrySelectionViewController else{
             return
         }
+        countryVC.delegate = self
         present(countryVC, animated: true, completion: nil)
     }
 
@@ -156,6 +180,16 @@ extension HomeViewController : UITableViewDelegate, UITableViewDataSource {
             if let index = sender as? Int{
                 vc?.num = index
             }
+            vc?.modalPresentationStyle = .fullScreen
         }
+    }
+}
+//국가선택
+extension HomeViewController: SelectButtonDelegate{
+    func selection(_ data: Int) {
+        let country = countries[data]
+        countryName.setTitle(country.name, for: .normal)
+        engCountryName.text = country.engName
+        countryImg.text = country.img
     }
 }
