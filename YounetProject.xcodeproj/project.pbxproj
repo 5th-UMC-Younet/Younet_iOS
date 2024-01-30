@@ -20,6 +20,10 @@
 		4D4643222B4FCE8D00AE4DF2 /* FeedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D4643202B4FCE8D00AE4DF2 /* FeedCell.xib */; };
 		4DAD139B2B52B14800A84525 /* AlarmCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAD13992B52B14800A84525 /* AlarmCell.swift */; };
 		4DAD139C2B52B14800A84525 /* AlarmCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DAD139A2B52B14800A84525 /* AlarmCell.xib */; };
+		4DAD139E2B5E8DFA00A84525 /* Comunity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DAD139D2B5E8DFA00A84525 /* Comunity.storyboard */; };
+		4DAD13A32B5FB36600A84525 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAD13A22B5FB36600A84525 /* Country.swift */; };
+		4DAD13A62B5FDFEE00A84525 /* FeedDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAD13A42B5FDFEE00A84525 /* FeedDetailCell.swift */; };
+		4DAD13A72B5FDFEE00A84525 /* FeedDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DAD13A52B5FDFEE00A84525 /* FeedDetailCell.xib */; };
 		4DC538BC2B516A1400CEC5B6 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC538BB2B516A1400CEC5B6 /* SearchViewController.swift */; };
 		4DC538BE2B516A3B00CEC5B6 /* AlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC538BD2B516A3B00CEC5B6 /* AlarmViewController.swift */; };
 		4DC538C22B5176C300CEC5B6 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC538C12B5176C300CEC5B6 /* DetailViewController.swift */; };
@@ -143,6 +147,10 @@
 		4D4643202B4FCE8D00AE4DF2 /* FeedCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedCell.xib; sourceTree = "<group>"; };
 		4DAD13992B52B14800A84525 /* AlarmCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmCell.swift; sourceTree = "<group>"; };
 		4DAD139A2B52B14800A84525 /* AlarmCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlarmCell.xib; sourceTree = "<group>"; };
+		4DAD139D2B5E8DFA00A84525 /* Comunity.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Comunity.storyboard; sourceTree = "<group>"; };
+		4DAD13A22B5FB36600A84525 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		4DAD13A42B5FDFEE00A84525 /* FeedDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDetailCell.swift; sourceTree = "<group>"; };
+		4DAD13A52B5FDFEE00A84525 /* FeedDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedDetailCell.xib; sourceTree = "<group>"; };
 		4DC538BB2B516A1400CEC5B6 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		4DC538BD2B516A3B00CEC5B6 /* AlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmViewController.swift; sourceTree = "<group>"; };
 		4DC538C12B5176C300CEC5B6 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -251,12 +259,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4DAD13A12B5FB34B00A84525 /* Country */ = {
+			isa = PBXGroup;
+			children = (
+				4DDBE8392B4D91A900B8A25A /* CountrySelectionViewController.swift */,
+				4DAD13A22B5FB36600A84525 /* Country.swift */,
+			);
+			path = Country;
+			sourceTree = "<group>";
+		};
 		4DC538BF2B51738900CEC5B6 /* Feed */ = {
 			isa = PBXGroup;
 			children = (
 				4D46431F2B4FCE8D00AE4DF2 /* FeedCell.swift */,
 				4D4643202B4FCE8D00AE4DF2 /* FeedCell.xib */,
 				4DC538C12B5176C300CEC5B6 /* DetailViewController.swift */,
+				4DAD13A42B5FDFEE00A84525 /* FeedDetailCell.swift */,
+				4DAD13A52B5FDFEE00A84525 /* FeedDetailCell.xib */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -279,6 +298,7 @@
 				4DDBE82F2B4D7E5F00B8A25A /* Chat */,
 				4DDBE82E2B4D7E5800B8A25A /* Post */,
 				4DDBE82D2B4D7E5000B8A25A /* Home */,
+				4DAD139D2B5E8DFA00A84525 /* Comunity.storyboard */,
 			);
 			path = Comunity;
 			sourceTree = "<group>";
@@ -286,10 +306,10 @@
 		4DDBE82D2B4D7E5000B8A25A /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				4DAD13A12B5FB34B00A84525 /* Country */,
 				4DC538C02B51739B00CEC5B6 /* Alarm */,
 				4DC538BF2B51738900CEC5B6 /* Feed */,
 				4DDBE8312B4D7E7800B8A25A /* HomeViewController.swift */,
-				4DDBE8392B4D91A900B8A25A /* CountrySelectionViewController.swift */,
 				4DC538BB2B516A1400CEC5B6 /* SearchViewController.swift */,
 			);
 			path = Home;
@@ -787,9 +807,11 @@
 				9C50A3402B5E5D7000082229 /* SearchResultTableViewCell.xib in Resources */,
 				9C4EDA7B2B47EF8C00BFDC48 /* Inter-Thin.ttf in Resources */,
 				9C4EDA792B47EF8C00BFDC48 /* Inter-Light.ttf in Resources */,
+				4DAD13A72B5FDFEE00A84525 /* FeedDetailCell.xib in Resources */,
 				4D4643222B4FCE8D00AE4DF2 /* FeedCell.xib in Resources */,
 				9C4EDA772B47EF8C00BFDC48 /* Inter-ExtraLight.ttf in Resources */,
 				9C4EDA7D2B47EF8C00BFDC48 /* Inter-Medium.ttf in Resources */,
+				4DAD139E2B5E8DFA00A84525 /* Comunity.storyboard in Resources */,
 				9C4EDA7A2B47EF8C00BFDC48 /* Inter-Black.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -867,6 +889,7 @@
 				B321EEC52B6FD31000C29F4A /* MyPageProfileEditViewController.swift in Sources */,
 				B321EEC02B6FD31000C29F4A /* PopupViewController.swift in Sources */,
 				B340FA242B714C2600D86FEF /* NickNameChatProfileViewController.swift in Sources */,
+				4DAD13A62B5FDFEE00A84525 /* FeedDetailCell.swift in Sources */,
 				4DCAF0BE2B50096F00120E13 /* TabBarController.swift in Sources */,
 				9C6B45352B47D9340068FA95 /* SceneDelegate.swift in Sources */,
 				4DDBE8382B4D7E8E00B8A25A /* MyViewController.swift in Sources */,
@@ -874,6 +897,7 @@
 				4DC538BE2B516A3B00CEC5B6 /* AlarmViewController.swift in Sources */,
 				4DDBE8362B4D7E8800B8A25A /* ChatViewController.swift in Sources */,
 				4DDBE8342B4D7E8000B8A25A /* PostViewController.swift in Sources */,
+				4DAD13A32B5FB36600A84525 /* Country.swift in Sources */,
 				4D4643212B4FCE8D00AE4DF2 /* FeedCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
