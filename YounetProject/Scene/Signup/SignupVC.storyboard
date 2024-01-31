@@ -25,7 +25,7 @@
                                 <rect key="frame" x="0.0" y="103" width="394" height="863"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jub-5j-cbm">
-                                        <rect key="frame" x="0.0" y="0.0" width="394" height="816.33333333333337"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="394" height="880.33333333333337"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gbq-p3-qdG">
                                                 <rect key="frame" x="124.66666666666669" y="713.33333333333337" width="145" height="47"/>
@@ -131,7 +131,7 @@
                                             <constraint firstItem="2t9-Y6-Qx4" firstAttribute="leading" secondItem="jub-5j-cbm" secondAttribute="leading" constant="44" id="CLf-dW-lSD"/>
                                             <constraint firstItem="2t9-Y6-Qx4" firstAttribute="top" secondItem="jub-5j-cbm" secondAttribute="top" constant="45" id="M8K-p7-IvT"/>
                                             <constraint firstItem="Gbq-p3-qdG" firstAttribute="centerX" secondItem="jub-5j-cbm" secondAttribute="centerX" id="Pfm-Br-e4p"/>
-                                            <constraint firstAttribute="bottom" secondItem="Gbq-p3-qdG" secondAttribute="bottom" constant="56" identifier="signupBtnBottomConstraint" id="t5a-QX-wX6"/>
+                                            <constraint firstAttribute="bottom" secondItem="Gbq-p3-qdG" secondAttribute="bottom" constant="120" identifier="signupBtnBottomConstraint" id="t5a-QX-wX6"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -204,7 +204,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

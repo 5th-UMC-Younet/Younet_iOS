@@ -48,10 +48,6 @@ class SignupCustomTextField: UIView {
         }
     }
     
-    func applyTFDelegate(_ delegate: UITextFieldDelegate) {
-        inputTextField.delegate = delegate
-    }
-    
     private func applyNib(){
         print(#fileID, #function, #line, "- ")
         let nibName = String(describing: Self.self)

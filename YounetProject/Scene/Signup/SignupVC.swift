@@ -6,8 +6,7 @@
 //
 
 import UIKit
-
-
+import Combine
 
 class SignupVC: UIViewController
 {
@@ -25,6 +24,7 @@ class SignupVC: UIViewController
     @IBOutlet var agreementStackView: UIStackView!
     @IBOutlet var agreementErrorLabel: UILabel!
     
+    var subscriptions : Set<AnyCancellable> = Set()
     
     var agreementStatus: Bool = false {
         didSet {
@@ -38,8 +38,17 @@ class SignupVC: UIViewController
     {
         super.viewDidLoad()
         config()
+        dump(signupBtnBottomConstraint)
         
+        handleKeyboardShowAndHide(signupBtnBottomConstraint, bottomPadding: 56, subscriptions: &subscriptions)
     }
+    
+    //MARK: - Handle keyboard
+//    @objc
+//    private func handleKeyboard(_ sender: Notification) {
+//        print(#fileID, #function, #line, "- sender: \(sender.userInfo)")
+//        
+//    }
     
     @objc
     private func signupBtnClicked(_ sender: UIButton)
@@ -179,19 +188,6 @@ extension SignupVC: SignupInputComponentDelegate
     }
 }
 
-extension SignupVC: UITextFieldDelegate
-{
-    func textFieldDidBeginEditing(_ textField: UITextField)
-    {
-        signupBtnBottomConstraint?.constant = 356
-    }
-    
-    func textFieldDidEndEditing(_ textField: UITextField)
-    {
-        signupBtnBottomConstraint?.constant = 56
-    }
-}
-
 //MARK: - Configuration Helper Function
 extension SignupVC
 {
@@ -212,8 +208,6 @@ extension SignupVC
         configSignupInputComponent(pwInputComponent)
         configSignupInputComponent(pwCheckInputComponent)
         
-        //EmailInputComponent
-        emailInputComponent.applyTFDelegate(self)
         
         //do when keyboard popup
         for constraint in contentView.constraints
@@ -251,7 +245,6 @@ extension SignupVC
     private func configSignupInputComponent(_ component: SignupInputComponent)
     {
         component.delegate = self
-        component.applyTFDelegate(self)
         if ((component == pwInputComponent) || (component == pwCheckInputComponent))
         {
             component.configPwInputComponent()
@@ -291,3 +284,5 @@ extension SignupVC
         return (inputStr == inputPw) && pwValidation(inputPw)
     }
 }
+
+

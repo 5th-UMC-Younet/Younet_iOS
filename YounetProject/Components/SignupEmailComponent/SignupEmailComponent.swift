@@ -172,12 +172,6 @@ class SignupEmailComponent: UIStackView {
         configEmailConfirmAccordingToValidation(isValid)
     }
     
-    func applyTFDelegate(_ delegate: UITextFieldDelegate)
-    {
-        emailInputCustomTF.applyTFDelegate(delegate)
-        emailConfirmCustomTF.applyTFDelegate(delegate)
-    }
-    
     private func applyNib(){
         print(#fileID, #function, #line, "- ")
         let nibName = String(describing: Self.self)

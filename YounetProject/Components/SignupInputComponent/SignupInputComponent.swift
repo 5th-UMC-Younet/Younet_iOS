@@ -44,10 +44,6 @@ class SignupInputComponent: UIStackView {
         customTextField.inputTextField.becomeFirstResponder()
     }
     
-    func applyTFDelegate(_ delegate: UITextFieldDelegate) {
-        customTextField.applyTFDelegate(delegate)
-    }
-    
     func configAccordingToValidation(_ isValid: Bool) {
         validStatus = isValid
         if (isValid)

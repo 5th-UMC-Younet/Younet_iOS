@@ -35,7 +35,7 @@
                     <rect key="frame" x="0.0" y="21.333333333333343" width="417" height="274"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="42" id="Vbe-6d-mxo"/>
+                        <constraint firstAttribute="height" constant="37" id="Vbe-6d-mxo"/>
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="오류문구" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GHU-43-bEG">
