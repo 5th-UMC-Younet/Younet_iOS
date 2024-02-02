@@ -11,6 +11,8 @@
 		9C1B3C282B5D25E100AB3B73 /* IdentificationVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C1B3C272B5D25E100AB3B73 /* IdentificationVC.storyboard */; };
 		9C1B3C2B2B5E1A5200AB3B73 /* IdentificationInputUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1B3C2A2B5E1A5200AB3B73 /* IdentificationInputUnit.swift */; };
 		9C1B3C2F2B5E1A6A00AB3B73 /* IdentificationInputUnit.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C1B3C2E2B5E1A6A00AB3B73 /* IdentificationInputUnit.xib */; };
+		9C374CF22B6CDF6900F879C4 /* NationSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C374CF02B6CDF6900F879C4 /* NationSelectionCell.swift */; };
+		9C374CF32B6CDF6900F879C4 /* NationSelectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C374CF12B6CDF6900F879C4 /* NationSelectionCell.xib */; };
 		9C3925222B4F966500AEBA2F /* SignupEmailComponent.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C3925212B4F966500AEBA2F /* SignupEmailComponent.xib */; };
 		9C3DF48E2B4A943D006CE6E5 /* SignupInputComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3DF48D2B4A943D006CE6E5 /* SignupInputComponent.swift */; };
 		9C3DF4902B4A945C006CE6E5 /* SignupInputComponent.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C3DF48F2B4A945C006CE6E5 /* SignupInputComponent.xib */; };
@@ -51,6 +53,7 @@
 		9CB80B942B53B2D7002FD656 /* UIAlertController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB80B932B53B2D7002FD656 /* UIAlertController+Extension.swift */; };
 		9CB80B962B53B933002FD656 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB80B952B53B933002FD656 /* UIApplication.swift */; };
 		9CC25CF02B4BC18A00C07086 /* SignupEmailComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC25CEF2B4BC18A00C07086 /* SignupEmailComponent.swift */; };
+		9CFC5FAC2B6CA9D500997BDC /* CountryDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFC5FAB2B6CA9D500997BDC /* CountryDTO.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +78,8 @@
 		9C1B3C272B5D25E100AB3B73 /* IdentificationVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = IdentificationVC.storyboard; sourceTree = "<group>"; };
 		9C1B3C2A2B5E1A5200AB3B73 /* IdentificationInputUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentificationInputUnit.swift; sourceTree = "<group>"; };
 		9C1B3C2E2B5E1A6A00AB3B73 /* IdentificationInputUnit.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IdentificationInputUnit.xib; sourceTree = "<group>"; };
+		9C374CF02B6CDF6900F879C4 /* NationSelectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NationSelectionCell.swift; sourceTree = "<group>"; };
+		9C374CF12B6CDF6900F879C4 /* NationSelectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NationSelectionCell.xib; sourceTree = "<group>"; };
 		9C3925212B4F966500AEBA2F /* SignupEmailComponent.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignupEmailComponent.xib; sourceTree = "<group>"; };
 		9C3DF48D2B4A943D006CE6E5 /* SignupInputComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupInputComponent.swift; sourceTree = "<group>"; };
 		9C3DF48F2B4A945C006CE6E5 /* SignupInputComponent.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignupInputComponent.xib; sourceTree = "<group>"; };
@@ -119,6 +124,7 @@
 		9CB80B932B53B2D7002FD656 /* UIAlertController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Extension.swift"; sourceTree = "<group>"; };
 		9CB80B952B53B933002FD656 /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
 		9CC25CEF2B4BC18A00C07086 /* SignupEmailComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupEmailComponent.swift; sourceTree = "<group>"; };
+		9CFC5FAB2B6CA9D500997BDC /* CountryDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDTO.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -336,6 +342,9 @@
 			children = (
 				9CB4A8C12B6A3AAB00521184 /* NationSelectionVC.swift */,
 				9CB4A8C32B6A3AB600521184 /* NationSelectionVC.storyboard */,
+				9CFC5FAB2B6CA9D500997BDC /* CountryDTO.swift */,
+				9C374CF02B6CDF6900F879C4 /* NationSelectionCell.swift */,
+				9C374CF12B6CDF6900F879C4 /* NationSelectionCell.xib */,
 			);
 			path = NationSelection;
 			sourceTree = "<group>";
@@ -471,6 +480,7 @@
 				9CB351882B4E775000EE36F0 /* SignupCustomTextField.xib in Resources */,
 				9C50A3442B5E630400082229 /* SelectNationPopup.storyboard in Resources */,
 				9C4EDA782B47EF8C00BFDC48 /* Inter-Regular.ttf in Resources */,
+				9C374CF32B6CDF6900F879C4 /* NationSelectionCell.xib in Resources */,
 				9C6B453C2B47D9350068FA95 /* Assets.xcassets in Resources */,
 				9C4EDA892B47F2AE00BFDC48 /* SignupVC.storyboard in Resources */,
 				9C3925222B4F966500AEBA2F /* SignupEmailComponent.xib in Resources */,
@@ -514,6 +524,7 @@
 				9C50A33E2B5E57E200082229 /* UITextField+Extension.swift in Sources */,
 				9CB80B922B53AD6F002FD656 /* UIViewController+Extension.swift in Sources */,
 				9C50A3422B5E5DEA00082229 /* SearchResultTableViewCell.swift in Sources */,
+				9CFC5FAC2B6CA9D500997BDC /* CountryDTO.swift in Sources */,
 				9CB4A8C22B6A3AAB00521184 /* NationSelectionVC.swift in Sources */,
 				9CB351862B4E774000EE36F0 /* SignupCustomTextField.swift in Sources */,
 				9C6B45372B47D9340068FA95 /* ViewController.swift in Sources */,
@@ -525,6 +536,7 @@
 				9CB4A8C82B6A3ACE00521184 /* PopupTemplateVC.swift in Sources */,
 				9C1B3C242B5D25B600AB3B73 /* IdentificationVC.swift in Sources */,
 				9C1B3C2B2B5E1A5200AB3B73 /* IdentificationInputUnit.swift in Sources */,
+				9C374CF22B6CDF6900F879C4 /* NationSelectionCell.swift in Sources */,
 				9C6B45352B47D9340068FA95 /* SceneDelegate.swift in Sources */,
 				9C50A33B2B5E508E00082229 /* SelectNationPopup.swift in Sources */,
 				9CC25CF02B4BC18A00C07086 /* SignupEmailComponent.swift in Sources */,

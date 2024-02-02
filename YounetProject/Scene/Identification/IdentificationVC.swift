@@ -29,10 +29,13 @@ class IdentificationVC: UIViewController
     
     @objc
     private func openSelectNationPopup(){
-        let presentedPopup = PopupTemplateVC.present(parent: self)
+        let presentedPopup = NationSelectionVC.present(parent: self)
         presentedPopup.onDismissed = {
-            print(#fileID, #function, #line, "- dismissed")
+            print(#fileID, #function, #line, "- DISMISSED")
+            print(#fileID, #function, #line, "- \(presentedPopup.selectedCountry)")
         }
+        
+        
     }
     
 }
