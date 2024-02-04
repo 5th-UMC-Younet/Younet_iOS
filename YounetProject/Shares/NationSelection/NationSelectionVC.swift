@@ -22,6 +22,7 @@ class NationSelectionVC: UIViewController
     @IBOutlet var nationSelectionTableView: UITableView!
     @IBOutlet var selectionBtn: UIButton!
     
+    
     // 국가 리스트
     let countryList: [CountryDTO] = [CountryDTO(engName: "denmark", korName: "덴마크")
                                         , CountryDTO(engName: "germany", korName: "독일")
