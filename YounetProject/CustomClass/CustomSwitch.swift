@@ -5,6 +5,9 @@
 //  Created by 김세아 on 1/20/24.
 //
 
+// 사용하실 때 UIButton에 Custom Class -> CustomSwitch로 지정 부탁드립니다.
+// 크기는 Figma 기준 width = 42, height = 28 입니다.
+
 import UIKit
 
 protocol SwieeftSwitchButtonDelegate: AnyObject {
@@ -12,8 +15,8 @@ protocol SwieeftSwitchButtonDelegate: AnyObject {
 }
 
 class CustomSwitch: UIButton {
-    
     typealias SwitchColor = (bar: UIColor, circle: UIColor)
+    
     private var barView: UIView!
     private var circleView: UIView!
     private var subCircleView: UIView!
@@ -26,9 +29,9 @@ class CustomSwitch: UIButton {
     }
     
     // on 상태의 스위치 색상
-    var onColor: SwitchColor = (#colorLiteral(red: 0.1999999881, green: 0.1999999881, blue: 0.1999999881, alpha: 1), #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)) {
+    var onColor: SwitchColor = (#colorLiteral(red: 0.1607553065, green: 0.1137417927, blue: 0.5372418165, alpha: 1), #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)) {
         didSet {
-            if isOn {
+            if isOn { 
                 self.barView.backgroundColor = self.onColor.bar
                 self.circleView.backgroundColor = self.onColor.circle
                 self.subBarView.backgroundColor = self.onColor.circle
@@ -60,13 +63,11 @@ class CustomSwitch: UIButton {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
         self.buttonInit(frame: frame)
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        
         self.buttonInit(frame: frame)
     }
     
@@ -119,7 +120,6 @@ class CustomSwitch: UIButton {
         var barViewColor: UIColor = .clear
         var circleViewColor: UIColor = .clear
 
-        
         if self.isOn {
             circleCenter = self.frame.width - (self.circleView.frame.width / 2) - barViewTopBottomMargin
             barViewColor = self.onColor.bar
