@@ -35,6 +35,7 @@
 		9C6B454A2B47D9350068FA95 /* YounetProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6B45492B47D9350068FA95 /* YounetProjectTests.swift */; };
 		9C6B45542B47D9350068FA95 /* YounetProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6B45532B47D9350068FA95 /* YounetProjectUITests.swift */; };
 		9C6B45562B47D9350068FA95 /* YounetProjectUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6B45552B47D9350068FA95 /* YounetProjectUITestsLaunchTests.swift */; };
+		9C4EDA772B47EF8C00BFDC48 /* Inter-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9C4EDA6E2B47EF8B00BFDC48 /* Inter-ExtraLight.ttf */; };
 		9CB351862B4E774000EE36F0 /* SignupCustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB351852B4E774000EE36F0 /* SignupCustomTextField.swift */; };
 		9CB351882B4E775000EE36F0 /* SignupCustomTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CB351872B4E775000EE36F0 /* SignupCustomTextField.xib */; };
 		9CB4A8C22B6A3AAB00521184 /* NationSelectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB4A8C12B6A3AAB00521184 /* NationSelectionVC.swift */; };
@@ -148,6 +149,7 @@
 		9C6B454F2B47D9350068FA95 /* YounetProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YounetProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C6B45532B47D9350068FA95 /* YounetProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YounetProjectUITests.swift; sourceTree = "<group>"; };
 		9C6B45552B47D9350068FA95 /* YounetProjectUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YounetProjectUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		9C4EDA6E2B47EF8B00BFDC48 /* Inter-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-ExtraLight.ttf"; sourceTree = "<group>"; };
 		9CB351852B4E774000EE36F0 /* SignupCustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupCustomTextField.swift; sourceTree = "<group>"; };
 		9CB351872B4E775000EE36F0 /* SignupCustomTextField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignupCustomTextField.xib; sourceTree = "<group>"; };
 		9CB4A8C12B6A3AAB00521184 /* NationSelectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NationSelectionVC.swift; sourceTree = "<group>"; };
@@ -348,6 +350,7 @@
 				9C6B45342B47D9340068FA95 /* SceneDelegate.swift */,
 				9C6B45362B47D9340068FA95 /* ViewController.swift */,
 				9C6B45382B47D9340068FA95 /* Main.storyboard */,
+				9C6B453D2B47D9350068FA95 /* LaunchScreen.storyboard */,
 				9C6B45402B47D9350068FA95 /* Info.plist */,
 			);
 			path = YounetProject;
@@ -674,15 +677,21 @@
 				9C4EDA892B47F2AE00BFDC48 /* SignupVC.storyboard in Resources */,
 				9C3925222B4F966500AEBA2F /* SignupEmailComponent.xib in Resources */,
 				9C1B3C282B5D25E100AB3B73 /* IdentificationVC.storyboard in Resources */,
+				9C4EDA7C2B47EF8C00BFDC48 /* Inter-SemiBold.ttf in Resources */,
 				9C6B453A2B47D9340068FA95 /* Main.storyboard in Resources */,
 				9C4EDA7F2B47EF8C00BFDC48 /* Inter-Bold.ttf in Resources */,
 				B340FA1E2B713ABD00D86FEF /* ChatProfile.storyboard in Resources */,
+				9C4EDA7B2B47EF8C00BFDC48 /* Inter-Thin.ttf in Resources */,
+				9C4EDA792B47EF8C00BFDC48 /* Inter-Light.ttf in Resources */,
+				9C4EDA772B47EF8C00BFDC48 /* Inter-ExtraLight.ttf in Resources */,
 				9CB4A8C62B6A3AC800521184 /* PopupTemplateVC.storyboard in Resources */,
 				B340FA282B714DE800D86FEF /* ChatPopupViewController.storyboard in Resources */,
 				9CB4A8C42B6A3AB600521184 /* NationSelectionVC.storyboard in Resources */,
 				9C1B3C2F2B5E1A6A00AB3B73 /* IdentificationInputUnit.xib in Resources */,
 				B34A9D752B73665800EA6686 /* LaunchScreenImage.png in Resources */,
 				9C50A3402B5E5D7000082229 /* SearchResultTableViewCell.xib in Resources */,
+				9C4EDA7D2B47EF8C00BFDC48 /* Inter-Medium.ttf in Resources */,
+				9C4EDA7A2B47EF8C00BFDC48 /* Inter-Black.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
