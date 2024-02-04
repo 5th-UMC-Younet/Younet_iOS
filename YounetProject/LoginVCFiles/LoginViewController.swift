@@ -8,31 +8,30 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-    
-    let alert = UIAlertController(title: "비밀번호가 틀렸거나 존재하지 않는 아이디입니다.", message: nil, preferredStyle: .alert)
-    let alertAction = UIAlertAction(title: "확인", style: .default, handler: nil)
-    
-    
+    @IBOutlet weak var idTextField: UITextField!
+    @IBOutlet weak var pwTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
         setKeyboard()
+    }
+    
+    @IBAction func joinBtnDidtap(_ sender: UIButton) {
+        // 회원가입 VC 연결
     }
     
     @IBAction func loginBtnDidTap(_ sender: UIButton) {
         // 로그인 인증
-        
-        // alert button 색상 설정 및 action 추가
-        alertAction.setValue(UIColor.black, forKey: "titleTextColor")
-        alert.addAction(alertAction)
-        //self.present(alert, animated: true)
+        if (idTextField.text == "") && (pwTextField.text == "") {
+            let presentedPopup = PopupViewController.present(parent: self)
+            presentedPopup.labelText = "\n비밀번호가 틀렸거나\n존재하지 않는 아이디입니다.\n"
+        } else {
+            let nextSB = UIStoryboard(name: "MyPage", bundle: nil)
+            guard let nextVC = nextSB.instantiateViewController(withIdentifier: "TabBarVC") as? UITabBarController else { return }
+            nextVC.modalPresentationStyle = .fullScreen
+            nextVC.modalTransitionStyle = .crossDissolve
+            self.present(nextVC, animated: true, completion: nil)
+        }
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.navigationItem.hidesBackButton = true
-   }
-    
 }
 
