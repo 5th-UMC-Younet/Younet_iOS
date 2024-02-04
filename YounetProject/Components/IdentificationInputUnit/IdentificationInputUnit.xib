@@ -38,7 +38,7 @@
                     <textInputTraits key="textInputTraits"/>
                 </textField>
             </subviews>
-            <point key="canvasLocation" x="464.12213740458014" y="87.676056338028175"/>
+            <point key="canvasLocation" x="376" y="79"/>
         </stackView>
     </objects>
 </document>
