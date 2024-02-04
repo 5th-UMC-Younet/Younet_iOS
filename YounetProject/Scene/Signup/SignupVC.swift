@@ -76,12 +76,12 @@ class SignupVC: UIViewController
     private func agreeBtnClicked(_ sender: UITapGestureRecognizer) {
         agreementStatus = !agreementStatus
         
-        let image = agreementStatus ? UIImage(systemName: "checkmark.square.fill") : UIImage(systemName: "square")
+        let image = agreementStatus ? UIImage(named: "check-circle") : UIImage(named: "uncheck-circle")
         
         
         
         if let stackView = sender.view as? UIStackView,
-           let stackIamgeView = stackView.arrangedSubviews.first as? UIImageView {
+           let stackIamgeView = stackView.arrangedSubviews[1] as? UIImageView {
             stackIamgeView.image = image
         }
         
@@ -195,6 +195,8 @@ extension SignupVC
     {
         //SignupBtn
         signupBtn.addTarget(self, action: #selector(signupBtnClicked(_:)), for: .touchUpInside)
+        signupBtn.layer.masksToBounds = true
+        signupBtn.layer.cornerRadius = 10
         //AgreementBtn
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(agreeBtnClicked))
@@ -218,13 +220,6 @@ extension SignupVC
                 signupBtnBottomConstraint = constraint
             }
         }
-    }
-    
-    /// SignupVC에서 공통적으로 사용하는 텍스트필드의 기본 보더 설정
-    public static func configTextFieldBorder(_ view: UIView) {
-        view.layer.cornerRadius = 6
-        view.layer.borderWidth = 0.8
-        view.layer.borderColor = UIColor.black.cgColor
     }
     
     /// IsNotValid일때 컴포넌트 설정

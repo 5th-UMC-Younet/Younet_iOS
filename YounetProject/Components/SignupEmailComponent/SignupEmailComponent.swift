@@ -17,7 +17,9 @@ class SignupEmailComponent: UIStackView {
     @IBOutlet var emailConfirmComponent: UIStackView!
     
     @IBOutlet var emailInputStatusLabel: UILabel!
+    @IBOutlet var emailInputHairlineView: UIView!
     @IBOutlet var emailConfirmStatusLabel: UILabel!
+    @IBOutlet var emailConfirmHairlineView: UIView!
     
     let emailInputNotValidText: String = "이메일 주소를 올바르게 입력해주세요."
     let emailConfirmNotValidText: String = "인증번호가 일치하지 않습니다."
@@ -25,6 +27,9 @@ class SignupEmailComponent: UIStackView {
     private var emailInputValid: Bool = false
     private var emailConfirmValid: Bool = false
     
+    let onEditingColor = UIColor(red: 41/255, green: 29/255, blue: 137/255, alpha: 1)
+    let onNotEditingColor = UIColor(red: 217/255, green: 217/255, blue: 217/255, alpha: 1)
+    let onInvalidColor = UIColor(red: 245/255, green: 86/255, blue: 78/255, alpha: 1)
     
     var validStatus: Bool {
         get {
@@ -48,6 +53,14 @@ class SignupEmailComponent: UIStackView {
         emailInputCustomTF.inputTextField.addTarget(self, action: #selector(emailInputTFEditingChanged(_:)), for: .editingChanged)
         emailInputBtn.addTarget(self, action: #selector(emailInputBtnClicked(_:)), for: .touchUpInside)
         emailConfirmBtn.addTarget(self, action: #selector(emailConfirmBtnClicked(_:)), for: .touchUpInside)
+        
+        emailInputBtn.layer.masksToBounds = true
+        emailInputBtn.layer.cornerRadius = 3
+        emailConfirmBtn.layer.masksToBounds = true
+        emailConfirmBtn.layer.cornerRadius = 3
+        
+        emailInputCustomTF.applyDelegate(self)
+        emailConfirmCustomTF.applyDelegate(self)
     }
     
     func setTFFocus() {
@@ -75,6 +88,7 @@ class SignupEmailComponent: UIStackView {
         emailInputValid = isValid
         if (isValid)
         {
+            emailInputHairlineView.backgroundColor = onEditingColor
             if (!emailInputBtn.isEnabled)
             {
                 emailInputBtn.isEnabled = true
@@ -86,6 +100,7 @@ class SignupEmailComponent: UIStackView {
         }
         else
         {
+            emailInputHairlineView.backgroundColor = onInvalidColor
             if (emailInputBtn.isEnabled)
             {
                 emailInputBtn.isEnabled = false
@@ -103,16 +118,16 @@ class SignupEmailComponent: UIStackView {
         emailConfirmValid = isValid
         if (isValid)
         {
-            emailInputCustomTF.backgroundColor = UIColor.systemGray4
+            emailConfirmHairlineView.backgroundColor = onEditingColor
             emailInputCustomTF.inputTextField.isEnabled = false
             emailInputBtn.isEnabled = false
             
-            emailConfirmCustomTF.backgroundColor = UIColor.systemGray4
             emailConfirmCustomTF.inputTextField.isEnabled = false
             emailConfirmBtn.isEnabled = false
         }
         else
         {
+            emailConfirmHairlineView.backgroundColor = onInvalidColor
             if (emailConfirmStatusLabel.isHidden)
             {
                 emailConfirmStatusLabel.isHidden = false
@@ -147,6 +162,7 @@ class SignupEmailComponent: UIStackView {
         {
             popupMsg = "입력하신 이메일로\n인증 번호가 전송되었습니다."
             emailInputBtn.setTitle("재전송", for: .normal)
+            
             emailConfirmBtn.isEnabled = true
         }
         else //재전송
@@ -205,7 +221,43 @@ extension SignupEmailComponent
     }
     
     private func emailConfirmValidation() -> Bool {
-        return true
+        return false
+    }
+}
+
+//MARK: - UITextFieldDelegate
+extension SignupEmailComponent: UITextFieldDelegate
+{
+    func textFieldDidBeginEditing(_ textField: UITextField)
+    {
+        if(!(emailInputHairlineView.backgroundColor?.cgColor == onInvalidColor.cgColor))
+        {
+            emailInputHairlineView.backgroundColor = onEditingColor
+            return
+        }
+        
+        if(!(emailConfirmHairlineView.backgroundColor?.cgColor == onInvalidColor.cgColor))
+        {
+            emailConfirmHairlineView.backgroundColor = onEditingColor
+            return
+        }
+        
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField)
+    {
+        if (emailInputHairlineView.backgroundColor?.cgColor == onEditingColor.cgColor)
+        {
+            emailInputHairlineView.backgroundColor = onNotEditingColor
+            return
+        }
+        
+        if (emailConfirmHairlineView.backgroundColor?.cgColor == onEditingColor.cgColor)
+        {
+            emailConfirmHairlineView.backgroundColor = onNotEditingColor
+            return
+        }
+        
     }
 }
 
@@ -249,3 +301,4 @@ extension UIViewController {
         return self
     }
 }
+

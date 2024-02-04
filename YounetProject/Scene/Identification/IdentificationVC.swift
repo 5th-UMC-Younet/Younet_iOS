@@ -18,7 +18,7 @@ class IdentificationVC: UIViewController
         config()
     }
     
-    private func config() 
+    private func config()
     {
         // fileuploadButton
         fileuploadButton.translatesAutoresizingMaskIntoConstraints = false

@@ -9,7 +9,8 @@ import UIKit
 
 class SignupCustomTextField: UIView {
     @IBOutlet var inputTextField: UITextField!
-    @IBOutlet var validStatusLabel: UILabel!
+    @IBOutlet var validStatusImg: UIImageView!
+
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -20,9 +21,8 @@ class SignupCustomTextField: UIView {
     private func config() 
     {
         applyNib()
-        SignupVC.configTextFieldBorder(self)
     }
-    
+     
     // getter
     func getFieldContentString() -> String 
     {
@@ -33,19 +33,24 @@ class SignupCustomTextField: UIView {
     {
         if (isValid)
         {
-            if (validStatusLabel.isHidden) {
-                validStatusLabel.isHidden = false
+            if (validStatusImg.isHidden) {
+                validStatusImg.isHidden = false
                 print(#fileID, #function, #line, "- 1")
             }
             self.layer.borderColor = UIColor.black.cgColor
         }
         else
         {
-            if (!validStatusLabel.isHidden) {
-                validStatusLabel.isHidden = true
+            if (!validStatusImg.isHidden) {
+                validStatusImg.isHidden = true
             }
             self.layer.borderColor = UIColor.systemRed.cgColor
         }
+    }
+    
+    func applyDelegate(_ delegate: UITextFieldDelegate)
+    {
+        inputTextField.delegate = delegate
     }
     
     private func applyNib(){

@@ -12,10 +12,16 @@ class SignupInputComponent: UIStackView {
     @IBOutlet var inputTitleLabel: UILabel!
     @IBOutlet var customTextField: SignupCustomTextField!
     @IBOutlet var inputErrorLabel: UILabel!
+    @IBOutlet var inputHairlineView: UIView!
     
     weak var delegate: SignupInputComponentDelegate? = nil
     
     var validStatus: Bool = false
+    
+    let onEditingColor = UIColor(red: 41/255, green: 29/255, blue: 137/255, alpha: 1)
+    let onNotEditingColor = UIColor(red: 217/255, green: 217/255, blue: 217/255, alpha: 1)
+    let onInvalidColor = UIColor(red: 245/255, green: 86/255, blue: 78/255, alpha: 1)
+    
     
     @IBInspectable
     var titleText: String = "" {
@@ -48,6 +54,7 @@ class SignupInputComponent: UIStackView {
         validStatus = isValid
         if (isValid)
         {
+            inputHairlineView.backgroundColor = onEditingColor
             if (!inputErrorLabel.isHidden)
             {
                 inputErrorLabel.isHidden = true
@@ -56,6 +63,7 @@ class SignupInputComponent: UIStackView {
         else
         {
             inputErrorLabel.text = inputErrorMsg
+            inputHairlineView.backgroundColor = onInvalidColor
             if (inputErrorLabel.isHidden)
             {
                 inputErrorLabel.isHidden = false
@@ -69,8 +77,8 @@ class SignupInputComponent: UIStackView {
     {
         applyNib()
         inputErrorLabel.isHidden = true
-        
         customTextField.inputTextField.addTarget(self, action: #selector(inputEditingChanged(_:)), for: .editingChanged)
+        customTextField.applyDelegate(self)
     }
     
     func configPwInputComponent()
@@ -103,7 +111,30 @@ class SignupInputComponent: UIStackView {
     }
 }
 
+extension SignupInputComponent: UITextFieldDelegate 
+{
+    func textFieldDidBeginEditing(_ textField: UITextField) 
+    {
+        if (!(inputHairlineView.backgroundColor?.cgColor == onInvalidColor.cgColor))
+        {
+            inputHairlineView.backgroundColor = UIColor(red: 41/255, green: 29/255, blue: 137/255, alpha: 1)
+        }
+        
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) 
+    {
+        if (inputHairlineView.backgroundColor?.cgColor == onEditingColor.cgColor)
+        {
+            inputHairlineView.backgroundColor = onNotEditingColor
+        }
+        
+    }
+}
+
 protocol SignupInputComponentDelegate: NSObjectProtocol {
     /// Input Validation(이름, 닉네임, 전화번호, 비밀번호, 비밀번호 확인)
     func inputValidation(_ component: SignupInputComponent, inputStr: String)
 }
+
+
