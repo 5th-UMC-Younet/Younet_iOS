@@ -1,13 +1,13 @@
 //
-//  PopupChoiceViewController.swift
+//  PopupViewController.swift
 //  YounetProject
 //
-//  Created by 김세아 on 2/4/24.
+//  Created by 김세아 on 2/3/24.
 //
 
 import UIKit
 
-class PopupChoiceViewController: UIViewController
+class PopupViewController: UIViewController
 {
     @IBOutlet var closeBtn: UIButton!
     @IBOutlet weak var confirmBtn: UIButton!

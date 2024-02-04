@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Inter-Bold.ttf">
+            <string>Inter-Bold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Popup TemplateVC-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController id="Y6W-OH-hqX" customClass="PopupTemplateVC" customModule="YounetProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vbv-Cr-yjL">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="877"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <buttonConfiguration key="configuration" style="gray"/>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iBR-gn-ZSq">
+                                <rect key="frame" x="55" y="365" width="283" height="147.33333333333337"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fNt-qJ-XYI">
+                                        <rect key="frame" x="0.0" y="112.33333333333331" width="283" height="35"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="확인">
+                                            <backgroundConfiguration key="background" cornerRadius="0.0">
+                                                <color key="backgroundColor" red="0.16177073119999999" green="0.1129831895" blue="0.53874236350000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </backgroundConfiguration>
+                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="17"/>
+                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M7W-ev-I7K">
+                                        <rect key="frame" x="15" y="15" width="253" height="82.333333333333329"/>
+                                        <string key="text">
+관련된 아이디가 존재하지 않습니다.
+</string>
+                                        <fontDescription key="fontDescription" name="Inter-Bold" family="Inter" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="fNt-qJ-XYI" firstAttribute="leading" secondItem="iBR-gn-ZSq" secondAttribute="leading" id="Rih-43-R4w"/>
+                                    <constraint firstItem="M7W-ev-I7K" firstAttribute="top" secondItem="iBR-gn-ZSq" secondAttribute="top" constant="15" id="VHc-4I-bkP"/>
+                                    <constraint firstItem="M7W-ev-I7K" firstAttribute="leading" secondItem="iBR-gn-ZSq" secondAttribute="leading" constant="15" id="XSy-iE-D3F"/>
+                                    <constraint firstItem="M7W-ev-I7K" firstAttribute="centerX" secondItem="iBR-gn-ZSq" secondAttribute="centerX" id="lAw-AL-o16"/>
+                                    <constraint firstItem="fNt-qJ-XYI" firstAttribute="centerX" secondItem="iBR-gn-ZSq" secondAttribute="centerX" id="r9j-7j-vpX"/>
+                                    <constraint firstAttribute="bottom" secondItem="fNt-qJ-XYI" secondAttribute="bottom" id="u4U-e6-dQE"/>
+                                    <constraint firstItem="fNt-qJ-XYI" firstAttribute="top" secondItem="M7W-ev-I7K" secondAttribute="bottom" constant="15" id="wCX-SL-fCx"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Vbv-Cr-yjL" firstAttribute="centerY" secondItem="vDu-zF-Fre" secondAttribute="centerY" id="0LD-5c-HqI"/>
+                            <constraint firstItem="Vbv-Cr-yjL" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="LbE-DA-ooI"/>
+                            <constraint firstItem="Vbv-Cr-yjL" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="MfQ-C6-J40"/>
+                            <constraint firstItem="iBR-gn-ZSq" firstAttribute="width" secondItem="5EZ-qb-Rvc" secondAttribute="width" multiplier="0.720102" id="VVV-yD-rIV"/>
+                            <constraint firstItem="iBR-gn-ZSq" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="WTC-w5-fqj"/>
+                            <constraint firstItem="Vbv-Cr-yjL" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="gmc-ze-C4W"/>
+                            <constraint firstItem="iBR-gn-ZSq" firstAttribute="centerY" secondItem="vDu-zF-Fre" secondAttribute="centerY" id="tux-Io-feF"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="closeBtn" destination="Vbv-Cr-yjL" id="XoN-m4-wzS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="130.53435114503816" y="-34.507042253521128"/>
+        </scene>
+    </scenes>
+</document>
