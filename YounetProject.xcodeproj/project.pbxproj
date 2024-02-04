@@ -262,13 +262,8 @@
 		9C6B45312B47D9340068FA95 /* YounetProject */ = {
 			isa = PBXGroup;
 			children = (
-				9CFC6AEA2B6F97D000443712 /* API */,
+				9CF07CAF2B6FBF2B002451C7 /* jehun */,
 				9C6B453B2B47D9350068FA95 /* Assets.xcassets */,
-				9C4EDA6D2B47EF7600BFDC48 /* Font */,
-				9CB80B8A2B53AD0B002FD656 /* Extensions */,
-				9C3DF4862B4A51CB006CE6E5 /* Components */,
-				9CB4A8BE2B6A3A6400521184 /* Shares */,
-				9C0426A62B47EB7400C693BC /* Scene */,
 				9C6B45322B47D9340068FA95 /* AppDelegate.swift */,
 				9C6B45342B47D9340068FA95 /* SceneDelegate.swift */,
 				9C6B45362B47D9340068FA95 /* ViewController.swift */,
@@ -353,6 +348,19 @@
 				9C3925212B4F966500AEBA2F /* SignupEmailComponent.xib */,
 			);
 			path = SignupEmailComponent;
+			sourceTree = "<group>";
+		};
+		9CF07CAF2B6FBF2B002451C7 /* jehun */ = {
+			isa = PBXGroup;
+			children = (
+				9C0426A62B47EB7400C693BC /* Scene */,
+				9CB4A8BE2B6A3A6400521184 /* Shares */,
+				9C3DF4862B4A51CB006CE6E5 /* Components */,
+				9CB80B8A2B53AD0B002FD656 /* Extensions */,
+				9C4EDA6D2B47EF7600BFDC48 /* Font */,
+				9CFC6AEA2B6F97D000443712 /* API */,
+			);
+			path = jehun;
 			sourceTree = "<group>";
 		};
 		9CFC6AEA2B6F97D000443712 /* API */ = {
