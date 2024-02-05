@@ -22,7 +22,6 @@ class PwResetViewController: UIViewController {
         super.viewDidLoad()
         initialDesignSetting()
         setKeyboard()
-        
     }
     
     func initialDesignSetting() {
@@ -32,11 +31,6 @@ class PwResetViewController: UIViewController {
         completeButton.backgroundColor = #colorLiteral(red: 0.8313595057, green: 0.8745134473, blue: 0.9882282615, alpha: 1)
     }
     
-    // 뒤로가기 버튼 터치 시
-    @IBAction func backBtnDidTap(_ sender: UIButton) {
-        dismiss(animated: true, completion: nil)
-    }
-
     // 각 TextField 선택 및 입력 종료시 아래 줄 색상 변경    
     @IBAction func newPwEditBegin(_ sender: Any) {
         firstLineView.backgroundColor = #colorLiteral(red: 0.1607553065, green: 0.1137417927, blue: 0.5372418165, alpha: 1)
@@ -115,26 +109,24 @@ class PwResetViewController: UIViewController {
     }
     
     @IBAction func completeBtnDidTap(_ sender: Any) {
-        //self.present(alert, animated: true)
-        openSelectNationPopup()
-    }
-    
-    private func gotoRootVC() {
-        self.view.window?.rootViewController?.dismiss(animated: false, completion: {
-            let newVC = LoginViewController()
-            newVC.modalTransitionStyle = .crossDissolve
-            newVC.modalPresentationStyle = .fullScreen
-            self.present(newVC, animated: true, completion: nil)
-        })
-    }
-    
-    @objc private func openSelectNationPopup(){
         let presentedPopup = PopupViewController.present(parent: self)
-        presentedPopup.labelText = "완료"
-        presentedPopup.onDismissed = {
-            self.gotoRootVC()
+        presentedPopup.labelText = "\n\n비밀번호가 재설정되었습니다.\n\n"
+        presentedPopup.buttonText = "로그인"
+        presentedPopup.onDismissed = { [weak self] () in
+            self?.gotoRootVC()
         }
     }
     
+    private func gotoRootVC() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let newVC = storyboard.instantiateViewController(withIdentifier: "LoginVC")
+        newVC.modalTransitionStyle = .crossDissolve
+        newVC.modalPresentationStyle = .fullScreen
+        self.present(newVC, animated: true, completion: nil)
+    }
     
+    // 뒤로가기 버튼 터치 시
+    @IBAction func backBtnDidTap(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
 }

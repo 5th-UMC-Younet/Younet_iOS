@@ -20,6 +20,8 @@ class MyPageProfileEditViewController: UIViewController{
     
     let imgPicker = UIImagePickerController()
     let maxTextCount = 100
+    let simpleData = UserDefaults.standard
+    let imageData = ImageFileManager.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,14 +35,14 @@ class MyPageProfileEditViewController: UIViewController{
         selfExplainTextView.delegate = self
         selfExplainTextView.isScrollEnabled = false
         
-        if ImageFileManager.shared.getSavedImage(named: "profileImage") != nil {
-            profileImage.setImage(ImageFileManager.shared.getSavedImage(named: "profileImage"), for: .normal)
+        if imageData.getSavedImage(named: "profileImage") != nil {
+            profileImage.setImage(imageData.getSavedImage(named: "profileImage"), for: .normal)
         }
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        UserDefaults.standard.string(forKey: "nickname") != nil ? (nicknameTextField.text = UserDefaults.standard.string(forKey: "nickname")) : (nicknameTextField.placeholder = "10자 이하의 닉네임")
+        simpleData.string(forKey: "nickname") != nil ? (nicknameTextField.text = simpleData.string(forKey: "nickname")) : (nicknameTextField.placeholder = "10자 이하의 닉네임")
         selfExplainTextView.text = textViewSample
     }
     
@@ -52,11 +54,13 @@ class MyPageProfileEditViewController: UIViewController{
     @IBAction func nationBtnDidtap(_ sender: Any) {
         let nationSelectionVC = NationSelectionVC.present(parent: self)
         nationSelectionVC.onDismissed = { [weak self] () in
-            self?.preferNationButton.setTitle(nationSelectionVC.selectedCountry?.korName, for:.normal)
-            self?.preferNationButton.setImage(UIImage(named: nationSelectionVC.selectedCountry!.engName), for: .normal)
-            
-            UserDefaults.standard.setValue(nationSelectionVC.selectedCountry?.korName, forKey: "preferNation")
-            UserDefaults.standard.setValue(nationSelectionVC.selectedCountry!.engName, forKey: "preferNationImage")
+            if nationSelectionVC.selectedCountry?.korName != nil {
+                self?.preferNationButton.setTitle(nationSelectionVC.selectedCountry?.korName, for:.normal)
+                self?.preferNationButton.setImage(UIImage(named: nationSelectionVC.selectedCountry!.engName), for: .normal)
+        
+                UserDefaults.standard.setValue(nationSelectionVC.selectedCountry?.korName, forKey: "preferNation_temp")
+                UserDefaults.standard.setValue(nationSelectionVC.selectedCountry!.engName, forKey: "preferNationImage_temp")
+            }
         }
     }
     
@@ -68,14 +72,6 @@ class MyPageProfileEditViewController: UIViewController{
         firstLineView.backgroundColor = #colorLiteral(red: 0.8509804606, green: 0.850980401, blue: 0.8509804606, alpha: 1)
     }
     
-    // MARK: Back Button Setting (데이터 저장)
-    @IBAction func backButtonDidtap(_ sender: UIButton) {
-        nicknameTextField.text != "" ? UserDefaults.standard.setValue(nicknameTextField.text, forKey: "nickname") : nil
-        selfExplainTextView.text != textViewSample ? UserDefaults.standard.setValue(selfExplainTextView.text, forKey: "selfExplain") : nil
-        
-        dismiss(animated: true, completion: nil)
-    }
-
     func openLibrary(){
         imgPicker.sourceType = .photoLibrary
         present(imgPicker, animated: false, completion: nil)
@@ -91,16 +87,50 @@ class MyPageProfileEditViewController: UIViewController{
             selfExplainTextView.textColor = UIColor.black
         }
     }
+    
+    @IBAction func confirmButtonDidtap(_ sender: UIButton) {
+        if imageData.getSavedImage(named: "profileImage_temp") != nil {
+            imageData.saveImage(image: imageData.getSavedImage(named: "profileImage_temp")!, name: "profileImage") { onSuccess in return }
+        }
+        imageData.deleteImage(named: "profileImage_temp") { onSuccess in return }
+        
+        nicknameTextField.text != "" ? simpleData.setValue(nicknameTextField.text, forKey: "nickname") : nil
+        selfExplainTextView.text != textViewSample ? simpleData.setValue(selfExplainTextView.text, forKey: "selfExplain") : nil
+        
+        // 임시 data 저장
+        if simpleData.value(forKey: "preferNation_temp") != nil {
+            simpleData.setValue(simpleData.value(forKey: "preferNation_temp"), forKey: "preferNation")
+        }
+        if simpleData.value(forKey: "preferNationImage_temp") != nil {
+            simpleData.setValue(simpleData.value(forKey: "preferNationImage_temp"), forKey: "preferNationImage")
+        }
+        if simpleData.value(forKey: "profileImage_temp") != nil {
+            simpleData.setValue(simpleData.value(forKey: "profileImage_temp"), forKey: "profileImage")
+        }
+        
+        // 임시 data 삭제
+        (simpleData.value(forKey: "preferNation_temp") != nil) ? (simpleData.removeObject(forKey: "preferNation_temp")) : nil
+        (simpleData.value(forKey: "preferNationImage_temp") != nil) ? (simpleData.removeObject(forKey: "preferNationImage_temp")) : nil
+        (simpleData.value(forKey: "profileImage_temp") != nil) ? (simpleData.removeObject(forKey: "profileImage_temp")) : nil
+        
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func backButtonDidtap(_ sender: UIButton) {
+        // 뒤로가기 누를 때: 저장된 임시 data 삭제
+        (simpleData.value(forKey: "preferNation_temp") != nil) ? (simpleData.removeObject(forKey: "preferNation_temp")) : nil
+        (simpleData.value(forKey: "preferNationImage_temp") != nil) ? (simpleData.removeObject(forKey: "preferNationImage_temp")) : nil
+        (simpleData.value(forKey: "profileImage_temp") != nil) ? (simpleData.removeObject(forKey: "profileImage_temp")) : nil
+        imageData.deleteImage(named: "profileImage_temp") { onSuccess in return }
+        dismiss(animated: true, completion: nil)
+    }
 }
 
 extension MyPageProfileEditViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage{
             profileImage.setImage(image, for: .normal)
-            
-            ImageFileManager.shared.saveImage(image: image, name: "profileImage") { onSuccess in
-                print("saveImage onSuccess: \(onSuccess)")
-            }
+            imageData.saveImage(image: image, name: "profileImage_temp") { onSuccess in return }
         }
         dismiss(animated: true, completion: nil)
     }

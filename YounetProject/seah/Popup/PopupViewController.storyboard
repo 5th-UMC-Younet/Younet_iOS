@@ -35,7 +35,7 @@
                                             <backgroundConfiguration key="background" cornerRadius="0.0">
                                                 <color key="backgroundColor" red="0.16177073119999999" green="0.1129831895" blue="0.53874236350000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </backgroundConfiguration>
-                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="17"/>
+                                            <fontDescription key="titleFontDescription" name="Inter-Bold" family="Inter" pointSize="17"/>
                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
                                     </button>

@@ -9,7 +9,7 @@ import UIKit
 
 class PopupViewController: UIViewController
 {
-    @IBOutlet var closeBtn: UIButton!
+    @IBOutlet weak var closeBtn: UIButton!
     @IBOutlet weak var confirmBtn: UIButton!
     @IBOutlet weak var textLabel: UILabel!
     
@@ -33,7 +33,6 @@ class PopupViewController: UIViewController
     }
     
     @objc private func closeBtnClicked(_ sender: UIButton) {
-        
         self.dismiss(animated: true, completion: onDismissed)
     }
     

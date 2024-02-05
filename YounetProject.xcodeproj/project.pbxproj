@@ -74,6 +74,14 @@
 		B321EED42B6FD31000C29F4A /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B321EEBB2B6FD31000C29F4A /* ViewExtension.swift */; };
 		B321EED52B6FD31000C29F4A /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B321EEBC2B6FD31000C29F4A /* CustomTextField.swift */; };
 		B321EED62B6FD31000C29F4A /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B321EEBD2B6FD31000C29F4A /* CustomLabel.swift */; };
+		B340FA1E2B713ABD00D86FEF /* ChatProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B340FA1D2B713ABD00D86FEF /* ChatProfile.storyboard */; };
+		B340FA222B71462B00D86FEF /* ChatMyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B340FA212B71462B00D86FEF /* ChatMyPageViewController.swift */; };
+		B340FA242B714C2600D86FEF /* NameChatProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B340FA232B714C2600D86FEF /* NameChatProfileViewController.swift */; };
+		B340FA262B714C3C00D86FEF /* NickNameChatProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B340FA252B714C3C00D86FEF /* NickNameChatProfileViewController.swift */; };
+		B340FA282B714DE800D86FEF /* ChatPopupViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B340FA272B714DE800D86FEF /* ChatPopupViewController.storyboard */; };
+		B340FA2A2B714DFF00D86FEF /* ChatPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B340FA292B714DFF00D86FEF /* ChatPopupViewController.swift */; };
+		B340FA2C2B715E7D00D86FEF /* OtherUserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B340FA2B2B715E7D00D86FEF /* OtherUserProfileViewController.swift */; };
+		B340FA2E2B715EA700D86FEF /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B340FA2D2B715EA700D86FEF /* ReportViewController.swift */; };
 		B3E5AEDA2B70C51400429CEF /* MyPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3E5AED92B70C51400429CEF /* MyPage.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -178,6 +186,14 @@
 		B321EEBB2B6FD31000C29F4A /* ViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		B321EEBC2B6FD31000C29F4A /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		B321EEBD2B6FD31000C29F4A /* CustomLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
+		B340FA1D2B713ABD00D86FEF /* ChatProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChatProfile.storyboard; sourceTree = "<group>"; };
+		B340FA212B71462B00D86FEF /* ChatMyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMyPageViewController.swift; sourceTree = "<group>"; };
+		B340FA232B714C2600D86FEF /* NameChatProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameChatProfileViewController.swift; sourceTree = "<group>"; };
+		B340FA252B714C3C00D86FEF /* NickNameChatProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NickNameChatProfileViewController.swift; sourceTree = "<group>"; };
+		B340FA272B714DE800D86FEF /* ChatPopupViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChatPopupViewController.storyboard; sourceTree = "<group>"; };
+		B340FA292B714DFF00D86FEF /* ChatPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatPopupViewController.swift; sourceTree = "<group>"; };
+		B340FA2B2B715E7D00D86FEF /* OtherUserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherUserProfileViewController.swift; sourceTree = "<group>"; };
+		B340FA2D2B715EA700D86FEF /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
 		B3E5AED92B70C51400429CEF /* MyPage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MyPage.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -438,13 +454,15 @@
 		B321EE9E2B6FD31000C29F4A /* seah */ = {
 			isa = PBXGroup;
 			children = (
+				B340FA1D2B713ABD00D86FEF /* ChatProfile.storyboard */,
 				B3E5AED92B70C51400429CEF /* MyPage.storyboard */,
 				B321EEA42B6FD31000C29F4A /* LaunchScreen.storyboard */,
 				B321EEAD2B6FD31000C29F4A /* LaunchScreenImage.png */,
 				B321EE9F2B6FD31000C29F4A /* Popup */,
-				B321EEA52B6FD31000C29F4A /* MyPageVCFiles */,
 				B321EEAE2B6FD31000C29F4A /* LoginVCFiles */,
+				B321EEA52B6FD31000C29F4A /* MyPageVCFiles */,
 				B321EEB82B6FD31000C29F4A /* CustomClass */,
+				B340FA2F2B715EB500D86FEF /* ChatProfileVCFiles */,
 			);
 			path = seah;
 			sourceTree = "<group>";
@@ -453,9 +471,11 @@
 			isa = PBXGroup;
 			children = (
 				B321EEA02B6FD31000C29F4A /* PopupViewController.storyboard */,
-				B321EEA12B6FD31000C29F4A /* PopupChoiceViewController.swift */,
 				B321EEA22B6FD31000C29F4A /* PopupViewController.swift */,
 				B321EEA32B6FD31000C29F4A /* PopupChoiceViewController.storyboard */,
+				B321EEA12B6FD31000C29F4A /* PopupChoiceViewController.swift */,
+				B340FA272B714DE800D86FEF /* ChatPopupViewController.storyboard */,
+				B340FA292B714DFF00D86FEF /* ChatPopupViewController.swift */,
 			);
 			path = Popup;
 			sourceTree = "<group>";
@@ -514,6 +534,18 @@
 				B321EEBD2B6FD31000C29F4A /* CustomLabel.swift */,
 			);
 			path = CustomClass;
+			sourceTree = "<group>";
+		};
+		B340FA2F2B715EB500D86FEF /* ChatProfileVCFiles */ = {
+			isa = PBXGroup;
+			children = (
+				B340FA2B2B715E7D00D86FEF /* OtherUserProfileViewController.swift */,
+				B340FA2D2B715EA700D86FEF /* ReportViewController.swift */,
+				B340FA232B714C2600D86FEF /* NameChatProfileViewController.swift */,
+				B340FA252B714C3C00D86FEF /* NickNameChatProfileViewController.swift */,
+				B340FA212B71462B00D86FEF /* ChatMyPageViewController.swift */,
+			);
+			path = ChatProfileVCFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -645,7 +677,9 @@
 				9C1B3C282B5D25E100AB3B73 /* IdentificationVC.storyboard in Resources */,
 				9C6B453A2B47D9340068FA95 /* Main.storyboard in Resources */,
 				9C4EDA7F2B47EF8C00BFDC48 /* Inter-Bold.ttf in Resources */,
+				B340FA1E2B713ABD00D86FEF /* ChatProfile.storyboard in Resources */,
 				9CB4A8C62B6A3AC800521184 /* PopupTemplateVC.storyboard in Resources */,
+				B340FA282B714DE800D86FEF /* ChatPopupViewController.storyboard in Resources */,
 				9CB4A8C42B6A3AB600521184 /* NationSelectionVC.storyboard in Resources */,
 				9C1B3C2F2B5E1A6A00AB3B73 /* IdentificationInputUnit.xib in Resources */,
 				9C50A3402B5E5D7000082229 /* SearchResultTableViewCell.xib in Resources */,
@@ -680,6 +714,7 @@
 				9CB80B922B53AD6F002FD656 /* UIViewController+Extension.swift in Sources */,
 				9C50A3422B5E5DEA00082229 /* SearchResultTableViewCell.swift in Sources */,
 				9CFC5FAC2B6CA9D500997BDC /* CountryDTO.swift in Sources */,
+				B340FA262B714C3C00D86FEF /* NickNameChatProfileViewController.swift in Sources */,
 				B321EED52B6FD31000C29F4A /* CustomTextField.swift in Sources */,
 				9CB4A8C22B6A3AAB00521184 /* NationSelectionVC.swift in Sources */,
 				9CB351862B4E774000EE36F0 /* SignupCustomTextField.swift in Sources */,
@@ -688,6 +723,7 @@
 				9C4EDA872B47F2A600BFDC48 /* SignupVC.swift in Sources */,
 				B321EEC32B6FD31000C29F4A /* SettingViewController.swift in Sources */,
 				9C3DF48E2B4A943D006CE6E5 /* SignupInputComponent.swift in Sources */,
+				B340FA2C2B715E7D00D86FEF /* OtherUserProfileViewController.swift in Sources */,
 				B321EED42B6FD31000C29F4A /* ViewExtension.swift in Sources */,
 				9C6B45332B47D9340068FA95 /* AppDelegate.swift in Sources */,
 				9CB80B942B53B2D7002FD656 /* UIAlertController+Extension.swift in Sources */,
@@ -698,14 +734,17 @@
 				9C1B3C242B5D25B600AB3B73 /* IdentificationVC.swift in Sources */,
 				9C1B3C2B2B5E1A5200AB3B73 /* IdentificationInputUnit.swift in Sources */,
 				B321EEC82B6FD31000C29F4A /* MyPageViewController.swift in Sources */,
+				B340FA222B71462B00D86FEF /* ChatMyPageViewController.swift in Sources */,
 				B321EECC2B6FD31000C29F4A /* PwSearchViewController.swift in Sources */,
 				B321EEBF2B6FD31000C29F4A /* PopupChoiceViewController.swift in Sources */,
 				9C374CF22B6CDF6900F879C4 /* NationSelectionCell.swift in Sources */,
 				9CFC6AEF2B6F985F00443712 /* AuthRouter.swift in Sources */,
+				B340FA2E2B715EA700D86FEF /* ReportViewController.swift in Sources */,
 				B321EED12B6FD31000C29F4A /* PageViewController.swift in Sources */,
 				B321EECA2B6FD31000C29F4A /* IdPwSearchViewController.swift in Sources */,
 				B321EED62B6FD31000C29F4A /* CustomLabel.swift in Sources */,
 				B321EEC62B6FD31000C29F4A /* FeedCell.swift in Sources */,
+				B340FA2A2B714DFF00D86FEF /* ChatPopupViewController.swift in Sources */,
 				9C6B45352B47D9340068FA95 /* SceneDelegate.swift in Sources */,
 				9C50A33B2B5E508E00082229 /* SelectNationPopup.swift in Sources */,
 				9CC25CF02B4BC18A00C07086 /* SignupEmailComponent.swift in Sources */,
@@ -715,6 +754,7 @@
 				9C4EDA842B47F27C00BFDC48 /* ServerSelectVC.swift in Sources */,
 				B321EEC52B6FD31000C29F4A /* MyPageProfileEditViewController.swift in Sources */,
 				B321EEC02B6FD31000C29F4A /* PopupViewController.swift in Sources */,
+				B340FA242B714C2600D86FEF /* NameChatProfileViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
