@@ -74,7 +74,7 @@
 		B321EED42B6FD31000C29F4A /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B321EEBB2B6FD31000C29F4A /* ViewExtension.swift */; };
 		B321EED52B6FD31000C29F4A /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B321EEBC2B6FD31000C29F4A /* CustomTextField.swift */; };
 		B321EED62B6FD31000C29F4A /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B321EEBD2B6FD31000C29F4A /* CustomLabel.swift */; };
-		B321EED82B6FE53600C29F4A /* MyPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B321EED72B6FE53600C29F4A /* MyPage.storyboard */; };
+		B3E5AEDA2B70C51400429CEF /* MyPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3E5AED92B70C51400429CEF /* MyPage.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -178,7 +178,7 @@
 		B321EEBB2B6FD31000C29F4A /* ViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		B321EEBC2B6FD31000C29F4A /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		B321EEBD2B6FD31000C29F4A /* CustomLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
-		B321EED72B6FE53600C29F4A /* MyPage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MyPage.storyboard; path = ../../../../Younet_iOS/YounetProject/MyPage.storyboard; sourceTree = "<group>"; };
+		B3E5AED92B70C51400429CEF /* MyPage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MyPage.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -438,7 +438,7 @@
 		B321EE9E2B6FD31000C29F4A /* seah */ = {
 			isa = PBXGroup;
 			children = (
-				B321EED72B6FE53600C29F4A /* MyPage.storyboard */,
+				B3E5AED92B70C51400429CEF /* MyPage.storyboard */,
 				B321EEA42B6FD31000C29F4A /* LaunchScreen.storyboard */,
 				B321EEAD2B6FD31000C29F4A /* LaunchScreenImage.png */,
 				B321EE9F2B6FD31000C29F4A /* Popup */,
@@ -632,6 +632,7 @@
 				9C3DF4902B4A945C006CE6E5 /* SignupInputComponent.xib in Resources */,
 				B321EEC12B6FD31000C29F4A /* PopupChoiceViewController.storyboard in Resources */,
 				B321EEC92B6FD31000C29F4A /* LaunchScreenImage.png in Resources */,
+				B3E5AEDA2B70C51400429CEF /* MyPage.storyboard in Resources */,
 				9CB351882B4E775000EE36F0 /* SignupCustomTextField.xib in Resources */,
 				9C50A3442B5E630400082229 /* SelectNationPopup.storyboard in Resources */,
 				B321EEC22B6FD31000C29F4A /* LaunchScreen.storyboard in Resources */,
@@ -644,7 +645,6 @@
 				9C1B3C282B5D25E100AB3B73 /* IdentificationVC.storyboard in Resources */,
 				9C6B453A2B47D9340068FA95 /* Main.storyboard in Resources */,
 				9C4EDA7F2B47EF8C00BFDC48 /* Inter-Bold.ttf in Resources */,
-				B321EED82B6FE53600C29F4A /* MyPage.storyboard in Resources */,
 				9CB4A8C62B6A3AC800521184 /* PopupTemplateVC.storyboard in Resources */,
 				9CB4A8C42B6A3AB600521184 /* NationSelectionVC.storyboard in Resources */,
 				9C1B3C2F2B5E1A6A00AB3B73 /* IdentificationInputUnit.xib in Resources */,
