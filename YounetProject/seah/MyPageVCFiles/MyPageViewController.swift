@@ -33,22 +33,10 @@ class MyPageViewController: UIViewController {
         nationImgContainer.layer.borderColor = UIColor.lightGray.cgColor
         nationImgContainer.layer.borderWidth = 0.25
         
-        if UserDefaults.standard.string(forKey: "preferNation") == nil {
-            nationImgContainer.isHidden = true
-        } else {
-            nationImgContainer.isHidden = false
-        }
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        UserDefaults.standard.string(forKey: "nickname") != nil ? (usernameLabel.text = UserDefaults.standard.string(forKey: "nickname")) : (usernameLabel.text = "Username")
-        UserDefaults.standard.string(forKey: "selfExplain") != nil ? (selfExplainLabel.text = UserDefaults.standard.string(forKey: "selfExplain")) : (selfExplainLabel.text = "프로필 소개글")
-        UserDefaults.standard.string(forKey: "preferNation") != nil ? (preferNationLabel.text = UserDefaults.standard.string(forKey: "preferNation")) : (preferNationLabel.text = "관심국가")
-        UserDefaults.standard.string(forKey: "preferNationImage") != nil ? (preferNationImage.image = UIImage(named: UserDefaults.standard.string(forKey: "preferNationImage")!)) : nil
-        if ImageFileManager.shared.getSavedImage(named: "profileImage") != nil {
-            profileImage.image = ImageFileManager.shared.getSavedImage(named: "profileImage")
-        }
+        getUserDefaults()
     }
     
     @IBAction func postBtnDidtap(_ sender: UIButton) {
@@ -76,6 +64,22 @@ class MyPageViewController: UIViewController {
         tableView.register(nibName, forCellReuseIdentifier: "FeedCell")
     }
     
+    private func getUserDefaults() {
+        UserDefaults.standard.string(forKey: "nickname") != nil ? (usernameLabel.text = UserDefaults.standard.string(forKey: "nickname")) : (usernameLabel.text = "Username")
+        UserDefaults.standard.string(forKey: "selfExplain") != nil ? (selfExplainLabel.text = UserDefaults.standard.string(forKey: "selfExplain")) : (selfExplainLabel.text = "프로필 소개글")
+        UserDefaults.standard.string(forKey: "preferNation") != nil ? (preferNationLabel.text = UserDefaults.standard.string(forKey: "preferNation")) : (preferNationLabel.text = "관심국가")
+        UserDefaults.standard.string(forKey: "preferNationImage") != nil ? (preferNationImage.image = UIImage(named: UserDefaults.standard.string(forKey: "preferNationImage")!)) : nil
+        
+        if ImageFileManager.shared.getSavedImage(named: "profileImage") != nil {
+            profileImage.image = ImageFileManager.shared.getSavedImage(named: "profileImage")
+        }
+
+        if UserDefaults.standard.string(forKey: "preferNation") == nil {
+            nationImgContainer.isHidden = true
+        } else {
+            nationImgContainer.isHidden = false
+        }
+    }
 }
 
 extension MyPageViewController : UITableViewDelegate, UITableViewDataSource {

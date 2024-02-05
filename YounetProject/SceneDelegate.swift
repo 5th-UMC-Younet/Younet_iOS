@@ -16,8 +16,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let _ = (scene as? UIWindowScene) else { return }
         
         //START 테스트용 코드
-        let storyboard = UIStoryboard(name: "SignupVC", bundle: nil)
-        guard let startVC = storyboard.instantiateViewController(withIdentifier: "SignupVC") as? SignupVC else { return }
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let startVC = storyboard.instantiateViewController(withIdentifier: "LoginVC") as? LoginViewController else { return }
         window?.rootViewController = startVC
         //END 테스트용 코드
     }
