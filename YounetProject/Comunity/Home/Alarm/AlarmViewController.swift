@@ -20,6 +20,14 @@ class AlarmViewController: UIViewController {
     @IBAction func backButton(_ sender: Any) {
         self.dismiss(animated: true,completion: nil)
     }
+    @IBAction func requestChat(_ sender: Any) {
+        guard let chatRqVC = storyboard?.instantiateViewController(identifier: "ChatRqVC") as? ChatRequestViewController else{
+            return
+        }
+        chatRqVC.modalPresentationStyle = .fullScreen
+        present(chatRqVC, animated: true, completion: nil)
+    }
+    
     //셀 등록
     private func registerXib() {
         let nibName = UINib(nibName: "AlarmCell", bundle: nil)

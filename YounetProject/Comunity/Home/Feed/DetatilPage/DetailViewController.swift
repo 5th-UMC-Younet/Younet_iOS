@@ -13,24 +13,21 @@ class DetailViewController: UIViewController {
     var like: Int?
     var comment: Int?
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var heartButton: UIButton!
-    @IBOutlet weak var commentField: UITextField!
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var nameLabel: UIButton!
-    @IBOutlet weak var categoryLabel: UILabel!
-    @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var heartLabel: UILabel!
-    @IBOutlet weak var commentLabel: UILabel!
     @IBOutlet weak var textView: UITextView!
-    @IBOutlet weak var imgView: UIImageView!
+    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var heartButton: UIButton!
     
-    
-    @IBAction func sendComment(_ sender: Any) {
-        //댓글 전송
+    @IBAction func sendComent(_ sender: Any) {
     }
-    
     @IBAction func back(_ sender: Any) {
         dismiss(animated: true)
+    }
+    @IBAction func settingButton(_ sender: Any) {
+        guard let postSetVC = storyboard?.instantiateViewController(identifier: "PostSetVC") as? PostSetViewController else{
+            return
+        }
+        postSetVC.modalPresentationStyle = .fullScreen
+        present(postSetVC, animated: true, completion: nil)
     }
     @IBAction func isHeart(_ sender: Any) {
         if heartButton.isSelected{
@@ -39,20 +36,20 @@ class DetailViewController: UIViewController {
             heartButton.isSelected = true
         }
     }
-    
-    
     override func viewDidLoad() {
-        //셀등록
         registerXib()
         tableView.delegate = self
         tableView.dataSource = self
+        collectionView.delegate = self
+        collectionView.dataSource = self
         super.viewDidLoad()
-        //초기값
     }
     //셀 등록
     private func registerXib() {
         let nibName = UINib(nibName: "FeedDetailCell", bundle: nil)
         tableView.register(nibName, forCellReuseIdentifier: "FeedDetailCell")
+        let nibName2 = UINib(nibName: "DetailImgCell", bundle: nil)
+        collectionView.register(nibName2, forCellWithReuseIdentifier: "DetailImgCell")
     }
 }
 extension DetailViewController : UITableViewDelegate, UITableViewDataSource {
@@ -70,4 +67,19 @@ extension DetailViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 92
     }
+}
+extension DetailViewController : UICollectionViewDelegate, UICollectionViewDataSource{
+        func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+            5
+        }
+        
+        func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DetailImgCell", for: indexPath) as? DetailImgCell else{
+                return UICollectionViewCell()
+            }
+            return cell
+        }
+        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+            return CGSize(width: collectionView.frame.size.width, height: collectionView.frame.height)
+        }
 }

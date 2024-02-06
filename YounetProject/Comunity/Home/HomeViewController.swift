@@ -11,13 +11,14 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var sortButton: UIButton! //정렬버튼
-    //카테고리 
+    //카테고리
     @IBOutlet var category: [UIButton]!
     var index: Int?
     //국가 선택
     @IBOutlet weak var countryName: UIButton!
     @IBOutlet weak var engCountryName: UILabel!
-    @IBOutlet weak var countryImg: UILabel!
+    @IBOutlet weak var countryImg: UIImageView!
+    
     
     let countries: [Country] = [
         Country(name: "네덜란드", engName: "NETHERLANDS", img: "🇳🇱"),
@@ -44,8 +45,6 @@ class HomeViewController: UIViewController {
     
     
     override func viewDidLoad() {
-        //국가 초기값
-        countryName.setTitle("캐나다", for: .normal)
         //카테고리 초기값
         category[0].isSelected = true
         index = 0
@@ -146,13 +145,25 @@ class HomeViewController: UIViewController {
     }
     //국가선택
     @IBAction func CountrySelection(_ sender: Any) {
-        guard let countryVC = storyboard?.instantiateViewController(identifier: "CountryVC") as? CountrySelectionViewController else{
-            return
-        }
-        countryVC.delegate = self
-        present(countryVC, animated: true, completion: nil)
-    }
+        let nationSelectionVC = NationSelectionVC.present(parent: self)
+                nationSelectionVC.onDismissed = { [weak self] () in
+                    let countryInfo = nationSelectionVC.selectedCountry
+                    var engName: String = ""
 
+                    for i in  0..<(self?.countries.count ?? 0)  {
+                        if self?.countries[i].name == countryInfo?.korName {
+                            engName = self?.countries[i].engName ?? ""
+                        }
+                    }
+
+                    self?.countryName.setTitle(countryInfo?.korName, for: .normal)
+
+                    self?.engCountryName.text = engName
+                    self?.countryImg.image = UIImage(named: countryInfo?.engName ?? "")
+    }
+        
+    }
+    
 }
 extension HomeViewController : UITableViewDelegate, UITableViewDataSource {
     //셀 개수
@@ -184,12 +195,14 @@ extension HomeViewController : UITableViewDelegate, UITableViewDataSource {
         }
     }
 }
-//국가선택
-extension HomeViewController: SelectButtonDelegate{
-    func selection(_ data: Int) {
-        let country = countries[data]
-        countryName.setTitle(country.name, for: .normal)
-        engCountryName.text = country.engName
-        countryImg.text = country.img
+
+extension UIColor {
+    convenience init(hex: Int, alpha: CGFloat = 1.0) {
+        self.init(
+            red: CGFloat((hex >> 16) & 0xFF) / 255.0,
+            green: CGFloat((hex >> 8) & 0xFF) / 255.0,
+            blue: CGFloat(hex & 0xFF) / 255.0,
+            alpha: alpha
+        )
     }
 }
