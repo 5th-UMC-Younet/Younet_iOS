@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Inter-Regular.ttf">
+            <string>Inter-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchResultTableViewCell" rowHeight="130" id="xsF-ij-lLI" customClass="SearchResultTableViewCell" customModule="YounetProject" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="467" height="130"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xsF-ij-lLI" id="aGz-qZ-Aqh">
+                <rect key="frame" x="0.0" y="0.0" width="467" height="130"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pAA-N7-J1V">
+                        <rect key="frame" x="5" y="5" width="457" height="120"/>
+                        <fontDescription key="fontDescription" name="Inter-Regular" family="Inter" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="pAA-N7-J1V" firstAttribute="leading" secondItem="aGz-qZ-Aqh" secondAttribute="leading" constant="5" id="HJm-hj-Ppl"/>
+                    <constraint firstItem="pAA-N7-J1V" firstAttribute="centerX" secondItem="aGz-qZ-Aqh" secondAttribute="centerX" id="OxV-9v-BPK"/>
+                    <constraint firstItem="pAA-N7-J1V" firstAttribute="top" secondItem="aGz-qZ-Aqh" secondAttribute="top" constant="5" id="XdA-8A-dKa"/>
+                    <constraint firstItem="pAA-N7-J1V" firstAttribute="centerY" secondItem="aGz-qZ-Aqh" secondAttribute="centerY" id="jFT-Ri-e9Y"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="nationTitleLabel" destination="pAA-N7-J1V" id="fsQ-wW-TT4"/>
+            </connections>
+            <point key="canvasLocation" x="-12.977099236641221" y="-100"/>
+        </tableViewCell>
+    </objects>
+</document>
