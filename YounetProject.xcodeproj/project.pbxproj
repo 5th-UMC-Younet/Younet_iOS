@@ -22,11 +22,6 @@
 		4D5B72592B6E109500D76B3E /* DetailImgCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D5B72572B6E109500D76B3E /* DetailImgCell.xib */; };
 		4D5B725C2B6E195500D76B3E /* PostSetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5B725B2B6E195500D76B3E /* PostSetViewController.swift */; };
 		4D5B72692B6E3B4C00D76B3E /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5B72682B6E3B4C00D76B3E /* TestViewController.swift */; };
-		4D5B72722B6E420F00D76B3E /* CountryDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5B726D2B6E420F00D76B3E /* CountryDTO.swift */; };
-		4D5B72732B6E420F00D76B3E /* NationSelectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5B726E2B6E420F00D76B3E /* NationSelectionVC.swift */; };
-		4D5B72742B6E421000D76B3E /* NationSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5B726F2B6E420F00D76B3E /* NationSelectionCell.swift */; };
-		4D5B72752B6E421000D76B3E /* NationSelectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D5B72702B6E420F00D76B3E /* NationSelectionCell.xib */; };
-		4D5B72762B6E421000D76B3E /* NationSelectionVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D5B72712B6E420F00D76B3E /* NationSelectionVC.storyboard */; };
 		4D5B72792B6F702D00D76B3E /* OpenChat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D5B72782B6F702D00D76B3E /* OpenChat.storyboard */; };
 		4D5B727C2B6F75CA00D76B3E /* OpenChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5B727B2B6F75CA00D76B3E /* OpenChatViewController.swift */; };
 		4D5B727F2B6F766000D76B3E /* OpenChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5B727D2B6F766000D76B3E /* OpenChatCell.swift */; };
@@ -56,7 +51,6 @@
 		4DEC592C2B6CF14800CAAC03 /* ChatRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEC592B2B6CF14800CAAC03 /* ChatRequestViewController.swift */; };
 		4DEC592F2B6CF3C500CAAC03 /* ChatRqCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEC592D2B6CF3C500CAAC03 /* ChatRqCell.swift */; };
 		4DEC59302B6CF3C500CAAC03 /* ChatRqCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DEC592E2B6CF3C500CAAC03 /* ChatRqCell.xib */; };
-		9C4EDA772B47EF8C00BFDC48 /* Inter-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9C4EDA6E2B47EF8B00BFDC48 /* Inter-ExtraLight.ttf */; };
 		9C4EDA782B47EF8C00BFDC48 /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9C4EDA6F2B47EF8C00BFDC48 /* Inter-Regular.ttf */; };
 		9C4EDA7F2B47EF8C00BFDC48 /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9C4EDA762B47EF8C00BFDC48 /* Inter-Bold.ttf */; };
 		9C4EDA822B47F27500BFDC48 /* ServerSelectVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C4EDA812B47F27500BFDC48 /* ServerSelectVC.storyboard */; };
@@ -173,11 +167,6 @@
 		4D5B72572B6E109500D76B3E /* DetailImgCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailImgCell.xib; sourceTree = "<group>"; };
 		4D5B725B2B6E195500D76B3E /* PostSetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostSetViewController.swift; sourceTree = "<group>"; };
 		4D5B72682B6E3B4C00D76B3E /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
-		4D5B726D2B6E420F00D76B3E /* CountryDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryDTO.swift; sourceTree = "<group>"; };
-		4D5B726E2B6E420F00D76B3E /* NationSelectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NationSelectionVC.swift; sourceTree = "<group>"; };
-		4D5B726F2B6E420F00D76B3E /* NationSelectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NationSelectionCell.swift; sourceTree = "<group>"; };
-		4D5B72702B6E420F00D76B3E /* NationSelectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NationSelectionCell.xib; sourceTree = "<group>"; };
-		4D5B72712B6E420F00D76B3E /* NationSelectionVC.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NationSelectionVC.storyboard; sourceTree = "<group>"; };
 		4D5B72782B6F702D00D76B3E /* OpenChat.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OpenChat.storyboard; sourceTree = "<group>"; };
 		4D5B727B2B6F75CA00D76B3E /* OpenChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenChatViewController.swift; sourceTree = "<group>"; };
 		4D5B727D2B6F766000D76B3E /* OpenChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenChatCell.swift; sourceTree = "<group>"; };
@@ -207,7 +196,6 @@
 		4DEC592B2B6CF14800CAAC03 /* ChatRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRequestViewController.swift; sourceTree = "<group>"; };
 		4DEC592D2B6CF3C500CAAC03 /* ChatRqCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRqCell.swift; sourceTree = "<group>"; };
 		4DEC592E2B6CF3C500CAAC03 /* ChatRqCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatRqCell.xib; sourceTree = "<group>"; };
-		9C4EDA6E2B47EF8B00BFDC48 /* Inter-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-ExtraLight.ttf"; sourceTree = "<group>"; };
 		9C4EDA6F2B47EF8C00BFDC48 /* Inter-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular.ttf"; sourceTree = "<group>"; };
 		9C4EDA762B47EF8C00BFDC48 /* Inter-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Bold.ttf"; sourceTree = "<group>"; };
 		9C4EDA812B47F27500BFDC48 /* ServerSelectVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ServerSelectVC.storyboard; sourceTree = "<group>"; };
@@ -331,18 +319,6 @@
 			path = DetatilPage;
 			sourceTree = "<group>";
 		};
-		4D5B726C2B6E420F00D76B3E /* NationSelection */ = {
-			isa = PBXGroup;
-			children = (
-				4D5B726D2B6E420F00D76B3E /* CountryDTO.swift */,
-				4D5B726E2B6E420F00D76B3E /* NationSelectionVC.swift */,
-				4D5B726F2B6E420F00D76B3E /* NationSelectionCell.swift */,
-				4D5B72702B6E420F00D76B3E /* NationSelectionCell.xib */,
-				4D5B72712B6E420F00D76B3E /* NationSelectionVC.storyboard */,
-			);
-			path = NationSelection;
-			sourceTree = "<group>";
-		};
 		4D5B72772B6F700200D76B3E /* OpenChat */ = {
 			isa = PBXGroup;
 			children = (
@@ -379,8 +355,6 @@
 			isa = PBXGroup;
 			children = (
 				4D5B725A2B6E192800D76B3E /* DetatilPage */,
-				4D46431F2B4FCE8D00AE4DF2 /* FeedCell.swift */,
-				4D4643202B4FCE8D00AE4DF2 /* FeedCell.xib */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -414,7 +388,6 @@
 		4DDBE82D2B4D7E5000B8A25A /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				4D5B726C2B6E420F00D76B3E /* NationSelection */,
 				4D0E44B22B6CE4E7001F6163 /* Search */,
 				4DAD13A12B5FB34B00A84525 /* Country */,
 				4DC538C02B51739B00CEC5B6 /* Alarm */,
@@ -573,7 +546,6 @@
 				4D5B72772B6F700200D76B3E /* OpenChat */,
 				4DDBE82A2B4D484F00B8A25A /* Comunity */,
 				9C4EDA6D2B47EF7600BFDC48 /* Font */,
-				9C0426A62B47EB7400C693BC /* Scene */,
 				9C6B45322B47D9340068FA95 /* AppDelegate.swift */,
 				9C6B45342B47D9340068FA95 /* SceneDelegate.swift */,
 				9C6B45362B47D9340068FA95 /* ViewController.swift */,
@@ -899,7 +871,6 @@
 				9C50A3442B5E630400082229 /* SelectNationPopup.storyboard in Resources */,
 				B321EEC22B6FD31000C29F4A /* LaunchScreen.storyboard in Resources */,
 				9C6B453F2B47D9350068FA95 /* LaunchScreen.storyboard in Resources */,
-				9C4EDA7E2B47EF8C00BFDC48 /* Inter-ExtraBold.ttf in Resources */,
 				4DAF5C902B6F84CD0038EAA1 /* OpenSearchCell.xib in Resources */,
 				4D5B72592B6E109500D76B3E /* DetailImgCell.xib in Resources */,
 				9C4EDA782B47EF8C00BFDC48 /* Inter-Regular.ttf in Resources */,
@@ -930,13 +901,8 @@
 				4D5B72792B6F702D00D76B3E /* OpenChat.storyboard in Resources */,
 				4DEC59302B6CF3C500CAAC03 /* ChatRqCell.xib in Resources */,
 				4DAD13A72B5FDFEE00A84525 /* FeedDetailCell.xib in Resources */,
-				4D4643222B4FCE8D00AE4DF2 /* FeedCell.xib in Resources */,
-				9C4EDA772B47EF8C00BFDC48 /* Inter-ExtraLight.ttf in Resources */,
-				9C4EDA7D2B47EF8C00BFDC48 /* Inter-Medium.ttf in Resources */,
 				4DAD139E2B5E8DFA00A84525 /* Comunity.storyboard in Resources */,
 				4DC175692B726A3900935205 /* SearchCell.xib in Resources */,
-				9C4EDA7A2B47EF8C00BFDC48 /* Inter-Black.ttf in Resources */,
-				4D5B72762B6E421000D76B3E /* NationSelectionVC.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1029,15 +995,11 @@
 				4DAF5C842B6F7FA80038EAA1 /* OpenRequestViewController.swift in Sources */,
 				4DDBE8382B4D7E8E00B8A25A /* MyViewController.swift in Sources */,
 				4DDBE8322B4D7E7800B8A25A /* HomeViewController.swift in Sources */,
-				4D5B72722B6E420F00D76B3E /* CountryDTO.swift in Sources */,
 				4DC538BE2B516A3B00CEC5B6 /* AlarmViewController.swift in Sources */,
-				4D5B72732B6E420F00D76B3E /* NationSelectionVC.swift in Sources */,
-				4D5B72742B6E421000D76B3E /* NationSelectionCell.swift in Sources */,
 				4DDBE8362B4D7E8800B8A25A /* ChatViewController.swift in Sources */,
 				4D5B727F2B6F766000D76B3E /* OpenChatCell.swift in Sources */,
 				4DDBE8342B4D7E8000B8A25A /* PostViewController.swift in Sources */,
 				4DAD13A32B5FB36600A84525 /* Country.swift in Sources */,
-				4D4643212B4FCE8D00AE4DF2 /* FeedCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
