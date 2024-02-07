@@ -102,10 +102,9 @@
 		B34A9D752B73665800EA6686 /* LaunchScreenImage.png in Resources */ = {isa = PBXBuildFile; fileRef = B34A9D742B73665800EA6686 /* LaunchScreenImage.png */; };
 		B34A9D802B73A20100EA6686 /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B34A9D7E2B73A20100EA6686 /* Inter-Bold.ttf */; };
 		B34A9D812B73A20100EA6686 /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B34A9D7F2B73A20100EA6686 /* Inter-Regular.ttf */; };
-		B34A9D872B73A2B300EA6686 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B34A9D822B73A2B300EA6686 /* Main.storyboard */; };
-		B34A9D882B73A2B300EA6686 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B34A9D852B73A2B300EA6686 /* Main.storyboard */; };
 		B34A9D8C2B73A2D300EA6686 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34A9D8A2B73A2D300EA6686 /* FeedCell.swift */; };
 		B34A9D8D2B73A2D300EA6686 /* FeedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B34A9D8B2B73A2D300EA6686 /* FeedCell.xib */; };
+		B34A9D9C2B73B65800EA6686 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B34A9D9B2B73B65800EA6686 /* Main.storyboard */; };
 		B3E5AEDA2B70C51400429CEF /* MyPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3E5AED92B70C51400429CEF /* MyPage.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -238,10 +237,9 @@
 		B34A9D742B73665800EA6686 /* LaunchScreenImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaunchScreenImage.png; sourceTree = "<group>"; };
 		B34A9D7E2B73A20100EA6686 /* Inter-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Bold.ttf"; sourceTree = "<group>"; };
 		B34A9D7F2B73A20100EA6686 /* Inter-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular.ttf"; sourceTree = "<group>"; };
-		B34A9D832B73A2B300EA6686 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "../../../../Downloads/Younet_iOS-seah/Younet_iOS-seah/YounetProject/Base.lproj/Main.storyboard"; sourceTree = "<group>"; };
-		B34A9D862B73A2B300EA6686 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
 		B34A9D8A2B73A2D300EA6686 /* FeedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		B34A9D8B2B73A2D300EA6686 /* FeedCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedCell.xib; sourceTree = "<group>"; };
+		B34A9D9B2B73B65800EA6686 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		B3E5AED92B70C51400429CEF /* MyPage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MyPage.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -454,11 +452,10 @@
 				4DDBE82A2B4D484F00B8A25A /* Comunity */,
 				B321EE9E2B6FD31000C29F4A /* seah */,
 				9CF07CAF2B6FBF2B002451C7 /* jehun */,
-				B34A9D842B73A2B300EA6686 /* Base.lproj */,
-				B34A9D822B73A2B300EA6686 /* Main.storyboard */,
 				9C6B45322B47D9340068FA95 /* AppDelegate.swift */,
 				9C6B45342B47D9340068FA95 /* SceneDelegate.swift */,
 				9C6B45362B47D9340068FA95 /* ViewController.swift */,
+				B34A9D9B2B73B65800EA6686 /* Main.storyboard */,
 				9C6B453B2B47D9350068FA95 /* Assets.xcassets */,
 				9C6B45402B47D9350068FA95 /* Info.plist */,
 			);
@@ -660,15 +657,6 @@
 			path = ../Font;
 			sourceTree = "<group>";
 		};
-		B34A9D842B73A2B300EA6686 /* Base.lproj */ = {
-			isa = PBXGroup;
-			children = (
-				B34A9D852B73A2B300EA6686 /* Main.storyboard */,
-			);
-			name = Base.lproj;
-			path = "../../../../Downloads/Younet_iOS-seah/Younet_iOS-seah/YounetProject/Base.lproj";
-			sourceTree = "<group>";
-		};
 		B34A9D892B73A2D300EA6686 /* Feed */ = {
 			isa = PBXGroup;
 			children = (
@@ -795,8 +783,6 @@
 				9C3DF4902B4A945C006CE6E5 /* SignupInputComponent.xib in Resources */,
 				B321EEC12B6FD31000C29F4A /* PopupChoiceViewController.storyboard in Resources */,
 				B3E5AEDA2B70C51400429CEF /* MyPage.storyboard in Resources */,
-				B34A9D872B73A2B300EA6686 /* Main.storyboard in Resources */,
-				B34A9D882B73A2B300EA6686 /* Main.storyboard in Resources */,
 				B34A9D802B73A20100EA6686 /* Inter-Bold.ttf in Resources */,
 				9CB351882B4E775000EE36F0 /* SignupCustomTextField.xib in Resources */,
 				B321EEC22B6FD31000C29F4A /* LaunchScreen.storyboard in Resources */,
@@ -812,6 +798,7 @@
 				9CB4A8C62B6A3AC800521184 /* PopupTemplateVC.storyboard in Resources */,
 				B340FA282B714DE800D86FEF /* ChatPopupViewController.storyboard in Resources */,
 				9CB4A8C42B6A3AB600521184 /* NationSelectionVC.storyboard in Resources */,
+				B34A9D9C2B73B65800EA6686 /* Main.storyboard in Resources */,
 				9C1B3C2F2B5E1A6A00AB3B73 /* IdentificationInputUnit.xib in Resources */,
 				B34A9D8D2B73A2D300EA6686 /* FeedCell.xib in Resources */,
 				B34A9D752B73665800EA6686 /* LaunchScreenImage.png in Resources */,
@@ -973,25 +960,6 @@
 			targetProxy = 9C6B45502B47D9350068FA95 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		B34A9D822B73A2B300EA6686 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B34A9D832B73A2B300EA6686 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		B34A9D852B73A2B300EA6686 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B34A9D862B73A2B300EA6686 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		9C6B45572B47D9350068FA95 /* Debug */ = {
