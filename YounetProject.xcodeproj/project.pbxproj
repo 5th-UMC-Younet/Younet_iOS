@@ -93,8 +93,6 @@
 		B321EEC32B6FD31000C29F4A /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B321EEA62B6FD31000C29F4A /* SettingViewController.swift */; };
 		B321EEC42B6FD31000C29F4A /* QuitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B321EEA72B6FD31000C29F4A /* QuitViewController.swift */; };
 		B321EEC52B6FD31000C29F4A /* MyPageProfileEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B321EEA82B6FD31000C29F4A /* MyPageProfileEditViewController.swift */; };
-		B321EEC62B6FD31000C29F4A /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B321EEAA2B6FD31000C29F4A /* FeedCell.swift */; };
-		B321EEC72B6FD31000C29F4A /* FeedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B321EEAB2B6FD31000C29F4A /* FeedCell.xib */; };
 		B321EEC82B6FD31000C29F4A /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B321EEAC2B6FD31000C29F4A /* MyPageViewController.swift */; };
 		B321EECA2B6FD31000C29F4A /* IdPwSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B321EEAF2B6FD31000C29F4A /* IdPwSearchViewController.swift */; };
 		B321EECB2B6FD31000C29F4A /* IdSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B321EEB02B6FD31000C29F4A /* IdSearchViewController.swift */; };
@@ -241,8 +239,6 @@
 		B321EEA62B6FD31000C29F4A /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		B321EEA72B6FD31000C29F4A /* QuitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuitViewController.swift; sourceTree = "<group>"; };
 		B321EEA82B6FD31000C29F4A /* MyPageProfileEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPageProfileEditViewController.swift; sourceTree = "<group>"; };
-		B321EEAA2B6FD31000C29F4A /* FeedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
-		B321EEAB2B6FD31000C29F4A /* FeedCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedCell.xib; sourceTree = "<group>"; };
 		B321EEAC2B6FD31000C29F4A /* MyPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		B321EEAF2B6FD31000C29F4A /* IdPwSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdPwSearchViewController.swift; sourceTree = "<group>"; };
 		B321EEB02B6FD31000C29F4A /* IdSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdSearchViewController.swift; sourceTree = "<group>"; };
@@ -550,7 +546,6 @@
 				9C6B45342B47D9340068FA95 /* SceneDelegate.swift */,
 				9C6B45362B47D9340068FA95 /* ViewController.swift */,
 				9C6B45382B47D9340068FA95 /* Main.storyboard */,
-				9C6B453D2B47D9350068FA95 /* LaunchScreen.storyboard */,
 				9C6B45402B47D9350068FA95 /* Info.plist */,
 			);
 			path = YounetProject;
@@ -686,22 +681,12 @@
 		B321EEA52B6FD31000C29F4A /* MyPageVCFiles */ = {
 			isa = PBXGroup;
 			children = (
-				B321EEA92B6FD31000C29F4A /* Feed */,
 				B321EEA62B6FD31000C29F4A /* SettingViewController.swift */,
 				B321EEA72B6FD31000C29F4A /* QuitViewController.swift */,
 				B321EEA82B6FD31000C29F4A /* MyPageProfileEditViewController.swift */,
 				B321EEAC2B6FD31000C29F4A /* MyPageViewController.swift */,
 			);
 			path = MyPageVCFiles;
-			sourceTree = "<group>";
-		};
-		B321EEA92B6FD31000C29F4A /* Feed */ = {
-			isa = PBXGroup;
-			children = (
-				B321EEAA2B6FD31000C29F4A /* FeedCell.swift */,
-				B321EEAB2B6FD31000C29F4A /* FeedCell.xib */,
-			);
-			path = Feed;
 			sourceTree = "<group>";
 		};
 		B321EEAE2B6FD31000C29F4A /* LoginVCFiles */ = {
@@ -875,7 +860,6 @@
 				4D5B72592B6E109500D76B3E /* DetailImgCell.xib in Resources */,
 				9C4EDA782B47EF8C00BFDC48 /* Inter-Regular.ttf in Resources */,
 				9C374CF32B6CDF6900F879C4 /* NationSelectionCell.xib in Resources */,
-				B321EEC72B6FD31000C29F4A /* FeedCell.xib in Resources */,
 				9C6B453C2B47D9350068FA95 /* Assets.xcassets in Resources */,
 				9C4EDA892B47F2AE00BFDC48 /* SignupVC.storyboard in Resources */,
 				9C3925222B4F966500AEBA2F /* SignupEmailComponent.xib in Resources */,
@@ -970,7 +954,6 @@
 				B321EED12B6FD31000C29F4A /* PageViewController.swift in Sources */,
 				B321EECA2B6FD31000C29F4A /* IdPwSearchViewController.swift in Sources */,
 				B321EED62B6FD31000C29F4A /* CustomLabel.swift in Sources */,
-				B321EEC62B6FD31000C29F4A /* FeedCell.swift in Sources */,
 				B340FA2A2B714DFF00D86FEF /* ChatPopupViewController.swift in Sources */,
 				9C6B45352B47D9340068FA95 /* SceneDelegate.swift in Sources */,
 				9C50A33B2B5E508E00082229 /* SelectNationPopup.swift in Sources */,
