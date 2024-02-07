@@ -57,14 +57,10 @@ class SignupVC: UIViewController
         
         if (isAvailable)
         {
-            let alert = UIAlertController(title: "", message: "회원가입이 완료되었습니다.", preferredStyle: .alert)
-            
-            let confirmAction = UIAlertAction(title: NSLocalizedString("로그인", comment: "login action"), style: .default, handler: { [weak self]_ in
-                self?.navigationController?.popViewController(animated: true)
-            })
-            
-            alert.addAction(confirmAction)
-            self.present(alert, animated: true)
+            let popup = DefaultPopup.present(parent: self, contentStr: "회원가입이 완료되었습니다.", btnTitleStr: "로그인")
+            popup.onDismissed = {
+                //로그인 화면으로 화면 전환
+            }
         }
         else
         {
