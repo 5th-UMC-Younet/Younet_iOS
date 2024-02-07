@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "9C6B452E2B47D9340068FA95"
-               BuildableName = "YounetProject"
+               BuildableName = "YounetProject.app"
                BlueprintName = "YounetProject"
                ReferencedContainer = "container:YounetProject.xcodeproj">
             </BuildableReference>
@@ -35,7 +35,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "9C6B45442B47D9350068FA95"
-               BuildableName = "YounetProjectTests"
+               BuildableName = "YounetProjectTests.xctest"
                BlueprintName = "YounetProjectTests"
                ReferencedContainer = "container:YounetProject.xcodeproj">
             </BuildableReference>
@@ -46,7 +46,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "9C6B454E2B47D9350068FA95"
-               BuildableName = "YounetProjectUITests"
+               BuildableName = "YounetProjectUITests.xctest"
                BlueprintName = "YounetProjectUITests"
                ReferencedContainer = "container:YounetProject.xcodeproj">
             </BuildableReference>
@@ -68,7 +68,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9C6B452E2B47D9340068FA95"
-            BuildableName = "YounetProject"
+            BuildableName = "YounetProject.app"
             BlueprintName = "YounetProject"
             ReferencedContainer = "container:YounetProject.xcodeproj">
          </BuildableReference>
@@ -85,7 +85,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9C6B452E2B47D9340068FA95"
-            BuildableName = "YounetProject"
+            BuildableName = "YounetProject.app"
             BlueprintName = "YounetProject"
             ReferencedContainer = "container:YounetProject.xcodeproj">
          </BuildableReference>
