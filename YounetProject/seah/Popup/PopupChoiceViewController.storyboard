@@ -25,27 +25,26 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zbz-l4-iMs">
-                                <rect key="frame" x="0.0" y="59" width="389" height="759"/>
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <buttonConfiguration key="configuration" style="gray"/>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I4n-f6-v66">
-                                <rect key="frame" x="54.333333333333343" y="352.33333333333331" width="280" height="147.33333333333331"/>
+                                <rect key="frame" x="55" y="352.33333333333331" width="283" height="147.33333333333331"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="로그아웃" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GTQ-Fg-eD8">
-                                        <rect key="frame" x="110.66666666666666" y="28" width="59" height="20.666666666666671"/>
+                                        <rect key="frame" x="112" y="28" width="59" height="20.666666666666671"/>
                                         <fontDescription key="fontDescription" name="Inter-Bold" family="Inter" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="aEl-9U-VeL">
-                                        <rect key="frame" x="0.0" y="112.33333333333337" width="280" height="35"/>
+                                        <rect key="frame" x="0.0" y="112.33333333333337" width="283" height="35"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LtW-hm-Jh9">
-                                                <rect key="frame" x="0.0" y="0.0" width="140" height="35"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="142" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="Qhk-pe-8Go"/>
-                                                    <constraint firstAttribute="width" constant="140" id="jeX-wf-Cdr"/>
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="예">
@@ -55,7 +54,7 @@
                                                 </buttonConfiguration>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QrA-wv-tzS" userLabel="Stack Line View">
-                                                <rect key="frame" x="140" y="5" width="1" height="25"/>
+                                                <rect key="frame" x="142" y="5" width="1" height="25"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="1" id="ejX-cP-Zhh"/>
@@ -63,7 +62,7 @@
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="43l-Ug-JME">
-                                                <rect key="frame" x="141" y="0.0" width="139" height="35"/>
+                                                <rect key="frame" x="143" y="0.0" width="140" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="140" id="7Ss-Vp-0kK"/>
                                                     <constraint firstAttribute="height" constant="35" id="88C-Sc-c4V"/>
@@ -79,7 +78,7 @@
                                         <color key="backgroundColor" red="0.1607553065" green="0.1137417927" blue="0.53724181650000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="로그아웃하시겠습니까?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1su-H9-1QL">
-                                        <rect key="frame" x="65" y="64.666666666666686" width="150" height="16"/>
+                                        <rect key="frame" x="66.666666666666686" y="64.666666666666686" width="150" height="16"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="150" id="xCF-RO-G1I"/>
                                         </constraints>

@@ -21,7 +21,8 @@ class MyPageViewController: UIViewController {
     @IBOutlet weak var postLineView: UIView!
     @IBOutlet weak var scrapLineView: UIView!
     
-    
+    let simpleData = UserDefaults.standard
+    let imageData = ImageFileManager.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,11 +33,10 @@ class MyPageViewController: UIViewController {
         
         nationImgContainer.layer.borderColor = UIColor.lightGray.cgColor
         nationImgContainer.layer.borderWidth = 0.25
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        getUserDefaults()
+        getData()
     }
     
     @IBAction func postBtnDidtap(_ sender: UIButton) {
@@ -46,7 +46,6 @@ class MyPageViewController: UIViewController {
         scrapButton.setImage(UIImage(named: "ScrapDefault"), for: .normal)
         scrapButton.tintColor = #colorLiteral(red: 0.8509804606, green: 0.850980401, blue: 0.8509804606, alpha: 1)
         scrapLineView.backgroundColor = #colorLiteral(red: 0.8509804606, green: 0.850980401, blue: 0.8509804606, alpha: 1)
-        
     }
     
     @IBAction func scrapBtnDidtap(_ sender: UIButton) {
@@ -64,17 +63,15 @@ class MyPageViewController: UIViewController {
         tableView.register(nibName, forCellReuseIdentifier: "FeedCell")
     }
     
-    private func getUserDefaults() {
-        UserDefaults.standard.string(forKey: "nickname") != nil ? (usernameLabel.text = UserDefaults.standard.string(forKey: "nickname")) : (usernameLabel.text = "Username")
-        UserDefaults.standard.string(forKey: "selfExplain") != nil ? (selfExplainLabel.text = UserDefaults.standard.string(forKey: "selfExplain")) : (selfExplainLabel.text = "프로필 소개글")
-        UserDefaults.standard.string(forKey: "preferNation") != nil ? (preferNationLabel.text = UserDefaults.standard.string(forKey: "preferNation")) : (preferNationLabel.text = "관심국가")
-        UserDefaults.standard.string(forKey: "preferNationImage") != nil ? (preferNationImage.image = UIImage(named: UserDefaults.standard.string(forKey: "preferNationImage")!)) : nil
+    private func getData() {
+        simpleData.string(forKey: "nickname") != nil ? usernameLabel.text = simpleData.string(forKey: "nickname") : nil
+        simpleData.string(forKey: "selfExplain") != nil ? selfExplainLabel.text = simpleData.string(forKey: "selfExplain") : nil
+        simpleData.string(forKey: "preferNation") != nil ? preferNationLabel.text = simpleData.string(forKey: "preferNation") : nil
+        simpleData.string(forKey: "preferNationImage") != nil ? preferNationImage.image = UIImage(named: simpleData.string(forKey: "preferNationImage")!) : nil
         
-        if ImageFileManager.shared.getSavedImage(named: "profileImage") != nil {
-            profileImage.image = ImageFileManager.shared.getSavedImage(named: "profileImage")
-        }
+        imageData.getSavedImage(named: "profileImage") != nil ? profileImage.image = imageData.getSavedImage(named: "profileImage") : nil
 
-        if UserDefaults.standard.string(forKey: "preferNation") == nil {
+        if simpleData.string(forKey: "preferNation") == nil {
             nationImgContainer.isHidden = true
         } else {
             nationImgContainer.isHidden = false

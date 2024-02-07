@@ -36,6 +36,7 @@ class QuitViewController: UIViewController {
                 }
         // FileManager Profile Image 삭제
         ImageFileManager.shared.deleteImage(named: "profileImage") { onSuccess in return }
+        ImageFileManager.shared.deleteImage(named: "profileImage_realName") { onSuccess in return }
     }
     
     private func transitionVC() {

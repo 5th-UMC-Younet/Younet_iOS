@@ -15,8 +15,6 @@ class FeedCell: UITableViewCell {
     @IBOutlet weak var likeLabel: UILabel!
     @IBOutlet weak var commentLabel: UILabel!
     
-    
-    
     override func awakeFromNib() {
         super.awakeFromNib()
     }

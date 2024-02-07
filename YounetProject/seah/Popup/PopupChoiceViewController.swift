@@ -25,12 +25,10 @@ class PopupChoiceViewController: UIViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("viewdidload")
         config()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        print("viewWillAppear")
         labelText != nil ? (textLabel.text = labelText) : nil
         titleText != nil ? (titleLabel.text = titleText) : nil
         confirmText != nil ? (confirmBtn.setTitle(confirmText, for: .normal)) : nil
