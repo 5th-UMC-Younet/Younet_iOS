@@ -65,6 +65,8 @@
 		9CB80B942B53B2D7002FD656 /* UIAlertController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB80B932B53B2D7002FD656 /* UIAlertController+Extension.swift */; };
 		9CB80B962B53B933002FD656 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB80B952B53B933002FD656 /* UIApplication.swift */; };
 		9CC25CF02B4BC18A00C07086 /* SignupEmailComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC25CEF2B4BC18A00C07086 /* SignupEmailComponent.swift */; };
+		9CE30EC82B7B836D005541D4 /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9CE30EC62B7B836D005541D4 /* Inter-Bold.ttf */; };
+		9CE30EC92B7B836D005541D4 /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9CE30EC72B7B836D005541D4 /* Inter-Regular.ttf */; };
 		9CFC5FAC2B6CA9D500997BDC /* CountryDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFC5FAB2B6CA9D500997BDC /* CountryDTO.swift */; };
 		9CFC6AE92B6F97B300443712 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 9CFC6AE82B6F97B300443712 /* Alamofire */; };
 		9CFC6AED2B6F97F500443712 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFC6AEC2B6F97F500443712 /* APIService.swift */; };
@@ -100,8 +102,6 @@
 		B340FA2C2B715E7D00D86FEF /* OtherUserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B340FA2B2B715E7D00D86FEF /* OtherUserProfileViewController.swift */; };
 		B340FA2E2B715EA700D86FEF /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B340FA2D2B715EA700D86FEF /* ReportViewController.swift */; };
 		B34A9D752B73665800EA6686 /* LaunchScreenImage.png in Resources */ = {isa = PBXBuildFile; fileRef = B34A9D742B73665800EA6686 /* LaunchScreenImage.png */; };
-		B34A9D802B73A20100EA6686 /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B34A9D7E2B73A20100EA6686 /* Inter-Bold.ttf */; };
-		B34A9D812B73A20100EA6686 /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B34A9D7F2B73A20100EA6686 /* Inter-Regular.ttf */; };
 		B34A9D8C2B73A2D300EA6686 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34A9D8A2B73A2D300EA6686 /* FeedCell.swift */; };
 		B34A9D8D2B73A2D300EA6686 /* FeedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B34A9D8B2B73A2D300EA6686 /* FeedCell.xib */; };
 		B34A9D9C2B73B65800EA6686 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B34A9D9B2B73B65800EA6686 /* Main.storyboard */; };
@@ -201,6 +201,8 @@
 		9CB80B932B53B2D7002FD656 /* UIAlertController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Extension.swift"; sourceTree = "<group>"; };
 		9CB80B952B53B933002FD656 /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
 		9CC25CEF2B4BC18A00C07086 /* SignupEmailComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupEmailComponent.swift; sourceTree = "<group>"; };
+		9CE30EC62B7B836D005541D4 /* Inter-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Bold.ttf"; sourceTree = "<group>"; };
+		9CE30EC72B7B836D005541D4 /* Inter-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular.ttf"; sourceTree = "<group>"; };
 		9CFC5FAB2B6CA9D500997BDC /* CountryDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDTO.swift; sourceTree = "<group>"; };
 		9CFC6AEC2B6F97F500443712 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		9CFC6AEE2B6F985F00443712 /* AuthRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
@@ -235,8 +237,6 @@
 		B340FA2B2B715E7D00D86FEF /* OtherUserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherUserProfileViewController.swift; sourceTree = "<group>"; };
 		B340FA2D2B715EA700D86FEF /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
 		B34A9D742B73665800EA6686 /* LaunchScreenImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaunchScreenImage.png; sourceTree = "<group>"; };
-		B34A9D7E2B73A20100EA6686 /* Inter-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Bold.ttf"; sourceTree = "<group>"; };
-		B34A9D7F2B73A20100EA6686 /* Inter-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular.ttf"; sourceTree = "<group>"; };
 		B34A9D8A2B73A2D300EA6686 /* FeedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		B34A9D8B2B73A2D300EA6686 /* FeedCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedCell.xib; sourceTree = "<group>"; };
 		B34A9D9B2B73B65800EA6686 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -538,10 +538,19 @@
 			path = SignupEmailComponent;
 			sourceTree = "<group>";
 		};
+		9CE30EC52B7B836D005541D4 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				9CE30EC62B7B836D005541D4 /* Inter-Bold.ttf */,
+				9CE30EC72B7B836D005541D4 /* Inter-Regular.ttf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
 		9CF07CAF2B6FBF2B002451C7 /* jehun */ = {
 			isa = PBXGroup;
 			children = (
-				B34A9D7D2B73A20100EA6686 /* Font */,
+				9CE30EC52B7B836D005541D4 /* Font */,
 				9CB4A8BE2B6A3A6400521184 /* Shares */,
 				9C3DF4862B4A51CB006CE6E5 /* Components */,
 				9CB80B8A2B53AD0B002FD656 /* Extensions */,
@@ -645,16 +654,6 @@
 				B340FA212B71462B00D86FEF /* ChatMyPageViewController.swift */,
 			);
 			path = ChatProfileVCFiles;
-			sourceTree = "<group>";
-		};
-		B34A9D7D2B73A20100EA6686 /* Font */ = {
-			isa = PBXGroup;
-			children = (
-				B34A9D7E2B73A20100EA6686 /* Inter-Bold.ttf */,
-				B34A9D7F2B73A20100EA6686 /* Inter-Regular.ttf */,
-			);
-			name = Font;
-			path = ../Font;
 			sourceTree = "<group>";
 		};
 		B34A9D892B73A2D300EA6686 /* Feed */ = {
@@ -783,8 +782,8 @@
 				9C3DF4902B4A945C006CE6E5 /* SignupInputComponent.xib in Resources */,
 				B321EEC12B6FD31000C29F4A /* PopupChoiceViewController.storyboard in Resources */,
 				B3E5AEDA2B70C51400429CEF /* MyPage.storyboard in Resources */,
-				B34A9D802B73A20100EA6686 /* Inter-Bold.ttf in Resources */,
 				9CB351882B4E775000EE36F0 /* SignupCustomTextField.xib in Resources */,
+				9CE30EC82B7B836D005541D4 /* Inter-Bold.ttf in Resources */,
 				B321EEC22B6FD31000C29F4A /* LaunchScreen.storyboard in Resources */,
 				4DAF5C902B6F84CD0038EAA1 /* OpenSearchCell.xib in Resources */,
 				4D5B72592B6E109500D76B3E /* DetailImgCell.xib in Resources */,
@@ -792,8 +791,8 @@
 				9C6B453C2B47D9350068FA95 /* Assets.xcassets in Resources */,
 				9C3925222B4F966500AEBA2F /* SignupEmailComponent.xib in Resources */,
 				4DAD139C2B52B14800A84525 /* AlarmCell.xib in Resources */,
-				B34A9D812B73A20100EA6686 /* Inter-Regular.ttf in Resources */,
 				4D5B72802B6F766000D76B3E /* OpenChatCell.xib in Resources */,
+				9CE30EC92B7B836D005541D4 /* Inter-Regular.ttf in Resources */,
 				B340FA1E2B713ABD00D86FEF /* ChatProfile.storyboard in Resources */,
 				9CB4A8C62B6A3AC800521184 /* PopupTemplateVC.storyboard in Resources */,
 				B340FA282B714DE800D86FEF /* ChatPopupViewController.storyboard in Resources */,
