@@ -16,9 +16,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let _ = (scene as? UIWindowScene) else { return }
         
         //START 테스트용 코드
-        let storyboard = UIStoryboard(name: "ChatProfile", bundle: nil)
-        guard let startVC = storyboard.instantiateViewController(withIdentifier: "ChatMyPageVC") as? ChatMyPageViewController else { return }
-        window?.rootViewController = startVC
+//        let storyboard = UIStoryboard(name: "ChatProfile", bundle: nil)
+//        guard let startVC = storyboard.instantiateViewController(withIdentifier: "ChatMyPageVC") as? ChatMyPageViewController else { return }
+//        window?.rootViewController = startVC
         //END 테스트용 코드
     }
 

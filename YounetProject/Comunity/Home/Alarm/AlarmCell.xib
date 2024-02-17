@@ -36,17 +36,24 @@
                         <state key="normal" image="x">
                             <color key="titleColor" systemColor="systemGrayColor"/>
                         </state>
+                        <connections>
+                            <action selector="deleteAlarm:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Ov3-Go-bzC"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="15:18 PM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P7P-oW-Ah6">
                         <rect key="frame" x="58" y="48" width="82" height="8"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
                         <color key="textColor" systemColor="systemGrayColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="contentLabel" destination="AYS-3a-Gt3" id="jgx-0e-EBf"/>
+                <outlet property="dateLabel" destination="P7P-oW-Ah6" id="hSw-YQ-yLA"/>
+            </connections>
             <point key="canvasLocation" x="46.564885496183201" y="20.422535211267608"/>
         </tableViewCell>
     </objects>

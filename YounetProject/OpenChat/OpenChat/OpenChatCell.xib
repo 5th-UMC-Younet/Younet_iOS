@@ -48,7 +48,7 @@
                             </label>
                         </subviews>
                     </stackView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="01/04" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Pt-iM-kGP">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01/04" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Pt-iM-kGP">
                         <rect key="frame" x="314" y="48" width="34" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -64,14 +64,24 @@
                     <constraint firstItem="5C9-gX-wZz" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="18f-sU-wFH"/>
                     <constraint firstItem="kcf-4O-guL" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="13" id="321-vR-xRo"/>
                     <constraint firstItem="VYp-8A-KLc" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="3cF-hy-O6n"/>
+                    <constraint firstItem="5Pt-iM-kGP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="48" id="KgF-bq-WMf"/>
                     <constraint firstAttribute="trailing" secondItem="5Pt-iM-kGP" secondAttribute="trailing" constant="13" id="MX3-as-vo6"/>
                     <constraint firstAttribute="bottom" secondItem="5Pt-iM-kGP" secondAttribute="bottom" constant="15" id="Shl-ev-aN3"/>
                     <constraint firstItem="VYp-8A-KLc" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="gQG-TI-0OQ"/>
                     <constraint firstItem="5C9-gX-wZz" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="75" id="lLb-qM-fRd"/>
+                    <constraint firstItem="5Pt-iM-kGP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="314" id="tto-RY-Td7"/>
                     <constraint firstAttribute="trailing" secondItem="kcf-4O-guL" secondAttribute="trailing" constant="13" id="ycC-Ra-PeH"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="dateLabel" destination="5Pt-iM-kGP" id="J3V-Jb-dLx"/>
+                <outlet property="imgView" destination="VYp-8A-KLc" id="DJl-Ul-fh5"/>
+                <outlet property="messageLabel" destination="1SS-NH-LXP" id="zuc-wU-Dd9"/>
+                <outlet property="numLabel" destination="x23-F0-9fG" id="lsf-DV-wix"/>
+                <outlet property="titleLabel" destination="UgF-py-pB6" id="zXB-r7-pHz"/>
+                <outlet property="unreadButton" destination="kcf-4O-guL" id="YKU-Ss-BOZ"/>
+            </connections>
             <point key="canvasLocation" x="-163" y="-9"/>
         </tableViewCell>
     </objects>
@@ -79,7 +89,7 @@
         <image name="notification" width="17" height="18"/>
         <image name="openProfile" width="50" height="50"/>
         <systemColor name="systemGrayColor">
-            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
