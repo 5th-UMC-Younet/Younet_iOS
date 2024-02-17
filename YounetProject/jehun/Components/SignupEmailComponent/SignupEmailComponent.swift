@@ -150,6 +150,14 @@ class SignupEmailComponent: UIStackView {
     {
         /// 이메일 인증 요청
         
+        #warning("TODO - email auth code sent api call ")
+        APIService.shared.requestEmailCode(email: emailInputCustomTF.getFieldContentString(), completion: { msg in
+            print(#fileID, #function, #line, "- msg: \(msg)")
+            
+        })
+        
+        
+        
         ///이메일 요청완료 팝업
         if (emailConfirmComponent.isHidden)
         {
@@ -171,18 +179,16 @@ class SignupEmailComponent: UIStackView {
             emailInputBtn.isEnabled = false
         }
         
-        let alert = UIAlertController(title: "", message: popupMsg, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("닫기", comment: "Close action"), style: .default, handler: { [weak self]_ in
-            self?.emailConfirmCustomTF.inputTextField.becomeFirstResponder()
-        }))
-        
-        UIApplication.shared.topViewController()?.present(alert, animated: true)
+        let popup = DefaultPopup.present(parent: UIApplication.shared.topViewController() ?? UIViewController(), contentStr: popupMsg, btnTitleStr: "닫기")
     }
     
     ///Validation 완료 시 TF가 회색으로 변하고 입력 불가
     @objc
     func emailConfirmBtnClicked(_ sender: UIButton)
     {
+        APIService.shared.confirmEmailCode(userEmail: emailInputCustomTF.getFieldContentString(), code: emailConfirmCustomTF.getFieldContentString(), completion: { msg in
+            print(#fileID, #function, #line, "- msg \(msg)")
+        })
         let isValid = emailConfirmValidation()
         
         configEmailConfirmAccordingToValidation(isValid)
@@ -221,7 +227,7 @@ extension SignupEmailComponent
     }
     
     private func emailConfirmValidation() -> Bool {
-        return false
+        return true
     }
 }
 
@@ -230,34 +236,42 @@ extension SignupEmailComponent: UITextFieldDelegate
 {
     func textFieldDidBeginEditing(_ textField: UITextField)
     {
-        if(!(emailInputHairlineView.backgroundColor?.cgColor == onInvalidColor.cgColor))
+        if (textField == emailInputCustomTF.inputTextField)
         {
-            emailInputHairlineView.backgroundColor = onEditingColor
-            return
+            if(!(emailInputHairlineView.backgroundColor?.cgColor == onInvalidColor.cgColor))
+            {
+                emailInputHairlineView.backgroundColor = onEditingColor
+                return
+            }
         }
-        
-        if(!(emailConfirmHairlineView.backgroundColor?.cgColor == onInvalidColor.cgColor))
+        else
         {
-            emailConfirmHairlineView.backgroundColor = onEditingColor
-            return
+            if(!(emailConfirmHairlineView.backgroundColor?.cgColor == onInvalidColor.cgColor))
+            {
+                emailConfirmHairlineView.backgroundColor = onEditingColor
+                return
+            }
         }
-        
     }
     
     func textFieldDidEndEditing(_ textField: UITextField)
     {
-        if (emailInputHairlineView.backgroundColor?.cgColor == onEditingColor.cgColor)
+        if (textField == emailInputCustomTF.inputTextField)
         {
-            emailInputHairlineView.backgroundColor = onNotEditingColor
-            return
+            if (emailInputHairlineView.backgroundColor?.cgColor == onEditingColor.cgColor)
+            {
+                emailInputHairlineView.backgroundColor = onNotEditingColor
+                return
+            }
         }
-        
-        if (emailConfirmHairlineView.backgroundColor?.cgColor == onEditingColor.cgColor)
+        else
         {
-            emailConfirmHairlineView.backgroundColor = onNotEditingColor
-            return
+            if (emailConfirmHairlineView.backgroundColor?.cgColor == onEditingColor.cgColor)
+            {
+                emailConfirmHairlineView.backgroundColor = onNotEditingColor
+                return
+            }
         }
-        
     }
 }
 
