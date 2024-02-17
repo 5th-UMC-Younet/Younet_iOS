@@ -36,6 +36,7 @@
         "version" : "5.0.1"
       }
     },
+    {
       "identity" : "kakao-ios-sdk",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/kakao/kakao-ios-sdk",

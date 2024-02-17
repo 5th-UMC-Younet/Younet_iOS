@@ -133,54 +133,9 @@
 		9CFC6AE92B6F97B300443712 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 9CFC6AE82B6F97B300443712 /* Alamofire */; };
 		9CFC6AED2B6F97F500443712 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFC6AEC2B6F97F500443712 /* APIService.swift */; };
 		9CFC6AEF2B6F985F00443712 /* AuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFC6AEE2B6F985F00443712 /* AuthRouter.swift */; };
-		B30664C82B7E5CCF00DEA415 /* ChatProfileDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30664C72B7E5CCF00DEA415 /* ChatProfileDataModel.swift */; };
-		B30664CA2B7E5CDE00DEA415 /* ChatProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30664C92B7E5CDE00DEA415 /* ChatProfileService.swift */; };
-		B321EEBE2B6FD31000C29F4A /* PopupViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B321EEA02B6FD31000C29F4A /* PopupViewController.storyboard */; };
-		B321EEBF2B6FD31000C29F4A /* PopupChoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B321EEA12B6FD31000C29F4A /* PopupChoiceViewController.swift */; };
-		B321EEC02B6FD31000C29F4A /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B321EEA22B6FD31000C29F4A /* PopupViewController.swift */; };
-		B321EEC12B6FD31000C29F4A /* PopupChoiceViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B321EEA32B6FD31000C29F4A /* PopupChoiceViewController.storyboard */; };
-		B321EEC22B6FD31000C29F4A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B321EEA42B6FD31000C29F4A /* LaunchScreen.storyboard */; };
-		B321EEC32B6FD31000C29F4A /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B321EEA62B6FD31000C29F4A /* SettingViewController.swift */; };
-		B321EEC42B6FD31000C29F4A /* QuitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B321EEA72B6FD31000C29F4A /* QuitViewController.swift */; };
-		B321EEC52B6FD31000C29F4A /* MyPageProfileEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B321EEA82B6FD31000C29F4A /* MyPageProfileEditViewController.swift */; };
-		B321EEC82B6FD31000C29F4A /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B321EEAC2B6FD31000C29F4A /* MyPageViewController.swift */; };
-		B321EECA2B6FD31000C29F4A /* IdPwSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B321EEAF2B6FD31000C29F4A /* IdPwSearchViewController.swift */; };
-		B321EECB2B6FD31000C29F4A /* IdSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B321EEB02B6FD31000C29F4A /* IdSearchViewController.swift */; };
-		B321EECC2B6FD31000C29F4A /* PwSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B321EEB12B6FD31000C29F4A /* PwSearchViewController.swift */; };
-		B321EECD2B6FD31000C29F4A /* PwResetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B321EEB22B6FD31000C29F4A /* PwResetViewController.swift */; };
-		B321EECE2B6FD31000C29F4A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B321EEB32B6FD31000C29F4A /* LoginViewController.swift */; };
-		B321EECF2B6FD31000C29F4A /* PwPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B321EEB52B6FD31000C29F4A /* PwPageViewController.swift */; };
-		B321EED02B6FD31000C29F4A /* IdPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B321EEB62B6FD31000C29F4A /* IdPageViewController.swift */; };
-		B321EED12B6FD31000C29F4A /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B321EEB72B6FD31000C29F4A /* PageViewController.swift */; };
-		B321EED22B6FD31000C29F4A /* CustomSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = B321EEB92B6FD31000C29F4A /* CustomSwitch.swift */; };
-		B321EED32B6FD31000C29F4A /* ImageFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B321EEBA2B6FD31000C29F4A /* ImageFileManager.swift */; };
-		B321EED42B6FD31000C29F4A /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B321EEBB2B6FD31000C29F4A /* ViewExtension.swift */; };
-		B321EED52B6FD31000C29F4A /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B321EEBC2B6FD31000C29F4A /* CustomTextField.swift */; };
-		B321EED62B6FD31000C29F4A /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B321EEBD2B6FD31000C29F4A /* CustomLabel.swift */; };
-		B340FA1E2B713ABD00D86FEF /* ChatProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B340FA1D2B713ABD00D86FEF /* ChatProfile.storyboard */; };
-		B340FA222B71462B00D86FEF /* ChatMyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B340FA212B71462B00D86FEF /* ChatMyPageViewController.swift */; };
-		B340FA242B714C2600D86FEF /* NickNameChatProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B340FA232B714C2600D86FEF /* NickNameChatProfileViewController.swift */; };
-		B340FA262B714C3C00D86FEF /* RealNameChatProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B340FA252B714C3C00D86FEF /* RealNameChatProfileViewController.swift */; };
-		B340FA282B714DE800D86FEF /* ChatPopupViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B340FA272B714DE800D86FEF /* ChatPopupViewController.storyboard */; };
-		B340FA2A2B714DFF00D86FEF /* ChatPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B340FA292B714DFF00D86FEF /* ChatPopupViewController.swift */; };
-		B340FA2C2B715E7D00D86FEF /* OtherUserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B340FA2B2B715E7D00D86FEF /* OtherUserProfileViewController.swift */; };
-		B340FA2E2B715EA700D86FEF /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B340FA2D2B715EA700D86FEF /* ReportViewController.swift */; };
-		B34A9D752B73665800EA6686 /* LaunchScreenImage.png in Resources */ = {isa = PBXBuildFile; fileRef = B34A9D742B73665800EA6686 /* LaunchScreenImage.png */; };
 		B34A9D802B73A20100EA6686 /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B34A9D7E2B73A20100EA6686 /* Inter-Bold.ttf */; };
 		B34A9D812B73A20100EA6686 /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B34A9D7F2B73A20100EA6686 /* Inter-Regular.ttf */; };
-		B34A9D8C2B73A2D300EA6686 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34A9D8A2B73A2D300EA6686 /* FeedCell.swift */; };
-		B34A9D8D2B73A2D300EA6686 /* FeedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B34A9D8B2B73A2D300EA6686 /* FeedCell.xib */; };
 		B34A9D9C2B73B65800EA6686 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B34A9D9B2B73B65800EA6686 /* Main.storyboard */; };
-		B34D3D2B2B78BB2C001C3F32 /* LoginDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34D3D2A2B78BB2C001C3F32 /* LoginDataModel.swift */; };
-		B34D3D2D2B78F1D7001C3F32 /* TokenUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34D3D2C2B78F1D7001C3F32 /* TokenUtils.swift */; };
-		B34D3D2F2B78F702001C3F32 /* APIUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34D3D2E2B78F702001C3F32 /* APIUrl.swift */; };
-		B34D3D3A2B79FD60001C3F32 /* MyPageDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34D3D392B79FD60001C3F32 /* MyPageDataModel.swift */; };
-		B34D3D3C2B79FD6E001C3F32 /* MyPageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34D3D3B2B79FD6E001C3F32 /* MyPageService.swift */; };
-		B34D3D3F2B7C7331001C3F32 /* TablePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34D3D3E2B7C7331001C3F32 /* TablePageViewController.swift */; };
-		B34D3D412B7C734D001C3F32 /* PostPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34D3D402B7C734D001C3F32 /* PostPageViewController.swift */; };
-		B34D3D432B7C735E001C3F32 /* ScrapPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34D3D422B7C735E001C3F32 /* ScrapPageViewController.swift */; };
-		B35849B22B7548BC005EFE02 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35849B12B7548BC005EFE02 /* LoginService.swift */; };
-		B3E5AEDA2B70C51400429CEF /* MyPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3E5AED92B70C51400429CEF /* MyPage.storyboard */; };
 		B3F34B522B7CA2BF0077B547 /* KakaoSDKAuth in Frameworks */ = {isa = PBXBuildFile; productRef = B3F34B512B7CA2BF0077B547 /* KakaoSDKAuth */; };
 		B3F34B542B7CA2BF0077B547 /* KakaoSDKUser in Frameworks */ = {isa = PBXBuildFile; productRef = B3F34B532B7CA2BF0077B547 /* KakaoSDKUser */; };
 /* End PBXBuildFile section */
@@ -330,54 +285,9 @@
 		9CFC5FAB2B6CA9D500997BDC /* CountryDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDTO.swift; sourceTree = "<group>"; };
 		9CFC6AEC2B6F97F500443712 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		9CFC6AEE2B6F985F00443712 /* AuthRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
-		B30664C72B7E5CCF00DEA415 /* ChatProfileDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatProfileDataModel.swift; sourceTree = "<group>"; };
-		B30664C92B7E5CDE00DEA415 /* ChatProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatProfileService.swift; sourceTree = "<group>"; };
-		B321EEA02B6FD31000C29F4A /* PopupViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PopupViewController.storyboard; sourceTree = "<group>"; };
-		B321EEA12B6FD31000C29F4A /* PopupChoiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupChoiceViewController.swift; sourceTree = "<group>"; };
-		B321EEA22B6FD31000C29F4A /* PopupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
-		B321EEA32B6FD31000C29F4A /* PopupChoiceViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PopupChoiceViewController.storyboard; sourceTree = "<group>"; };
-		B321EEA42B6FD31000C29F4A /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		B321EEA62B6FD31000C29F4A /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
-		B321EEA72B6FD31000C29F4A /* QuitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuitViewController.swift; sourceTree = "<group>"; };
-		B321EEA82B6FD31000C29F4A /* MyPageProfileEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPageProfileEditViewController.swift; sourceTree = "<group>"; };
-		B321EEAC2B6FD31000C29F4A /* MyPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
-		B321EEAF2B6FD31000C29F4A /* IdPwSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdPwSearchViewController.swift; sourceTree = "<group>"; };
-		B321EEB02B6FD31000C29F4A /* IdSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdSearchViewController.swift; sourceTree = "<group>"; };
-		B321EEB12B6FD31000C29F4A /* PwSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PwSearchViewController.swift; sourceTree = "<group>"; };
-		B321EEB22B6FD31000C29F4A /* PwResetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PwResetViewController.swift; sourceTree = "<group>"; };
-		B321EEB32B6FD31000C29F4A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		B321EEB52B6FD31000C29F4A /* PwPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PwPageViewController.swift; sourceTree = "<group>"; };
-		B321EEB62B6FD31000C29F4A /* IdPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdPageViewController.swift; sourceTree = "<group>"; };
-		B321EEB72B6FD31000C29F4A /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
-		B321EEB92B6FD31000C29F4A /* CustomSwitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSwitch.swift; sourceTree = "<group>"; };
-		B321EEBA2B6FD31000C29F4A /* ImageFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageFileManager.swift; sourceTree = "<group>"; };
-		B321EEBB2B6FD31000C29F4A /* ViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
-		B321EEBC2B6FD31000C29F4A /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
-		B321EEBD2B6FD31000C29F4A /* CustomLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
-		B340FA1D2B713ABD00D86FEF /* ChatProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChatProfile.storyboard; sourceTree = "<group>"; };
-		B340FA212B71462B00D86FEF /* ChatMyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMyPageViewController.swift; sourceTree = "<group>"; };
-		B340FA232B714C2600D86FEF /* NickNameChatProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NickNameChatProfileViewController.swift; sourceTree = "<group>"; };
-		B340FA252B714C3C00D86FEF /* RealNameChatProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealNameChatProfileViewController.swift; sourceTree = "<group>"; };
-		B340FA272B714DE800D86FEF /* ChatPopupViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChatPopupViewController.storyboard; sourceTree = "<group>"; };
-		B340FA292B714DFF00D86FEF /* ChatPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatPopupViewController.swift; sourceTree = "<group>"; };
-		B340FA2B2B715E7D00D86FEF /* OtherUserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherUserProfileViewController.swift; sourceTree = "<group>"; };
-		B340FA2D2B715EA700D86FEF /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
-		B34A9D742B73665800EA6686 /* LaunchScreenImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaunchScreenImage.png; sourceTree = "<group>"; };
 		B34A9D7E2B73A20100EA6686 /* Inter-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Bold.ttf"; sourceTree = "<group>"; };
 		B34A9D7F2B73A20100EA6686 /* Inter-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular.ttf"; sourceTree = "<group>"; };
-		B34A9D8A2B73A2D300EA6686 /* FeedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
-		B34A9D8B2B73A2D300EA6686 /* FeedCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedCell.xib; sourceTree = "<group>"; };
 		B34A9D9B2B73B65800EA6686 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		B34D3D2A2B78BB2C001C3F32 /* LoginDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDataModel.swift; sourceTree = "<group>"; };
-		B34D3D2C2B78F1D7001C3F32 /* TokenUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenUtils.swift; sourceTree = "<group>"; };
-		B34D3D2E2B78F702001C3F32 /* APIUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIUrl.swift; sourceTree = "<group>"; };
-		B34D3D392B79FD60001C3F32 /* MyPageDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageDataModel.swift; sourceTree = "<group>"; };
-		B34D3D3B2B79FD6E001C3F32 /* MyPageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageService.swift; sourceTree = "<group>"; };
-		B34D3D3E2B7C7331001C3F32 /* TablePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TablePageViewController.swift; sourceTree = "<group>"; };
-		B34D3D402B7C734D001C3F32 /* PostPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostPageViewController.swift; sourceTree = "<group>"; };
-		B34D3D422B7C735E001C3F32 /* ScrapPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrapPageViewController.swift; sourceTree = "<group>"; };
-		B35849B12B7548BC005EFE02 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
-		B3E5AED92B70C51400429CEF /* MyPage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MyPage.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -797,7 +707,6 @@
 				9C6B45322B47D9340068FA95 /* AppDelegate.swift */,
 				9C6B45342B47D9340068FA95 /* SceneDelegate.swift */,
 				9C6B45362B47D9340068FA95 /* ViewController.swift */,
-				9C6B45382B47D9340068FA95 /* Main.storyboard */,
 				9C3D392D2B7B95CB00FF5CBB /* LaunchScreen.storyboard */,
 				B34A9D9B2B73B65800EA6686 /* Main.storyboard */,
 				9C6B453B2B47D9350068FA95 /* Assets.xcassets */,
@@ -890,7 +799,6 @@
 				9CB4A8BE2B6A3A6400521184 /* Shares */,
 				9C3DF4862B4A51CB006CE6E5 /* Components */,
 				9C0426A62B47EB7400C693BC /* Scene */,
-				9CFC6AEA2B6F97D000443712 /* API */,
 				9CB80B8A2B53AD0B002FD656 /* Extensions */,
 				9C4EDA6D2B47EF7600BFDC48 /* Font */,
 				9CFC6AEA2B6F97D000443712 /* API */,
@@ -916,110 +824,6 @@
 			path = API;
 			sourceTree = "<group>";
 		};
-		B30664C62B7E5CA800DEA415 /* ChatProfileAPI */ = {
-			isa = PBXGroup;
-			children = (
-				B30664C72B7E5CCF00DEA415 /* ChatProfileDataModel.swift */,
-				B30664C92B7E5CDE00DEA415 /* ChatProfileService.swift */,
-			);
-			path = ChatProfileAPI;
-			sourceTree = "<group>";
-		};
-		B321EE9E2B6FD31000C29F4A /* seah */ = {
-			isa = PBXGroup;
-			children = (
-				B340FA1D2B713ABD00D86FEF /* ChatProfile.storyboard */,
-				B3E5AED92B70C51400429CEF /* MyPage.storyboard */,
-				B321EEA42B6FD31000C29F4A /* LaunchScreen.storyboard */,
-				B34A9D742B73665800EA6686 /* LaunchScreenImage.png */,
-				B34D3D2C2B78F1D7001C3F32 /* TokenUtils.swift */,
-				B34D3D2E2B78F702001C3F32 /* APIUrl.swift */,
-				B321EE9F2B6FD31000C29F4A /* Popup */,
-				B321EEAE2B6FD31000C29F4A /* LoginVCFiles */,
-				B321EEA52B6FD31000C29F4A /* MyPageVCFiles */,
-				B340FA2F2B715EB500D86FEF /* ChatProfileVCFiles */,
-				B321EEB82B6FD31000C29F4A /* CustomClass */,
-			);
-			path = seah;
-			sourceTree = "<group>";
-		};
-		B321EE9F2B6FD31000C29F4A /* Popup */ = {
-			isa = PBXGroup;
-			children = (
-				B321EEA02B6FD31000C29F4A /* PopupViewController.storyboard */,
-				B321EEA22B6FD31000C29F4A /* PopupViewController.swift */,
-				B321EEA32B6FD31000C29F4A /* PopupChoiceViewController.storyboard */,
-				B321EEA12B6FD31000C29F4A /* PopupChoiceViewController.swift */,
-				B340FA272B714DE800D86FEF /* ChatPopupViewController.storyboard */,
-				B340FA292B714DFF00D86FEF /* ChatPopupViewController.swift */,
-			);
-			path = Popup;
-			sourceTree = "<group>";
-		};
-		B321EEA52B6FD31000C29F4A /* MyPageVCFiles */ = {
-			isa = PBXGroup;
-			children = (
-				B34D3D3D2B7C7309001C3F32 /* TableVCFiles */,
-				B34D3D382B79FD40001C3F32 /* MyPageAPI */,
-				B34A9D892B73A2D300EA6686 /* Feed */,
-				B321EEA62B6FD31000C29F4A /* SettingViewController.swift */,
-				B321EEA72B6FD31000C29F4A /* QuitViewController.swift */,
-				B321EEA82B6FD31000C29F4A /* MyPageProfileEditViewController.swift */,
-				B321EEAC2B6FD31000C29F4A /* MyPageViewController.swift */,
-			);
-			path = MyPageVCFiles;
-			sourceTree = "<group>";
-		};
-		B321EEAE2B6FD31000C29F4A /* LoginVCFiles */ = {
-			isa = PBXGroup;
-			children = (
-				B34A9DA22B73EFA600EA6686 /* IdPwSearchData */,
-				B34A9DA12B73EF7E00EA6686 /* LoginAPI */,
-				B321EEB42B6FD31000C29F4A /* PageVCFiles */,
-				B321EEB32B6FD31000C29F4A /* LoginViewController.swift */,
-				B321EEAF2B6FD31000C29F4A /* IdPwSearchViewController.swift */,
-				B321EEB02B6FD31000C29F4A /* IdSearchViewController.swift */,
-				B321EEB12B6FD31000C29F4A /* PwSearchViewController.swift */,
-				B321EEB22B6FD31000C29F4A /* PwResetViewController.swift */,
-			);
-			path = LoginVCFiles;
-			sourceTree = "<group>";
-		};
-		B321EEB42B6FD31000C29F4A /* PageVCFiles */ = {
-			isa = PBXGroup;
-			children = (
-				B321EEB52B6FD31000C29F4A /* PwPageViewController.swift */,
-				B321EEB62B6FD31000C29F4A /* IdPageViewController.swift */,
-				B321EEB72B6FD31000C29F4A /* PageViewController.swift */,
-			);
-			path = PageVCFiles;
-			sourceTree = "<group>";
-		};
-		B321EEB82B6FD31000C29F4A /* CustomClass */ = {
-			isa = PBXGroup;
-			children = (
-				B321EEB92B6FD31000C29F4A /* CustomSwitch.swift */,
-				B321EEBA2B6FD31000C29F4A /* ImageFileManager.swift */,
-				B321EEBB2B6FD31000C29F4A /* ViewExtension.swift */,
-				B321EEBC2B6FD31000C29F4A /* CustomTextField.swift */,
-				B321EEBD2B6FD31000C29F4A /* CustomLabel.swift */,
-			);
-			path = CustomClass;
-			sourceTree = "<group>";
-		};
-		B340FA2F2B715EB500D86FEF /* ChatProfileVCFiles */ = {
-			isa = PBXGroup;
-			children = (
-				B30664C62B7E5CA800DEA415 /* ChatProfileAPI */,
-				B340FA2B2B715E7D00D86FEF /* OtherUserProfileViewController.swift */,
-				B340FA2D2B715EA700D86FEF /* ReportViewController.swift */,
-				B340FA232B714C2600D86FEF /* NickNameChatProfileViewController.swift */,
-				B340FA252B714C3C00D86FEF /* RealNameChatProfileViewController.swift */,
-				B340FA212B71462B00D86FEF /* ChatMyPageViewController.swift */,
-			);
-			path = ChatProfileVCFiles;
-			sourceTree = "<group>";
-		};
 		B34A9D7D2B73A20100EA6686 /* Font */ = {
 			isa = PBXGroup;
 			children = (
@@ -1028,50 +832,6 @@
 			);
 			name = Font;
 			path = ../Font;
-			sourceTree = "<group>";
-		};
-		B34A9D892B73A2D300EA6686 /* Feed */ = {
-			isa = PBXGroup;
-			children = (
-				B34A9D8A2B73A2D300EA6686 /* FeedCell.swift */,
-				B34A9D8B2B73A2D300EA6686 /* FeedCell.xib */,
-			);
-			path = Feed;
-			sourceTree = "<group>";
-		};
-		B34A9DA12B73EF7E00EA6686 /* LoginAPI */ = {
-			isa = PBXGroup;
-			children = (
-				B34D3D2A2B78BB2C001C3F32 /* LoginDataModel.swift */,
-				B35849B12B7548BC005EFE02 /* LoginService.swift */,
-			);
-			path = LoginAPI;
-			sourceTree = "<group>";
-		};
-		B34A9DA22B73EFA600EA6686 /* IdPwSearchData */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = IdPwSearchData;
-			sourceTree = "<group>";
-		};
-		B34D3D382B79FD40001C3F32 /* MyPageAPI */ = {
-			isa = PBXGroup;
-			children = (
-				B34D3D392B79FD60001C3F32 /* MyPageDataModel.swift */,
-				B34D3D3B2B79FD6E001C3F32 /* MyPageService.swift */,
-			);
-			path = MyPageAPI;
-			sourceTree = "<group>";
-		};
-		B34D3D3D2B7C7309001C3F32 /* TableVCFiles */ = {
-			isa = PBXGroup;
-			children = (
-				B34D3D3E2B7C7331001C3F32 /* TablePageViewController.swift */,
-				B34D3D402B7C734D001C3F32 /* PostPageViewController.swift */,
-				B34D3D422B7C735E001C3F32 /* ScrapPageViewController.swift */,
-			);
-			path = TableVCFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1222,29 +982,21 @@
 				9C33BD542B7B842A00497FEC /* LaunchScreenImage.png in Resources */,
 				9C4EDA892B47F2AE00BFDC48 /* SignupVC.storyboard in Resources */,
 				9C3925222B4F966500AEBA2F /* SignupEmailComponent.xib in Resources */,
-				9C6B453A2B47D9340068FA95 /* Main.storyboard in Resources */,
 				9C4EDA7F2B47EF8C00BFDC48 /* Inter-Bold.ttf in Resources */,
 				9C3D392E2B7B95CB00FF5CBB /* LaunchScreen.storyboard in Resources */,
-				B321EEBE2B6FD31000C29F4A /* PopupViewController.storyboard in Resources */,
 				9C3DF4902B4A945C006CE6E5 /* SignupInputComponent.xib in Resources */,
-				B321EEC12B6FD31000C29F4A /* PopupChoiceViewController.storyboard in Resources */,
-				B3E5AEDA2B70C51400429CEF /* MyPage.storyboard in Resources */,
 				B34A9D802B73A20100EA6686 /* Inter-Bold.ttf in Resources */,
 				9CB351882B4E775000EE36F0 /* SignupCustomTextField.xib in Resources */,
-				B321EEC22B6FD31000C29F4A /* LaunchScreen.storyboard in Resources */,
 				9C374CF32B6CDF6900F879C4 /* NationSelectionCell.xib in Resources */,
 				9C6B453C2B47D9350068FA95 /* Assets.xcassets in Resources */,
 				9C3925222B4F966500AEBA2F /* SignupEmailComponent.xib in Resources */,
 				B34A9D812B73A20100EA6686 /* Inter-Regular.ttf in Resources */,
-				B340FA1E2B713ABD00D86FEF /* ChatProfile.storyboard in Resources */,
 				9CB4A8C62B6A3AC800521184 /* PopupTemplateVC.storyboard in Resources */,
 				9C33BD522B7B842A00497FEC /* ChatProfile.storyboard in Resources */,
 				9CB4A8C42B6A3AB600521184 /* NationSelectionVC.storyboard in Resources */,
 				B34A9D9C2B73B65800EA6686 /* Main.storyboard in Resources */,
 				9C1B3C2F2B5E1A6A00AB3B73 /* IdentificationInputUnit.xib in Resources */,
 				9CF1D2222B73695200D5959D /* DefaultPopup.storyboard in Resources */,
-				B34A9D8D2B73A2D300EA6686 /* FeedCell.xib in Resources */,
-				B34A9D752B73665800EA6686 /* LaunchScreenImage.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1283,15 +1035,10 @@
 				9C33BD4F2B7B842A00497FEC /* ReportViewController.swift in Sources */,
 				4D83BAC72B80B6DD00A9F57C /* OpenChatViewController.swift in Sources */,
 				9C33BD562B7B842A00497FEC /* IdSearchViewController.swift in Sources */,
-				B34D3D412B7C734D001C3F32 /* PostPageViewController.swift in Sources */,
 				9C6B45372B47D9340068FA95 /* ViewController.swift in Sources */,
 				9C6B45332B47D9340068FA95 /* AppDelegate.swift in Sources */,
 				9C6B45352B47D9340068FA95 /* SceneDelegate.swift in Sources */,
-				B34A9D8C2B73A2D300EA6686 /* FeedCell.swift in Sources */,
 				9C50A33E2B5E57E200082229 /* UITextField+Extension.swift in Sources */,
-				B321EECF2B6FD31000C29F4A /* PwPageViewController.swift in Sources */,
-				B321EED02B6FD31000C29F4A /* IdPageViewController.swift in Sources */,
-				B34D3D2F2B78F702001C3F32 /* APIUrl.swift in Sources */,
 				9CFC6AED2B6F97F500443712 /* APIService.swift in Sources */,
 				4D83BAB12B80B6D200A9F57C /* MyViewController.swift in Sources */,
 				4D83BA9E2B80B6D200A9F57C /* TestViewController.swift in Sources */,
@@ -1303,9 +1050,6 @@
 				9C33BD442B7B842A00497FEC /* PopupViewController.swift in Sources */,
 				4D83BAA12B80B6D200A9F57C /* FeedDetailCell.swift in Sources */,
 				9CFC5FAC2B6CA9D500997BDC /* CountryDTO.swift in Sources */,
-				B340FA262B714C3C00D86FEF /* RealNameChatProfileViewController.swift in Sources */,
-				B34D3D3A2B79FD60001C3F32 /* MyPageDataModel.swift in Sources */,
-				B321EED52B6FD31000C29F4A /* CustomTextField.swift in Sources */,
 				9CB4A8C22B6A3AAB00521184 /* NationSelectionVC.swift in Sources */,
 				9CB351862B4E774000EE36F0 /* SignupCustomTextField.swift in Sources */,
 				9C33BD5E2B7B842A00497FEC /* ImageFileManager.swift in Sources */,
@@ -1328,9 +1072,7 @@
 				4D83BA9B2B80B6D200A9F57C /* SearchDetailViewController.swift in Sources */,
 				9C33BD4D2B7B842A00497FEC /* NickNameChatProfileViewController.swift in Sources */,
 				4D83BAAB2B80B6D200A9F57C /* ChatRqCell.swift in Sources */,
-				B30664C82B7E5CCF00DEA415 /* ChatProfileDataModel.swift in Sources */,
 				9CB80B962B53B933002FD656 /* UIApplication.swift in Sources */,
-				B321EEC32B6FD31000C29F4A /* SettingViewController.swift in Sources */,
 				9C3DF48E2B4A943D006CE6E5 /* SignupInputComponent.swift in Sources */,
 				9C6B45332B47D9340068FA95 /* AppDelegate.swift in Sources */,
 				9C33BD5A2B7B842A00497FEC /* PwPageViewController.swift in Sources */,
@@ -1368,37 +1110,12 @@
 				4D83BAC02B80B6DD00A9F57C /* OpenSearchViewController.swift in Sources */,
 				9C33BD5F2B7B842A00497FEC /* ViewExtension.swift in Sources */,
 				9C33BD552B7B842A00497FEC /* IdPwSearchViewController.swift in Sources */,
-				B321EEC42B6FD31000C29F4A /* QuitViewController.swift in Sources */,
-				B321EED22B6FD31000C29F4A /* CustomSwitch.swift in Sources */,
-				B34D3D2D2B78F1D7001C3F32 /* TokenUtils.swift in Sources */,
-				B321EED32B6FD31000C29F4A /* ImageFileManager.swift in Sources */,
 				9C1B3C2B2B5E1A5200AB3B73 /* IdentificationInputUnit.swift in Sources */,
-				B321EEC82B6FD31000C29F4A /* MyPageViewController.swift in Sources */,
-				B34D3D3C2B79FD6E001C3F32 /* MyPageService.swift in Sources */,
-				B340FA222B71462B00D86FEF /* ChatMyPageViewController.swift in Sources */,
-				B321EECC2B6FD31000C29F4A /* PwSearchViewController.swift in Sources */,
-				B35849B22B7548BC005EFE02 /* LoginService.swift in Sources */,
-				B321EEBF2B6FD31000C29F4A /* PopupChoiceViewController.swift in Sources */,
 				9C374CF22B6CDF6900F879C4 /* NationSelectionCell.swift in Sources */,
 				9CFC6AEF2B6F985F00443712 /* AuthRouter.swift in Sources */,
-				B340FA2E2B715EA700D86FEF /* ReportViewController.swift in Sources */,
-				B321EED12B6FD31000C29F4A /* PageViewController.swift in Sources */,
-				B321EECA2B6FD31000C29F4A /* IdPwSearchViewController.swift in Sources */,
-				B321EED62B6FD31000C29F4A /* CustomLabel.swift in Sources */,
-				B34D3D432B7C735E001C3F32 /* ScrapPageViewController.swift in Sources */,
-				B340FA2A2B714DFF00D86FEF /* ChatPopupViewController.swift in Sources */,
 				9C6B45352B47D9340068FA95 /* SceneDelegate.swift in Sources */,
 				9CC25CF02B4BC18A00C07086 /* SignupEmailComponent.swift in Sources */,
-				B321EECB2B6FD31000C29F4A /* IdSearchViewController.swift in Sources */,
-				B321EECD2B6FD31000C29F4A /* PwResetViewController.swift in Sources */,
-				B321EECE2B6FD31000C29F4A /* LoginViewController.swift in Sources */,
-				B321EEC52B6FD31000C29F4A /* MyPageProfileEditViewController.swift in Sources */,
-				B34D3D3F2B7C7331001C3F32 /* TablePageViewController.swift in Sources */,
-				B321EEC02B6FD31000C29F4A /* PopupViewController.swift in Sources */,
-				B340FA242B714C2600D86FEF /* NickNameChatProfileViewController.swift in Sources */,
-				B34D3D2B2B78BB2C001C3F32 /* LoginDataModel.swift in Sources */,
 				9C6B45352B47D9340068FA95 /* SceneDelegate.swift in Sources */,
-				B30664CA2B7E5CDE00DEA415 /* ChatProfileService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
