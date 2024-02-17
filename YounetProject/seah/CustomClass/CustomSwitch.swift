@@ -10,7 +10,7 @@
 
 import UIKit
 
-protocol SwieeftSwitchButtonDelegate: AnyObject {
+protocol SwitchButtonDelegate: AnyObject {
     func isOnValueChange(isOn: Bool)
 }
 
@@ -59,7 +59,7 @@ class CustomSwitch: UIButton {
     // barView의 상, 하단 마진 값
     var barViewTopBottomMargin: CGFloat = 2
     
-    weak var delegate: SwieeftSwitchButtonDelegate?
+    weak var delegate: SwitchButtonDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)

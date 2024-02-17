@@ -53,7 +53,8 @@ extension UIViewController{
         view.addGestureRecognizer(tap)
     }
     
-    func setKeyboardObserver() {
+    
+    func setupKeyboardEvent() {
         NotificationCenter.default.addObserver(self, selector: #selector(UIViewController.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(UIViewController.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
@@ -61,6 +62,7 @@ extension UIViewController{
     @objc func keyboardWillShow(notification: NSNotification) {
         if self.view.window?.frame.origin.y == 0 {
             if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+                
                 let keyboardRectangle = keyboardFrame.cgRectValue
                 let keyboardHeight = keyboardRectangle.height
                 UIView.animate(withDuration: 1) {
@@ -84,4 +86,55 @@ extension UIViewController{
     
     
     
+}
+
+extension UIResponder {
+    
+    private struct Static {
+        static weak var responder: UIResponder?
+    }
+    
+    static var currentResponder: UIResponder? {
+        Static.responder = nil
+        UIApplication.shared.sendAction(#selector(UIResponder._trap), to: nil, from: nil, for: nil)
+        return Static.responder
+    }
+    
+    @objc private func _trap() {
+        Static.responder = self
+    }
+}
+
+extension UIImageView {
+    // url로 이미지 설정하는 extension
+    func load(url: URL) {
+        DispatchQueue.global().async { [weak self] in
+            if let data = try? Data(contentsOf: url) {
+                if let image = UIImage(data: data) {
+                    DispatchQueue.main.async {
+                        self?.image = image
+                    }
+                }
+            }
+        }
+    }
+    
+}
+
+extension UIImage {
+    // 이미지 크기 조절을 위한 extension
+    func resize(newWidth: CGFloat) -> UIImage {
+        let scale = newWidth / self.size.width
+        let newHeight = self.size.height * scale
+
+        let size = CGSize(width: newWidth, height: newHeight)
+        let render = UIGraphicsImageRenderer(size: size)
+        let renderImage = render.image { context in
+            self.draw(in: CGRect(origin: .zero, size: size))
+        }
+        
+        print("화면 배율: \(UIScreen.main.scale)")// 배수
+        print("origin: \(self), resize: \(renderImage)")
+        return renderImage
+    }
 }

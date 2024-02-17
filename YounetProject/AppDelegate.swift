@@ -6,15 +6,59 @@
 //
 
 import UIKit
+import KakaoSDKCommon
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
     
     var window: UIWindow?
+    var alarmNum = 0
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        KakaoSDK.initSDK(appKey: "774e929f589b038acd49775d44cd5ccc")
+        
+        // 앱 실행 시 사용자에게 알림 허용 권한을 받음
+        UNUserNotificationCenter.current().delegate = self
+        let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound] // 필요한 알림 권한을 설정
+        UNUserNotificationCenter.current().requestAuthorization(
+            options: authOptions,
+            completionHandler: { _, _ in }
+        )
+        
+        // 푸시 알림 허용 여부 판단
+        NotificationCenter.default.addObserver(
+              self,
+              selector: #selector(checkNotificationSetting),
+              name: UIApplication.willEnterForegroundNotification,
+              object: nil
+            )
+       
         return true
     }
+    
+    @objc private func checkNotificationSetting() {
+        
+        UNUserNotificationCenter.current()
+          .getNotificationSettings { permission in
+            switch permission.authorizationStatus  {
+            case .authorized:
+              print("푸시 수신 동의")
+                self.alarmNum = 1
+            case .denied:
+              print("푸시 수신 거부")
+                self.alarmNum = 2
+            case .notDetermined:
+              print("한 번 허용 누른 경우")
+            case .provisional:
+              print("푸시 수신 임시 중단")
+            case .ephemeral:
+              // @available(iOS 14.0, *)
+              print("푸시 설정이 App Clip에 대해서만 부분적으로 동의한 경우")
+            @unknown default:
+              print("Unknow Status")
+            }
+          }
+      }
     
     // MARK: UISceneSession Lifecycle
     

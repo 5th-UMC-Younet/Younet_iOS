@@ -6,20 +6,79 @@
 //
 
 import UIKit
+import KakaoSDKAuth
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
-
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        if (AuthApi.isKakaoTalkLoginUrl(url)) {
+            return AuthController.handleOpenUrl(url: url)
+        }
+        
+        return false
+    }
+    
+    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+            if let url = URLContexts.first?.url {
+                if (AuthApi.isKakaoTalkLoginUrl(url)) {
+                    _ = AuthController.handleOpenUrl(url: url)
+                }
+            }
+        }
+    
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let _ = (scene as? UIWindowScene) else { return }
         
-        //START 테스트용 코드
-        let storyboard = UIStoryboard(name: "ChatProfile", bundle: nil)
-        guard let startVC = storyboard.instantiateViewController(withIdentifier: "ChatMyPageVC") as? ChatMyPageViewController else { return }
-        window?.rootViewController = startVC
-        //END 테스트용 코드
+        
+        // 분기 처리를 통한 로그인 유지 구현
+        if UserDefaults.standard.string(forKey: "tokenExpireTime") != nil {
+            if (Date().timeIntervalSince1970 * 1000) < UserDefaults.standard.double(forKey: "tokenExpireTime") {
+                // 토큰 만료시간이 지나지 않은 경우 -> 로그인 처리(마이페이지로 이동)
+                let storyboard = UIStoryboard(name: "MyPage", bundle: nil)
+                let startVC = storyboard.instantiateViewController(withIdentifier: "TabBarVC") as? UITabBarController
+                window?.rootViewController = startVC
+                print(TokenUtils().read(APIUrl.url, account: "accessToken")!)
+            } else {
+                //토큰 만료시간이 지난 경우 -> refresh 토큰 활용해 토큰 재발급
+                RefreshTokenService.shared.refreshToken(refreshToken: (TokenUtils().read(APIUrl.url, account: "refreshToken"))!){ (networkResult) -> (Void) in
+                    switch networkResult {
+                    case .success(let result):
+                        // 서버 통한 재발급 성공 시 -> userDefaults에 만료시간 재저장, 로그인 처리(마이페이지로 이동)
+                        if let LoginUserData = result as? LoginUserData {
+                            let tk = TokenUtils()
+                            tk.create(APIUrl.url, account: "accessToken", value: LoginUserData.accessToken)
+                            tk.create(APIUrl.url, account: "refreshToken", value: LoginUserData.refreshToken)
+                            UserDefaults.standard.setValue(LoginUserData.accessTokenExpiresIn, forKey: "tokenExpireTime")
+                            print("토큰 만료로 재발급 완료")
+                            print(tk.read(APIUrl.url, account: "accessToken")!)
+                            let storyboard = UIStoryboard(name: "MyPage", bundle: nil)
+                            let startVC = storyboard.instantiateViewController(withIdentifier: "TabBarVC") as? UITabBarController
+                            self.window?.rootViewController = startVC
+                        }
+                    case .requestErr:
+                        // 400 오류로 서버 통한 재발급 실패 시 -> 미로그인 처리(로그인 페이지로 이동)
+                        print("requestErr")
+                        print("400 error: 토큰 재발급 실패")
+                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                        let startVC = storyboard.instantiateViewController(withIdentifier: "LoginVC") as? LoginViewController
+                        self.window?.rootViewController = startVC
+                    case .pathErr:
+                        print("pathErr")
+                    case .serverErr:
+                        print("serverErr")
+                    case .networkFail:
+                        print("networkFail")
+                    }
+                }
+            }
+        } else { 
+            // 토큰 만료시간이 저장되지 않은 경우(로그아웃, 회원탈퇴, 최초 로그인인 경우) -> 미로그인 처리(로그인 페이지로 이동)
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let startVC = storyboard.instantiateViewController(withIdentifier: "LoginVC") as? LoginViewController
+            window?.rootViewController = startVC
+        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

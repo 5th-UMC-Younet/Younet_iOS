@@ -28,12 +28,14 @@ class ChatMyPageViewController: UIViewController {
     let imageData = ImageFileManager.shared
     
     override func viewDidLoad() {
-        super.viewDidLoad()
+        getData()
         setDesign()
+        super.viewDidLoad()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         getData()
+        
     }
     
     private func setDesign() {
@@ -53,17 +55,49 @@ class ChatMyPageViewController: UIViewController {
     }
 
     private func getData() {
+        // 실명프로필 별도 API 연결
         simpleData.string(forKey: "preferNation") == nil ? (nationContainer.isHidden = true) : (nationContainer.isHidden = false)
 
         imageData.getSavedImage(named: "profileImage_realName") != nil ? profileImage.image = imageData.getSavedImage(named: "profileImage_realName") : nil
         simpleData.string(forKey: "selfExplain_realName") != nil ? selfExplain.text = simpleData.string(forKey: "selfExplain_realName") : nil
         // university, realName 서버에서 받아와서 등록
         
-        imageData.getSavedImage(named: "profileImage") != nil ? nickNameProfileImage.image = imageData.getSavedImage(named: "profileImage") : nil
-        simpleData.string(forKey: "nickname") != nil ? nickName.text = simpleData.string(forKey: "nickname") : nil
-        simpleData.string(forKey: "preferNationImage") != nil ? preferNationImage.image = UIImage(named: simpleData.string(forKey: "preferNationImage")!) : nil
-        simpleData.string(forKey: "preferNation") != nil ? preferNation.text = simpleData.string(forKey: "preferNation") : nil
-        simpleData.string(forKey: "selfExplain") != nil ? nickNameSelfExplain.text = simpleData.string(forKey: "selfExplain") : nil
+        MyPageService.shared.MyPage{ (networkResult) -> (Void) in
+            switch networkResult {
+            case .success(let result):
+                if let myPageData = result as? MyPageUserData {
+                    // 프로필 세팅
+                    self.nickName.text = myPageData.name
+                    myPageData.profileText == nil ? (self.nickNameSelfExplain.text = "프로필 소개글") : (self.nickNameSelfExplain.text = myPageData.profileText)
+                    
+                    // 관심 국가명 및 이미지 세팅
+                    if self.simpleData.string(forKey: "preferNationImage") != nil {
+                        self.preferNation.text = myPageData.likeCntr
+                        self.preferNationImage.image = UIImage(named: self.simpleData.string(forKey: "preferNationImage")!)
+                        self.nationContainer.isHidden = false
+                    } else {
+                        self.preferNation.text = "관심국가"
+                        self.nationContainer.isHidden = true
+                    }
+                    
+                    if myPageData.profilePicture != nil {
+                        // url로부터 프로필 이미지 받아오기
+                        let url = URL(string: myPageData.profilePicture!)
+                        self.nickNameProfileImage.load(url: url!)
+                    }
+                    
+                }
+            case .requestErr:
+                print("400 Error")
+            case .pathErr:
+                print("pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        }
+        
     }
     
     @IBAction func settingBtnDidtap(_ sender: UIButton) {
@@ -76,9 +110,11 @@ class ChatMyPageViewController: UIViewController {
     
     @IBAction func popupTest1(_ sender: UIButton) {
         let presentedPopup = ChatPopupViewController.present(parent: self)
+        presentedPopup.setPopupNumber = 1
     }
     
     @IBAction func popupTest2(_ sender: UIButton) {
         let presentedPopup = ChatPopupViewController.present(parent: self)
+        presentedPopup.setPopupNumber = 0
     }
 }

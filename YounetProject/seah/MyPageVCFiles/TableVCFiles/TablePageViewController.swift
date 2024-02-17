@@ -1,20 +1,19 @@
 //
-//  PageViewController.swift
+//  TablePageViewController.swift
 //  YounetProject
 //
-//  Created by 김세아 on 1/28/24.
+//  Created by 김세아 on 2/14/24.
 //
 
 import UIKit
 
-class PageViewController: UIPageViewController, UIPageViewControllerDelegate, UIPageViewControllerDataSource{
-    
+class TablePageViewController: UIPageViewController, UIPageViewControllerDelegate, UIPageViewControllerDataSource {
     var completeHandler : ((Int) -> ())?
     
     let viewsList : [UIViewController] = {
-        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-        let vc1 = storyBoard.instantiateViewController(withIdentifier: "IdPageVC")
-        let vc2 = storyBoard.instantiateViewController(withIdentifier: "PwPageVC")
+        let storyBoard = UIStoryboard(name: "MyPage", bundle: nil)
+        let vc1 = storyBoard.instantiateViewController(withIdentifier: "postPageVC")
+        let vc2 = storyBoard.instantiateViewController(withIdentifier: "scrapPageVC")
         return [vc1, vc2]
     }()
     
@@ -23,7 +22,7 @@ class PageViewController: UIPageViewController, UIPageViewControllerDelegate, UI
         return viewsList.firstIndex(of: vc) ?? 0
     }
     
-    override func viewDidLoad() { 
+    override func viewDidLoad() {
         super.viewDidLoad()
         self.dataSource = self
         self.delegate = self
