@@ -50,21 +50,29 @@ class SignupVC: UIViewController
 //        
 //    }
     
-    @objc
-    private func signupBtnClicked(_ sender: UIButton)
+    private func getSignupRequest() -> SignupRequest
     {
+        return SignupRequest(name: nameInputComponent.customTextField.getFieldContentString(), nickname: nicknameInputComponent.customTextField.getFieldContentString(), userId: idInputComponent.customTextField.getFieldContentString(), email: emailInputComponent.emailInputCustomTF.getFieldContentString(), password: pwInputComponent.customTextField.getFieldContentString())
+    }
+    
+    @objc private func signupBtnClicked(_ sender: UIButton)
+    {
+        
         let isAvailable = isSignupAvailable()
         
         if (isAvailable)
         {
-            let alert = UIAlertController(title: "", message: "회원가입이 완료되었습니다.", preferredStyle: .alert)
-            
-            let confirmAction = UIAlertAction(title: NSLocalizedString("로그인", comment: "login action"), style: .default, handler: { [weak self]_ in
-                self?.navigationController?.popViewController(animated: true)
+            APIService.shared.signup(request: self.getSignupRequest(), completion: { response in
+                let msg = response["message"] as? String ?? ""
+                let result = response["result"] as? String ?? ""
+                
+                let popup = DefaultPopup.present(parent: self, contentStr: result, btnTitleStr: "로그인")
+                popup.onDismissed = {
+                    // 버튼이 눌렸을 때 로그인 화면으로 화면 전환
+                }
             })
             
-            alert.addAction(confirmAction)
-            self.present(alert, animated: true)
+            
         }
         else
         {
@@ -280,4 +288,10 @@ extension SignupVC
     }
 }
 
-
+struct SignupRequest {
+    var name: String
+    var nickname: String
+    var userId: String
+    var email: String
+    var password: String
+}

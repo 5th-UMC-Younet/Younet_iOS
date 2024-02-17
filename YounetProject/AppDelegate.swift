@@ -13,6 +13,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        UserDefaults.standard.storeAccessToken(newToken: "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJjeWFuaHlAaGFueWFuZy5hYy5rciIsIm5hbWUiOiJ0ZXN0MiIsImlkIjo0LCJleHAiOjE3MDgxNDA2MDh9.ttNsjOAFOzojatofD9rNYqcarl1nO54Hdse8f6DkYp4")
+        
+        
         return true
     }
     
