@@ -27,7 +27,6 @@
 		9C33BD432B7B842A00497FEC /* ChatPopupViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C33BD1B2B7B842A00497FEC /* ChatPopupViewController.storyboard */; };
 		9C33BD442B7B842A00497FEC /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C33BD1C2B7B842A00497FEC /* PopupViewController.swift */; };
 		9C33BD452B7B842A00497FEC /* PopupChoiceViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C33BD1D2B7B842A00497FEC /* PopupChoiceViewController.storyboard */; };
-		9C33BD462B7B842A00497FEC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C33BD1E2B7B842A00497FEC /* LaunchScreen.storyboard */; };
 		9C33BD472B7B842A00497FEC /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C33BD202B7B842A00497FEC /* SettingViewController.swift */; };
 		9C33BD482B7B842A00497FEC /* QuitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C33BD212B7B842A00497FEC /* QuitViewController.swift */; };
 		9C33BD492B7B842A00497FEC /* MyPageProfileEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C33BD222B7B842A00497FEC /* MyPageProfileEditViewController.swift */; };
@@ -91,12 +90,15 @@
 		9C374CF22B6CDF6900F879C4 /* NationSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C374CF02B6CDF6900F879C4 /* NationSelectionCell.swift */; };
 		9C374CF32B6CDF6900F879C4 /* NationSelectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C374CF12B6CDF6900F879C4 /* NationSelectionCell.xib */; };
 		9C3925222B4F966500AEBA2F /* SignupEmailComponent.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C3925212B4F966500AEBA2F /* SignupEmailComponent.xib */; };
+		9C3D392E2B7B95CB00FF5CBB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C3D392D2B7B95CB00FF5CBB /* LaunchScreen.storyboard */; };
+		9C3D39312B7CCACA00FF5CBB /* IdentificationVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C3D39302B7CCACA00FF5CBB /* IdentificationVC.storyboard */; };
+		9C3D39332B7CCAE300FF5CBB /* IdentificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3D39322B7CCAE300FF5CBB /* IdentificationVC.swift */; };
 		9C3DF48E2B4A943D006CE6E5 /* SignupInputComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3DF48D2B4A943D006CE6E5 /* SignupInputComponent.swift */; };
 		9C3DF4902B4A945C006CE6E5 /* SignupInputComponent.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C3DF48F2B4A945C006CE6E5 /* SignupInputComponent.xib */; };
+		9C43D6BA2B7DC9CA007833BD /* DefaultUnderlineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C43D6B92B7DC9CA007833BD /* DefaultUnderlineTextField.swift */; };
+		9C43D6BC2B7DC9D6007833BD /* DefaultUnderlineTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C43D6BB2B7DC9D6007833BD /* DefaultUnderlineTextField.xib */; };
 		9C4EDA782B47EF8C00BFDC48 /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9C4EDA6F2B47EF8C00BFDC48 /* Inter-Regular.ttf */; };
 		9C4EDA7F2B47EF8C00BFDC48 /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9C4EDA762B47EF8C00BFDC48 /* Inter-Bold.ttf */; };
-		9C4EDA822B47F27500BFDC48 /* ServerSelectVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C4EDA812B47F27500BFDC48 /* ServerSelectVC.storyboard */; };
-		9C4EDA842B47F27C00BFDC48 /* ServerSelectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4EDA832B47F27C00BFDC48 /* ServerSelectVC.swift */; };
 		9C4EDA872B47F2A600BFDC48 /* SignupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4EDA862B47F2A600BFDC48 /* SignupVC.swift */; };
 		9C4EDA892B47F2AE00BFDC48 /* SignupVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C4EDA882B47F2AE00BFDC48 /* SignupVC.storyboard */; };
 		9C50A33E2B5E57E200082229 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C50A33D2B5E57E200082229 /* UITextField+Extension.swift */; };
@@ -105,7 +107,6 @@
 		9C6B45372B47D9340068FA95 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6B45362B47D9340068FA95 /* ViewController.swift */; };
 		9C6B453A2B47D9340068FA95 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C6B45382B47D9340068FA95 /* Main.storyboard */; };
 		9C6B453C2B47D9350068FA95 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C6B453B2B47D9350068FA95 /* Assets.xcassets */; };
-		9C6B453F2B47D9350068FA95 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C6B453D2B47D9350068FA95 /* LaunchScreen.storyboard */; };
 		9C6B454A2B47D9350068FA95 /* YounetProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6B45492B47D9350068FA95 /* YounetProjectTests.swift */; };
 		9C6B45542B47D9350068FA95 /* YounetProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6B45532B47D9350068FA95 /* YounetProjectUITests.swift */; };
 		9C6B45562B47D9350068FA95 /* YounetProjectUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6B45552B47D9350068FA95 /* YounetProjectUITestsLaunchTests.swift */; };
@@ -121,8 +122,8 @@
 		9CC25CF02B4BC18A00C07086 /* SignupEmailComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC25CEF2B4BC18A00C07086 /* SignupEmailComponent.swift */; };
 		9CF1D2202B73694700D5959D /* DefaultPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF1D21F2B73694700D5959D /* DefaultPopup.swift */; };
 		9CF1D2222B73695200D5959D /* DefaultPopup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CF1D2212B73695200D5959D /* DefaultPopup.storyboard */; };
-		9CF1D2242B737E5100D5959D /* IdentificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF1D2232B737E5100D5959D /* IdentificationVC.swift */; };
-		9CF1D2262B737E5900D5959D /* IdentificationVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CF1D2252B737E5900D5959D /* IdentificationVC.storyboard */; };
+		9CF1D2242B737E5100D5959D /* MenuSelectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF1D2232B737E5100D5959D /* MenuSelectionVC.swift */; };
+		9CF1D2262B737E5900D5959D /* MenuSelectionVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CF1D2252B737E5900D5959D /* MenuSelectionVC.storyboard */; };
 		9CFC5FAC2B6CA9D500997BDC /* CountryDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFC5FAB2B6CA9D500997BDC /* CountryDTO.swift */; };
 		9CFC6AE92B6F97B300443712 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 9CFC6AE82B6F97B300443712 /* Alamofire */; };
 		9CFC6AED2B6F97F500443712 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFC6AEC2B6F97F500443712 /* APIService.swift */; };
@@ -229,12 +230,15 @@
 		9C374CF02B6CDF6900F879C4 /* NationSelectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NationSelectionCell.swift; sourceTree = "<group>"; };
 		9C374CF12B6CDF6900F879C4 /* NationSelectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NationSelectionCell.xib; sourceTree = "<group>"; };
 		9C3925212B4F966500AEBA2F /* SignupEmailComponent.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignupEmailComponent.xib; sourceTree = "<group>"; };
+		9C3D392D2B7B95CB00FF5CBB /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9C3D39302B7CCACA00FF5CBB /* IdentificationVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = IdentificationVC.storyboard; sourceTree = "<group>"; };
+		9C3D39322B7CCAE300FF5CBB /* IdentificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentificationVC.swift; sourceTree = "<group>"; };
 		9C3DF48D2B4A943D006CE6E5 /* SignupInputComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupInputComponent.swift; sourceTree = "<group>"; };
 		9C3DF48F2B4A945C006CE6E5 /* SignupInputComponent.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignupInputComponent.xib; sourceTree = "<group>"; };
+		9C43D6B92B7DC9CA007833BD /* DefaultUnderlineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultUnderlineTextField.swift; sourceTree = "<group>"; };
+		9C43D6BB2B7DC9D6007833BD /* DefaultUnderlineTextField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DefaultUnderlineTextField.xib; sourceTree = "<group>"; };
 		9C4EDA6F2B47EF8C00BFDC48 /* Inter-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular.ttf"; sourceTree = "<group>"; };
 		9C4EDA762B47EF8C00BFDC48 /* Inter-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Bold.ttf"; sourceTree = "<group>"; };
-		9C4EDA812B47F27500BFDC48 /* ServerSelectVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ServerSelectVC.storyboard; sourceTree = "<group>"; };
-		9C4EDA832B47F27C00BFDC48 /* ServerSelectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerSelectVC.swift; sourceTree = "<group>"; };
 		9C4EDA862B47F2A600BFDC48 /* SignupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupVC.swift; sourceTree = "<group>"; };
 		9C4EDA882B47F2AE00BFDC48 /* SignupVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignupVC.storyboard; sourceTree = "<group>"; };
 		9C50A33D2B5E57E200082229 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
@@ -244,7 +248,6 @@
 		9C6B45362B47D9340068FA95 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9C6B45392B47D9340068FA95 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9C6B453B2B47D9350068FA95 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		9C6B453E2B47D9350068FA95 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9C6B45402B47D9350068FA95 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C6B45452B47D9350068FA95 /* YounetProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YounetProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C6B45492B47D9350068FA95 /* YounetProjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YounetProjectTests.swift; sourceTree = "<group>"; };
@@ -263,8 +266,8 @@
 		9CC25CEF2B4BC18A00C07086 /* SignupEmailComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupEmailComponent.swift; sourceTree = "<group>"; };
 		9CF1D21F2B73694700D5959D /* DefaultPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultPopup.swift; sourceTree = "<group>"; };
 		9CF1D2212B73695200D5959D /* DefaultPopup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DefaultPopup.storyboard; sourceTree = "<group>"; };
-		9CF1D2232B737E5100D5959D /* IdentificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentificationVC.swift; sourceTree = "<group>"; };
-		9CF1D2252B737E5900D5959D /* IdentificationVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = IdentificationVC.storyboard; sourceTree = "<group>"; };
+		9CF1D2232B737E5100D5959D /* MenuSelectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuSelectionVC.swift; sourceTree = "<group>"; };
+		9CF1D2252B737E5900D5959D /* MenuSelectionVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MenuSelectionVC.storyboard; sourceTree = "<group>"; };
 		9CFC5FAB2B6CA9D500997BDC /* CountryDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDTO.swift; sourceTree = "<group>"; };
 		9CFC6AEC2B6F97F500443712 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		9CFC6AEE2B6F985F00443712 /* AuthRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
@@ -301,12 +304,12 @@
 		9C0426A62B47EB7400C693BC /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				9C3D392F2B7CCAB200FF5CBB /* Identification */,
 				9CF1D21E2B73693700D5959D /* DefaultPopup */,
 				9C4EDA852B47F29400BFDC48 /* Signup */,
-				9C1B3C222B5D234A00AB3B73 /* Identification */,
+				9C1B3C222B5D234A00AB3B73 /* MenuSelection */,
 				9C180EB72B71DDB100B564CE /* OpenChat */,
 				9C180EB62B71DDA800B564CE /* Chat */,
-				9C4EDA802B47F26300BFDC48 /* ServerSelect */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -350,13 +353,13 @@
 			path = YourChatCell;
 			sourceTree = "<group>";
 		};
-		9C1B3C222B5D234A00AB3B73 /* Identification */ = {
+		9C1B3C222B5D234A00AB3B73 /* MenuSelection */ = {
 			isa = PBXGroup;
 			children = (
-				9CF1D2232B737E5100D5959D /* IdentificationVC.swift */,
-				9CF1D2252B737E5900D5959D /* IdentificationVC.storyboard */,
+				9CF1D2232B737E5100D5959D /* MenuSelectionVC.swift */,
+				9CF1D2252B737E5900D5959D /* MenuSelectionVC.storyboard */,
 			);
-			path = Identification;
+			path = MenuSelection;
 			sourceTree = "<group>";
 		};
 		9C1B3C292B5E1A3700AB3B73 /* IdentificationInputUnit */ = {
@@ -592,9 +595,19 @@
 			path = OpenChat;
 			sourceTree = "<group>";
 		};
+		9C3D392F2B7CCAB200FF5CBB /* Identification */ = {
+			isa = PBXGroup;
+			children = (
+				9C3D39302B7CCACA00FF5CBB /* IdentificationVC.storyboard */,
+				9C3D39322B7CCAE300FF5CBB /* IdentificationVC.swift */,
+			);
+			path = Identification;
+			sourceTree = "<group>";
+		};
 		9C3DF4862B4A51CB006CE6E5 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				9C43D6B82B7DC965007833BD /* DefaultUnderlineTextField */,
 				9C1B3C292B5E1A3700AB3B73 /* IdentificationInputUnit */,
 				9CB351842B4E76F800EE36F0 /* SignupCustomTextField */,
 				9CC25CEE2B4BC17400C07086 /* SignupEmailComponent */,
@@ -612,6 +625,15 @@
 			path = SignupInputComponent;
 			sourceTree = "<group>";
 		};
+		9C43D6B82B7DC965007833BD /* DefaultUnderlineTextField */ = {
+			isa = PBXGroup;
+			children = (
+				9C43D6B92B7DC9CA007833BD /* DefaultUnderlineTextField.swift */,
+				9C43D6BB2B7DC9D6007833BD /* DefaultUnderlineTextField.xib */,
+			);
+			path = DefaultUnderlineTextField;
+			sourceTree = "<group>";
+		};
 		9C4EDA6D2B47EF7600BFDC48 /* Font */ = {
 			isa = PBXGroup;
 			children = (
@@ -619,15 +641,6 @@
 				9C4EDA6F2B47EF8C00BFDC48 /* Inter-Regular.ttf */,
 			);
 			path = Font;
-			sourceTree = "<group>";
-		};
-		9C4EDA802B47F26300BFDC48 /* ServerSelect */ = {
-			isa = PBXGroup;
-			children = (
-				9C4EDA812B47F27500BFDC48 /* ServerSelectVC.storyboard */,
-				9C4EDA832B47F27C00BFDC48 /* ServerSelectVC.swift */,
-			);
-			path = ServerSelect;
 			sourceTree = "<group>";
 		};
 		9C4EDA852B47F29400BFDC48 /* Signup */ = {
@@ -671,7 +684,7 @@
 				9C6B45342B47D9340068FA95 /* SceneDelegate.swift */,
 				9C6B45362B47D9340068FA95 /* ViewController.swift */,
 				9C6B45382B47D9340068FA95 /* Main.storyboard */,
-				9C6B453D2B47D9350068FA95 /* LaunchScreen.storyboard */,
+				9C3D392D2B7B95CB00FF5CBB /* LaunchScreen.storyboard */,
 				9C6B45402B47D9350068FA95 /* Info.plist */,
 			);
 			path = YounetProject;
@@ -900,28 +913,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C33BD432B7B842A00497FEC /* ChatPopupViewController.storyboard in Resources */,
-				9C4EDA822B47F27500BFDC48 /* ServerSelectVC.storyboard in Resources */,
 				9C33BD942B7B843400497FEC /* ChatRqCell.xib in Resources */,
 				9C33BD882B7B843400497FEC /* SearchCell.xib in Resources */,
 				9C180ECE2B71E98C00B564CE /* YourChatCell.xib in Resources */,
 				9C180EBB2B71DDE500B564CE /* ChatVC.storyboard in Resources */,
 				9C33BD532B7B842A00497FEC /* MyPage.storyboard in Resources */,
+				9C3D39312B7CCACA00FF5CBB /* IdentificationVC.storyboard in Resources */,
 				9C33BD4B2B7B842A00497FEC /* FeedCell.xib in Resources */,
 				9C33BD8D2B7B843400497FEC /* DetailImgCell.xib in Resources */,
 				9C33BD402B7B842A00497FEC /* PopupViewController.storyboard in Resources */,
-				9C6B453F2B47D9350068FA95 /* LaunchScreen.storyboard in Resources */,
 				9C33BDAE2B7B843800497FEC /* OpenChatCell.xib in Resources */,
 				9C180EC92B71E96500B564CE /* MyChatCell.xib in Resources */,
 				9C33BD452B7B842A00497FEC /* PopupChoiceViewController.storyboard in Resources */,
-				9CF1D2262B737E5900D5959D /* IdentificationVC.storyboard in Resources */,
+				9CF1D2262B737E5900D5959D /* MenuSelectionVC.storyboard in Resources */,
 				9C33BD8A2B7B843400497FEC /* FeedDetailCell.xib in Resources */,
-				9C33BD462B7B842A00497FEC /* LaunchScreen.storyboard in Resources */,
 				9C3DF4902B4A945C006CE6E5 /* SignupInputComponent.xib in Resources */,
 				9CB351882B4E775000EE36F0 /* SignupCustomTextField.xib in Resources */,
 				9C33BD9A2B7B843400497FEC /* Comunity.storyboard in Resources */,
 				9C4EDA782B47EF8C00BFDC48 /* Inter-Regular.ttf in Resources */,
 				9C33BDA82B7B843800497FEC /* OpenSearchCell.xib in Resources */,
 				9C33BD952B7B843400497FEC /* AlarmCell.xib in Resources */,
+				9C43D6BC2B7DC9D6007833BD /* DefaultUnderlineTextField.xib in Resources */,
 				9C33BDAF2B7B843800497FEC /* OpenChat.storyboard in Resources */,
 				9C374CF32B6CDF6900F879C4 /* NationSelectionCell.xib in Resources */,
 				9C180EBF2B71DDFD00B564CE /* OpenChatVC.storyboard in Resources */,
@@ -931,6 +943,7 @@
 				9C3925222B4F966500AEBA2F /* SignupEmailComponent.xib in Resources */,
 				9C6B453A2B47D9340068FA95 /* Main.storyboard in Resources */,
 				9C4EDA7F2B47EF8C00BFDC48 /* Inter-Bold.ttf in Resources */,
+				9C3D392E2B7B95CB00FF5CBB /* LaunchScreen.storyboard in Resources */,
 				9CB4A8C62B6A3AC800521184 /* PopupTemplateVC.storyboard in Resources */,
 				9C33BD522B7B842A00497FEC /* ChatProfile.storyboard in Resources */,
 				9CB4A8C42B6A3AB600521184 /* NationSelectionVC.storyboard in Resources */,
@@ -1010,18 +1023,20 @@
 				9C33BDAC2B7B843800497FEC /* OpenAlarmViewController.swift in Sources */,
 				9C33BD922B7B843400497FEC /* AlarmViewController.swift in Sources */,
 				9C33BD5D2B7B842A00497FEC /* CustomSwitch.swift in Sources */,
+				9C3D39332B7CCAE300FF5CBB /* IdentificationVC.swift in Sources */,
 				9CF1D2202B73694700D5959D /* DefaultPopup.swift in Sources */,
 				9C1B3C2B2B5E1A5200AB3B73 /* IdentificationInputUnit.swift in Sources */,
 				9C33BD482B7B842A00497FEC /* QuitViewController.swift in Sources */,
 				9C33BD962B7B843400497FEC /* Country.swift in Sources */,
 				9C180EB92B71DDDC00B564CE /* ChatVC.swift in Sources */,
-				9CF1D2242B737E5100D5959D /* IdentificationVC.swift in Sources */,
+				9CF1D2242B737E5100D5959D /* MenuSelectionVC.swift in Sources */,
 				9C180EC12B71E0DE00B564CE /* Message.swift in Sources */,
 				9C33BD8F2B7B843400497FEC /* PostSetViewController.swift in Sources */,
 				9C33BDAA2B7B843800497FEC /* OpenChatCell.swift in Sources */,
 				9C33BD9B2B7B843400497FEC /* TabBarController.swift in Sources */,
 				9C33BD842B7B843400497FEC /* HomeViewController.swift in Sources */,
 				9C33BD872B7B843400497FEC /* SearchDetailViewController.swift in Sources */,
+				9C43D6BA2B7DC9CA007833BD /* DefaultUnderlineTextField.swift in Sources */,
 				9C374CF22B6CDF6900F879C4 /* NationSelectionCell.swift in Sources */,
 				9CFC6AEF2B6F985F00443712 /* AuthRouter.swift in Sources */,
 				9C33BD612B7B842A00497FEC /* CustomLabel.swift in Sources */,
@@ -1036,7 +1051,6 @@
 				9C33BD5F2B7B842A00497FEC /* ViewExtension.swift in Sources */,
 				9C33BDA92B7B843800497FEC /* OpenRequestViewController.swift in Sources */,
 				9C33BD552B7B842A00497FEC /* IdPwSearchViewController.swift in Sources */,
-				9C4EDA842B47F27C00BFDC48 /* ServerSelectVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1079,14 +1093,6 @@
 				9C6B45392B47D9340068FA95 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		9C6B453D2B47D9350068FA95 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9C6B453E2B47D9350068FA95 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

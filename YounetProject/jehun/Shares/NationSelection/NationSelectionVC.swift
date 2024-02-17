@@ -22,6 +22,7 @@ class NationSelectionVC: UIViewController
     @IBOutlet var nationSelectionTableView: UITableView!
     @IBOutlet var selectionBtn: UIButton!
     
+    var previousSelectedIndexPath : IndexPath? = nil
     
     // 국가 리스트
     let countryList: [CountryDTO] = [CountryDTO(engName: "denmark", korName: "덴마크")
@@ -47,6 +48,7 @@ class NationSelectionVC: UIViewController
     
     override func viewDidLoad()
     {
+        print(#fileID, #function, #line, "- \(selectedCountry?.engName)")
         super.viewDidLoad()
         config()
     }
@@ -61,6 +63,17 @@ class NationSelectionVC: UIViewController
         let nib = UINib(nibName: "NationSelectionCell", bundle: nil)
         nationSelectionTableView.register(nib, forCellReuseIdentifier: "NationSelectionCell")
         nationSelectionTableView.separatorStyle = .none
+        
+        
+        
+        if let foundIndex = countryList.firstIndex(where: {
+            $0.engName == self.selectedCountry?.engName ?? ""
+        }) {
+            let initialPreviousIndex = IndexPath(row: foundIndex, section: 0)
+            self.previousSelectedIndexPath = initialPreviousIndex
+        }
+        
+        nationSelectionTableView.reloadData()
     }
     
     @objc
@@ -80,6 +93,20 @@ class NationSelectionVC: UIViewController
         parent.present(vc, animated: true)
         return vc
     }
+    
+    @discardableResult
+    class func present(parent: UIViewController, selectedCountry: CountryDTO? = nil) -> NationSelectionVC {
+        let storyboard = UIStoryboard(name: "NationSelectionVC", bundle: .main)
+        print(#fileID, #function, #line, "- \(storyboard)")
+        let vc = storyboard.instantiateInitialViewController() as! NationSelectionVC
+        vc.modalPresentationStyle = .overCurrentContext
+        vc.modalTransitionStyle = .crossDissolve
+        
+        vc.selectedCountry = selectedCountry
+        
+        parent.present(vc, animated: true)
+        return vc
+    }
 }
 
 
@@ -93,8 +120,13 @@ extension NationSelectionVC: UITableViewDataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "NationSelectionCell", for: indexPath) as? NationSelectionCell else { return UITableViewCell() }
         
-        cell.configCell(countryList[indexPath.row])
-        
+        cell.configCell(countryList[indexPath.row], selected: selectedCountry)
+
+//        if (countryList[indexPath.row].engName == selectedCountry?.engName ?? "")
+//        {
+//            
+//            cell.isSelectedBefore = true
+//        }
         return cell
     }
     
@@ -103,6 +135,24 @@ extension NationSelectionVC: UITableViewDataSource
         
         return indexPath
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        var reloadIndexes : [IndexPath] = []
+                
+        reloadIndexes.append(indexPath)
+        
+        if let previous = previousSelectedIndexPath {
+            reloadIndexes.append(previous)
+        }
+        
+        tableView.reloadRows(at: reloadIndexes, with: .automatic)
+        
+        self.previousSelectedIndexPath = indexPath
+        
+//        tableView.reloadData()
+    }
+    
 }
 //MARK: - TableViewDelegate
 extension NationSelectionVC: UITableViewDelegate

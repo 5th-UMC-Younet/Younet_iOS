@@ -117,7 +117,7 @@ extension SignupInputComponent: UITextFieldDelegate
     {
         if (!(inputHairlineView.backgroundColor?.cgColor == onInvalidColor.cgColor))
         {
-            inputHairlineView.backgroundColor = UIColor(red: 41/255, green: 29/255, blue: 137/255, alpha: 1)
+            inputHairlineView.backgroundColor = onEditingColor
         }
         
     }

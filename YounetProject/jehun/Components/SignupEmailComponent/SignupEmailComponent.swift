@@ -150,6 +150,14 @@ class SignupEmailComponent: UIStackView {
     {
         /// 이메일 인증 요청
         
+        #warning("TODO - email auth code sent api call ")
+        APIService.shared.requestEmailCode(email: emailInputCustomTF.getFieldContentString(), completion: { msg in
+            print(#fileID, #function, #line, "- msg: \(msg)")
+            
+        })
+        
+        
+        
         ///이메일 요청완료 팝업
         if (emailConfirmComponent.isHidden)
         {
@@ -178,6 +186,9 @@ class SignupEmailComponent: UIStackView {
     @objc
     func emailConfirmBtnClicked(_ sender: UIButton)
     {
+        APIService.shared.confirmEmailCode(userEmail: emailInputCustomTF.getFieldContentString(), code: emailConfirmCustomTF.getFieldContentString(), completion: { msg in
+            print(#fileID, #function, #line, "- msg \(msg)")
+        })
         let isValid = emailConfirmValidation()
         
         configEmailConfirmAccordingToValidation(isValid)
