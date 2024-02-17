@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<<<<<<< HEAD
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
-=======
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
->>>>>>> develop
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Image references" minToolsVersion="12.0"/>
@@ -22,16 +17,6 @@
         </array>
     </customFonts>
     <scenes>
-<<<<<<< HEAD
-        <!--View Controller-->
-        <scene sceneID="xf9-7M-rtZ">
-            <objects>
-                <viewController id="E5y-EJ-Qut" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Sf9-qP-Qag">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="26p-rF-dOQ"/>
-=======
         <!--LoginVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -209,7 +194,6 @@
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
->>>>>>> develop
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="wEk-L0-cOD" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="QjJ-wR-i5r"/>
@@ -223,11 +207,8 @@
                         <outlet property="pwTextField" destination="ooL-g3-72b" id="tgz-IJ-nvx"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uMK-Eg-syR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-<<<<<<< HEAD
-            <point key="canvasLocation" x="938" y="-7"/>
-=======
             <point key="canvasLocation" x="-83.206106870229007" y="-45.774647887323944"/>
         </scene>
         <!--IdPwSearchVC-->
@@ -921,7 +902,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mLn-it-mNq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="30" y="493"/>
->>>>>>> develop
         </scene>
     </scenes>
     <resources>
