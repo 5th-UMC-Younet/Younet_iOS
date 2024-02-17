@@ -8,8 +8,13 @@
 import UIKit
 
 class ChatRqCell: UITableViewCell {
+    @IBOutlet weak var userImg: UIImageView!
+    @IBOutlet weak var userButton: UIButton!
+    @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var rejectButton: UIButton!
     @IBOutlet weak var acceptButton: UIButton!
+    var onAcceptButtonTapped: (() -> Void)?
+    var onRejectButtonTapped: (() -> Void)?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,8 +28,10 @@ class ChatRqCell: UITableViewCell {
         // Configure the view for the selected state
     }
     @IBAction func regect(_ sender: Any) {
+        onRejectButtonTapped?()
     }
     @IBAction func accept(_ sender: Any) {
+        onAcceptButtonTapped?()
     }
     
     

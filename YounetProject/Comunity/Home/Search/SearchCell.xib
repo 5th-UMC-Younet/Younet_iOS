@@ -17,7 +17,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="유학생활" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sas-N7-8da">
-                        <rect key="frame" x="11" y="15" width="52" height="18"/>
+                        <rect key="frame" x="15" y="15" width="52" height="18"/>
                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                         <color key="textColor" red="0.15294116739999999" green="0.1176470518" blue="0.51372551919999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
@@ -183,7 +183,7 @@
                     <constraint firstItem="zDl-00-gdX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="9eg-5K-If3"/>
                     <constraint firstAttribute="bottom" secondItem="YYk-af-5uR" secondAttribute="bottom" constant="189" id="EYB-3U-0Dz"/>
                     <constraint firstItem="34F-z1-66n" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="50" id="VaD-So-8Kp"/>
-                    <constraint firstItem="sas-N7-8da" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="11" id="b5G-jV-tJt"/>
+                    <constraint firstItem="sas-N7-8da" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="b5G-jV-tJt"/>
                     <constraint firstItem="YYk-af-5uR" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="30" id="d9O-IG-F80"/>
                     <constraint firstItem="zDl-00-gdX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="135" id="gds-sR-pNb"/>
                     <constraint firstItem="34F-z1-66n" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="hhY-VO-63m"/>
@@ -194,7 +194,20 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="categoryLabel" destination="sas-N7-8da" id="KVW-sD-uC7"/>
+                <outlet property="commentLabel1" destination="d5r-eh-toK" id="5h7-A4-oZT"/>
+                <outlet property="commentLabel2" destination="o4G-1B-M3H" id="L05-FK-Bx8"/>
+                <outlet property="contentLabel1" destination="gCu-W8-QOB" id="xbk-Mu-RUS"/>
+                <outlet property="contentLabel2" destination="hE1-Vu-96Q" id="S6U-7r-cjb"/>
+                <outlet property="imgView1" destination="fWo-Hl-qkB" id="Cjd-xf-0FV"/>
+                <outlet property="imgView2" destination="4Kx-nI-MIL" id="jRk-Rj-mOf"/>
+                <outlet property="likeLabel1" destination="U2N-1U-Rc9" id="zqO-Zm-84y"/>
+                <outlet property="likeLabel2" destination="6Ky-BD-ypd" id="UVQ-8m-WU5"/>
                 <outlet property="moreButton" destination="YYk-af-5uR" id="Dp1-1h-gHQ"/>
+                <outlet property="timeLabel1" destination="ecQ-oh-5f4" id="Erg-en-5mq"/>
+                <outlet property="timeLabel2" destination="Zw3-x9-x83" id="aVs-Jv-Vez"/>
+                <outlet property="titleLabel1" destination="Zqi-0e-BeO" id="6ct-Rm-OeZ"/>
+                <outlet property="titleLabel2" destination="kkm-2P-aEk" id="PKp-Hx-4qZ"/>
             </connections>
             <point key="canvasLocation" x="61.832061068702288" y="20.422535211267608"/>
         </tableViewCell>

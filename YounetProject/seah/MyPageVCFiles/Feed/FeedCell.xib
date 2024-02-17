@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -48,8 +48,8 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="A6Q-KT-f1n">
-                                        <rect key="frame" x="0.0" y="64" width="103.33333333333333" height="15"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="A6Q-KT-f1n">
+                                        <rect key="frame" x="0.0" y="64" width="100.33333333333333" height="15"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="pfc-Mv-ol8">
                                                 <rect key="frame" x="0.0" y="0.0" width="70.666666666666671" height="12.333333333333334"/>
@@ -75,7 +75,7 @@
                                                 </subviews>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="댓글 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7hV-rO-psP">
-                                                <rect key="frame" x="76.666666666666657" y="0.0" width="26.666666666666671" height="12"/>
+                                                <rect key="frame" x="73.666666666666657" y="0.0" width="26.666666666666671" height="12"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                 <color key="textColor" red="0.43137258290000002" green="0.43137258290000002" blue="0.43137258290000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -109,11 +109,12 @@
             <connections>
                 <outlet property="commentLabel" destination="7hV-rO-psP" id="oeR-qD-MRC"/>
                 <outlet property="contentLabel" destination="aVp-yG-Tqo" id="eNm-0d-Ihl"/>
+                <outlet property="imgView" destination="cNV-V9-0ux" id="KdH-Hx-WBr"/>
                 <outlet property="likeLabel" destination="zeV-dT-ePx" id="vPV-JD-Smr"/>
                 <outlet property="timeLabel" destination="1NY-rx-E81" id="87G-MP-JSA"/>
                 <outlet property="titleLabel" destination="cdH-x2-Sgv" id="CCG-fi-v37"/>
             </connections>
-            <point key="canvasLocation" x="64.885496183206101" y="19.718309859154932"/>
+            <point key="canvasLocation" x="64.122137404580144" y="19.718309859154932"/>
         </tableViewCell>
     </objects>
 </document>

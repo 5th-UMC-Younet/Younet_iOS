@@ -109,7 +109,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillProportionally" spacing="-12" translatesAutoresizingMaskIntoConstraints="NO" id="FtG-9L-P7j">
-                                                        <rect key="frame" x="38.333333333333343" y="40.333333333333314" width="204.99999999999997" height="30"/>
+                                                        <rect key="frame" x="38.333333333333343" y="40.333333333333314" width="205" height="30"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lYg-Sy-JvC">
                                                                 <rect key="frame" x="0.0" y="0.0" width="148" height="30"/>
@@ -528,7 +528,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0tu-NJ-tHR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="160.80000000000001" y="452.95566502463055"/>
+            <point key="canvasLocation" x="626" y="493"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="vPZ-KZ-aDb">
@@ -536,7 +536,7 @@
                 <pageViewController storyboardIdentifier="PageVC" autoresizesArchivedViewToFullSize="NO" modalTransitionStyle="crossDissolve" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="nRc-HU-QXu" customClass="PageViewController" customModule="YounetProject" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lCW-us-7aW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="752" y="453"/>
+            <point key="canvasLocation" x="1217" y="493"/>
         </scene>
         <!--PwResetVC-->
         <scene sceneID="EZd-69-zWU">
@@ -901,7 +901,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mLn-it-mNq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-436" y="453"/>
+            <point key="canvasLocation" x="30" y="493"/>
         </scene>
     </scenes>
     <resources>
