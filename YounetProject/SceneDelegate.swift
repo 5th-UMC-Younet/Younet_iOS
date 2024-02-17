@@ -16,8 +16,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let _ = (scene as? UIWindowScene) else { return }
         
         //START 테스트용 코드
-        let storyboard = UIStoryboard(name: "MenuSelectionVC", bundle: nil)
-        guard let startVC = storyboard.instantiateViewController(withIdentifier: "MenuSelectionVC") as? MenuSelectionVC else { return }
+        let storyboard = UIStoryboard(name: "Comunity", bundle: nil)
+        guard let startVC = storyboard.instantiateViewController(withIdentifier: "tabC") as? TabBarController else { return }
         let navigationController = UINavigationController(rootViewController: startVC)
         window?.rootViewController = navigationController
         //END 테스트용 코드
