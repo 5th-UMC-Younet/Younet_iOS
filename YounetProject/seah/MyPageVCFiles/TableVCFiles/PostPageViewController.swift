@@ -1,47 +1,39 @@
 //
-//  OtherUserProfileViewController.swift
+//  PostPageViewController.swift
 //  YounetProject
 //
-//  Created by 김세아 on 2/6/24.
+//  Created by 김세아 on 2/14/24.
 //
 
 import UIKit
 import Alamofire
 
-class OtherUserProfileViewController: UIViewController {
-
-    @IBOutlet weak var nickNameProfileImage: UIImageView!
-    @IBOutlet weak var nickName: UILabel!
-    @IBOutlet weak var nationContainer: UIView!
-    @IBOutlet weak var preferNationImage: UIImageView!
-    @IBOutlet weak var preferNation: UILabel!
-    @IBOutlet weak var nickNameSelfExplain: UILabel!
-    
+class PostPageViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
-    let simpleData = UserDefaults.standard
-    let imageData = ImageFileManager.shared
-    
-    var feedData: [ChatOtherUserProfileData] = []
+    var feedData: [MyPageUserData] = []
     var page = 1
     var index = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getData()
-        getAPI()
-        
-        setDesign()
         registerXib()
-        
-        tableView.delegate = self
-        tableView.dataSource = self
+        getAPI()
     }
     
-    private func setDesign() {
-        nationContainer.layer.borderColor = UIColor.lightGray.cgColor
-        nationContainer.layer.borderWidth = 0.25
-       
+    // FeedCell register
+    private func registerXib() {
+        let nibName = UINib(nibName: "FeedCell", bundle: nil)
+        tableView.register(nibName, forCellReuseIdentifier: "FeedCell")
+    }
+    
+    // 갱신용. 특정 개수 이상 시 아래로 swipe했을 때 갱신
+    @IBAction func more(_ sender: UIButton) {
+        // 0) 현재 페이지 값에 1을 추가한다.
+        self.page += 1
+        
+        // 데이터를 다시 읽어오도록 테이블 뷰를 갱신한다.
+        self.tableView.reloadData()
     }
     
     func tableViewLoad() {
@@ -49,45 +41,6 @@ class OtherUserProfileViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.reloadData()
-    }
-    
-    private func getData() {
-        // 서버에서 받아와서 설정
-        ChatOtherUserProfileService.shared.OtherUserProfile(userId: 1){ (networkResult) -> (Void) in
-            switch networkResult {
-            case .success(let result):
-                if let otherUserData = result as? ChatOtherUserProfileData {
-                    // 프로필 세팅
-                    self.nickName.text = otherUserData.name
-                    otherUserData.profileText == nil ? (self.nickNameSelfExplain.text = "프로필 소개글") : (self.nickNameSelfExplain.text = otherUserData.profileText)
-                    
-                    // 관심 국가명 및 이미지 세팅
-                    if self.simpleData.string(forKey: "preferNationImage") != nil {
-                        self.preferNation.text = otherUserData.likeCntr
-                        self.preferNationImage.image = UIImage(named: self.simpleData.string(forKey: "preferNationImage")!)
-                        self.nationContainer.isHidden = false
-                    } else {
-                        self.preferNation.text = "관심국가"
-                        self.nationContainer.isHidden = true
-                    }
-                    
-                    if otherUserData.profilePicture != nil {
-                        // url로부터 프로필 이미지 받아오기
-                        let url = URL(string: otherUserData.profilePicture!)
-                        self.nickNameProfileImage.load(url: url!)
-                    }
-                    
-                }
-            case .requestErr:
-                print("400 Error")
-            case .pathErr:
-                print("pathErr")
-            case .serverErr:
-                print("serverErr")
-            case .networkFail:
-                print("networkFail")
-            }
-        }
     }
     
     func getAPI(){
@@ -102,13 +55,11 @@ class OtherUserProfileViewController: UIViewController {
     }
     
     func getDataByDates() {
-        // MARK: - 유저 아이디 받아오기
-        let userId = 1
-        let url = APIUrl.otherUserPage + "\(userId)"
-        print(url)
-        AF.request(url, method: .get)
+        let url = APIUrl.myPage
+        let tk = TokenUtils()
+        AF.request(url, method: .get, headers: tk.getAuthorizationHeader(serviceID: APIUrl.url))
             .validate(statusCode: 200..<300)
-            .responseDecodable(of: ChatProfileResponse<ChatOtherUserProfileData>.self) { response in
+            .responseDecodable(of: MyPageResponse<MyPageUserData>.self) { response in
                 switch response.result {
                 case .success(let feed):
                     self.feedData.append(feed.result!)
@@ -144,18 +95,9 @@ class OtherUserProfileViewController: UIViewController {
             return nil
         }
     }
-    
-    private func registerXib() {
-        let nibName = UINib(nibName: "FeedCell", bundle: nil)
-        tableView.register(nibName, forCellReuseIdentifier: "FeedCell")
-    }
-    
-    @IBAction func backButtonDidtap(_ sender: UIButton) {
-        dismiss(animated: true, completion: nil)
-    }
 }
 
-extension OtherUserProfileViewController : UITableViewDelegate, UITableViewDataSource {
+extension PostPageViewController : UITableViewDelegate, UITableViewDataSource {
     
     //셀 개수
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

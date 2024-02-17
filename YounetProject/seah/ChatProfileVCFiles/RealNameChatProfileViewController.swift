@@ -17,6 +17,9 @@ class RealNameChatProfileViewController: UIViewController {
     @IBOutlet weak var nationButton: UIButton!
     @IBOutlet weak var exUnivButton: UIButton!
     
+    @IBOutlet weak var mainStackView: UIStackView!
+    @IBOutlet weak var subStackView: UIStackView!
+    
     let textViewSample = "100자 이하의 소개글"
     let imgPicker = UIImagePickerController()
     let maxTextCount = 100
@@ -26,13 +29,18 @@ class RealNameChatProfileViewController: UIViewController {
         super.viewDidLoad()
         
         setKeyboard()
-        setKeyboardObserver()
         setTextViewPlaceholder()
         setDefaultData()
         
         imgPicker.delegate = self
         selfExplainTextView.delegate = self
         selfExplainTextView.isScrollEnabled = false
+        
+        let screenHeight = UIScreen.main.bounds.size.height
+        if screenHeight < 700 {
+            mainStackView.spacing = 45
+            subStackView.spacing = 30
+        }
     
     }
 
@@ -122,4 +130,5 @@ extension RealNameChatProfileViewController : UITextViewDelegate {
             }
         }
     }
+    
 }

@@ -22,8 +22,12 @@ class ChatPopupViewController: UIViewController {
     
     var rightDismissed: (() -> Void)? = nil
     var leftDismissed: (() -> Void)? = nil
+    
     // 실명프로필인 경우 setPopup = 0, 익명프로필인 경우 setPopup = 1
-    var setPopupNumber: Int? = 0
+    var setPopupNumber = 0
+    
+    let simpleData = UserDefaults.standard
+    let imageData = ImageFileManager.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,30 +48,94 @@ class ChatPopupViewController: UIViewController {
     }
     
     private func getUserDefaults() {
-        // 프로필 이미지와 소개글은 전체 팝업 공유
-        UserDefaults.standard.string(forKey: "selfExplain") != nil ? (selfExplainLabel.text = UserDefaults.standard.string(forKey: "selfExplain")) : (selfExplainLabel.text = "프로필 소개글")
-        if ImageFileManager.shared.getSavedImage(named: "profileImage") != nil {
-            profileImage.image = ImageFileManager.shared.getSavedImage(named: "profileImage")
-        }
+        // 왼쪽 버튼은 공통으로 신고하기 button
         leftDismissed = { [weak self] () in self?.goReport() }
         
+        OpenChatProfileService.shared.OpenChatProfile(userId: 1, chatRoomId: 1){(networkResult) -> (Void) in
+            switch networkResult {
+            case .success(let result):
+                if self.setPopupNumber == 0 {
+                    if let ChatProfileData = result as? ChatProfileData {
+                        // 실명프로필인 경우 서버에서 이름, 본교, 유학국, 교환교 데이터 수신
+                        self.nationImgContainer.isHidden = true
+                        
+                        if ChatProfileData.profilePicture != nil {
+                            let url = URL(string: ChatProfileData.profilePicture!)
+                            self.profileImage.load(url: url!)
+                        }
+                        
+                        self.nameLabel.text = "실명"
+                        self.univOrNationLabel.text = "OO대학교"
+                        self.rightDismissed = { [weak self] () in self?.requestChat() }
+                    }
+                } else {
+                    if let ChatProfileData = result as? ChatProfileData {
+                        
+                        
+                    }}
+            case .requestErr:
+                print("400 error")
+            case .pathErr:
+                print("pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+            
+        }
+        
+        
         if setPopupNumber == 0 {
-            // 실명프로필인 경우 서버에서 데이터 수신
+            // 실명프로필인 경우 서버에서 이름, 본교, 유학국, 교환교 데이터 수신
             nationImgContainer.isHidden = true
+
+            UserDefaults.standard.string(forKey: "selfExplain_realName") != nil ?  (selfExplainLabel.text = UserDefaults.standard.string(forKey: "selfExplain_realName")) : (selfExplainLabel.text = "프로필 소개글")
+            if ImageFileManager.shared.getSavedImage(named: "profileImage") != nil {
+                profileImage.image = ImageFileManager.shared.getSavedImage(named: "profileImage_realName")
+            }
+            
             nameLabel.text = "실명"
             univOrNationLabel.text = "OO대학교"
             rightDismissed = { [weak self] () in self?.requestChat() }
             
-        } else {
-            // 익명프로필인 경우
-            UserDefaults.standard.string(forKey: "nickname") != nil ? (nameLabel.text = UserDefaults.standard.string(forKey: "nickname")) : (nameLabel.text = "닉네임")
-            UserDefaults.standard.string(forKey: "preferNation") != nil ? (univOrNationLabel.text = UserDefaults.standard.string(forKey: "preferNation")) : (univOrNationLabel.text = "관심국가")
-            UserDefaults.standard.string(forKey: "preferNationImage") != nil ? (preferNationImage.image = UIImage(named: UserDefaults.standard.string(forKey: "preferNationImage")!)) : nil
             
-            if UserDefaults.standard.string(forKey: "preferNation") == nil {
-                nationImgContainer.isHidden = true
-            } else {
-                nationImgContainer.isHidden = false
+        } else {
+            // 익명프로필인 경우-> 일단 연결은 해놨는데 채팅쪽 익명이라 남의 프로필이니까 새로 API 연결해야함
+            MyPageService.shared.MyPage{ (networkResult) -> (Void) in
+                switch networkResult {
+                case .success(let result):
+                    if let myPageData = result as? MyPageUserData {
+                        // 프로필 세팅
+                        self.nameLabel.text = myPageData.name
+                        myPageData.profileText == nil ? (self.selfExplainLabel.text = "프로필 소개글") : (self.selfExplainLabel.text = myPageData.profileText)
+                        
+                        // 관심 국가명 및 이미지 세팅
+                        if self.simpleData.string(forKey: "preferNationImage") != nil {
+                            self.univOrNationLabel.text = myPageData.likeCntr
+                            self.preferNationImage.image = UIImage(named: self.simpleData.string(forKey: "preferNationImage")!)
+                            self.nationImgContainer.isHidden = false
+                        } else {
+                            self.univOrNationLabel.text = "관심국가"
+                            self.nationImgContainer.isHidden = true
+                        }
+                        
+                        if myPageData.profilePicture != nil {
+                            // url로부터 프로필 이미지 받아오기
+                            let url = URL(string: myPageData.profilePicture!)
+                            self.profileImage.load(url: url!)
+                        }
+                        
+                    }
+                case .requestErr:
+                    print("400 Error")
+                case .pathErr:
+                    print("pathErr")
+                case .serverErr:
+                    print("serverErr")
+                case .networkFail:
+                    print("networkFail")
+                }
             }
             
             rightBtn.setTitle("HOME", for: .normal)
@@ -111,9 +179,9 @@ class ChatPopupViewController: UIViewController {
     }
 
     @discardableResult
-    class func present(parent: UIViewController) -> PopupChoiceViewController {
-        let storyboard = UIStoryboard(name: "PopupChoiceViewController", bundle: .main)
-        let vc = storyboard.instantiateViewController(withIdentifier: "PopupChoiceViewController") as! PopupChoiceViewController
+    class func present(parent: UIViewController) -> ChatPopupViewController {
+        let storyboard = UIStoryboard(name: "ChatPopupViewController", bundle: .main)
+        let vc = storyboard.instantiateViewController(withIdentifier: "ChatPopupViewController") as! ChatPopupViewController
         
         vc.modalPresentationStyle = .overCurrentContext
         vc.modalTransitionStyle = .crossDissolve

@@ -16,6 +16,7 @@ class ReportViewController: UIViewController {
     @IBOutlet weak var fifthReportButton: UIButton!
         
     @IBOutlet weak var fileNameButton: UIButton!
+    @IBOutlet weak var mainStackView: UIStackView!
     
     var BtnArray = [UIButton]()
     
@@ -32,6 +33,11 @@ class ReportViewController: UIViewController {
         BtnArray.append(fifthReportButton)
         
         fileNameButton.isHidden = true
+        
+        let screenHeight = UIScreen.main.bounds.size.height
+        if screenHeight < 700 {
+            mainStackView.spacing = 50
+        }
     }
     
     @IBAction func reportButtonDidtap(_ sender: UIButton) {
@@ -51,6 +57,12 @@ class ReportViewController: UIViewController {
         // 받아온 파일명으로 title 설정
         //fileNameButton.setTitle("", for: .normal)
         fileNameButton.isHidden = false
+    }
+    
+    @IBAction func confirmButtonDidtap(_ sender: UIButton) {
+        let presentedPopup = PopupViewController.present(parent: self)
+        presentedPopup.labelText = "\n신고가 완료되었습니다.\n"
+        presentedPopup.onDismissed = { [weak self] () in self?.dismiss(animated: true, completion: nil) }
     }
     
     @IBAction func backButtonDidtap(_ sender: UIButton) {

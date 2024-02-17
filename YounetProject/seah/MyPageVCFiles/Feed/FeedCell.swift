@@ -20,6 +20,9 @@ class FeedCell: UITableViewCell {
     
     
     
+    @IBOutlet weak var imageSampleView: UIImageView!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
