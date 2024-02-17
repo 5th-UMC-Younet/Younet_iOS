@@ -130,7 +130,7 @@ class PwResetViewController: UIViewController {
                 }
                 
             case .requestErr(let msg):
-                if let message = msg as? String {
+                if msg is String {
                     // 아이디 인증번호 검증 실패 -> 실패 팝업 띄우기
                     let pwFailedPopup = PopupViewController.present(parent: self)
                     pwFailedPopup.labelText = "\n관련된 아이디가 존재하지 않습니다.\n"

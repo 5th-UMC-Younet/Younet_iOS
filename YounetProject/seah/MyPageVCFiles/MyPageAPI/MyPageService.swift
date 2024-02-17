@@ -143,7 +143,7 @@ struct MyPageProfileEditService{
             switch response.result {
             case .success:
                 guard let statusCode = response.response?.statusCode else { return }
-                guard let data = response.value else { return }
+                guard response.value != nil else { return }
                 // 응답 상태와 정보를 입력으로 하는 judgeSingInData 함수 실행
                 completion(judgeSignInData2(status: statusCode))
                 
