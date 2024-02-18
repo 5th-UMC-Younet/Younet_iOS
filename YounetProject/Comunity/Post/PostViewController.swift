@@ -101,11 +101,10 @@ class PostViewController: UIViewController {
     @IBAction func done(_ sender: Any) {
         guard let title = titleField.text, let categoryId = categoryId, let countryId = countryId, let communityProfileId = communityProfileId, let body = contentField.text else {
             // 필수 필드가 누락되었을 경우 에러 처리
-            let alert = UIAlertController(title: "", message: "모든 필수 필드를 입력해주세요.", preferredStyle: UIAlertController.Style.alert)
-            let confirm = UIAlertAction(title: "확인", style: .default, handler: nil)
-            confirm.setValue(UIColor.black, forKey: "titleTextColor")
-            alert.addAction(confirm)
-            present(alert, animated: true, completion: nil)
+            let alert = PopupViewController.present(parent: self)
+            alert.labelText = "\n모든 필수 필드를 입력해주세요.\n"
+            alert.buttonText = "확인"
+            
             return
         }
         for image in selectedImages {
@@ -162,21 +161,20 @@ class PostViewController: UIViewController {
             switch response.result {
             case .success:
                 // 성공적으로 등록되었을 경우 알림 표시
-                let alert = UIAlertController(title: "", message: "게시글이 등록되었습니다.", preferredStyle: UIAlertController.Style.alert)
-                let confirm = UIAlertAction(title: "확인", style: .default, handler: nil)
-                confirm.setValue(UIColor.black, forKey: "titleTextColor")
-                alert.addAction(confirm)
-                self.present(alert, animated: true, completion: nil)
+                let alert = PopupViewController.present(parent: self)
+                alert.labelText = "\n게시글이 등록되었습니다.\n"
+                alert.buttonText = "확인"
+                alert.onDismissed = {}
             case .failure(let error):
                 // 실패한 경우 에러 메시지 표시
-                let alert = UIAlertController(title: "", message: "게시글 등록에 실패했습니다. \(error.localizedDescription)", preferredStyle: UIAlertController.Style.alert)
-                let confirm = UIAlertAction(title: "확인", style: .default, handler: nil)
-                confirm.setValue(UIColor.black, forKey: "titleTextColor")
-                alert.addAction(confirm)
-                self.present(alert, animated: true, completion: nil)
+                print("PostError: \(error)")
+                let alert = PopupViewController.present(parent: self)
+                alert.labelText = "\n게시글 등록에 실패했습니다.\n"
+                alert.buttonText = "확인"
+                alert.onDismissed = {}
+                
             }
         }
-        
     }
     
     //사진

@@ -697,9 +697,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="7N9-Ky-w93">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="7N9-Ky-w93">
                                 <rect key="frame" x="0.0" y="169" width="393" height="601"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="43" translatesAutoresizingMaskIntoConstraints="NO" id="cLR-ky-eDN">
@@ -909,11 +908,15 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="cEG-Xt-cgI" firstAttribute="top" secondItem="cLR-ky-eDN" secondAttribute="bottom" constant="8" id="6B1-nU-vzL"/>
+                            <constraint firstItem="7N9-Ky-w93" firstAttribute="bottom" secondItem="uX8-4j-YjX" secondAttribute="bottom" constant="50" id="9BT-Ln-0XA"/>
                             <constraint firstItem="FKl-GJ-VI0" firstAttribute="top" secondItem="KKh-iM-2Ox" secondAttribute="top" constant="65" id="B7S-Ce-VqC"/>
+                            <constraint firstItem="7N9-Ky-w93" firstAttribute="top" secondItem="uX8-4j-YjX" secondAttribute="top" constant="110" id="TDN-Fb-LyA"/>
                             <constraint firstItem="FKl-GJ-VI0" firstAttribute="centerX" secondItem="uX8-4j-YjX" secondAttribute="centerX" id="WR7-w6-bG4"/>
                             <constraint firstItem="cEG-Xt-cgI" firstAttribute="trailing" secondItem="cLR-ky-eDN" secondAttribute="trailing" id="cDi-Vu-psv"/>
+                            <constraint firstItem="7N9-Ky-w93" firstAttribute="leading" secondItem="uX8-4j-YjX" secondAttribute="leading" id="eUt-Ks-9vj"/>
                             <constraint firstItem="cLR-ky-eDN" firstAttribute="centerX" secondItem="uX8-4j-YjX" secondAttribute="centerX" id="g5a-Po-lGz"/>
                             <constraint firstItem="cLR-ky-eDN" firstAttribute="top" secondItem="FKl-GJ-VI0" secondAttribute="bottom" constant="10" id="isT-9a-gzK"/>
+                            <constraint firstItem="uX8-4j-YjX" firstAttribute="trailing" secondItem="7N9-Ky-w93" secondAttribute="trailing" id="xH1-73-PkP"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="HOME" image="home" id="QIh-AH-jPD"/>
