@@ -46,7 +46,6 @@
 		4D83BAC82B80B6DD00A9F57C /* OpenChatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D83BABE2B80B6DD00A9F57C /* OpenChatCell.xib */; };
 		4D83BAC92B80B6DD00A9F57C /* OpenChat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D83BABF2B80B6DD00A9F57C /* OpenChat.storyboard */; };
 		4D83BACC2B80B72500A9F57C /* BSImagePicker in Frameworks */ = {isa = PBXBuildFile; productRef = 4D83BACB2B80B72500A9F57C /* BSImagePicker */; };
-		4D9B5EAE2B80FEDA00E6B6A6 /* test.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4D9B5EAD2B80FEDA00E6B6A6 /* test.jpg */; };
 		9C180EB92B71DDDC00B564CE /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C180EB82B71DDDC00B564CE /* ChatVC.swift */; };
 		9C180EBB2B71DDE500B564CE /* ChatVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C180EBA2B71DDE500B564CE /* ChatVC.storyboard */; };
 		9C180EBD2B71DDF700B564CE /* OpenChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C180EBC2B71DDF700B564CE /* OpenChatVC.swift */; };
@@ -78,7 +77,6 @@
 		9C33BD502B7B842A00497FEC /* RealNameChatProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C33BD2B2B7B842A00497FEC /* RealNameChatProfileViewController.swift */; };
 		9C33BD512B7B842A00497FEC /* OtherUserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C33BD2C2B7B842A00497FEC /* OtherUserProfileViewController.swift */; };
 		9C33BD522B7B842A00497FEC /* ChatProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C33BD2D2B7B842A00497FEC /* ChatProfile.storyboard */; };
-		9C33BD532B7B842A00497FEC /* MyPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C33BD2E2B7B842A00497FEC /* MyPage.storyboard */; };
 		9C33BD542B7B842A00497FEC /* LaunchScreenImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C33BD2F2B7B842A00497FEC /* LaunchScreenImage.png */; };
 		9C33BD552B7B842A00497FEC /* IdPwSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C33BD312B7B842A00497FEC /* IdPwSearchViewController.swift */; };
 		9C33BD562B7B842A00497FEC /* IdSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C33BD322B7B842A00497FEC /* IdSearchViewController.swift */; };
@@ -205,7 +203,6 @@
 		4D83BABD2B80B6DD00A9F57C /* OpenChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenChatViewController.swift; sourceTree = "<group>"; };
 		4D83BABE2B80B6DD00A9F57C /* OpenChatCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OpenChatCell.xib; sourceTree = "<group>"; };
 		4D83BABF2B80B6DD00A9F57C /* OpenChat.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = OpenChat.storyboard; sourceTree = "<group>"; };
-		4D9B5EAD2B80FEDA00E6B6A6 /* test.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = test.jpg; path = ../../../../test.jpg; sourceTree = "<group>"; };
 		9C180EB82B71DDDC00B564CE /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
 		9C180EBA2B71DDE500B564CE /* ChatVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChatVC.storyboard; sourceTree = "<group>"; };
 		9C180EBC2B71DDF700B564CE /* OpenChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenChatVC.swift; sourceTree = "<group>"; };
@@ -237,7 +234,6 @@
 		9C33BD2B2B7B842A00497FEC /* RealNameChatProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealNameChatProfileViewController.swift; sourceTree = "<group>"; };
 		9C33BD2C2B7B842A00497FEC /* OtherUserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherUserProfileViewController.swift; sourceTree = "<group>"; };
 		9C33BD2D2B7B842A00497FEC /* ChatProfile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ChatProfile.storyboard; sourceTree = "<group>"; };
-		9C33BD2E2B7B842A00497FEC /* MyPage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MyPage.storyboard; sourceTree = "<group>"; };
 		9C33BD2F2B7B842A00497FEC /* LaunchScreenImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaunchScreenImage.png; sourceTree = "<group>"; };
 		9C33BD312B7B842A00497FEC /* IdPwSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdPwSearchViewController.swift; sourceTree = "<group>"; };
 		9C33BD322B7B842A00497FEC /* IdSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdSearchViewController.swift; sourceTree = "<group>"; };
@@ -427,7 +423,6 @@
 		4D83BA902B80B6D200A9F57C /* Post */ = {
 			isa = PBXGroup;
 			children = (
-				4D9B5EAD2B80FEDA00E6B6A6 /* test.jpg */,
 				4D83BA912B80B6D200A9F57C /* PostViewController.swift */,
 			);
 			path = Post;
@@ -553,7 +548,6 @@
 				9C33BD1F2B7B842A00497FEC /* MyPageVCFiles */,
 				9C33BD272B7B842A00497FEC /* ChatProfileVCFiles */,
 				9C33BD2D2B7B842A00497FEC /* ChatProfile.storyboard */,
-				9C33BD2E2B7B842A00497FEC /* MyPage.storyboard */,
 				9C33BD2F2B7B842A00497FEC /* LaunchScreenImage.png */,
 				9C33BD302B7B842A00497FEC /* LoginVCFiles */,
 				9C33BD3A2B7B842A00497FEC /* CustomClass */,
@@ -1024,10 +1018,8 @@
 				9C33BD432B7B842A00497FEC /* ChatPopupViewController.storyboard in Resources */,
 				9C180ECE2B71E98C00B564CE /* YourChatCell.xib in Resources */,
 				4D83BAAC2B80B6D200A9F57C /* ChatRqCell.xib in Resources */,
-				4D9B5EAE2B80FEDA00E6B6A6 /* test.jpg in Resources */,
 				4D83BA9D2B80B6D200A9F57C /* SearchCell.xib in Resources */,
 				9C180EBB2B71DDE500B564CE /* ChatVC.storyboard in Resources */,
-				9C33BD532B7B842A00497FEC /* MyPage.storyboard in Resources */,
 				9C3D39312B7CCACA00FF5CBB /* IdentificationVC.storyboard in Resources */,
 				9C33BD4B2B7B842A00497FEC /* FeedCell.xib in Resources */,
 				4D83BAA22B80B6D200A9F57C /* DetailImgCell.xib in Resources */,

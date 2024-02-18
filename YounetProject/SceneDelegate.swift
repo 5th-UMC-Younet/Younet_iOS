@@ -14,13 +14,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let _ = (scene as? UIWindowScene) else { return }
-        
+
         
 //        // 분기 처리를 통한 로그인 유지 구현
 //        if UserDefaults.standard.string(forKey: "tokenExpireTime") != nil {
 //            if (Date().timeIntervalSince1970 * 1000) < UserDefaults.standard.double(forKey: "tokenExpireTime") {
 //                // 토큰 만료시간이 지나지 않은 경우 -> 로그인 처리(마이페이지로 이동)
-//                let storyboard = UIStoryboard(name: "MyPage", bundle: nil)
+//                let storyboard = UIStoryboard(name: "Comunity", bundle: nil)
 //                let startVC = storyboard.instantiateViewController(withIdentifier: "TabBarVC") as? UITabBarController
 //                window?.rootViewController = startVC
 //                print(TokenUtils().read(APIUrl.url, account: "accessToken")!)
@@ -37,7 +37,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //                            UserDefaults.standard.setValue(LoginUserData.accessTokenExpiresIn, forKey: "tokenExpireTime")
 //                            print("토큰 만료로 재발급 완료")
 //                            print(tk.read(APIUrl.url, account: "accessToken")!)
-//                            let storyboard = UIStoryboard(name: "MyPage", bundle: nil)
+//                            let storyboard = UIStoryboard(name: "Comunity", bundle: nil)
 //                            let startVC = storyboard.instantiateViewController(withIdentifier: "TabBarVC") as? UITabBarController
 //                            self.window?.rootViewController = startVC
 //                        }
@@ -63,6 +63,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //            let startVC = storyboard.instantiateViewController(withIdentifier: "LoginVC") as? LoginViewController
 //            window?.rootViewController = startVC
 //        }
+
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
