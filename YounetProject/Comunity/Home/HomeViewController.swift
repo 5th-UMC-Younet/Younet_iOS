@@ -200,7 +200,7 @@ class HomeViewController: UIViewController {
                 getDataByLikes()
             }
         } else {
-            feedData.remove(at: 0)
+            feedData.removeAll()
             if sortId == 1{
                 getDataByDates()
             } else {
@@ -217,7 +217,6 @@ class HomeViewController: UIViewController {
                 case .success(let feed):
                     self.feedData.append(feed)
                     self.tableViewLoad()
-                    print(self.countryId,self.categoryId)
                 case .failure(let error):
                     print("FeedError: \(error)")
                 }
@@ -245,7 +244,6 @@ class HomeViewController: UIViewController {
         if let date = dateFormatter.date(from: dateString) {
             let now = Date()
             let components = Calendar.current.dateComponents([.hour, .minute, .day, .month, .year], from: date, to: now)
-            
             if let years = components.year, years > 0 {
                 return "\(years)년 전"
             } else if let months = components.month, months > 0 {
@@ -270,31 +268,35 @@ class HomeViewController: UIViewController {
 extension HomeViewController : UITableViewDelegate, UITableViewDataSource {
     //셀 개수
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return feedData[0].content.count
+        return feedData[0].content!.count
     }
     
     //셀 종류
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "FeedCell", for: indexPath) as? FeedCell else{return UITableViewCell()}
-        let feed = feedData[0].content[indexPath.row]
+        let feed = feedData[0].content![indexPath.row]
         cell.titleLabel.text = feed.title
         cell.contentLabel.text = feed.bodySample
-        cell.likeLabel.text = "좋아요 \(feed.likesCount)"
-        cell.commentLabel.text = "댓글 \(feed.commentsCount)"
+        cell.likeLabel.text = "좋아요 \(String(describing: feed.likesCount!))"
+        cell.commentLabel.text = "댓글 \(String(describing: feed.commentsCount!))"
         //Image
-        let url = URL(string: feed.imageSampleUrl)
-        DispatchQueue.global().async {
-            if let data = try? Data(contentsOf: url!) {
-                if let image = UIImage(data: data) {
-                    DispatchQueue.main.async {
-                        cell.imgView.image = image
+        if let urlString = feed.imageSampleUrl, let url = URL(string: urlString) {
+            DispatchQueue.global().async {
+                if let data = try? Data(contentsOf: url) {
+                    if let image = UIImage(data: data) {
+                        DispatchQueue.main.async {
+                            cell.imageSampleView.image = image
+                        }
                     }
                 }
             }
+        } else {
+            cell.imageSampleView.image = nil // 이미지뷰 초기화
         }
+        
         //Time
         let dateString = feed.createdAt
-        if let timeAgo = timeAgo(from: dateString) {
+        if let timeAgo = timeAgo(from: dateString!) {
             cell.timeLabel.text = "\(timeAgo)"
         } else {
             print("TimeError")
@@ -307,9 +309,9 @@ extension HomeViewController : UITableViewDelegate, UITableViewDataSource {
     }
     //데이터 전달
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let postId = feedData[0].content[indexPath.row].postId
-        let date = feedData[0].content[indexPath.row].createdAt
-        let senderData: (Int,Int,String,String) = (postId,categoryId,date,name)
+        let postId = feedData[0].content![indexPath.row].postId
+        let date = feedData[0].content![indexPath.row].createdAt
+        let senderData: (Int?,Int?,String?,String?) = (postId,categoryId,date,name)
         performSegue(withIdentifier: "DetailVC", sender: senderData)
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

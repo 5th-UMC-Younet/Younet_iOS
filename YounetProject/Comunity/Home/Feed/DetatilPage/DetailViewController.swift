@@ -19,6 +19,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var heartButton: UIButton!
     @IBOutlet weak var storeButton: UIButton!
     
@@ -86,11 +87,10 @@ class DetailViewController: UIViewController {
             .responseDecodable(of: DetailModel.self) { [self] response in
                 switch response.result {
                 case .success(let detail):
-                    print(detail)
                     finished1 = true
                     self.detailData.append(detail)
                     self.collectionViewLoad()
-                    if finished1 && finished2 == true{
+                    if finished2{
                         self.loadData()
                     }
                 case .failure(let error):
@@ -106,10 +106,14 @@ class DetailViewController: UIViewController {
                     finished2 = true
                     self.commentData.append(comment)
                     self.tableViewLoad()
+                    if finished1{
+                        self.loadData()
+                    }
                 case .failure(let error):
                     print("CommentError: \(error)")
                 }
             }
+        
     }
     //좋아요 추가
     func like(){
@@ -251,7 +255,7 @@ extension DetailViewController : UITableViewDelegate, UITableViewDataSource {
 
 extension DetailViewController : UICollectionViewDelegate, UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return (detailData[0].data.sections.first?.images.count)!
+        return (detailData[0].data.sections.first?.images.count ?? 0)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

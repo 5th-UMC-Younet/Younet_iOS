@@ -14,15 +14,13 @@ class FeedCell: UITableViewCell {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var likeLabel: UILabel!
     @IBOutlet weak var commentLabel: UILabel!
-    @IBOutlet weak var imgView: UIImageView!
-    
-    
-    
-    
     
     @IBOutlet weak var imageSampleView: UIImageView!
     
-    
+    override func prepareForReuse() {
+            super.prepareForReuse()
+            imageSampleView.image = nil // 이미지 초기화
+        }
     override func awakeFromNib() {
         super.awakeFromNib()
     }

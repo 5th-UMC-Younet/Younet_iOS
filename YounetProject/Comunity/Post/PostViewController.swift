@@ -120,7 +120,7 @@ class PostViewController: UIViewController {
         // 게시물 등록 요청 보내기
         let url = "http://ec2-3-34-112-205.ap-northeast-2.compute.amazonaws.com:8080/post/"
         let headers: HTTPHeaders = [
-            "Content-Type": "application/json"
+            "Content-Type": "multipart/form-data"
         ]
         let parameters: [String: Any] = [
             "title":title,

@@ -22,7 +22,8 @@ class OpenChatViewController: UIViewController {
         tableView.register(nibName, forCellReuseIdentifier: "OpenChatCell")
     }
     @IBAction func alarm(_ sender: Any) {
-        guard let alarmVC = storyboard?.instantiateViewController(identifier: "OpenAlarmVC") as? OpenAlarmViewController else{
+        let storyboard = UIStoryboard(name: "Comunity", bundle: nil)
+        guard let alarmVC = storyboard.instantiateViewController(identifier: "AlarmVC") as? AlarmViewController else{
             return
         }
         alarmVC.modalPresentationStyle = .fullScreen
@@ -45,7 +46,7 @@ class OpenChatViewController: UIViewController {
     func getData(){
         let url = "http://ec2-3-34-112-205.ap-northeast-2.compute.amazonaws.com:8080/chat/list/open"
         let header: HTTPHeaders = [
-            "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkb2pvbzU2QG5hdmVyLmNvbSIsIm5hbWUiOiJtaWEiLCJpZCI6MiwiZXhwIjoxNzA4MTYwNjQ4fQ.7VjfiIjko5PTRYnx7yaXgB4F_fcyxzQzp1dy1jCnglE"
+            "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkb2pvbzU2QG5hdmVyLmNvbSIsIm5hbWUiOiJtaWEiLCJpZCI6MiwiZXhwIjoxNzA4MTc0ODUxfQ.QVLyNv3Dt1giJLp9vOpc4kyVKrpbcuz_tMJzArQZZZU"
         ]
         AF.request(url, method: .get, headers: header)
             .validate(statusCode: 200..<300)

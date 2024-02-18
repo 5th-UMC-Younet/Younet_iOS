@@ -46,6 +46,7 @@
 		4D83BAC82B80B6DD00A9F57C /* OpenChatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D83BABE2B80B6DD00A9F57C /* OpenChatCell.xib */; };
 		4D83BAC92B80B6DD00A9F57C /* OpenChat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D83BABF2B80B6DD00A9F57C /* OpenChat.storyboard */; };
 		4D83BACC2B80B72500A9F57C /* BSImagePicker in Frameworks */ = {isa = PBXBuildFile; productRef = 4D83BACB2B80B72500A9F57C /* BSImagePicker */; };
+		4D9B5EAE2B80FEDA00E6B6A6 /* test.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4D9B5EAD2B80FEDA00E6B6A6 /* test.jpg */; };
 		9C180EB92B71DDDC00B564CE /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C180EB82B71DDDC00B564CE /* ChatVC.swift */; };
 		9C180EBB2B71DDE500B564CE /* ChatVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C180EBA2B71DDE500B564CE /* ChatVC.storyboard */; };
 		9C180EBD2B71DDF700B564CE /* OpenChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C180EBC2B71DDF700B564CE /* OpenChatVC.swift */; };
@@ -204,6 +205,7 @@
 		4D83BABD2B80B6DD00A9F57C /* OpenChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenChatViewController.swift; sourceTree = "<group>"; };
 		4D83BABE2B80B6DD00A9F57C /* OpenChatCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OpenChatCell.xib; sourceTree = "<group>"; };
 		4D83BABF2B80B6DD00A9F57C /* OpenChat.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = OpenChat.storyboard; sourceTree = "<group>"; };
+		4D9B5EAD2B80FEDA00E6B6A6 /* test.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = test.jpg; path = ../../../../test.jpg; sourceTree = "<group>"; };
 		9C180EB82B71DDDC00B564CE /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
 		9C180EBA2B71DDE500B564CE /* ChatVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChatVC.storyboard; sourceTree = "<group>"; };
 		9C180EBC2B71DDF700B564CE /* OpenChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenChatVC.swift; sourceTree = "<group>"; };
@@ -425,6 +427,7 @@
 		4D83BA902B80B6D200A9F57C /* Post */ = {
 			isa = PBXGroup;
 			children = (
+				4D9B5EAD2B80FEDA00E6B6A6 /* test.jpg */,
 				4D83BA912B80B6D200A9F57C /* PostViewController.swift */,
 			);
 			path = Post;
@@ -1021,6 +1024,7 @@
 				9C33BD432B7B842A00497FEC /* ChatPopupViewController.storyboard in Resources */,
 				9C180ECE2B71E98C00B564CE /* YourChatCell.xib in Resources */,
 				4D83BAAC2B80B6D200A9F57C /* ChatRqCell.xib in Resources */,
+				4D9B5EAE2B80FEDA00E6B6A6 /* test.jpg in Resources */,
 				4D83BA9D2B80B6D200A9F57C /* SearchCell.xib in Resources */,
 				9C180EBB2B71DDE500B564CE /* ChatVC.storyboard in Resources */,
 				9C33BD532B7B842A00497FEC /* MyPage.storyboard in Resources */,
