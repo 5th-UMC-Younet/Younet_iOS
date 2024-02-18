@@ -30,12 +30,6 @@ class PostViewController: UIViewController {
         //임시
         communityProfileId = 1
         countryId = 1
-        if let image = UIImage(named: "test.jpg") {
-            // selectedImages 배열에 이미지 추가
-            selectedImages.append(image)
-        } else {
-            print("이미지를 찾을 수 없습니다.")
-        }
         
         //카테고리 메뉴
         category.setTitle("Category", for: .normal)
@@ -107,12 +101,9 @@ class PostViewController: UIViewController {
             
             return
         }
-        for image in selectedImages {
-            let imageName = UUID().uuidString + ".jpeg"
+        for _ in selectedImages {
+            let imageName = UUID().uuidString + ".jpg"
             imageKeys.append(imageName)
-        }
-        if imageKeys.last == "," {
-            imageKeys.removeLast()
         }
         print(imageKeys)
         
@@ -164,7 +155,14 @@ class PostViewController: UIViewController {
                 let alert = PopupViewController.present(parent: self)
                 alert.labelText = "\n게시글이 등록되었습니다.\n"
                 alert.buttonText = "확인"
-                alert.onDismissed = {}
+                alert.onDismissed = {
+                    guard let goHome = self.storyboard?.instantiateViewController(identifier: "tabC") as? TabBarController else{
+                        return
+                    }
+                    goHome.modalTransitionStyle = .crossDissolve
+                    goHome.modalPresentationStyle = .fullScreen
+                    self.present(goHome, animated: true, completion: nil)
+                }
             case .failure(let error):
                 // 실패한 경우 에러 메시지 표시
                 print("PostError: \(error)")

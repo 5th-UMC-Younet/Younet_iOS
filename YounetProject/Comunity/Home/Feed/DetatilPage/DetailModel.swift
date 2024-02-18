@@ -49,4 +49,16 @@ struct Comment: Codable {
     let body: String?
     let createdAt: String?
     let updatedAt: String?
+    let replyList: [Reply]?
 }
+struct Reply: Codable {
+    let replyId: Int?
+    let commentId: Int?
+    let postId: Int?
+    let communityProfileId: Int?
+    let authorName: String?
+    let body: String?
+    let createdAt: String?
+    let updatedAt: String?
+}
+

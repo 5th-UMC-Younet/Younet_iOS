@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D2F06A62B82355F000E2A46 /* ReplyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2F06A42B82355F000E2A46 /* ReplyCell.swift */; };
+		4D2F06A72B82355F000E2A46 /* ReplyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D2F06A52B82355F000E2A46 /* ReplyCell.xib */; };
 		4D83BA982B80B6D200A9F57C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D83BA742B80B6D200A9F57C /* HomeViewController.swift */; };
 		4D83BA992B80B6D200A9F57C /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D83BA762B80B6D200A9F57C /* SearchCell.swift */; };
 		4D83BA9A2B80B6D200A9F57C /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D83BA772B80B6D200A9F57C /* SearchViewController.swift */; };
@@ -165,6 +167,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4D2F06A42B82355F000E2A46 /* ReplyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplyCell.swift; sourceTree = "<group>"; };
+		4D2F06A52B82355F000E2A46 /* ReplyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReplyCell.xib; sourceTree = "<group>"; };
 		4D83BA742B80B6D200A9F57C /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		4D83BA762B80B6D200A9F57C /* SearchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
 		4D83BA772B80B6D200A9F57C /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -340,9 +344,9 @@
 			children = (
 				4D83BA732B80B6D200A9F57C /* Home */,
 				4D83BA902B80B6D200A9F57C /* Post */,
+				4D83BA962B80B6D200A9F57C /* Comunity.storyboard */,
 				4D83BA922B80B6D200A9F57C /* Chat */,
 				4D83BA942B80B6D200A9F57C /* My */,
-				4D83BA962B80B6D200A9F57C /* Comunity.storyboard */,
 				4D83BA972B80B6D200A9F57C /* TabBarController.swift */,
 			);
 			path = Comunity;
@@ -392,6 +396,8 @@
 				4D83BA832B80B6D200A9F57C /* PostSetViewController.swift */,
 				4D83BA842B80B6D200A9F57C /* FeedModel.swift */,
 				4D83BA852B80B6D200A9F57C /* DetailModel.swift */,
+				4D2F06A42B82355F000E2A46 /* ReplyCell.swift */,
+				4D2F06A52B82355F000E2A46 /* ReplyCell.xib */,
 			);
 			path = DetatilPage;
 			sourceTree = "<group>";
@@ -1023,6 +1029,7 @@
 				4D83BAAD2B80B6D200A9F57C /* AlarmCell.xib in Resources */,
 				4D83BAC92B80B6DD00A9F57C /* OpenChat.storyboard in Resources */,
 				9C180EBF2B71DDFD00B564CE /* OpenChatVC.storyboard in Resources */,
+				4D2F06A72B82355F000E2A46 /* ReplyCell.xib in Resources */,
 				9C33BD542B7B842A00497FEC /* LaunchScreenImage.png in Resources */,
 				9C4EDA892B47F2AE00BFDC48 /* SignupVC.storyboard in Resources */,
 				9C4EDA7F2B47EF8C00BFDC48 /* Inter-Bold.ttf in Resources */,
@@ -1108,6 +1115,7 @@
 				9C33BD592B7B842A00497FEC /* LoginViewController.swift in Sources */,
 				4D83BAAA2B80B6D200A9F57C /* AlarmViewController.swift in Sources */,
 				9C33BD4E2B7B842A00497FEC /* ChatMyPageViewController.swift in Sources */,
+				4D2F06A62B82355F000E2A46 /* ReplyCell.swift in Sources */,
 				9C4EDA872B47F2A600BFDC48 /* SignupVC.swift in Sources */,
 				4D83BAAF2B80B6D200A9F57C /* PostViewController.swift in Sources */,
 				4D83BA9B2B80B6D200A9F57C /* SearchDetailViewController.swift in Sources */,

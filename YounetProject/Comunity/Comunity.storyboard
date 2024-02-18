@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Qfc-FA-NOZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Qfc-FA-NOZ">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -74,15 +74,12 @@
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XOw-u4-cqW">
-                                <rect key="frame" x="0.0" y="751" width="393" height="1"/>
-                                <color key="backgroundColor" systemColor="systemGrayColor"/>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UCi-fp-580">
-                                <rect key="frame" x="16" y="751" width="50" height="50"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UCi-fp-580">
+                                <rect key="frame" x="315" y="749" width="50" height="50"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="tintColor" systemColor="labelColor"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="camera" catalog="system" title=""/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="" image="camera"/>
                                 <connections>
                                     <action selector="goAlbum:" destination="lE6-7i-wJ7" eventType="touchUpInside" id="W6F-ZM-pIh"/>
                                 </connections>
@@ -91,21 +88,17 @@
                         <viewLayoutGuide key="safeArea" id="YzU-vy-tKc"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="XOw-u4-cqW" firstAttribute="leading" secondItem="YzU-vy-tKc" secondAttribute="leading" id="3IC-hV-4wW"/>
+                            <constraint firstItem="YzU-vy-tKc" firstAttribute="trailing" secondItem="UCi-fp-580" secondAttribute="trailing" constant="28" id="2Cm-TH-sah"/>
                             <constraint firstItem="oH5-Dv-OnK" firstAttribute="top" secondItem="YzU-vy-tKc" secondAttribute="top" constant="66" id="7lp-rh-NPu"/>
-                            <constraint firstItem="UCi-fp-580" firstAttribute="top" secondItem="YzU-vy-tKc" secondAttribute="top" constant="692" id="7pf-jR-T4n"/>
                             <constraint firstItem="8NT-QG-UYi" firstAttribute="top" secondItem="YzU-vy-tKc" secondAttribute="top" constant="127" id="Ftx-1u-sS4"/>
                             <constraint firstItem="8NT-QG-UYi" firstAttribute="leading" secondItem="YzU-vy-tKc" secondAttribute="leading" constant="16" id="IOm-BS-k7r"/>
-                            <constraint firstItem="XOw-u4-cqW" firstAttribute="top" secondItem="YzU-vy-tKc" secondAttribute="top" constant="692" id="Lwb-fM-3f8"/>
+                            <constraint firstItem="UCi-fp-580" firstAttribute="top" secondItem="YzU-vy-tKc" secondAttribute="top" constant="690" id="IoQ-4u-MHc"/>
                             <constraint firstItem="oH5-Dv-OnK" firstAttribute="leading" secondItem="YzU-vy-tKc" secondAttribute="leading" constant="16" id="MKV-Ye-wgx"/>
                             <constraint firstItem="QX6-tp-96S" firstAttribute="top" secondItem="YzU-vy-tKc" secondAttribute="top" constant="1" id="Sru-6A-hyj"/>
-                            <constraint firstItem="UCi-fp-580" firstAttribute="leading" secondItem="YzU-vy-tKc" secondAttribute="leading" constant="16" id="Vg9-qB-0oB"/>
                             <constraint firstItem="3oh-yK-T3r" firstAttribute="top" secondItem="YzU-vy-tKc" secondAttribute="top" id="WNM-Sd-Qv8"/>
                             <constraint firstItem="Z4x-44-MNH" firstAttribute="top" secondItem="YzU-vy-tKc" secondAttribute="top" id="Yr4-xQ-qJ9"/>
                             <constraint firstItem="QX6-tp-96S" firstAttribute="centerX" secondItem="YzU-vy-tKc" secondAttribute="centerX" id="bey-y5-BHh"/>
-                            <constraint firstItem="XOw-u4-cqW" firstAttribute="height" secondItem="ezO-eW-M3h" secondAttribute="height" multiplier="0.00117371" id="c0T-ap-REY"/>
                             <constraint firstItem="Z4x-44-MNH" firstAttribute="leading" secondItem="YzU-vy-tKc" secondAttribute="leading" constant="16" id="ige-Jm-K6g"/>
-                            <constraint firstItem="XOw-u4-cqW" firstAttribute="width" secondItem="ezO-eW-M3h" secondAttribute="width" id="lkx-B5-RMR"/>
                             <constraint firstItem="YzU-vy-tKc" firstAttribute="trailing" secondItem="3oh-yK-T3r" secondAttribute="trailing" constant="16" id="tfO-hH-ULc"/>
                         </constraints>
                     </view>
@@ -123,7 +116,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2tu-ep-FP2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1502" y="933"/>
+            <point key="canvasLocation" x="1501.5267175572519" y="932.3943661971831"/>
         </scene>
         <!--Search View Controller-->
         <scene sceneID="6G6-Hf-70G">
@@ -2370,7 +2363,7 @@
         <image name="back_2" width="10" height="18.333333969116211"/>
         <image name="bell" catalog="system" width="125" height="128"/>
         <image name="bookmark.fill" catalog="system" width="110" height="128"/>
-        <image name="camera" catalog="system" width="128" height="93"/>
+        <image name="camera" width="50" height="50"/>
         <image name="chat" width="24" height="24"/>
         <image name="chevron.backward" catalog="system" width="97" height="128"/>
         <image name="denmark" width="22" height="16"/>
