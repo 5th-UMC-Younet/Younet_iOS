@@ -100,13 +100,11 @@ struct RealNameProfileService{
             return .networkFail
         }
     }
-    
 }
 
 // MARK: - 오픈채팅 프로필 조회 API
 struct OpenChatProfileService{
     static let shared = OpenChatProfileService()
-    let tk = TokenUtils()
     
     func OpenChatProfile(userId: Int, chatRoomId: Int, completion: @escaping (NetworkResult<Any>) -> (Void)) {
         
@@ -141,6 +139,58 @@ struct OpenChatProfileService{
             return .success(decodedData.result!)
         case 400..<500:
             return .requestErr(decodedData.message)
+        case 500:
+            return .serverErr
+        default:
+            return .networkFail
+        }
+    }
+    
+}
+
+// MARK: - 신고 API
+struct ReportService{
+    static let shared = ReportService()
+    let tk = TokenUtils()
+    
+    func Report(userId: Int, reportReason: String, reportFile: String, completion: @escaping (NetworkResult<Any>) -> (Void)) {
+        
+        let url = APIUrl.report + "\(userId)"
+        let tokenheader = tk.getAuthorizationHeader(serviceID: APIUrl.url)
+        
+        let body: [String: Any] = [
+            "reportReason": reportReason,
+            "reportFile": reportFile
+        ]
+        
+        // 요청하기
+        let dataRequest = AF.request(url,
+                                     method: .post,
+                                     parameters: body,
+                                     encoding: JSONEncoding.default,
+                                     headers: tokenheader)
+        
+        dataRequest.responseData {(response) in
+            switch response.result {
+            case .success:
+                guard let statusCode = response.response?.statusCode else { return }
+                guard let data = response.value else { return }
+                completion(judgeSignInData(status: statusCode))
+                
+            case .failure(let err):
+                print(err)
+                completion(.networkFail)
+            }
+        }
+    }
+    
+    // 상태에 따라 어떤 것을 출력해줄지 결정
+    func judgeSignInData(status: Int) -> NetworkResult<Any> {
+        switch status {
+        case 200:
+            return .success(print("신고 성공"))
+        case 400..<500:
+            return .requestErr(print("신고 실패"))
         case 500:
             return .serverErr
         default:

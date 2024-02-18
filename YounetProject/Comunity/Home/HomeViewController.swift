@@ -287,7 +287,7 @@ extension HomeViewController : UITableViewDelegate, UITableViewDataSource {
             if let data = try? Data(contentsOf: url!) {
                 if let image = UIImage(data: data) {
                     DispatchQueue.main.async {
-                        cell.imgView.image = image
+                        cell.imageSampleView.image = image
                     }
                 }
             }

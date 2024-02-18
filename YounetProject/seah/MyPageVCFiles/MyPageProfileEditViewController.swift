@@ -37,7 +37,10 @@ class MyPageProfileEditViewController: UIViewController{
         
         setKeyboard()
         setTextViewPlaceholder()
-        setDefaultData()
+        DispatchQueue.main.async {
+            self.setDefaultData()
+        }
+        
         
         print("\(profileImage.currentImage!)")
         

@@ -41,3 +41,8 @@ struct ChatProfileData: Codable {
     var userId, communityProfileId : Int?
     var profilePicture, name, likeCntr, profileText : String?
 }
+
+struct ChatRealNameProfileData: Codable {
+    var userId: Int?
+    var name, profilePicture, mainSkl, hostContr, hostSkl, profileText: String?
+}

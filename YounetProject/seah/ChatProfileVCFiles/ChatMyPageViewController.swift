@@ -28,14 +28,14 @@ class ChatMyPageViewController: UIViewController {
     let imageData = ImageFileManager.shared
     
     override func viewDidLoad() {
-        getData()
         setDesign()
         super.viewDidLoad()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        getData()
-        
+        DispatchQueue.main.async {
+            self.getData()
+        }
     }
     
     private func setDesign() {

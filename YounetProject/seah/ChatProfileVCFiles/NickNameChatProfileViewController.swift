@@ -36,7 +36,9 @@ class NickNameChatProfileViewController: UIViewController {
         
         setKeyboard()
         setTextViewPlaceholder()
-        setDefaultData()
+        DispatchQueue.main.async {
+            self.setDefaultData()
+        }
         
         imgPicker.delegate = self
         nicknameTextField.delegate = self
@@ -143,10 +145,15 @@ class NickNameChatProfileViewController: UIViewController {
         if nicknameTextField.text != "" {
             nicknameSaved = nicknameTextField.text!
         }
+        
         if selfExplainTextView.text != textViewSample {
             profileTextSaved = selfExplainTextView.text
-        } else{
+        } else {
             profileTextSaved = textViewSample
+        }
+        
+        if self.simpleData.string(forKey: "preferNationImage") != nil {
+            likeCntrSaved = (preferNationButton.titleLabel?.text)!
         }
         
         MyPageProfileEditService.shared.MyPageEditPatch(profilePicture: imgSaved!, name: usernameLabel.text! ,nickname: nicknameSaved, likeCntr: likeCntrSaved, profileText: profileTextSaved) { (networkResult) -> (Void) in

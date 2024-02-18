@@ -20,6 +20,13 @@ class LoginViewController: UIViewController {
     
     @IBAction func joinBtnDidTap(_ sender: UIButton) {
         // 회원가입 VC 연결
+        
+        //테스트
+        let nextSB = UIStoryboard(name: "Comunity", bundle: nil)
+        guard let nextVC = nextSB.instantiateViewController(withIdentifier: "tabC") as? TabBarController else { return }
+        nextVC.modalPresentationStyle = .fullScreen
+        nextVC.modalTransitionStyle = .crossDissolve
+        self.present(nextVC, animated: true, completion: nil)
     }
     
     @IBAction func kakaoLoginBtnDidTap(_ sender: Any) {

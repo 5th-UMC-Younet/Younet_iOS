@@ -33,13 +33,11 @@ class MyPageViewController: UIViewController {
         }
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
     override func viewWillAppear(_ animated: Bool) {
         setDesign()
-        getData()
+        DispatchQueue.main.async {
+            self.getData()
+        }
     }
     
     private func setDesign() {

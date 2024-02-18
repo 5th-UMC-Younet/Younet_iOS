@@ -236,7 +236,7 @@
 		9C33BD2C2B7B842A00497FEC /* OtherUserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherUserProfileViewController.swift; sourceTree = "<group>"; };
 		9C33BD2D2B7B842A00497FEC /* ChatProfile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ChatProfile.storyboard; sourceTree = "<group>"; };
 		9C33BD2E2B7B842A00497FEC /* MyPage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MyPage.storyboard; sourceTree = "<group>"; };
-		9C33BD2F2B7B842A00497FEC /* LaunchScreenImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaunchScreenImage.png; sourceTree = "<group>"; };
+		9C33BD2F2B7B842A00497FEC /* LaunchScreenImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = LaunchScreenImage.png; path = seah/LaunchScreenImage.png; sourceTree = "<group>"; };
 		9C33BD312B7B842A00497FEC /* IdPwSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdPwSearchViewController.swift; sourceTree = "<group>"; };
 		9C33BD322B7B842A00497FEC /* IdSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdSearchViewController.swift; sourceTree = "<group>"; };
 		9C33BD332B7B842A00497FEC /* PwSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PwSearchViewController.swift; sourceTree = "<group>"; };
@@ -551,7 +551,6 @@
 				9C33BD272B7B842A00497FEC /* ChatProfileVCFiles */,
 				9C33BD2D2B7B842A00497FEC /* ChatProfile.storyboard */,
 				9C33BD2E2B7B842A00497FEC /* MyPage.storyboard */,
-				9C33BD2F2B7B842A00497FEC /* LaunchScreenImage.png */,
 				9C33BD302B7B842A00497FEC /* LoginVCFiles */,
 				9C33BD3A2B7B842A00497FEC /* CustomClass */,
 			);
@@ -562,11 +561,11 @@
 			isa = PBXGroup;
 			children = (
 				9C33BD182B7B842A00497FEC /* PopupViewController.storyboard */,
-				9C33BD192B7B842A00497FEC /* ChatPopupViewController.swift */,
-				9C33BD1A2B7B842A00497FEC /* PopupChoiceViewController.swift */,
-				9C33BD1B2B7B842A00497FEC /* ChatPopupViewController.storyboard */,
 				9C33BD1C2B7B842A00497FEC /* PopupViewController.swift */,
+				9C33BD1B2B7B842A00497FEC /* ChatPopupViewController.storyboard */,
+				9C33BD192B7B842A00497FEC /* ChatPopupViewController.swift */,
 				9C33BD1D2B7B842A00497FEC /* PopupChoiceViewController.storyboard */,
+				9C33BD1A2B7B842A00497FEC /* PopupChoiceViewController.swift */,
 			);
 			path = Popup;
 			sourceTree = "<group>";
@@ -574,13 +573,13 @@
 		9C33BD1F2B7B842A00497FEC /* MyPageVCFiles */ = {
 			isa = PBXGroup;
 			children = (
+				9C33BD232B7B842A00497FEC /* Feed */,
 				B34AB8F12B80CE9900A8C808 /* TableVCFiles */,
 				B34AB8EC2B80CE8000A8C808 /* MyPageAPI */,
 				9C33BD202B7B842A00497FEC /* SettingViewController.swift */,
 				9C33BD212B7B842A00497FEC /* QuitViewController.swift */,
-				9C33BD222B7B842A00497FEC /* MyPageProfileEditViewController.swift */,
-				9C33BD232B7B842A00497FEC /* Feed */,
 				9C33BD262B7B842A00497FEC /* MyPageViewController.swift */,
+				9C33BD222B7B842A00497FEC /* MyPageProfileEditViewController.swift */,
 			);
 			path = MyPageVCFiles;
 			sourceTree = "<group>";
@@ -730,6 +729,7 @@
 				9C6B45322B47D9340068FA95 /* AppDelegate.swift */,
 				9C6B45342B47D9340068FA95 /* SceneDelegate.swift */,
 				9C6B45362B47D9340068FA95 /* ViewController.swift */,
+				9C33BD2F2B7B842A00497FEC /* LaunchScreenImage.png */,
 				9C33BD1E2B7B842A00497FEC /* LaunchScreen.storyboard */,
 				B34A9D9B2B73B65800EA6686 /* Main.storyboard */,
 				9C6B453B2B47D9350068FA95 /* Assets.xcassets */,

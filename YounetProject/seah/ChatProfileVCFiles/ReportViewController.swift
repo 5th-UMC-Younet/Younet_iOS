@@ -19,6 +19,8 @@ class ReportViewController: UIViewController {
     @IBOutlet weak var mainStackView: UIStackView!
     
     var BtnArray = [UIButton]()
+    var BtnSetNum = 0
+    var reportReason = "default"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,10 +47,26 @@ class ReportViewController: UIViewController {
             if Btn == sender {
                 // 만약 현재 버튼이 이 함수를 호출한 버튼이라면
                 Btn.isSelected = true
+                BtnSetNum = BtnArray.firstIndex(of: Btn)!
             } else {
                 // 이 함수를 호출한 버튼이 아니라면
                 Btn.isSelected = false
             }
+        }
+        
+        switch BtnSetNum {
+        case 0:
+            reportReason = "CURSE"
+        case 1:
+            reportReason = "FRAUD"
+        case 2:
+            reportReason = "SEXUAL"
+        case 3:
+            reportReason = "DEAL"
+        case 4:
+            reportReason = "OTHER"
+        default:
+            print("error")
         }
     }
     
@@ -60,9 +78,24 @@ class ReportViewController: UIViewController {
     }
     
     @IBAction func confirmButtonDidtap(_ sender: UIButton) {
-        let presentedPopup = PopupViewController.present(parent: self)
-        presentedPopup.labelText = "\n신고가 완료되었습니다.\n"
-        presentedPopup.onDismissed = { [weak self] () in self?.dismiss(animated: true, completion: nil) }
+        print(reportReason)
+        
+        ReportService.shared.Report(userId: 1, reportReason: reportReason, reportFile: ""){(networkResult) -> (Void) in
+            switch networkResult {
+            case .success(let result):
+                let presentedPopup = PopupViewController.present(parent: self)
+                presentedPopup.labelText = "\n신고가 완료되었습니다.\n"
+                presentedPopup.onDismissed = { [weak self] () in self?.dismiss(animated: true, completion: nil) }
+            case .requestErr:
+                print("400 error")
+            case .pathErr:
+                print("pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        }
     }
     
     @IBAction func backButtonDidtap(_ sender: UIButton) {

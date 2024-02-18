@@ -55,7 +55,7 @@ class ChatPopupViewController: UIViewController {
             switch networkResult {
             case .success(let result):
                 if self.setPopupNumber == 0 {
-                    if let ChatProfileData = result as? ChatProfileData {
+                    if let ChatProfileData = result as? ChatRealNameProfileData {
                         // 실명프로필인 경우 서버에서 이름, 본교, 유학국, 교환교 데이터 수신
                         self.nationImgContainer.isHidden = true
                         
@@ -64,15 +64,30 @@ class ChatPopupViewController: UIViewController {
                             self.profileImage.load(url: url!)
                         }
                         
-                        self.nameLabel.text = "실명"
-                        self.univOrNationLabel.text = "OO대학교"
+                        self.nameLabel.text = ChatProfileData.name
+                        self.univOrNationLabel.text = ChatProfileData.hostSkl
+                        self.selfExplainLabel.text = ChatProfileData.profileText
                         self.rightDismissed = { [weak self] () in self?.requestChat() }
                     }
                 } else {
+                    // 익명프로필인 경우
                     if let ChatProfileData = result as? ChatProfileData {
+                        self.nationImgContainer.isHidden = true
                         
+                        if ChatProfileData.profilePicture != nil {
+                            let url = URL(string: ChatProfileData.profilePicture!)
+                            self.profileImage.load(url: url!)
+                        }
                         
-                    }}
+                        self.nameLabel.text = ChatProfileData.name
+                        self.univOrNationLabel.text = ChatProfileData.likeCntr
+                        self.selfExplainLabel.text = ChatProfileData.profileText
+                        
+                        self.rightBtn.setTitle("HOME", for: .normal)
+                        self.rightDismissed = { [weak self] () in self?.goHome()
+                        }
+                    }
+                }
             case .requestErr:
                 print("400 error")
             case .pathErr:
@@ -83,63 +98,6 @@ class ChatPopupViewController: UIViewController {
                 print("networkFail")
             }
             
-        }
-        
-        
-        if setPopupNumber == 0 {
-            // 실명프로필인 경우 서버에서 이름, 본교, 유학국, 교환교 데이터 수신
-            nationImgContainer.isHidden = true
-
-            UserDefaults.standard.string(forKey: "selfExplain_realName") != nil ?  (selfExplainLabel.text = UserDefaults.standard.string(forKey: "selfExplain_realName")) : (selfExplainLabel.text = "프로필 소개글")
-            if ImageFileManager.shared.getSavedImage(named: "profileImage") != nil {
-                profileImage.image = ImageFileManager.shared.getSavedImage(named: "profileImage_realName")
-            }
-            
-            nameLabel.text = "실명"
-            univOrNationLabel.text = "OO대학교"
-            rightDismissed = { [weak self] () in self?.requestChat() }
-            
-            
-        } else {
-            // 익명프로필인 경우-> 일단 연결은 해놨는데 채팅쪽 익명이라 남의 프로필이니까 새로 API 연결해야함
-            MyPageService.shared.MyPage{ (networkResult) -> (Void) in
-                switch networkResult {
-                case .success(let result):
-                    if let myPageData = result as? MyPageUserData {
-                        // 프로필 세팅
-                        self.nameLabel.text = myPageData.name
-                        myPageData.profileText == nil ? (self.selfExplainLabel.text = "프로필 소개글") : (self.selfExplainLabel.text = myPageData.profileText)
-                        
-                        // 관심 국가명 및 이미지 세팅
-                        if self.simpleData.string(forKey: "preferNationImage") != nil {
-                            self.univOrNationLabel.text = myPageData.likeCntr
-                            self.preferNationImage.image = UIImage(named: self.simpleData.string(forKey: "preferNationImage")!)
-                            self.nationImgContainer.isHidden = false
-                        } else {
-                            self.univOrNationLabel.text = "관심국가"
-                            self.nationImgContainer.isHidden = true
-                        }
-                        
-                        if myPageData.profilePicture != nil {
-                            // url로부터 프로필 이미지 받아오기
-                            let url = URL(string: myPageData.profilePicture!)
-                            self.profileImage.load(url: url!)
-                        }
-                        
-                    }
-                case .requestErr:
-                    print("400 Error")
-                case .pathErr:
-                    print("pathErr")
-                case .serverErr:
-                    print("serverErr")
-                case .networkFail:
-                    print("networkFail")
-                }
-            }
-            
-            rightBtn.setTitle("HOME", for: .normal)
-            rightDismissed = { [weak self] () in self?.goHome() }
         }
     }
     

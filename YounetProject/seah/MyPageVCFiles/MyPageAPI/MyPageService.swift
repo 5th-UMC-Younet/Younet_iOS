@@ -123,15 +123,11 @@ struct MyPageProfileEditService{
         // 요청하기
         let dataRequest = AF.upload(multipartFormData: { multipartFormData in
             
-            //multipartFormData.append(try! JSONSerialization.data(withJSONObject: dataText) ?? Data(), withName: "editMyPage", mimeType: "application/json")
             print(dataText)
             multipartFormData.append("{\(sendText)}".data(using: .utf8)!, withName: "editMypage", mimeType: "application/json")
             print("\(tk.read(APIUrl.url, account: "accessToken")!)")
-            //print("{\(sendText)}")
-            //for (key, value) in body {
-              // multipartFormData.append("\(value)".data(using: .utf8)!, withName: key, mimeType: "text/plain") }
             
-            if let image = profilePicture.jpegData(compressionQuality: 1){
+            if let image = profilePicture.jpegData(compressionQuality: 0.1){
                 print("변환 성공")
                 print("\(image)")
                 multipartFormData.append(image, withName: "file", fileName: "changedProfileImage.jpeg", mimeType: "image/jpeg") }

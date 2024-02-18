@@ -28,11 +28,13 @@ class OtherUserProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getData()
-        getAPI()
-        
         setDesign()
         registerXib()
+        
+        DispatchQueue.main.async {
+            self.getData()
+            self.getAPI()
+        }
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -41,7 +43,6 @@ class OtherUserProfileViewController: UIViewController {
     private func setDesign() {
         nationContainer.layer.borderColor = UIColor.lightGray.cgColor
         nationContainer.layer.borderWidth = 0.25
-       
     }
     
     func tableViewLoad() {
