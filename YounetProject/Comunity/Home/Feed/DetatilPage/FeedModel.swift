@@ -8,11 +8,11 @@
 import Foundation
 struct FeedModel: Codable {
     let content: [Content]?
-        let size: Int?
-        let number: Int?
-        let first: Bool?
-        let last: Bool?
-        let numberOfElements: Int?
+    let size: Int?
+    let number: Int?
+    let first: Bool?
+    let last: Bool?
+    let numberOfElements: Int?
 }
 struct Content: Codable {
     let postId: Int?
@@ -24,3 +24,4 @@ struct Content: Codable {
     let createdAt: String?
     let commentsCount: Int?
 }
+

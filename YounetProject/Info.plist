@@ -42,7 +42,7 @@
 					<key>UISceneDelegateClassName</key>
 					<string>$(PRODUCT_MODULE_NAME).SceneDelegate</string>
 					<key>UISceneStoryboardFile</key>
-					<string>OpenChat</string>
+					<string>Comunity</string>
 				</dict>
 			</array>
 		</dict>

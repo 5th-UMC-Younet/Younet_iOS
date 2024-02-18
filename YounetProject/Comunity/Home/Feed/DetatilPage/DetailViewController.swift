@@ -31,6 +31,13 @@ class DetailViewController: UIViewController {
     var date: String?
     var comunityProfileId: Int? //로그인한 사용자의 ID
     var countryName: String?
+    var commentId: Int?
+    
+    //대댓글
+    var t = true
+    var num = 0
+    var count = 0
+    var i = 0
     
     @IBAction func sendComent(_ sender: Any) {
         print("전송")
@@ -104,6 +111,7 @@ class DetailViewController: UIViewController {
                 switch response.result {
                 case .success(let comment):
                     finished2 = true
+                    print(comment)
                     self.commentData.append(comment)
                     self.tableViewLoad()
                     if finished1{
@@ -220,6 +228,8 @@ class DetailViewController: UIViewController {
         tableView.register(nibName, forCellReuseIdentifier: "FeedDetailCell")
         let nibName2 = UINib(nibName: "DetailImgCell", bundle: nil)
         collectionView.register(nibName2, forCellWithReuseIdentifier: "DetailImgCell")
+        let nibName3 = UINib(nibName: "ReplyCell", bundle: nil)
+        tableView.register(nibName3, forCellReuseIdentifier: "ReplyCell")
     }
     func tableViewLoad(){
         tableView.delegate = self
@@ -235,17 +245,47 @@ class DetailViewController: UIViewController {
 //MARK: - extension
 extension DetailViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return commentData.first?.content?.count ?? 0
+        return commentData[0].content!.count + (commentData[0].content?.first?.replyList!.count)!
     }
     
     //셀 종류
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "FeedDetailCell", for: indexPath) as? FeedDetailCell else{return UITableViewCell()}
-        let comment = commentData[indexPath.row]
-        cell.userName.setTitle(" \((comment.content?.first?.authorName)!)", for: .normal)
-        cell.dateLabel.text = comment.content?.first?.createdAt
-        cell.commentLabel.text = comment.content?.first?.body
-        return cell
+        print(commentData[0].content!.count + (commentData[0].content?.first?.replyList!.count)!)
+//        if !(commentData.isEmpty){
+//
+//        }
+        let comment = commentData[0].content![num]
+        let replyCount = comment.replyList!.count
+        if t{
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "FeedDetailCell", for: indexPath) as? FeedDetailCell else{return UITableViewCell()}
+            cell.userName.setTitle(" \((comment.authorName)!)", for: .normal)
+            cell.dateLabel.text = String(comment.createdAt?.prefix(10) ?? "")
+            cell.commentLabel.text = comment.body
+            count = replyCount
+            i = 0
+            if count != 0{
+                t = false
+            }else if (num+1) < commentData[0].content!.count + (commentData[0].content?.first?.replyList!.count)!{
+                    num += 1
+            }
+            return cell
+        }else{
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "ReplyCell", for: indexPath) as? ReplyCell else{return UITableViewCell()}
+            cell.userName.setTitle(" \((comment.replyList![i].authorName)!)", for: .normal)
+            cell.dateLabel.text = comment.createdAt
+            cell.commentLabel.text = comment.replyList![i].body
+            count -= 1
+            i += 1
+            print(count,t)
+            if count == 0{
+                t = true
+                if (num+1) < commentData[0].content!.count + (commentData[0].content?.first?.replyList!.count)!{
+                    num += 1
+                }
+            }
+            return cell
+        }
+         
     }
     //테이블뷰 높이
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
