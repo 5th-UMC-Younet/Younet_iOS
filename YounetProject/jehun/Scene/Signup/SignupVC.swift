@@ -68,7 +68,7 @@ class SignupVC: UIViewController
                 
                 let popup = DefaultPopup.present(parent: self, contentStr: result, btnTitleStr: "로그인")
                 popup.onDismissed = {
-                    // 버튼이 눌렸을 때 로그인 화면으로 화면 전환
+                    self.navigationController?.popViewController(animated: true)
                 }
             })
             

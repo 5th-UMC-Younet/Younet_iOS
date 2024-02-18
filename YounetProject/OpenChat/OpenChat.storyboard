@@ -82,13 +82,25 @@
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="chatPlus"/>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kUQ-bp-l7F">
+                                <rect key="frame" x="6" y="69" width="39.666666666666664" height="34.333333333333343"/>
+                                <color key="tintColor" red="0.2470588088" green="0.2470588088" blue="0.2470588088" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="chevron.backward" catalog="system"/>
+                                <connections>
+                                    <action selector="back:" destination="JY5-yh-yne" eventType="touchUpInside" id="zPP-mm-yLT"/>
+                                    <action selector="backButtonDidtap:" destination="DbW-jy-yKz" eventType="touchUpInside" id="K8e-xf-fVo"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hcc-tj-nev"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="brm-lr-bL6" firstAttribute="leading" secondItem="hcc-tj-nev" secondAttribute="leading" id="8Gc-aC-26E"/>
                             <constraint firstItem="brm-lr-bL6" firstAttribute="top" secondItem="IU5-fa-EK6" secondAttribute="bottom" constant="40" id="Ahq-jX-S4o"/>
+                            <constraint firstItem="kUQ-bp-l7F" firstAttribute="centerY" secondItem="R0F-aX-UlJ" secondAttribute="centerY" id="YsE-JK-TCn"/>
                             <constraint firstItem="hcc-tj-nev" firstAttribute="trailing" secondItem="WZl-Gd-Uot" secondAttribute="trailing" constant="16" id="cge-xL-Qfh"/>
+                            <constraint firstItem="kUQ-bp-l7F" firstAttribute="leading" secondItem="hcc-tj-nev" secondAttribute="leading" constant="6" id="d7d-kZ-Ey2"/>
                             <constraint firstItem="brm-lr-bL6" firstAttribute="trailing" secondItem="hcc-tj-nev" secondAttribute="trailing" id="g1t-l5-w3v"/>
                             <constraint firstItem="hcc-tj-nev" firstAttribute="bottom" secondItem="WZl-Gd-Uot" secondAttribute="bottom" constant="29" id="jHA-Bz-C2S"/>
                             <constraint firstItem="hcc-tj-nev" firstAttribute="trailing" secondItem="IU5-fa-EK6" secondAttribute="trailing" constant="30.666666666666629" id="lvk-b6-7b4"/>
@@ -138,7 +150,7 @@
                                 <rect key="frame" x="16" y="94" width="35" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="23"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="3" maxY="0.0"/>
                                 <state key="normal" image="back_2" backgroundImage="back_1">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -150,12 +162,17 @@
                                 <rect key="frame" x="0.0" y="194" width="393" height="658"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="글, 제목, 내용, 해시태그" borderStyle="roundedRect" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="hJC-jJ-efg">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="글, 제목, 내용, 해시태그" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="hJC-jJ-efg">
                                 <rect key="frame" x="60" y="93" width="317" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.85098039219999999" green="0.85098039219999999" blue="0.85098039219999999" alpha="0.22" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="그룹채팅" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="914-ck-jaJ">
                                 <rect key="frame" x="16" y="159" width="52" height="18"/>
@@ -577,16 +594,28 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x4S-cX-Czt">
+                                <rect key="frame" x="6" y="73.333333333333329" width="39.666666666666664" height="34.333333333333329"/>
+                                <color key="tintColor" red="0.2470588088" green="0.2470588088" blue="0.2470588088" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="chevron.backward" catalog="system"/>
+                                <connections>
+                                    <action selector="backButtonDidtap:" destination="DbW-jy-yKz" eventType="touchUpInside" id="MfW-P5-Rjs"/>
+                                    <action selector="backButtonDidtap:" destination="MN3-Za-0Jp" eventType="touchUpInside" id="tcb-oS-Fs4"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="dvm-Bp-vXd"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="CTG-AX-8ho" firstAttribute="centerX" secondItem="NaC-mF-ter" secondAttribute="centerX" id="3MA-3P-CpX"/>
+                            <constraint firstItem="x4S-cX-Czt" firstAttribute="centerY" secondItem="mpp-Lk-xwK" secondAttribute="centerY" id="4dQ-pq-8PB"/>
                             <constraint firstItem="Ndx-fE-w3N" firstAttribute="top" secondItem="OMH-WQ-keX" secondAttribute="bottom" constant="50" id="56d-u1-TcK"/>
                             <constraint firstItem="Ndx-fE-w3N" firstAttribute="centerX" secondItem="NaC-mF-ter" secondAttribute="centerX" id="6LU-J6-QhS"/>
                             <constraint firstItem="Ol2-Zt-boe" firstAttribute="top" secondItem="mpp-Lk-xwK" secondAttribute="bottom" constant="83" id="7Ly-Gj-Llq"/>
                             <constraint firstItem="CTG-AX-8ho" firstAttribute="centerX" secondItem="mpp-Lk-xwK" secondAttribute="centerX" id="Adf-Et-yzS"/>
                             <constraint firstItem="Ak5-SI-zph" firstAttribute="bottom" secondItem="OMH-WQ-keX" secondAttribute="bottom" id="Bk5-1G-zZp"/>
+                            <constraint firstItem="x4S-cX-Czt" firstAttribute="leading" secondItem="dvm-Bp-vXd" secondAttribute="leading" constant="6" id="HBT-Hk-kTo"/>
                             <constraint firstItem="OMH-WQ-keX" firstAttribute="leading" secondItem="Ak5-SI-zph" secondAttribute="leading" id="Hpy-p6-1ze"/>
                             <constraint firstItem="dvm-Bp-vXd" firstAttribute="trailing" secondItem="t5o-pB-Yx9" secondAttribute="trailing" constant="20" id="MAR-e6-els"/>
                             <constraint firstItem="OMH-WQ-keX" firstAttribute="centerX" secondItem="NaC-mF-ter" secondAttribute="centerX" id="RSB-d4-zBK"/>
@@ -973,7 +1002,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="69X-xt-BUY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2951" y="957"/>
+            <point key="canvasLocation" x="1766" y="-90"/>
         </scene>
         <!--Nick Name Chat Profile View Controller-->
         <scene sceneID="fTE-r5-DhC">
@@ -1284,7 +1313,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DI1-37-1eT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3612" y="959"/>
+            <point key="canvasLocation" x="2427" y="-88"/>
         </scene>
         <!--Report View Controller-->
         <scene sceneID="19n-3P-Ums">
@@ -1591,7 +1620,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v3u-mh-d6t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2067" y="958"/>
+            <point key="canvasLocation" x="1737" y="814"/>
         </scene>
         <!--Other User Profile View Controller-->
         <scene sceneID="EOQ-el-Ux6">
@@ -1793,7 +1822,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="54E-EC-9kl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1299" y="959"/>
+            <point key="canvasLocation" x="969" y="815"/>
         </scene>
     </scenes>
     <resources>

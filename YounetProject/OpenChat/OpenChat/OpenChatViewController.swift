@@ -21,6 +21,9 @@ class OpenChatViewController: UIViewController {
         let nibName = UINib(nibName: "OpenChatCell", bundle: nil)
         tableView.register(nibName, forCellReuseIdentifier: "OpenChatCell")
     }
+    @IBAction func back(_ sender: Any) {
+        dismiss(animated: true)
+    }
     @IBAction func alarm(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Comunity", bundle: nil)
         guard let alarmVC = storyboard.instantiateViewController(identifier: "AlarmVC") as? AlarmViewController else{

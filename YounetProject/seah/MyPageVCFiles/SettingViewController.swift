@@ -24,15 +24,6 @@ class SettingViewController: UIViewController {
         messageSwitch.delegate = self
     }
     
-    @IBAction func segueTest(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "OpenChat", bundle: .main)
-        let nextVC = storyboard.instantiateViewController(withIdentifier: "TabBarVC") as! UITabBarController
-        nextVC.modalPresentationStyle = .fullScreen
-        nextVC.modalTransitionStyle = .crossDissolve
-        
-        self.present(nextVC, animated: true)
-    }
-    
     
     @IBAction func logoutBtnDidtap(_ sender: Any) {
         //카카오 로그아웃인지 서버 회원가입 로그아웃인지 분기 처리

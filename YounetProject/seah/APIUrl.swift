@@ -5,12 +5,12 @@
 //  Created by 김세아 on 2/11/24.
 //
 
-// add to commit and merge
+
 import Foundation
 
 struct APIUrl {
     static let url = "http://3.34.112.205:8080"
-    static let aa = "aaaaa"
+
     static let login = url + "/user/login"
     static let findId = url + "/user/findId"
     static let findPwSendEmail = url + "/user/findPassword/email?loginId="

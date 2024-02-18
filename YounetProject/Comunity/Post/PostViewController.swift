@@ -90,7 +90,7 @@ class PostViewController: UIViewController {
     
     //취소
     @IBAction func backButton(_ sender: Any) {
-        guard let back = storyboard?.instantiateViewController(identifier: "tabC") as? TabBarController else{
+        guard let back = storyboard?.instantiateViewController(identifier: "tabC") as? CustomTabBarViewController else{
             return
         }
         back.modalTransitionStyle = .crossDissolve

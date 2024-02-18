@@ -76,7 +76,6 @@
 		9C33BD4F2B7B842A00497FEC /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C33BD2A2B7B842A00497FEC /* ReportViewController.swift */; };
 		9C33BD502B7B842A00497FEC /* RealNameChatProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C33BD2B2B7B842A00497FEC /* RealNameChatProfileViewController.swift */; };
 		9C33BD512B7B842A00497FEC /* OtherUserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C33BD2C2B7B842A00497FEC /* OtherUserProfileViewController.swift */; };
-		9C33BD522B7B842A00497FEC /* ChatProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C33BD2D2B7B842A00497FEC /* ChatProfile.storyboard */; };
 		9C33BD542B7B842A00497FEC /* LaunchScreenImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C33BD2F2B7B842A00497FEC /* LaunchScreenImage.png */; };
 		9C33BD552B7B842A00497FEC /* IdPwSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C33BD312B7B842A00497FEC /* IdPwSearchViewController.swift */; };
 		9C33BD562B7B842A00497FEC /* IdSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C33BD322B7B842A00497FEC /* IdSearchViewController.swift */; };
@@ -143,6 +142,7 @@
 		B34AB9192B80D28000A8C808 /* APIUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34AB8FD2B80CEF500A8C808 /* APIUrl.swift */; };
 		B34AB91A2B80D29000A8C808 /* TokenUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34AB8FE2B80CEF500A8C808 /* TokenUtils.swift */; };
 		B34AB91D2B80D3B700A8C808 /* SignupCustomTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CB351872B4E775000EE36F0 /* SignupCustomTextField.xib */; };
+		B37F116B2B81FF1B00D655FF /* CustomTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37F116A2B81FF1B00D655FF /* CustomTabBarViewController.swift */; };
 		B3F34B522B7CA2BF0077B547 /* KakaoSDKAuth in Frameworks */ = {isa = PBXBuildFile; productRef = B3F34B512B7CA2BF0077B547 /* KakaoSDKAuth */; };
 		B3F34B542B7CA2BF0077B547 /* KakaoSDKUser in Frameworks */ = {isa = PBXBuildFile; productRef = B3F34B532B7CA2BF0077B547 /* KakaoSDKUser */; };
 /* End PBXBuildFile section */
@@ -233,7 +233,6 @@
 		9C33BD2A2B7B842A00497FEC /* ReportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
 		9C33BD2B2B7B842A00497FEC /* RealNameChatProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealNameChatProfileViewController.swift; sourceTree = "<group>"; };
 		9C33BD2C2B7B842A00497FEC /* OtherUserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherUserProfileViewController.swift; sourceTree = "<group>"; };
-		9C33BD2D2B7B842A00497FEC /* ChatProfile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ChatProfile.storyboard; sourceTree = "<group>"; };
 		9C33BD2F2B7B842A00497FEC /* LaunchScreenImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaunchScreenImage.png; sourceTree = "<group>"; };
 		9C33BD312B7B842A00497FEC /* IdPwSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdPwSearchViewController.swift; sourceTree = "<group>"; };
 		9C33BD322B7B842A00497FEC /* IdSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdSearchViewController.swift; sourceTree = "<group>"; };
@@ -290,8 +289,6 @@
 		9CFC5FAB2B6CA9D500997BDC /* CountryDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDTO.swift; sourceTree = "<group>"; };
 		9CFC6AEC2B6F97F500443712 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		9CFC6AEE2B6F985F00443712 /* AuthRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
-		B34A9D7E2B73A20100EA6686 /* Inter-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Bold.ttf"; sourceTree = "<group>"; };
-		B34A9D7F2B73A20100EA6686 /* Inter-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular.ttf"; sourceTree = "<group>"; };
 		B34A9D9B2B73B65800EA6686 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		B34AB8ED2B80CE8000A8C808 /* MyPageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPageService.swift; sourceTree = "<group>"; };
 		B34AB8EE2B80CE8000A8C808 /* MyPageDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPageDataModel.swift; sourceTree = "<group>"; };
@@ -304,6 +301,7 @@
 		B34AB8FE2B80CEF500A8C808 /* TokenUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenUtils.swift; sourceTree = "<group>"; };
 		B34AB9022B80CF2700A8C808 /* LoginDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginDataModel.swift; sourceTree = "<group>"; };
 		B34AB9032B80CF2700A8C808 /* LoginService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
+		B37F116A2B81FF1B00D655FF /* CustomTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -547,7 +545,6 @@
 				9C33BD172B7B842A00497FEC /* Popup */,
 				9C33BD1F2B7B842A00497FEC /* MyPageVCFiles */,
 				9C33BD272B7B842A00497FEC /* ChatProfileVCFiles */,
-				9C33BD2D2B7B842A00497FEC /* ChatProfile.storyboard */,
 				9C33BD2F2B7B842A00497FEC /* LaunchScreenImage.png */,
 				9C33BD302B7B842A00497FEC /* LoginVCFiles */,
 				9C33BD3A2B7B842A00497FEC /* CustomClass */,
@@ -558,10 +555,10 @@
 		9C33BD172B7B842A00497FEC /* Popup */ = {
 			isa = PBXGroup;
 			children = (
-				9C33BD182B7B842A00497FEC /* PopupViewController.storyboard */,
 				9C33BD192B7B842A00497FEC /* ChatPopupViewController.swift */,
-				9C33BD1A2B7B842A00497FEC /* PopupChoiceViewController.swift */,
 				9C33BD1B2B7B842A00497FEC /* ChatPopupViewController.storyboard */,
+				9C33BD1A2B7B842A00497FEC /* PopupChoiceViewController.swift */,
+				9C33BD182B7B842A00497FEC /* PopupViewController.storyboard */,
 				9C33BD1C2B7B842A00497FEC /* PopupViewController.swift */,
 				9C33BD1D2B7B842A00497FEC /* PopupChoiceViewController.storyboard */,
 			);
@@ -636,6 +633,7 @@
 				9C33BD3D2B7B842A00497FEC /* ViewExtension.swift */,
 				9C33BD3E2B7B842A00497FEC /* CustomTextField.swift */,
 				9C33BD3F2B7B842A00497FEC /* CustomLabel.swift */,
+				B37F116A2B81FF1B00D655FF /* CustomTabBarViewController.swift */,
 			);
 			path = CustomClass;
 			sourceTree = "<group>";
@@ -815,7 +813,6 @@
 		9CF07CAF2B6FBF2B002451C7 /* jehun */ = {
 			isa = PBXGroup;
 			children = (
-				B34A9D7D2B73A20100EA6686 /* Font */,
 				9CB4A8BE2B6A3A6400521184 /* Shares */,
 				9C3DF4862B4A51CB006CE6E5 /* Components */,
 				9C0426A62B47EB7400C693BC /* Scene */,
@@ -842,16 +839,6 @@
 				9CFC6AEE2B6F985F00443712 /* AuthRouter.swift */,
 			);
 			path = API;
-			sourceTree = "<group>";
-		};
-		B34A9D7D2B73A20100EA6686 /* Font */ = {
-			isa = PBXGroup;
-			children = (
-				B34A9D7E2B73A20100EA6686 /* Inter-Bold.ttf */,
-				B34A9D7F2B73A20100EA6686 /* Inter-Regular.ttf */,
-			);
-			name = Font;
-			path = ../Font;
 			sourceTree = "<group>";
 		};
 		B34AB8EC2B80CE8000A8C808 /* MyPageAPI */ = {
@@ -1040,7 +1027,6 @@
 				9C4EDA892B47F2AE00BFDC48 /* SignupVC.storyboard in Resources */,
 				9C4EDA7F2B47EF8C00BFDC48 /* Inter-Bold.ttf in Resources */,
 				9CB4A8C62B6A3AC800521184 /* PopupTemplateVC.storyboard in Resources */,
-				9C33BD522B7B842A00497FEC /* ChatProfile.storyboard in Resources */,
 				9CB4A8C42B6A3AB600521184 /* NationSelectionVC.storyboard in Resources */,
 				B34A9D9C2B73B65800EA6686 /* Main.storyboard in Resources */,
 				9C1B3C2F2B5E1A6A00AB3B73 /* IdentificationInputUnit.xib in Resources */,
@@ -1095,6 +1081,7 @@
 				4D83BAA82B80B6D200A9F57C /* AlarmModel.swift in Sources */,
 				4D83BAC62B80B6DD00A9F57C /* OpenAlarmViewController.swift in Sources */,
 				9C33BD4F2B7B842A00497FEC /* ReportViewController.swift in Sources */,
+				B37F116B2B81FF1B00D655FF /* CustomTabBarViewController.swift in Sources */,
 				B34AB8FB2B80CEC000A8C808 /* ChatProfileDataModel.swift in Sources */,
 				4D83BAC72B80B6DD00A9F57C /* OpenChatViewController.swift in Sources */,
 				9C33BD562B7B842A00497FEC /* IdSearchViewController.swift in Sources */,
@@ -1336,6 +1323,7 @@
 				INFOPLIST_KEY_NSCameraUsageDescription = "Photo Library Permission Request";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Camera Permission Request";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -1367,6 +1355,7 @@
 				INFOPLIST_KEY_NSCameraUsageDescription = "Photo Library Permission Request";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Camera Permission Request";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

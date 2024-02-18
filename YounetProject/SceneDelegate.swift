@@ -21,7 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //            if (Date().timeIntervalSince1970 * 1000) < UserDefaults.standard.double(forKey: "tokenExpireTime") {
 //                // 토큰 만료시간이 지나지 않은 경우 -> 로그인 처리(마이페이지로 이동)
 //                let storyboard = UIStoryboard(name: "Comunity", bundle: nil)
-//                let startVC = storyboard.instantiateViewController(withIdentifier: "TabBarVC") as? UITabBarController
+//                let startVC = storyboard.instantiateViewController(withIdentifier: "tabC") as? CustomTabBarViewController
 //                window?.rootViewController = startVC
 //                print(TokenUtils().read(APIUrl.url, account: "accessToken")!)
 //            } else {
@@ -38,7 +38,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //                            print("토큰 만료로 재발급 완료")
 //                            print(tk.read(APIUrl.url, account: "accessToken")!)
 //                            let storyboard = UIStoryboard(name: "Comunity", bundle: nil)
-//                            let startVC = storyboard.instantiateViewController(withIdentifier: "TabBarVC") as? UITabBarController
+//                            let startVC = storyboard.instantiateViewController(withIdentifier: "tabC") as? CustomTabBarViewController
 //                            self.window?.rootViewController = startVC
 //                        }
 //                    case .requestErr:

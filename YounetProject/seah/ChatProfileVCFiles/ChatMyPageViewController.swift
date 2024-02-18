@@ -28,7 +28,6 @@ class ChatMyPageViewController: UIViewController {
     let imageData = ImageFileManager.shared
     
     override func viewDidLoad() {
-        getData()
         setDesign()
         super.viewDidLoad()
     }
@@ -117,4 +116,9 @@ class ChatMyPageViewController: UIViewController {
         let presentedPopup = ChatPopupViewController.present(parent: self)
         presentedPopup.setPopupNumber = 0
     }
+    
+    @IBAction func backButtonDidtap(_ sender: Any) {
+        dismiss(animated: false)
+    }
+    
 }

@@ -148,6 +148,8 @@ enum AuthRouter : URLRequestConvertible {
             request = try URLEncoding.default.encode(request, with: queryParams)
         case .checkEmailAuthCode:
             request.httpBody = try JSONEncoding.default.encode(request, with: bodyParams).httpBody
+        case .sendSignupInfo:
+            request.httpBody = try JSONEncoding.default.encode(request, with: bodyParams).httpBody
         default:
             break
         }

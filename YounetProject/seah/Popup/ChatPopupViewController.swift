@@ -158,7 +158,7 @@ class ChatPopupViewController: UIViewController {
     // dismissed completion 사전 정의
     private func goReport() {
         // 신고 화면으로 전환
-        let storyboard = UIStoryboard(name: "ChatProfile", bundle: .main)
+        let storyboard = UIStoryboard(name: "OpenChat", bundle: .main)
         let nextVC = storyboard.instantiateViewController(withIdentifier: "ReportViewController") as! ReportViewController
         nextVC.modalPresentationStyle = .fullScreen
         nextVC.modalTransitionStyle = .crossDissolve
@@ -171,7 +171,7 @@ class ChatPopupViewController: UIViewController {
     }
     
     private func goHome() {
-        let storyboard = UIStoryboard(name: "ChatProfile", bundle: .main)
+        let storyboard = UIStoryboard(name: "OpenChat", bundle: .main)
         let nextVC = storyboard.instantiateViewController(withIdentifier: "OtherUserProfileViewController") as! OtherUserProfileViewController
         nextVC.modalPresentationStyle = .fullScreen
         nextVC.modalTransitionStyle = .crossDissolve

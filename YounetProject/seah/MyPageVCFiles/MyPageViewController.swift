@@ -35,10 +35,10 @@ class MyPageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setDesign()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        setDesign()
         getData()
     }
     
@@ -143,6 +143,10 @@ class MyPageViewController: UIViewController {
         // simpleData.string(forKey: "preferNation") != nil ? preferNationLabel.text = simpleData.string(forKey: "preferNation") : nil
         // imageData.getSavedImage(named: "profileImage") != nil ? profileImage.image = imageData.getSavedImage(named: "profileImage") : nil
 
+    }
+    
+    @IBAction func BackButtonDidtap(_ sender: Any) {
+        dismiss(animated: false)
     }
 }
 

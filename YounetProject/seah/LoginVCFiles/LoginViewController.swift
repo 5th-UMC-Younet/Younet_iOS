@@ -20,6 +20,20 @@ class LoginViewController: UIViewController {
     
     @IBAction func joinBtnDidTap(_ sender: UIButton) {
         // 회원가입 VC 연결
+        let signupVC = UIStoryboard(name: "SignupVC", bundle: .main).instantiateViewController(withIdentifier: "SignupVC")
+        signupVC.navigationItem.title = "회원 가입"
+
+        let backImg = UIImage(named: "back")?.resize(newWidth: 13)
+        let backButton = UIBarButtonItem(image: backImg, style: .plain, target: self, action: #selector(self.leftBarBtnClicked(_:)) )
+        backButton.tintColor = .black
+        signupVC.navigationItem.leftBarButtonItem = backButton
+        
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name:"Inter-Bold", size: 17.0)!]
+        self.navigationController?.pushViewController(signupVC, animated: true)
+    }
+    
+    @objc private func leftBarBtnClicked(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func kakaoLoginBtnDidTap(_ sender: Any) {
@@ -68,9 +82,9 @@ class LoginViewController: UIViewController {
                     UserDefaults.standard.setValue(LoginUserData.accessTokenExpiresIn, forKey: "tokenExpireTime")
                     print("\(String(describing: tk.read(APIUrl.url, account: "accessToken")))")
                     
-                    // MyPage로 화면 전환
-                    let nextSB = UIStoryboard(name: "Comunity", bundle: nil)
-                    guard let nextVC = nextSB.instantiateViewController(withIdentifier: "TabBarVC") as? UITabBarController else { return }
+                    // 본인인증 탭로 화면 전환
+                    let nextSB = UIStoryboard(name: "MenuSelectionVC", bundle: nil)
+                    guard let nextVC = nextSB.instantiateViewController(withIdentifier: "NavigationVC") as? UINavigationController else { return }
                     nextVC.modalPresentationStyle = .fullScreen
                     nextVC.modalTransitionStyle = .crossDissolve
                     self.present(nextVC, animated: true, completion: nil)
