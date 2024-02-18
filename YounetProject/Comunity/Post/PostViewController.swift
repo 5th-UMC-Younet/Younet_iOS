@@ -109,7 +109,7 @@ class PostViewController: UIViewController {
             return
         }
         for image in selectedImages {
-            let imageName = UUID().uuidString + ".jpg"
+            let imageName = UUID().uuidString + ".jpeg"
             imageKeys.append(imageName)
         }
         if imageKeys.last == "," {
@@ -123,7 +123,7 @@ class PostViewController: UIViewController {
             "Content-Type": "multipart/form-data"
         ]
         let parameters: [String: Any] = [
-            "title":title,
+            "title": title,
             "communityProfileId": communityProfileId,
             "countryId": countryId,
             "categoryId": categoryId,
@@ -138,7 +138,7 @@ class PostViewController: UIViewController {
         AF.upload(multipartFormData: { multipartFormData in
             do {
                 let jsonData = try JSONSerialization.data(withJSONObject: parameters)
-                multipartFormData.append(jsonData, withName: "post")
+                multipartFormData.append(jsonData, withName: "post", mimeType: "application/json")
             } catch {
                 print("Error converting parameters to JSON: \(error)")
             }
@@ -148,7 +148,7 @@ class PostViewController: UIViewController {
                     if let imageNames = section["imageKeys"] as? [String] {
                         for imageName in imageNames {
                             if let image = UIImage(named: imageName) {
-                                if let imageData = image.jpegData(compressionQuality: 0.1) {
+                                if let imageData = image.jpegData(compressionQuality: 0.01) {
                                     multipartFormData.append(imageData, withName: "files", fileName: imageName, mimeType: "image/jpeg")
                                 }
                             }
@@ -176,6 +176,7 @@ class PostViewController: UIViewController {
                 self.present(alert, animated: true, completion: nil)
             }
         }
+        
     }
     
     //사진
