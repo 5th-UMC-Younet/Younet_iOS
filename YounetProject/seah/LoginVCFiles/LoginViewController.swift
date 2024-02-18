@@ -69,7 +69,7 @@ class LoginViewController: UIViewController {
                     print("\(String(describing: tk.read(APIUrl.url, account: "accessToken")))")
                     
                     // MyPage로 화면 전환
-                    let nextSB = UIStoryboard(name: "MyPage", bundle: nil)
+                    let nextSB = UIStoryboard(name: "Comunity", bundle: nil)
                     guard let nextVC = nextSB.instantiateViewController(withIdentifier: "TabBarVC") as? UITabBarController else { return }
                     nextVC.modalPresentationStyle = .fullScreen
                     nextVC.modalTransitionStyle = .crossDissolve

@@ -11,7 +11,7 @@ class TablePageViewController: UIPageViewController, UIPageViewControllerDelegat
     var completeHandler : ((Int) -> ())?
     
     let viewsList : [UIViewController] = {
-        let storyBoard = UIStoryboard(name: "MyPage", bundle: nil)
+        let storyBoard = UIStoryboard(name: "Comunity", bundle: nil)
         let vc1 = storyBoard.instantiateViewController(withIdentifier: "postPageVC")
         let vc2 = storyBoard.instantiateViewController(withIdentifier: "scrapPageVC")
         return [vc1, vc2]

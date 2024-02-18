@@ -101,7 +101,7 @@ class ChatMyPageViewController: UIViewController {
     }
     
     @IBAction func settingBtnDidtap(_ sender: UIButton) {
-        let storyboard = UIStoryboard(name: "MyPage", bundle: nil)
+        let storyboard = UIStoryboard(name: "Comunity", bundle: nil)
         let newVC = storyboard.instantiateViewController(withIdentifier: "SettingViewController")
         newVC.modalTransitionStyle = .crossDissolve
         newVC.modalPresentationStyle = .fullScreen
