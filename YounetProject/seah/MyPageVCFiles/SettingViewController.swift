@@ -25,8 +25,8 @@ class SettingViewController: UIViewController {
     }
     
     @IBAction func segueTest(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "ChatProfile", bundle: .main)
-        let nextVC = storyboard.instantiateViewController(withIdentifier: "tabbarVC") as! UITabBarController
+        let storyboard = UIStoryboard(name: "OpenChat", bundle: .main)
+        let nextVC = storyboard.instantiateViewController(withIdentifier: "TabBarVC") as! UITabBarController
         nextVC.modalPresentationStyle = .fullScreen
         nextVC.modalTransitionStyle = .crossDissolve
         

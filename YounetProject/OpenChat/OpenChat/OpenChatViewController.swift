@@ -44,11 +44,10 @@ class OpenChatViewController: UIViewController {
     }
     //MARK: - API
     func getData(){
+        let tkHeader = TokenUtils().getAuthorizationHeader(serviceID: APIUrl.url)
         let url = "http://ec2-3-34-112-205.ap-northeast-2.compute.amazonaws.com:8080/chat/list/open"
-        let header: HTTPHeaders = [
-            "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkb2pvbzU2QG5hdmVyLmNvbSIsIm5hbWUiOiJtaWEiLCJpZCI6MiwiZXhwIjoxNzA4MTc0ODUxfQ.QVLyNv3Dt1giJLp9vOpc4kyVKrpbcuz_tMJzArQZZZU"
-        ]
-        AF.request(url, method: .get, headers: header)
+        
+        AF.request(url, method: .get, headers: tkHeader)
             .validate(statusCode: 200..<300)
             .responseDecodable(of: [OpenChatModel].self) { response in
                 switch response.result {
