@@ -114,9 +114,11 @@ class PostViewController: UIViewController {
         tabBarController?.selectedIndex = 3
         tabBarController?.tabBar.isHidden = false
     }
+    
     //등록
     @IBAction func done(_ sender: Any) {
         guard let title = titleField.text, let categoryId = categoryId, let countryId = countryId, let communityProfileId = communityProfileId, let body = contentField.text else {
+            
             // 필수 필드가 누락되었을 경우 에러 처리
             let alert = PopupViewController.present(parent: self)
             alert.labelText = "\n모든 필수 필드를 입력해주세요.\n"
@@ -144,57 +146,64 @@ class PostViewController: UIViewController {
                 [
                     "body": body,
                     "imageKeys": imageKeys
+                
                 ]
             ]
         ]
         
         AF.upload(multipartFormData: { multipartFormData in
-            do {
-                let jsonData = try JSONSerialization.data(withJSONObject: parameters)
-                multipartFormData.append(jsonData, withName: "post", mimeType: "application/json")
-                print(parameters)
-            } catch {
-                print("Error converting parameters to JSON: \(error)")
-            }
-            
-            if let imageKeys = parameters["sections"] as? [[String: Any]] {
-                for section in imageKeys {
-                    if let imageNames = section["imageKeys"] as? [String] {
-                        for index in 0..<imageNames.count {
-                            let imageName = imageNames[index]
-                            let image = self.selectedImages[index]
-                            
-                            if let imageData = image.jpegData(compressionQuality: 1.0) {
-                                multipartFormData.append(imageData, withName: "files", fileName: imageName, mimeType: "image/jpeg")
+                    do {
+                        let jsonData = try JSONSerialization.data(withJSONObject: parameters)
+                        multipartFormData.append(jsonData, withName: "post", mimeType: "application/json")
+                        print(parameters)
+                    } catch {
+                        print("Error converting parameters to JSON: \(error)")
+                    }
+                    
+                    if let imageKeys = parameters["sections"] as? [[String: Any]] {
+                        for section in imageKeys {
+                            if let imageNames = section["imageKeys"] as? [String] {
+                                for index in 0..<imageNames.count {
+                                    let imageName = imageNames[index]
+                                    let image = self.selectedImages[index]
+                                    
+                                    if let imageData = image.jpegData(compressionQuality: 1.0) {
+                                        multipartFormData.append(imageData, withName: "files", fileName: imageName, mimeType: "image/jpeg")
+                                    }
+                                }
                             }
                         }
                     }
+                }, to: url, method: .post, headers: headers)
+                .response { response in
+                    debugPrint(response)
+                    switch response.result {
+                    case .success:
+                        // 성공적으로 등록되었을 경우 알림 표시
+                        let alert = PopupViewController.present(parent: self)
+                        alert.labelText = "\n게시글이 등록되었습니다.\n"
+                        alert.buttonText = "확인"
+                        alert.onDismissed = {
+                            self.tabBarController?.selectedIndex = 0
+                            self.tabBarController?.tabBar.isHidden = false
+                           /* guard let goHome = self.storyboard?.instantiateViewController(identifier: "tabC") as? TabBarController else{
+                                return
+                            }
+                            goHome.modalTransitionStyle = .crossDissolve
+                            goHome.modalPresentationStyle = .fullScreen
+                            self.present(goHome, animated: true, completion: nil)*/
+                        }
+                    case .failure(let error):
+                        // 실패한 경우 에러 메시지 표시
+                        print("PostError: \(error)")
+                        let alert = PopupViewController.present(parent: self)
+                        alert.labelText = "\n게시글 등록에 실패했습니다.\n"
+                        alert.buttonText = "확인"
+                        alert.onDismissed = {}
+                        
+                    }
                 }
             }
-        }, to: url, method: .post, headers: headers)
-        .response { response in
-            debugPrint(response)
-            switch response.result {
-            case .success:
-                // 성공적으로 등록되었을 경우 알림 표시
-                let alert = PopupViewController.present(parent: self)
-                alert.labelText = "\n게시글이 등록되었습니다.\n"
-                alert.buttonText = "확인"
-                alert.onDismissed = {
-                    self.tabBarController?.selectedIndex = 0
-                    self.tabBarController?.tabBar.isHidden = false
-                }
-            case .failure(let error):
-                // 실패한 경우 에러 메시지 표시
-                print("PostError: \(error)")
-                let alert = PopupViewController.present(parent: self)
-                alert.labelText = "\n게시글 등록에 실패했습니다.\n"
-                alert.buttonText = "확인"
-                alert.onDismissed = {}
-                
-            }
-        }
-    }
     
     //사진
     @IBAction func goAlbum(_ sender: Any) {

@@ -127,7 +127,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2tu-ep-FP2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1501.5267175572519" y="932.3943661971831"/>
+            <point key="canvasLocation" x="1303" y="-141"/>
         </scene>
         <!--Search View Controller-->
         <scene sceneID="6G6-Hf-70G">
@@ -1026,11 +1026,11 @@
             <objects>
                 <viewController storyboardIdentifier="DetailVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="agV-Kn-FLR" customClass="DetailViewController" customModule="YounetProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="afD-na-wkJ">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Brc-Bj-5Ud">
-                                <rect key="frame" x="0.0" y="109" width="393" height="611"/>
+                                <rect key="frame" x="0.0" y="109" width="393" height="733"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wlj-vw-zPM">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
@@ -1041,7 +1041,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="6" maxY="0.0"/>
-                                                <state key="normal" title="username" image="user">
+                                                <state key="normal" title="username">
                                                     <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                             </button>
@@ -1106,11 +1106,10 @@
                                                     </collectionViewCell>
                                                 </cells>
                                             </collectionView>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AoF-Q0-QuQ">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="샘플 텍스트" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AoF-Q0-QuQ">
                                                 <rect key="frame" x="18" y="305" width="355" height="161"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                 <color key="textColor" systemColor="labelColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -1251,7 +1250,7 @@
                                 <viewLayoutGuide key="frameLayoutGuide" id="RMQ-XC-AaY"/>
                             </scrollView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="139" translatesAutoresizingMaskIntoConstraints="NO" id="XCo-yL-y0Q">
-                                <rect key="frame" x="11" y="68" width="371.66666666666669" height="24"/>
+                                <rect key="frame" x="11" y="9" width="371.66666666666669" height="24"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o9v-D4-aRx">
                                         <rect key="frame" x="0.0" y="0.0" width="16.666666666666668" height="24"/>
@@ -1305,6 +1304,7 @@
                         <outlet property="scrollView" destination="Brc-Bj-5Ud" id="Yft-On-flB"/>
                         <outlet property="storeButton" destination="Rxb-gJ-nzi" id="wcV-MN-Cvt"/>
                         <outlet property="tableView" destination="6kR-7n-mOQ" id="9JU-bJ-WLz"/>
+                        <outlet property="textField" destination="XDE-F0-DFd" id="9uo-AY-z1m"/>
                         <outlet property="textView" destination="AoF-Q0-QuQ" id="HoX-f8-JpN"/>
                         <outlet property="titleLabel" destination="kor-Cr-lld" id="Dim-Rm-4fK"/>
                         <outlet property="userName" destination="ETA-KT-RhS" id="Wge-Nd-drP"/>
@@ -1328,7 +1328,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DLQ-dd-bla" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2585" y="800"/>
+            <point key="canvasLocation" x="-909" y="538"/>
         </scene>
         <!--Custom Tab Bar View Controller-->
         <scene sceneID="WWW-UO-DUA">
@@ -1377,11 +1377,12 @@
                     <size key="freeformSize" width="393" height="463"/>
                     <connections>
                         <outlet property="tableView" destination="L7M-od-lZC" id="WyL-pC-irr"/>
+                        <segue destination="agV-Kn-FLR" kind="show" identifier="DetailVC" id="oui-IV-zEp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z21-jX-fwW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1248" y="-572"/>
+            <point key="canvasLocation" x="1408" y="1533"/>
         </scene>
         <!--MyPageViewController-->
         <scene sceneID="VJ4-IC-x6g">
@@ -1669,7 +1670,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4pW-Tg-rJP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2612.9770992366412" y="44.366197183098592"/>
+            <point key="canvasLocation" x="3332" y="841"/>
         </scene>
         <!--Table Page View Controller-->
         <scene sceneID="WON-k0-cAL">
@@ -1677,7 +1678,7 @@
                 <pageViewController storyboardIdentifier="tablePageVC" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="3gR-aP-9cc" customClass="TablePageViewController" customModule="YounetProject" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="exY-Vv-cxw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1952" y="-158"/>
+            <point key="canvasLocation" x="3105" y="1824"/>
         </scene>
         <!--My Page Profile Edit View Controller-->
         <scene sceneID="hqu-0r-lpK">
@@ -1990,7 +1991,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TPn-b2-5R2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3377" y="386"/>
+            <point key="canvasLocation" x="4095" y="1182"/>
         </scene>
         <!--Setting View Controller-->
         <scene sceneID="VJg-7r-aZC">
@@ -2188,7 +2189,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xdh-cA-1is" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3378" y="-272"/>
+            <point key="canvasLocation" x="4097" y="524"/>
         </scene>
         <!--Quit View Controller-->
         <scene sceneID="0Nb-YW-4pP">
@@ -2355,7 +2356,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E8G-X0-dXc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4112" y="-273"/>
+            <point key="canvasLocation" x="4830" y="523"/>
         </scene>
         <!--Scrap Page View Controller-->
         <scene sceneID="7hc-LC-JEo">
@@ -2382,15 +2383,16 @@
                     <size key="freeformSize" width="393" height="463"/>
                     <connections>
                         <outlet property="tableView" destination="kF3-4i-vJB" id="SBu-IM-JBy"/>
+                        <segue destination="agV-Kn-FLR" kind="show" identifier="DetailVC" id="jTf-OT-SFb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dht-Ti-Otu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1953" y="-572"/>
+            <point key="canvasLocation" x="2117" y="1533"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Adr-Fb-BWS"/>
+        <segue reference="oui-IV-zEp"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="AccountIcon" width="22" height="22"/>

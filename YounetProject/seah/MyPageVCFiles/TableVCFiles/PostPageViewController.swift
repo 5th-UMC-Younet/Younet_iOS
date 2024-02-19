@@ -15,26 +15,20 @@ class PostPageViewController: UIViewController {
     var page = 1
     var index = 0
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         registerXib()
         getAPI()
+        scrollToBottom()
     }
-    
+
     // FeedCell register
     private func registerXib() {
         let nibName = UINib(nibName: "FeedCell", bundle: nil)
         tableView.register(nibName, forCellReuseIdentifier: "FeedCell")
     }
     
-    // 갱신용. 특정 개수 이상 시 아래로 swipe했을 때 갱신
-    @IBAction func more(_ sender: UIButton) {
-        // 0) 현재 페이지 값에 1을 추가한다.
-        self.page += 1
-        
-        // 데이터를 다시 읽어오도록 테이블 뷰를 갱신한다.
-        self.tableView.reloadData()
-    }
     
     func tableViewLoad() {
         registerXib()
@@ -46,15 +40,15 @@ class PostPageViewController: UIViewController {
     func getAPI(){
         if feedData.isEmpty {
             // feedData 배열이 비어있는 경우에는 API를 호출하여 데이터를 가져옵니다.
-            getDataByDates()
+            getData()
         } else {
             // feedData 배열이 비어있지 않은 경우에는 첫 번째 요소를 제거하고 다시 API를 호출하여 데이터를 업데이트합니다.
             feedData.remove(at: 0)
-            getDataByDates()
+            getData()
         }
     }
     
-    func getDataByDates() {
+    func getData() {
         let url = APIUrl.myPage
         let tk = TokenUtils()
         AF.request(url, method: .get, headers: tk.getAuthorizationHeader(serviceID: APIUrl.url))
@@ -95,6 +89,17 @@ class PostPageViewController: UIViewController {
             return nil
         }
     }
+    
+    func scrollToBottom(){
+        DispatchQueue.main.async {
+            if self.feedData.count > 0 {
+               let ip = IndexPath(row: self.feedData.count-1, section: 0)
+               self.tableView.scrollToRow(at: ip, at: .bottom, animated: true)
+            }
+        }
+        getData()
+    }
+    
 }
 
 extension PostPageViewController : UITableViewDelegate, UITableViewDataSource {
@@ -159,7 +164,8 @@ extension PostPageViewController : UITableViewDelegate, UITableViewDataSource {
         let postId = feedData[0].posts[indexPath.row].postId
         let date = feedData[0].posts[indexPath.row].createdAt
         let categoryId = feedData[0].posts[indexPath.row].categoryId
-        let senderData: (Int, Int, String) = (postId!, categoryId!, date!)
+        
+        let senderData: (Int?, Int?, String?) = (postId, categoryId, date)
         performSegue(withIdentifier: "DetailVC", sender: senderData)
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
