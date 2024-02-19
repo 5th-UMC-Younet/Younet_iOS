@@ -98,12 +98,8 @@ class PostViewController: UIViewController {
     
     //취소
     @IBAction func backButton(_ sender: Any) {
-        guard let back = storyboard?.instantiateViewController(identifier: "tabC") as? CustomTabBarViewController else{
-            return
-        }
-        back.modalTransitionStyle = .crossDissolve
-        back.modalPresentationStyle = .fullScreen
-        present(back, animated: true, completion: nil)
+        tabBarController?.selectedIndex = 3
+        tabBarController?.tabBar.isHidden = false
     }
     //등록
     @IBAction func done(_ sender: Any) {
@@ -246,5 +242,18 @@ class PostViewController: UIViewController {
     //MARK: - Post
     func post(){
         
+    }
+}
+
+extension UIApplication {
+    /*function will return reference to tabbarcontroller */
+    func tabbarController() -> UIViewController? {
+        guard let vcs = self.keyWindow?.rootViewController?.children else { return nil }
+        for vc in vcs {
+            if  let _ = vc as? CustomTabBarViewController {
+                return vc
+            }
+        }
+        return nil
     }
 }

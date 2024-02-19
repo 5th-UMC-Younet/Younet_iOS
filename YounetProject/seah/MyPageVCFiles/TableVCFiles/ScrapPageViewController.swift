@@ -121,15 +121,19 @@ extension ScrapPageViewController : UITableViewDelegate, UITableViewDataSource {
         cell.commentLabel.text = "댓글 \(feed.commentsCount!)"
         
         //Image
-        let url = URL(string: feed.imageSampleUrl!)
-        DispatchQueue.global().async {
-            if let data = try? Data(contentsOf: url!) {
-                if let image = UIImage(data: data) {
-                    DispatchQueue.main.async {
-                        cell.imageSampleView.image = image
+        if feed.imageSampleUrl != nil {
+            let url = URL(string: feed.imageSampleUrl!)
+            DispatchQueue.global().async {
+                if let data = try? Data(contentsOf: url!) {
+                    if let image = UIImage(data: data) {
+                        DispatchQueue.main.async {
+                            cell.imageSampleView.image = image
+                        }
                     }
                 }
             }
+        } else {
+            cell.imageSampleView.image = nil
         }
         
         //Time
