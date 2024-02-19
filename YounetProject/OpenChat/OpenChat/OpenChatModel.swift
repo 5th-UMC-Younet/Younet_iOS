@@ -15,5 +15,10 @@ struct OpenChatModel: Codable {
     let participants: Int?
 }
 struct OpenSearchModel: Codable {
-    
+    let chatRoomId: Int?
+    let title: String?
+    let thumbnail: String?
+    let message: String?
+    let createdAt: String?
+    let participants: Int?
 }

@@ -1112,7 +1112,7 @@
                                                     </button>
                                                 </subviews>
                                             </stackView>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="댓글을 입력하세요" borderStyle="roundedRect" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="15" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="XDE-F0-DFd">
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="댓글을 입력하세요" borderStyle="roundedRect" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="XDE-F0-DFd">
                                                 <rect key="frame" x="21" y="570" width="347" height="34"/>
                                                 <color key="textColor" systemColor="systemGrayColor"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
@@ -1230,6 +1230,7 @@
                         <outlet property="scrollView" destination="Brc-Bj-5Ud" id="Yft-On-flB"/>
                         <outlet property="storeButton" destination="Rxb-gJ-nzi" id="wcV-MN-Cvt"/>
                         <outlet property="tableView" destination="6kR-7n-mOQ" id="9JU-bJ-WLz"/>
+                        <outlet property="textField" destination="XDE-F0-DFd" id="9uo-AY-z1m"/>
                         <outlet property="textView" destination="AoF-Q0-QuQ" id="HoX-f8-JpN"/>
                         <outlet property="titleLabel" destination="kor-Cr-lld" id="Dim-Rm-4fK"/>
                         <outlet property="userName" destination="ETA-KT-RhS" id="Wge-Nd-drP"/>

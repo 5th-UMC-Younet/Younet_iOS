@@ -22,6 +22,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var heartButton: UIButton!
     @IBOutlet weak var storeButton: UIButton!
+    @IBOutlet weak var textField: UITextField!
     
     //API
     var detailData: [DetailModel] = []
@@ -29,18 +30,22 @@ class DetailViewController: UIViewController {
     var postId: Int?
     var categoryId: Int?
     var date: String?
-    var comunityProfileId: Int? //로그인한 사용자의 ID
+    var comunityProfileId: Int = 1 //로그인한 사용자의 ID
     var countryName: String?
     var commentId: Int?
+    var body: String = "" //댓글
     
     //대댓글
     var t = true
     var num = 0
     var count = 0
     var i = 0
+    var commentCount = 0
     
-    @IBAction func sendComent(_ sender: Any) {
-        print("전송")
+    @IBAction func sendComent(_ sender: Any) { 
+        body = textField.text!
+        textField.text = ""
+        postComment()
     }
     @IBAction func back(_ sender: Any) {
         dismiss(animated: true)
@@ -78,10 +83,11 @@ class DetailViewController: UIViewController {
     }
     //MARK: - API
     func getAPI(){
-        if detailData.isEmpty {
+        if detailData.isEmpty && commentData.isEmpty {
             getData()
         } else {
             detailData.remove(at: 0)
+            commentData.remove(at: 0)
             getData()
         }
     }
@@ -111,17 +117,34 @@ class DetailViewController: UIViewController {
                 switch response.result {
                 case .success(let comment):
                     finished2 = true
-                    print(comment)
                     self.commentData.append(comment)
                     self.tableViewLoad()
                     if finished1{
-                        self.loadData()
-                    }
+                        self.loadData()                    }
                 case .failure(let error):
                     print("CommentError: \(error)")
                 }
             }
         
+    }
+    //댓글
+    func postComment(){
+        let url = "http://ec2-3-34-112-205.ap-northeast-2.compute.amazonaws.com:8080/comment"
+        let parameters: [String: Any] = [
+            "postId": postId!,
+            "communityProfileId": comunityProfileId,
+            "body": body
+        ]
+        AF.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default)
+            .validate(statusCode: 200..<300)
+            .responseJSON { response in
+                switch response.result {
+                case .success:                    
+                    self.getAPI()
+                case .failure(let error):
+                    print("CommentFailed: \(error)")
+                }
+            }
     }
     //좋아요 추가
     func like(){
@@ -200,7 +223,15 @@ class DetailViewController: UIViewController {
         countryLabel.text = countryName
         titleLabel.text = detail.data.postTitle
         userName.setTitle(" \(detail.data.authorName)", for: .normal) //user image 필요
-        commentLabel.text = " \((commentData.first?.content?.count)!)"
+        if let firstComment = commentData.first,
+            let content = firstComment.content,
+            let firstContent = content.first,
+            let replyList = firstContent.replyList {
+            commentLabel.text = " \((content.count) + (replyList.count))"
+        } else {
+            commentLabel.text = "0"
+        }
+
         likeLabel.text = " \(detail.data.likesCount)"
         textView.text = detail.data.sections.first?.body
         dateLabel.text = String(date?.prefix(10) ?? "")
@@ -242,51 +273,52 @@ class DetailViewController: UIViewController {
     }
 }
 
-//MARK: - extension
 extension DetailViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return commentData[0].content!.count + (commentData[0].content?.first?.replyList!.count)!
+        guard let firstComment = commentData.first else {
+                return 0
+            }
+
+            let commentCount = firstComment.content?.count ?? 0
+            let replyCount = firstComment.content?.first?.replyList?.count ?? 0
+
+            return commentCount + replyCount
     }
     
     //셀 종류
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        print(commentData[0].content!.count + (commentData[0].content?.first?.replyList!.count)!)
-//        if !(commentData.isEmpty){
-//
-//        }
-        let comment = commentData[0].content![num]
-        let replyCount = comment.replyList!.count
-        if t{
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "FeedDetailCell", for: indexPath) as? FeedDetailCell else{return UITableViewCell()}
-            cell.userName.setTitle(" \((comment.authorName)!)", for: .normal)
-            cell.dateLabel.text = String(comment.createdAt?.prefix(10) ?? "")
-            cell.commentLabel.text = comment.body
-            count = replyCount
-            i = 0
-            if count != 0{
-                t = false
-            }else if (num+1) < commentData[0].content!.count + (commentData[0].content?.first?.replyList!.count)!{
-                    num += 1
-            }
-            return cell
-        }else{
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "ReplyCell", for: indexPath) as? ReplyCell else{return UITableViewCell()}
-            cell.userName.setTitle(" \((comment.replyList![i].authorName)!)", for: .normal)
-            cell.dateLabel.text = comment.createdAt
-            cell.commentLabel.text = comment.replyList![i].body
-            count -= 1
-            i += 1
-            print(count,t)
-            if count == 0{
-                t = true
-                if (num+1) < commentData[0].content!.count + (commentData[0].content?.first?.replyList!.count)!{
-                    num += 1
+        commentCount = commentData[0].content!.count
+            let comment = commentData[0].content![num]
+            let replyCount = comment.replyList!.count
+            if t{
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: "FeedDetailCell", for: indexPath) as? FeedDetailCell else{return UITableViewCell()}
+                cell.userName.setTitle(" \((comment.authorName)!)", for: .normal)
+                cell.dateLabel.text = String(comment.createdAt?.prefix(10) ?? "")
+                cell.commentLabel.text = comment.body
+                count = replyCount
+                i = 0
+                if count != 0{
+                    t = false
+                }else if ((num+1) < commentData[0].content!.count + (commentData[0].content?.first?.replyList!.count)!) && (num+1) < commentCount{
+                        num += 1
                 }
+                return cell
+            }else{
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: "ReplyCell", for: indexPath) as? ReplyCell else{return UITableViewCell()}
+                cell.userName.setTitle(" \((comment.replyList![i].authorName)!)", for: .normal)
+                cell.dateLabel.text = comment.createdAt
+                cell.commentLabel.text = comment.replyList![i].body
+                count -= 1
+                i += 1
+                if count == 0{
+                    t = true
+                    if ((num+1) < commentData[0].content!.count + (commentData[0].content?.first?.replyList!.count)!) && (num+1) < commentCount{
+                        num += 1
+                    }
+                }
+                return cell
             }
-            return cell
-        }
-         
-    }
+         }
     //테이블뷰 높이
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 92
@@ -318,3 +350,4 @@ extension DetailViewController : UICollectionViewDelegate, UICollectionViewDataS
         return CGSize(width: collectionView.frame.size.width, height: collectionView.frame.height)
     }
 }
+

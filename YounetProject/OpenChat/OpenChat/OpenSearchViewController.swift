@@ -45,7 +45,7 @@ class OpenSearchViewController: UIViewController {
                     self.searchData.append(contentsOf: search)
                     self.tableViewLoad()
                 case .failure(let error):
-                    print("SearchError: \(error)")
+                    print("OpenSearchError: \(error)")
                 }
             }
     }
@@ -56,6 +56,20 @@ extension OpenSearchViewController : UITableViewDelegate, UITableViewDataSource 
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "OpenSearchCell", for: indexPath) as? OpenSearchCell else{return UITableViewCell()}
+        let search = searchData[indexPath.row]
+        cell.titleLabel.text = search.title
+        cell.messageLabel.text = search.message
+        cell.participantLabel.text = "\(String(describing: search.participants))"
+        let url = URL(string: search.thumbnail!)
+        DispatchQueue.global().async {
+            if let data = try? Data(contentsOf: url!) {
+                if let image = UIImage(data: data) {
+                    DispatchQueue.main.async {
+                        cell.imgView.image = image
+                    }
+                }
+            }
+        }
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
