@@ -25,6 +25,7 @@ class OtherUserProfileViewController: UIViewController {
     var feedData: [ChatOtherUserProfileData] = []
     var page = 1
     var index = 0
+    var userIdInt = 8
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,7 +54,7 @@ class OtherUserProfileViewController: UIViewController {
     
     private func getData() {
         // 서버에서 받아와서 설정
-        ChatOtherUserProfileService.shared.OtherUserProfile(userId: 1){ (networkResult) -> (Void) in
+        ChatOtherUserProfileService.shared.OtherUserProfile(userId: userIdInt){ (networkResult) -> (Void) in
             switch networkResult {
             case .success(let result):
                 if let otherUserData = result as? ChatOtherUserProfileData {
@@ -103,7 +104,7 @@ class OtherUserProfileViewController: UIViewController {
     
     func getDataByDates() {
         // MARK: - 유저 아이디 받아오기
-        let userId = 1
+        let userId = userIdInt
         let url = APIUrl.otherUserPage + "\(userId)"
         print(url)
         AF.request(url, method: .get)
@@ -179,15 +180,19 @@ extension OtherUserProfileViewController : UITableViewDelegate, UITableViewDataS
         cell.commentLabel.text = "댓글 \(feed.commentsCount!)"
         
         //Image
-        let url = URL(string: feed.imageSampleUrl!)
-        DispatchQueue.global().async {
-            if let data = try? Data(contentsOf: url!) {
-                if let image = UIImage(data: data) {
-                    DispatchQueue.main.async {
-                        cell.imageSampleView.image = image
+        if feed.imageSampleUrl != nil {
+            let url = URL(string: feed.imageSampleUrl!)
+            DispatchQueue.global().async {
+                if let data = try? Data(contentsOf: url!) {
+                    if let image = UIImage(data: data) {
+                        DispatchQueue.main.async {
+                            cell.imageSampleView.image = image
+                        }
                     }
                 }
             }
+        } else {
+            cell.imageSampleView.image = nil
         }
         
         //Time

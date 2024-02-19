@@ -49,7 +49,6 @@ class ChatPopupViewController: UIViewController {
     
     private func getUserDefaults() {
         // 왼쪽 버튼은 공통으로 신고하기 button
-        leftDismissed = { [weak self] () in self?.goReport() }
         
         OpenChatProfileService.shared.OpenChatProfile(userId: 1, chatRoomId: 1){(networkResult) -> (Void) in
             switch networkResult {
@@ -66,7 +65,6 @@ class ChatPopupViewController: UIViewController {
                         
                         self.nameLabel.text = "실명"
                         self.univOrNationLabel.text = "OO대학교"
-                        self.rightDismissed = { [weak self] () in self?.requestChat() }
                     }
                 } else {
                     if let ChatProfileData = result as? ChatProfileData {
@@ -97,8 +95,6 @@ class ChatPopupViewController: UIViewController {
             
             nameLabel.text = "실명"
             univOrNationLabel.text = "OO대학교"
-            rightDismissed = { [weak self] () in self?.requestChat() }
-            
             
         } else {
             // 익명프로필인 경우-> 일단 연결은 해놨는데 채팅쪽 익명이라 남의 프로필이니까 새로 API 연결해야함
@@ -139,7 +135,6 @@ class ChatPopupViewController: UIViewController {
             }
             
             rightBtn.setTitle("HOME", for: .normal)
-            rightDismissed = { [weak self] () in self?.goHome() }
         }
     }
     
@@ -153,29 +148,6 @@ class ChatPopupViewController: UIViewController {
     
     @objc private func rightBtnClicked(_ sender: UIButton) {
         self.dismiss(animated: true, completion: rightDismissed)
-    }
-    
-    // dismissed completion 사전 정의
-    private func goReport() {
-        // 신고 화면으로 전환
-        let storyboard = UIStoryboard(name: "OpenChat", bundle: .main)
-        let nextVC = storyboard.instantiateViewController(withIdentifier: "ReportViewController") as! ReportViewController
-        nextVC.modalPresentationStyle = .fullScreen
-        nextVC.modalTransitionStyle = .crossDissolve
-        self.present(nextVC, animated: true)
-    }
-    
-    private func requestChat() {
-        // VC 연결 코드 작성
-        print("채팅 요청")
-    }
-    
-    private func goHome() {
-        let storyboard = UIStoryboard(name: "OpenChat", bundle: .main)
-        let nextVC = storyboard.instantiateViewController(withIdentifier: "OtherUserProfileViewController") as! OtherUserProfileViewController
-        nextVC.modalPresentationStyle = .fullScreen
-        nextVC.modalTransitionStyle = .crossDissolve
-        self.present(nextVC, animated: true)
     }
 
     @discardableResult

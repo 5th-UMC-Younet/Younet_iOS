@@ -43,6 +43,9 @@ class MyPageViewController: UIViewController {
     }
     
     private func setDesign() {
+        //countryId 리셋
+        UserDefaults.standard.setValue(1, forKey: "countryId")
+        
         scrapButton.setImage(UIImage(named: "ScrapDefault"), for: .normal)
         scrapButton.tintColor = #colorLiteral(red: 0.8509804606, green: 0.850980401, blue: 0.8509804606, alpha: 1)
         scrapLineView.backgroundColor = #colorLiteral(red: 0.8509804606, green: 0.850980401, blue: 0.8509804606, alpha: 1)
@@ -129,7 +132,6 @@ class MyPageViewController: UIViewController {
                         let url = URL(string: myPageData.profilePicture!)
                         self.profileImage.load(url: url!)
                     }
-                    
                 }
             case .requestErr:
                 print("400 Error")

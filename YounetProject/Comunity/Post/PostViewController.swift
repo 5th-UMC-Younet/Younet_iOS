@@ -13,9 +13,10 @@ import Photos
 class PostViewController: UIViewController {
     @IBOutlet weak var category: UIButton!
     @IBOutlet weak var titleField: UITextField!
-    @IBOutlet weak var contentField: UITextField!
+    @IBOutlet weak var contentField: UITextView!
     
     let imagePicker = ImagePickerController()
+    let textViewSample = "내용을 입력하세요"
     
     var categoryId: Int?
     var countryId: Int?
@@ -27,6 +28,29 @@ class PostViewController: UIViewController {
     var imageKeys: [String] = []
     
     override func viewDidLoad() {
+        //카테고리 메뉴
+        let life = UIAction(title: "유학생활", handler: { _ in self.categorySelect(data: 1) })
+        let prepare = UIAction(title: "유학준비", handler: { _ in self.categorySelect(data: 2) })
+        let trade = UIAction(title: "중고거래", handler: { _ in self.categorySelect(data: 3) })
+        let travel = UIAction(title: "여행", handler: { _ in self.categorySelect(data: 4) })
+        let etc = UIAction(title: "기타", handler: { _ in self.categorySelect(data: 5) })
+        let buttonMenu = UIMenu(title: "", children: [life,prepare,trade,travel,etc])
+        category.menu = buttonMenu
+        
+        setKeyboard()
+        super.viewDidLoad()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        contentField.text = ""
+        titleField.text = ""
+        setTextViewPlaceholder()
+        contentField.delegate = self
+        
+        //이미지 등록
+        selectedImages = []
+        selectedAssets = []
+        imageKeys = []
+        
         //optional binding으로 userId 가져오기: From MyPageViewController
         let userIdInt: Int? = UserDefaults.standard.integer(forKey: "myUserId")
         if let userId = userIdInt {
@@ -40,20 +64,10 @@ class PostViewController: UIViewController {
         if let contId = countryIdInt {
             countryId = contId
         } else {
-            countryId = 1
+            countryId = 0
         }
         
-        //카테고리 메뉴
-        let life = UIAction(title: "유학생활", handler: { _ in self.categorySelect(data: 1) })
-        let prepare = UIAction(title: "유학준비", handler: { _ in self.categorySelect(data: 2) })
-        let trade = UIAction(title: "중고거래", handler: { _ in self.categorySelect(data: 3) })
-        let travel = UIAction(title: "여행", handler: { _ in self.categorySelect(data: 4) })
-        let etc = UIAction(title: "기타", handler: { _ in self.categorySelect(data: 5) })
-        let buttonMenu = UIMenu(title: "", children: [life,prepare,trade,travel,etc])
-        category.menu = buttonMenu
-        
         tabBarController?.tabBar.isHidden = true
-        super.viewDidLoad()
     }
     override func viewWillLayoutSubviews() {
         //제목 아래 밑줄
@@ -64,7 +78,6 @@ class PostViewController: UIViewController {
         border.borderWidth = 1.0 // 추가: 밑줄 두께
         titleField.layer.addSublayer(border)
         titleField.layer.masksToBounds = true
-        contentField.layer.masksToBounds = true
     }
     
     //카테고리
@@ -112,7 +125,7 @@ class PostViewController: UIViewController {
             return
         }
         for _ in selectedImages {
-            let imageName = UUID().uuidString + ".jpg"
+            let imageName = UUID().uuidString + ".jpeg"
             imageKeys.append(imageName)
         }
         print(imageKeys)
@@ -139,6 +152,7 @@ class PostViewController: UIViewController {
             do {
                 let jsonData = try JSONSerialization.data(withJSONObject: parameters)
                 multipartFormData.append(jsonData, withName: "post", mimeType: "application/json")
+                print(parameters)
             } catch {
                 print("Error converting parameters to JSON: \(error)")
             }
@@ -146,11 +160,12 @@ class PostViewController: UIViewController {
             if let imageKeys = parameters["sections"] as? [[String: Any]] {
                 for section in imageKeys {
                     if let imageNames = section["imageKeys"] as? [String] {
-                        for imageName in imageNames {
-                            if let image = UIImage(named: imageName) {
-                                if let imageData = image.jpegData(compressionQuality: 0.01) {
-                                    multipartFormData.append(imageData, withName: "files", fileName: imageName, mimeType: "image/jpeg")
-                                }
+                        for index in 0..<imageNames.count {
+                            let imageName = imageNames[index]
+                            let image = self.selectedImages[index]
+                            
+                            if let imageData = image.jpegData(compressionQuality: 1.0) {
+                                multipartFormData.append(imageData, withName: "files", fileName: imageName, mimeType: "image/jpeg")
                             }
                         }
                     }
@@ -166,12 +181,8 @@ class PostViewController: UIViewController {
                 alert.labelText = "\n게시글이 등록되었습니다.\n"
                 alert.buttonText = "확인"
                 alert.onDismissed = {
-                    guard let goHome = self.storyboard?.instantiateViewController(identifier: "tabC") as? TabBarController else{
-                        return
-                    }
-                    goHome.modalTransitionStyle = .crossDissolve
-                    goHome.modalPresentationStyle = .fullScreen
-                    self.present(goHome, animated: true, completion: nil)
+                    self.tabBarController?.selectedIndex = 0
+                    self.tabBarController?.tabBar.isHidden = false
                 }
             case .failure(let error):
                 // 실패한 경우 에러 메시지 표시
@@ -224,16 +235,17 @@ class PostViewController: UIViewController {
                     var thumbnail = UIImage()
                     
                     imageManager.requestImage(for: self.selectedAssets[i],
-                                              targetSize: CGSize(width: 200, height: 200),
+                                              targetSize: CGSize(width: 500, height: 500),
                                               contentMode: .aspectFit,
                                               options: option) { (result, info) in
                         thumbnail = result!
                     }
                     
-                    let data = thumbnail.jpegData(compressionQuality: 0.7)
+                    let data = thumbnail.jpegData(compressionQuality: 1)
                     let newImage = UIImage(data: data!)
                     
                     self.selectedImages.append(newImage! as UIImage)
+                    print(self.selectedImages)
                 }
                 print(self.selectedImages,self.selectedImages.count)
             }
@@ -242,6 +254,17 @@ class PostViewController: UIViewController {
     //MARK: - Post
     func post(){
         
+    }
+    
+    // textView PlaceHolder
+    private func setTextViewPlaceholder() {
+        if contentField.text == "" {
+            contentField.text = textViewSample
+            contentField.textColor = #colorLiteral(red: 0.7725487351, green: 0.7725491524, blue: 0.7803917527, alpha: 1)
+        } else if contentField.text == textViewSample {
+            contentField.text = ""
+            contentField.textColor = UIColor.black
+        }
     }
 }
 
@@ -255,5 +278,16 @@ extension UIApplication {
             }
         }
         return nil
+    }
+}
+
+extension PostViewController : UITextViewDelegate{
+    // textView 편집 시작
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        setTextViewPlaceholder()
+    }
+    // textView 편집 끝
+    func textViewDidEndEditing(_ textView: UITextView) {
+        setTextViewPlaceholder()
     }
 }

@@ -42,7 +42,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="70" translatesAutoresizingMaskIntoConstraints="NO" id="IU5-fa-EK6">
-                                <rect key="frame" x="165" y="74" width="197.33333333333337" height="24"/>
+                                <rect key="frame" x="165.33333333333337" y="79" width="205.66666666666663" height="24"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오픈채팅" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R0F-aX-UlJ">
                                         <rect key="frame" x="0.0" y="0.0" width="62.333333333333336" height="24"/>
@@ -51,10 +51,10 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="1wU-Ff-MA7">
-                                        <rect key="frame" x="132.33333333333331" y="0.0" width="65" height="24"/>
+                                        <rect key="frame" x="132.33333333333334" y="0.0" width="73.333333333333343" height="24"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sev-ls-q4j">
-                                                <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sev-ls-q4j">
+                                                <rect key="frame" x="0.0" y="0.0" width="32.333333333333336" height="24"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" image="alarm"/>
                                                 <connections>
@@ -62,7 +62,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b01-4S-pJe">
-                                                <rect key="frame" x="41" y="0.0" width="24" height="24"/>
+                                                <rect key="frame" x="49.333333333333314" y="0.0" width="24" height="24"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" image="search"/>
                                                 <connections>
@@ -74,7 +74,7 @@
                                 </subviews>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="brm-lr-bL6">
-                                <rect key="frame" x="0.0" y="138" width="393" height="631"/>
+                                <rect key="frame" x="0.0" y="143" width="393" height="626"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WZl-Gd-Uot">
@@ -83,7 +83,7 @@
                                 <state key="normal" image="chatPlus"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kUQ-bp-l7F">
-                                <rect key="frame" x="6" y="69" width="39.666666666666664" height="34.333333333333343"/>
+                                <rect key="frame" x="6" y="74" width="39.666666666666664" height="34.333333333333343"/>
                                 <color key="tintColor" red="0.2470588088" green="0.2470588088" blue="0.2470588088" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="chevron.backward" catalog="system"/>
@@ -103,8 +103,9 @@
                             <constraint firstItem="kUQ-bp-l7F" firstAttribute="leading" secondItem="hcc-tj-nev" secondAttribute="leading" constant="6" id="d7d-kZ-Ey2"/>
                             <constraint firstItem="brm-lr-bL6" firstAttribute="trailing" secondItem="hcc-tj-nev" secondAttribute="trailing" id="g1t-l5-w3v"/>
                             <constraint firstItem="hcc-tj-nev" firstAttribute="bottom" secondItem="WZl-Gd-Uot" secondAttribute="bottom" constant="29" id="jHA-Bz-C2S"/>
-                            <constraint firstItem="hcc-tj-nev" firstAttribute="trailing" secondItem="IU5-fa-EK6" secondAttribute="trailing" constant="30.666666666666629" id="lvk-b6-7b4"/>
-                            <constraint firstItem="IU5-fa-EK6" firstAttribute="top" secondItem="hcc-tj-nev" secondAttribute="top" constant="15" id="nWf-wW-YzN"/>
+                            <constraint firstItem="hcc-tj-nev" firstAttribute="trailing" secondItem="IU5-fa-EK6" secondAttribute="trailing" constant="22" id="lvk-b6-7b4"/>
+                            <constraint firstItem="IU5-fa-EK6" firstAttribute="top" secondItem="hcc-tj-nev" secondAttribute="top" constant="20" id="nWf-wW-YzN"/>
+                            <constraint firstItem="R0F-aX-UlJ" firstAttribute="centerX" secondItem="hcc-tj-nev" secondAttribute="centerX" id="uy7-RV-LJ7"/>
                             <constraint firstItem="brm-lr-bL6" firstAttribute="bottom" secondItem="hcc-tj-nev" secondAttribute="bottom" id="wKK-L4-DGR"/>
                         </constraints>
                     </view>
@@ -314,7 +315,7 @@
                                     <constraint firstAttribute="width" constant="90" id="zPf-Rr-aja"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Inter-Bold" family="Inter" pointSize="17"/>
-                                <color key="textColor" red="0.2470588088" green="0.2470588088" blue="0.2470588088" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t5o-pB-Yx9">
@@ -663,7 +664,7 @@
                                     <constraint firstAttribute="height" constant="23" id="QIl-VH-nF3"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Inter-Bold" family="Inter" pointSize="17"/>
-                                <color key="textColor" red="0.2470588088" green="0.2470588088" blue="0.2470588088" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pVS-Kf-R7M">
@@ -1236,7 +1237,7 @@
                                     <constraint firstAttribute="width" constant="90" id="sQ1-9F-KdN"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Inter-Bold" family="Inter" pointSize="17"/>
-                                <color key="textColor" red="0.2470588088" green="0.2470588088" blue="0.2470588088" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EV1-Gf-PVW">
@@ -1330,7 +1331,7 @@
                                     <constraint firstAttribute="width" constant="90" id="mdR-3q-2fR"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Inter-Bold" family="Inter" pointSize="17"/>
-                                <color key="textColor" red="0.2470588088" green="0.2470588088" blue="0.2470588088" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HEu-3d-ZJC">
@@ -1620,7 +1621,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v3u-mh-d6t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1737" y="814"/>
+            <point key="canvasLocation" x="1735.8778625954199" y="813.38028169014092"/>
         </scene>
         <!--Other User Profile View Controller-->
         <scene sceneID="EOQ-el-Ux6">

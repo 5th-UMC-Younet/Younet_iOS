@@ -65,6 +65,10 @@ class ChatMyPageViewController: UIViewController {
             switch networkResult {
             case .success(let result):
                 if let myPageData = result as? MyPageUserData {
+                    if myPageData.userId != nil {
+                        self.simpleData.setValue(myPageData.userId, forKey: "myUserId")
+                    }
+                    
                     // 프로필 세팅
                     self.nickName.text = myPageData.name
                     myPageData.profileText == nil ? (self.nickNameSelfExplain.text = "프로필 소개글") : (self.nickNameSelfExplain.text = myPageData.profileText)
@@ -110,11 +114,37 @@ class ChatMyPageViewController: UIViewController {
     @IBAction func popupTest1(_ sender: UIButton) {
         let presentedPopup = ChatPopupViewController.present(parent: self)
         presentedPopup.setPopupNumber = 1
+        presentedPopup.leftDismissed = { self.goReport() }
+        presentedPopup.rightDismissed = { self.goHome() }
     }
     
     @IBAction func popupTest2(_ sender: UIButton) {
         let presentedPopup = ChatPopupViewController.present(parent: self)
         presentedPopup.setPopupNumber = 0
+        presentedPopup.leftDismissed = { self.goReport() }
+        presentedPopup.rightDismissed = { self.requestChat() }
+    }
+    
+    private func goReport() {
+        // 신고 화면으로 전환
+        let storyboard = UIStoryboard(name: "OpenChat", bundle: .main)
+        let nextVC = storyboard.instantiateViewController(withIdentifier: "ReportViewController") as! ReportViewController
+        nextVC.modalPresentationStyle = .fullScreen
+        nextVC.modalTransitionStyle = .crossDissolve
+        present(nextVC, animated: true)
+    }
+    
+    private func requestChat() {
+        // VC 연결 코드 작성
+        print("채팅 요청")
+    }
+    
+    private func goHome() {
+        let storyboard = UIStoryboard(name: "OpenChat", bundle: .main)
+        let nextVC = storyboard.instantiateViewController(withIdentifier: "OtherUserProfileViewController") as! OtherUserProfileViewController
+        nextVC.modalPresentationStyle = .fullScreen
+        nextVC.modalTransitionStyle = .crossDissolve
+        self.present(nextVC, animated: true)
     }
     
     @IBAction func backButtonDidtap(_ sender: Any) {

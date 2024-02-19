@@ -57,6 +57,11 @@ class HomeViewController: UIViewController {
         category[self.categoryId-1].isSelected = true
         index = 0
         
+        //countryId 리셋
+        print(countryId)
+        UserDefaults.standard.setValue(countryId, forKey: "countryId")
+        print(UserDefaults.standard.integer(forKey: "countryId"))
+        
         super.viewDidLoad()
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -173,15 +178,20 @@ class HomeViewController: UIViewController {
                 if self?.countries[i].name == countryInfo?.korName {
                     engName = self?.countries[i].engName ?? ""
                     self!.countryId = i+1
-                    //countryId 저장
-                    UserDefaults.standard.setValue(self?.countryId, forKey: "countryId")
                 }
             }
             self?.countryName.setTitle(countryInfo?.korName, for: .normal)
             self?.engCountryName.text = engName
             self?.countryImg.image = UIImage(named: countryInfo?.engName ?? "")
             self?.name = countryInfo!.korName
+            
+            //countryId 저장
+            print(self?.countryId)
+            UserDefaults.standard.setValue(self?.countryId, forKey: "countryId")
+            print(UserDefaults.standard.integer(forKey: "countryId"))
             self?.getAPI()
+            
+            
         }
         
     }

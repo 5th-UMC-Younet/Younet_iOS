@@ -108,18 +108,9 @@ struct MyPageProfileEditService{
             "profileText": profileText
         ]
         let sendText = "\(body)".trimmingCharacters(in: ["[","]"])
-        let dataText = asString(jsonDictionary: body)
         
         typealias JSONDictionary = [String : Any]
 
-        func asString(jsonDictionary: JSONDictionary) -> String {
-          do {
-            let data = try JSONSerialization.data(withJSONObject: jsonDictionary, options: .prettyPrinted)
-            return String(data: data, encoding: String.Encoding.utf8) ?? ""
-          } catch {
-            return ""
-          }
-        }
         // 요청하기
         let dataRequest = AF.upload(multipartFormData: { multipartFormData in
             multipartFormData.append("{\(sendText)}".data(using: .utf8)!, withName: "editMypage", mimeType: "application/json")
