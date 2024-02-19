@@ -27,12 +27,23 @@ class PostViewController: UIViewController {
     var imageKeys: [String] = []
     
     override func viewDidLoad() {
-        //임시
-        communityProfileId = 1
-        countryId = 1
+        //optional binding으로 userId 가져오기: From MyPageViewController
+        let userIdInt: Int? = UserDefaults.standard.integer(forKey: "myUserId")
+        if let userId = userIdInt {
+            communityProfileId = userId
+        } else {
+            communityProfileId = 1
+        }
+        
+        //optional binding으로 countryId 가져오기: From MenuSelectionVC
+        let countryIdInt: Int? = UserDefaults.standard.integer(forKey: "countryId")
+        if let contId = countryIdInt {
+            countryId = contId
+        } else {
+            countryId = 1
+        }
         
         //카테고리 메뉴
-        category.setTitle("Category", for: .normal)
         let life = UIAction(title: "유학생활", handler: { _ in self.categorySelect(data: 1) })
         let prepare = UIAction(title: "유학준비", handler: { _ in self.categorySelect(data: 2) })
         let trade = UIAction(title: "중고거래", handler: { _ in self.categorySelect(data: 3) })
@@ -41,18 +52,21 @@ class PostViewController: UIViewController {
         let buttonMenu = UIMenu(title: "", children: [life,prepare,trade,travel,etc])
         category.menu = buttonMenu
         
-        //제목
-        titleField.borderStyle = .none
-        let border = CALayer()
-        border.frame = CGRect(x: 0, y: titleField.frame.size.height - 1, width: titleField.frame.width, height: 1)
-        border.borderColor = UIColor.darkGray.cgColor
-        border.borderWidth = 1.0 // 추가: 밑줄 두께
-        titleField.layer.addSublayer(border)
-        titleField.layer.masksToBounds = true
-        
         tabBarController?.tabBar.isHidden = true
         super.viewDidLoad()
     }
+    override func viewWillLayoutSubviews() {
+        //제목 아래 밑줄
+        titleField.borderStyle = .none
+        let border = CALayer()
+        border.frame = CGRect(x: 0, y: titleField.frame.size.height - 0.5, width: titleField.frame.width, height: 1)
+        border.borderColor = UIColor.lightGray.cgColor
+        border.borderWidth = 1.0 // 추가: 밑줄 두께
+        titleField.layer.addSublayer(border)
+        titleField.layer.masksToBounds = true
+        contentField.layer.masksToBounds = true
+    }
+    
     //카테고리
     func categorySelect(data: Int){
         switch data{

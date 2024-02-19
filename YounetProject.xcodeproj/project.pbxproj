@@ -574,13 +574,13 @@
 		9C33BD1F2B7B842A00497FEC /* MyPageVCFiles */ = {
 			isa = PBXGroup;
 			children = (
+				9C33BD262B7B842A00497FEC /* MyPageViewController.swift */,
 				B34AB8F12B80CE9900A8C808 /* TableVCFiles */,
 				B34AB8EC2B80CE8000A8C808 /* MyPageAPI */,
 				9C33BD202B7B842A00497FEC /* SettingViewController.swift */,
 				9C33BD212B7B842A00497FEC /* QuitViewController.swift */,
 				9C33BD222B7B842A00497FEC /* MyPageProfileEditViewController.swift */,
 				9C33BD232B7B842A00497FEC /* Feed */,
-				9C33BD262B7B842A00497FEC /* MyPageViewController.swift */,
 			);
 			path = MyPageVCFiles;
 			sourceTree = "<group>";

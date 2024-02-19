@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -25,31 +25,28 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="VVm-D2-ciN">
-                        <rect key="frame" x="20.666666666666657" y="9.6666666666666643" width="349" height="79"/>
+                        <rect key="frame" x="15" y="9.6666666666666643" width="360" height="79"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="JU3-ol-J4N">
-                                <rect key="frame" x="0.0" y="0.0" width="250" height="79"/>
+                                <rect key="frame" x="0.0" y="0.0" width="261" height="79"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cdH-x2-Sgv">
-                                        <rect key="frame" x="0.0" y="0.0" width="250" height="26.333333333333332"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="250" id="Yl7-6W-etf"/>
-                                        </constraints>
+                                        <rect key="frame" x="0.0" y="0.0" width="38.666666666666664" height="26.333333333333332"/>
                                         <fontDescription key="fontDescription" name="Inter-Bold" family="Inter" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="본문내용" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aVp-yG-Tqo">
-                                        <rect key="frame" x="0.0" y="35.333333333333336" width="250" height="19.666666666666664"/>
+                                        <rect key="frame" x="0.0" y="35.333333333333336" width="230" height="19.666666666666664"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="250" id="I1n-y1-6Lr"/>
+                                            <constraint firstAttribute="width" constant="230" id="I1n-y1-6Lr"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Inter-Regular" family="Inter" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="A6Q-KT-f1n">
-                                        <rect key="frame" x="0.0" y="64" width="119.33333333333333" height="15"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="A6Q-KT-f1n">
+                                        <rect key="frame" x="0.0" y="64" width="107.33333333333333" height="15"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="pfc-Mv-ol8">
                                                 <rect key="frame" x="0.0" y="0.0" width="70.666666666666671" height="12.333333333333334"/>
@@ -61,7 +58,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="|" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t1m-ub-hmp">
-                                                        <rect key="frame" x="29.666666666666668" y="1.3333333333333286" width="2.6666666666666679" height="10"/>
+                                                        <rect key="frame" x="29.666666666666664" y="1.3333333333333286" width="2.6666666666666643" height="10"/>
                                                         <fontDescription key="fontDescription" name="Inter-Regular" family="Inter" pointSize="8"/>
                                                         <color key="textColor" red="0.43137258290000002" green="0.43137258290000002" blue="0.43137258290000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -75,7 +72,7 @@
                                                 </subviews>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="댓글 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7hV-rO-psP">
-                                                <rect key="frame" x="92.666666666666657" y="0.0" width="26.666666666666671" height="12"/>
+                                                <rect key="frame" x="80.666666666666671" y="0.0" width="26.666666666666671" height="12"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                 <color key="textColor" red="0.43137258290000002" green="0.43137258290000002" blue="0.43137258290000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -84,12 +81,13 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cNV-V9-0ux">
-                                <rect key="frame" x="270" y="0.0" width="79" height="79"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cNV-V9-0ux">
+                                <rect key="frame" x="281" y="0.0" width="79" height="79"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="79" id="E9Y-vc-SOa"/>
-                                    <constraint firstAttribute="width" constant="79" id="FRK-BD-XES"/>
+                                    <constraint firstAttribute="width" secondItem="cNV-V9-0ux" secondAttribute="height" multiplier="1:1" id="RoJ-w7-yxm"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -101,8 +99,9 @@
                     </stackView>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="trailing" secondItem="VVm-D2-ciN" secondAttribute="trailing" constant="15" id="ElQ-7E-Dqm"/>
                     <constraint firstItem="VVm-D2-ciN" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="HTD-F5-cxh"/>
-                    <constraint firstItem="VVm-D2-ciN" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="m9f-Yy-Rfp"/>
+                    <constraint firstItem="VVm-D2-ciN" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="YQt-6g-kPl"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

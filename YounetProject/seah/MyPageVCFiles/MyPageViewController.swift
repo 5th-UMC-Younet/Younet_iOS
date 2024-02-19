@@ -106,6 +106,10 @@ class MyPageViewController: UIViewController {
             switch networkResult {
             case .success(let result):
                 if let myPageData = result as? MyPageUserData {
+                    if myPageData.userId != nil {
+                        self.simpleData.setValue(myPageData.userId, forKey: "myUserId")
+                    }
+                    
                     // 프로필 세팅
                     self.usernameLabel.text = myPageData.name
                     myPageData.profileText == nil ? (self.selfExplainLabel.text = "프로필 소개글") : (self.selfExplainLabel.text = myPageData.profileText)
@@ -137,12 +141,6 @@ class MyPageViewController: UIViewController {
                 print("networkFail")
             }
         }
-        
-        // simpleData.string(forKey: "nickname") != nil ? usernameLabel.text = simpleData.string(forKey: "nickname") : nil
-        // simpleData.string(forKey: "selfExplain") != nil ? selfExplainLabel.text = simpleData.string(forKey: "selfExplain") : nil
-        // simpleData.string(forKey: "preferNation") != nil ? preferNationLabel.text = simpleData.string(forKey: "preferNation") : nil
-        // imageData.getSavedImage(named: "profileImage") != nil ? profileImage.image = imageData.getSavedImage(named: "profileImage") : nil
-
     }
     
     @IBAction func BackButtonDidtap(_ sender: Any) {

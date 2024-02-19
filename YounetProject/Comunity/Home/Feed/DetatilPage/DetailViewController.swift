@@ -32,12 +32,14 @@ class DetailViewController: UIViewController {
     var comunityProfileId: Int? //로그인한 사용자의 ID
     var countryName: String?
     var commentId: Int?
+    var communityProfileId: Int?
     
     //대댓글
     var t = true
     var num = 0
     var count = 0
     var i = 0
+    var commentCount = 0
     
     @IBAction func sendComent(_ sender: Any) {
         print("전송")
@@ -86,6 +88,10 @@ class DetailViewController: UIViewController {
         }
     }
     func getData(){
+        //userId 가져오기
+        let userIdInt: Int? = UserDefaults.standard.integer(forKey: "myUserId")
+        if let userId = userIdInt { communityProfileId = userId } else { communityProfileId = 1 }
+        
         var finished1 = false
         var finished2 = false
         let url = "http://ec2-3-34-112-205.ap-northeast-2.compute.amazonaws.com:8080/post/\(postId!)"
@@ -128,7 +134,7 @@ class DetailViewController: UIViewController {
         let url = "http://ec2-3-34-112-205.ap-northeast-2.compute.amazonaws.com:8080/like/post"
         let parameters: [String: Any] = [
             "postId": postId!, // 좋아요를 누른 게시물의 ID
-            "communityProfileId": 1 // 로그인한 사용자의 ID
+            "communityProfileId": communityProfileId! // 로그인한 사용자의 ID
         ]
         AF.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default)
             .validate(statusCode: 200..<300)
@@ -146,7 +152,7 @@ class DetailViewController: UIViewController {
         let url = "http://ec2-3-34-112-205.ap-northeast-2.compute.amazonaws.com:8080/like/post"
         let parameters: [String: Any] = [
             "postId": postId!,
-            "communityProfileId": 1
+            "communityProfileId": communityProfileId!
         ]
         AF.request(url, method: .delete, parameters: parameters, encoding: JSONEncoding.default)
             .validate(statusCode: 200..<300)
@@ -164,7 +170,7 @@ class DetailViewController: UIViewController {
         let url = "http://ec2-3-34-112-205.ap-northeast-2.compute.amazonaws.com:8080/scrap/post"
         let parameters: [String: Any] = [
             "postId": postId!, // 스크랩 누른 게시물의 ID
-            "communityProfileId": 1 // 로그인한 사용자의 ID
+            "communityProfileId": communityProfileId! // 로그인한 사용자의 ID
         ]
         AF.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default)
             .validate(statusCode: 200..<300)
@@ -182,7 +188,7 @@ class DetailViewController: UIViewController {
         let url = "http://ec2-3-34-112-205.ap-northeast-2.compute.amazonaws.com:8080/scrap/post"
         let parameters: [String: Any] = [
             "postId": postId!,
-            "communityProfileId": 1
+            "communityProfileId": communityProfileId!
         ]
         AF.request(url, method: .delete, parameters: parameters, encoding: JSONEncoding.default)
             .validate(statusCode: 200..<300)
@@ -242,51 +248,48 @@ class DetailViewController: UIViewController {
     }
 }
 
-//MARK: - extension
 extension DetailViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return commentData[0].content!.count + (commentData[0].content?.first?.replyList!.count)!
+        return commentData[0].content!.count + (commentData[0].content?.first?.replyList!.count ?? 0)
     }
     
     //셀 종류
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        print(commentData[0].content!.count + (commentData[0].content?.first?.replyList!.count)!)
-//        if !(commentData.isEmpty){
-//
-//        }
-        let comment = commentData[0].content![num]
-        let replyCount = comment.replyList!.count
-        if t{
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "FeedDetailCell", for: indexPath) as? FeedDetailCell else{return UITableViewCell()}
-            cell.userName.setTitle(" \((comment.authorName)!)", for: .normal)
-            cell.dateLabel.text = String(comment.createdAt?.prefix(10) ?? "")
-            cell.commentLabel.text = comment.body
-            count = replyCount
-            i = 0
-            if count != 0{
-                t = false
-            }else if (num+1) < commentData[0].content!.count + (commentData[0].content?.first?.replyList!.count)!{
-                    num += 1
-            }
-            return cell
-        }else{
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "ReplyCell", for: indexPath) as? ReplyCell else{return UITableViewCell()}
-            cell.userName.setTitle(" \((comment.replyList![i].authorName)!)", for: .normal)
-            cell.dateLabel.text = comment.createdAt
-            cell.commentLabel.text = comment.replyList![i].body
-            count -= 1
-            i += 1
-            print(count,t)
-            if count == 0{
-                t = true
-                if (num+1) < commentData[0].content!.count + (commentData[0].content?.first?.replyList!.count)!{
-                    num += 1
+            print(commentData[0].content!.count + (commentData[0].content?.first?.replyList!.count)!)
+        commentCount = commentData[0].content!.count
+            let comment = commentData[0].content![num]
+        print(num)
+            let replyCount = comment.replyList!.count
+            if t{
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: "FeedDetailCell", for: indexPath) as? FeedDetailCell else{return UITableViewCell()}
+                cell.userName.setTitle(" \((comment.authorName)!)", for: .normal)
+                cell.dateLabel.text = String(comment.createdAt?.prefix(10) ?? "")
+                cell.commentLabel.text = comment.body
+                count = replyCount
+                i = 0
+                if count != 0{
+                    t = false
+                }else if ((num+1) < commentData[0].content!.count + (commentData[0].content?.first?.replyList!.count)!) && (num+1) < commentCount{
+                        num += 1
                 }
+                return cell
+            }else{
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: "ReplyCell", for: indexPath) as? ReplyCell else{return UITableViewCell()}
+                cell.userName.setTitle(" \((comment.replyList![i].authorName)!)", for: .normal)
+                cell.dateLabel.text = comment.createdAt
+                cell.commentLabel.text = comment.replyList![i].body
+                count -= 1
+                i += 1
+                print(count,t)
+                if count == 0{
+                    t = true
+                    if ((num+1) < commentData[0].content!.count + (commentData[0].content?.first?.replyList!.count)!) && (num+1) < commentCount{
+                        num += 1
+                    }
+                }
+                return cell
             }
-            return cell
-        }
-         
-    }
+         }
     //테이블뷰 높이
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 92
@@ -318,3 +321,4 @@ extension DetailViewController : UICollectionViewDelegate, UICollectionViewDataS
         return CGSize(width: collectionView.frame.size.width, height: collectionView.frame.height)
     }
 }
+

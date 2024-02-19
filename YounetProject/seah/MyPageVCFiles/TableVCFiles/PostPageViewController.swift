@@ -148,12 +148,13 @@ extension PostPageViewController : UITableViewDelegate, UITableViewDataSource {
     }
     
     
-    /*//데이터 전달
+    //데이터 전달
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //print(indexPath.row)
         let postId = feedData[0].posts[indexPath.row].postId
-        let date = feedData[0].content[indexPath.row].createdAt
-        let senderData: (Int,Int,String) = (postId,categoryId,date)
+        let date = feedData[0].posts[indexPath.row].createdAt
+        let categoryId = feedData[0].posts[indexPath.row].categoryId
+        let senderData: (Int, Int, String) = (postId!, categoryId!, date!)
         performSegue(withIdentifier: "DetailVC", sender: senderData)
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -166,6 +167,6 @@ extension PostPageViewController : UITableViewDelegate, UITableViewDataSource {
                 vc?.modalPresentationStyle = .fullScreen
             }
         }
-    }*/
+    }
     
 }

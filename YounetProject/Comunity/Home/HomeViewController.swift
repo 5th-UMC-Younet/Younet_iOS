@@ -51,7 +51,6 @@ class HomeViewController: UIViewController {
     ]
     
     override func viewDidLoad() {
-        getAPI()
         //정렬 초기값
         sortButton[0].isSelected = true
         //카테고리 초기값
@@ -60,6 +59,10 @@ class HomeViewController: UIViewController {
         
         super.viewDidLoad()
     }
+    override func viewWillAppear(_ animated: Bool) {
+        getAPI()
+    }
+    
     //MARK: - ALarm
     @IBAction func alarm(_ sender: Any) {
         guard let alarmVC = storyboard?.instantiateViewController(identifier: "AlarmVC") as? AlarmViewController else{
@@ -68,7 +71,9 @@ class HomeViewController: UIViewController {
         alarmVC.modalPresentationStyle = .fullScreen
         present(alarmVC, animated: true, completion: nil)
     }
-    
+    @IBAction func back(_ sender: Any) {
+        dismiss(animated: true)
+    }
     //MARK: - Search
     @IBAction func search(_ sender: Any) {
         guard let searchVC = storyboard?.instantiateViewController(identifier: "SearchVC") as? SearchViewController else{
@@ -168,6 +173,8 @@ class HomeViewController: UIViewController {
                 if self?.countries[i].name == countryInfo?.korName {
                     engName = self?.countries[i].engName ?? ""
                     self!.countryId = i+1
+                    //countryId 저장
+                    UserDefaults.standard.setValue(self?.countryId, forKey: "countryId")
                 }
             }
             self?.countryName.setTitle(countryInfo?.korName, for: .normal)
