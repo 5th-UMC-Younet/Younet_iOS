@@ -1118,9 +1118,12 @@
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                                             </textField>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="6kR-7n-mOQ">
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="6kR-7n-mOQ">
                                                 <rect key="frame" x="-1" y="620" width="394" height="232"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="232" id="Eoc-jI-fMX"/>
+                                                </constraints>
                                             </tableView>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HRm-NY-CFO">
                                                 <rect key="frame" x="333" y="577" width="27" height="27"/>
@@ -1230,6 +1233,7 @@
                         <outlet property="scrollView" destination="Brc-Bj-5Ud" id="Yft-On-flB"/>
                         <outlet property="storeButton" destination="Rxb-gJ-nzi" id="wcV-MN-Cvt"/>
                         <outlet property="tableView" destination="6kR-7n-mOQ" id="9JU-bJ-WLz"/>
+                        <outlet property="tableViewHeight" destination="Eoc-jI-fMX" id="qY9-Rr-5VV"/>
                         <outlet property="textField" destination="XDE-F0-DFd" id="9uo-AY-z1m"/>
                         <outlet property="textView" destination="AoF-Q0-QuQ" id="HoX-f8-JpN"/>
                         <outlet property="titleLabel" destination="kor-Cr-lld" id="Dim-Rm-4fK"/>

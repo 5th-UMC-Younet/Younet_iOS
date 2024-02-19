@@ -23,6 +23,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var heartButton: UIButton!
     @IBOutlet weak var storeButton: UIButton!
     @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var tableViewHeight: NSLayoutConstraint!
     
     //API
     var detailData: [DetailModel] = []
@@ -34,15 +35,16 @@ class DetailViewController: UIViewController {
     var countryName: String?
     var commentId: Int?
     var body: String = "" //댓글
+    var commentCount: Int? //총 댓글수
     
-    //대댓글
-    var t = true
-    var num = 0
-    var count = 0
-    var i = 0
-    var commentCount = 0
+    //답글
+    var t = true //댓글 구분
+    var num = 0 //댓글 인덱스
+    var countR = 0 //답글 수
+    var i = 0 //답글 인덱스
+    var countC = 0 //댓글 수
     
-    @IBAction func sendComent(_ sender: Any) { 
+    @IBAction func sendComent(_ sender: Any) {
         body = textField.text!
         textField.text = ""
         postComment()
@@ -79,6 +81,9 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         getData()
         registerXib()
+        DispatchQueue.main.async {
+                    self.tableViewHeight.constant = self.tableView.contentSize.height
+                }
         super.viewDidLoad()
     }
     //MARK: - API
@@ -139,7 +144,7 @@ class DetailViewController: UIViewController {
             .validate(statusCode: 200..<300)
             .responseJSON { response in
                 switch response.result {
-                case .success:                    
+                case .success:
                     self.getAPI()
                 case .failure(let error):
                     print("CommentFailed: \(error)")
@@ -223,15 +228,7 @@ class DetailViewController: UIViewController {
         countryLabel.text = countryName
         titleLabel.text = detail.data.postTitle
         userName.setTitle(" \(detail.data.authorName)", for: .normal) //user image 필요
-        if let firstComment = commentData.first,
-            let content = firstComment.content,
-            let firstContent = content.first,
-            let replyList = firstContent.replyList {
-            commentLabel.text = " \((content.count) + (replyList.count))"
-        } else {
-            commentLabel.text = "0"
-        }
-
+        commentLabel.text = " \(commentCount!)"
         likeLabel.text = " \(detail.data.likesCount)"
         textView.text = detail.data.sections.first?.body
         dateLabel.text = String(date?.prefix(10) ?? "")
@@ -275,50 +272,50 @@ class DetailViewController: UIViewController {
 
 extension DetailViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let firstComment = commentData.first else {
-                return 0
-            }
-
-            let commentCount = firstComment.content?.count ?? 0
-            let replyCount = firstComment.content?.first?.replyList?.count ?? 0
-
-            return commentCount + replyCount
+        return commentCount!
     }
     
     //셀 종류
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        commentCount = commentData[0].content!.count
-            let comment = commentData[0].content![num]
-            let replyCount = comment.replyList!.count
-            if t{
-                guard let cell = tableView.dequeueReusableCell(withIdentifier: "FeedDetailCell", for: indexPath) as? FeedDetailCell else{return UITableViewCell()}
-                cell.userName.setTitle(" \((comment.authorName)!)", for: .normal)
-                cell.dateLabel.text = String(comment.createdAt?.prefix(10) ?? "")
-                cell.commentLabel.text = comment.body
-                count = replyCount
-                i = 0
-                if count != 0{
-                    t = false
-                }else if ((num+1) < commentData[0].content!.count + (commentData[0].content?.first?.replyList!.count)!) && (num+1) < commentCount{
-                        num += 1
-                }
-                return cell
-            }else{
-                guard let cell = tableView.dequeueReusableCell(withIdentifier: "ReplyCell", for: indexPath) as? ReplyCell else{return UITableViewCell()}
-                cell.userName.setTitle(" \((comment.replyList![i].authorName)!)", for: .normal)
-                cell.dateLabel.text = comment.createdAt
-                cell.commentLabel.text = comment.replyList![i].body
-                count -= 1
-                i += 1
-                if count == 0{
-                    t = true
-                    if ((num+1) < commentData[0].content!.count + (commentData[0].content?.first?.replyList!.count)!) && (num+1) < commentCount{
-                        num += 1
-                    }
-                }
-                return cell
+        let comment = commentData[0].content![num]
+        countC = commentData[0].content!.count
+        let replyCount = comment.replyList!.count
+        if t {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "FeedDetailCell", for: indexPath) as? FeedDetailCell else { return UITableViewCell() }
+            cell.userName.setTitle(" \((comment.authorName)!)", for: .normal)
+            cell.dateLabel.text = String(comment.createdAt?.prefix(10) ?? "")
+            cell.commentLabel.text = comment.body
+            countR = replyCount
+            i = 0
+            if countR != 0 {
+                t = false
+            } else if ((num + 1) < commentData[0].content!.count + (commentData[0].content?.first?.replyList!.count)!) && (num + 1) < countC {
+                print(num)
+                num += 1
             }
-         }
+            DispatchQueue.main.async {
+                self.tableViewHeight.constant = tableView.contentSize.height
+            }
+            return cell
+        } else {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "ReplyCell", for: indexPath) as? ReplyCell else { return UITableViewCell() }
+            cell.userName.setTitle(" \((comment.replyList![i].authorName)!)", for: .normal)
+            cell.dateLabel.text = String(comment.createdAt?.prefix(10) ?? "")
+            cell.commentLabel.text = comment.replyList![i].body
+            countR -= 1
+            i += 1
+            if countR == 0 {
+                t = true
+                if ((num + 1) < commentData[0].content!.count + (commentData[0].content?.first?.replyList!.count)!) && (num + 1) < countC {
+                    num += 1
+                }
+            }
+            DispatchQueue.main.async {
+                self.tableViewHeight.constant = tableView.contentSize.height
+            }
+            return cell
+        }
+    }
     //테이블뷰 높이
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 92
@@ -331,7 +328,7 @@ extension DetailViewController : UICollectionViewDelegate, UICollectionViewDataS
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DetailImgCell", for: indexPath) as? DetailImgCell else{return UICollectionViewCell()}
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DetailImgCell", for: indexPath) as? DetailImgCell else { return UICollectionViewCell() }
         let detail = detailData[0]
         if let imageUrlString = detail.data.sections.first?.images[indexPath.item].imageUrl,
            let imageUrl = URL(string: imageUrlString) {
@@ -344,10 +341,14 @@ extension DetailViewController : UICollectionViewDelegate, UICollectionViewDataS
                 }
             }
         }
+        DispatchQueue.main.async {
+            self.scrollView.contentSize.height = collectionView.contentSize.height
+        }
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.size.width, height: collectionView.frame.height)
     }
+    
 }
 

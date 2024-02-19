@@ -309,19 +309,22 @@ extension HomeViewController : UITableViewDelegate, UITableViewDataSource {
     }
     //데이터 전달
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let postId = feedData[0].content![indexPath.row].postId
-        let date = feedData[0].content![indexPath.row].createdAt
-        let senderData: (Int?,Int?,String?,String?) = (postId,categoryId,date,name)
+        let feed = feedData[0].content![indexPath.row]
+        let postId = feed.postId
+        let date = feed.createdAt
+        let commentCount = feed.commentsCount
+        let senderData: (Int?,Int?,String?,String?,Int?) = (postId,categoryId,date,name,commentCount)
         performSegue(withIdentifier: "DetailVC", sender: senderData)
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "DetailVC" {
             let vc = segue.destination as? DetailViewController
-            if let senderData = sender as? (Int, Int,String,String) {
+            if let senderData = sender as? (Int, Int,String,String,Int) {
                 vc?.postId = senderData.0
                 vc?.categoryId = senderData.1
                 vc?.date = senderData.2
                 vc?.countryName = senderData.3
+                vc?.commentCount = senderData.4
                 vc?.modalPresentationStyle = .fullScreen
             }
         }
