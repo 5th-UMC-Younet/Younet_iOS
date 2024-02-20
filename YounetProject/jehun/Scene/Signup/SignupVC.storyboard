@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="d4u-hJ-c5h">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Inter-Regular.ttf">
+            <string>Inter-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--회원 가입-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="SignupVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="SignupVC" customModule="YounetProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="394" height="1000"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EXk-8Q-9Mq">
+                                <rect key="frame" x="0.0" y="103" width="394" height="863"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jub-5j-cbm">
+                                        <rect key="frame" x="0.0" y="0.0" width="394" height="900.33333333333337"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gbq-p3-qdG">
+                                                <rect key="frame" x="30" y="733.33333333333337" width="334" height="47"/>
+                                                <color key="backgroundColor" red="0.16177073119999999" green="0.1129831895" blue="0.53874236350000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="47" id="apB-0a-T36"/>
+                                                </constraints>
+                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="회원가입">
+                                                    <fontDescription key="titleFontDescription" name="Inter-Bold" family="Inter" pointSize="19"/>
+                                                    <color key="baseBackgroundColor" red="0.16177073119999999" green="0.1129831895" blue="0.53874236350000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </buttonConfiguration>
+                                            </button>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="2t9-Y6-Qx4">
+                                                <rect key="frame" x="44" y="45" width="306" height="666.33333333333337"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="XRh-om-qR0" customClass="SignupInputComponent" customModule="YounetProject" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="306" height="110"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="titleText" value="이름(증명서류에 기재된 이름)"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="inputErrorMsg" value="이름을 입력해주세요."/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="6bE-Y5-mxQ" customClass="SignupInputComponent" customModule="YounetProject" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="132" width="306" height="70"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="titleText" value="닉네임"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="inputErrorMsg" value="닉네임을 입력해주세요."/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="z3v-UT-Zzi" customClass="SignupInputComponent" customModule="YounetProject" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="224" width="306" height="70"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="titleText" value="ID"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="inputErrorMsg" value="ID를 올바르게 입력해주세요."/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="J41-VO-tcl" customClass="SignupEmailComponent" customModule="YounetProject" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="316" width="306" height="124.33333333333331"/>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="lAu-CT-A4l" customClass="SignupInputComponent" customModule="YounetProject" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="462.33333333333337" width="306" height="70"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="titleText" value="비밀번호"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="inputErrorMsg" value="영어, 숫자, 특수문자 포함 8자리 이상으로 작성해주세요."/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="FQr-yO-O1T" customClass="SignupInputComponent" customModule="YounetProject" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="554.33333333333337" width="306" height="70"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="titleText" value="비밀번호 확인"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="inputErrorMsg" value="비밀번호가 일치하지 않습니다."/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="vFe-Xo-lAO">
+                                                        <rect key="frame" x="0.0" y="646.33333333333337" width="306" height="20"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="ftl-hs-Fo5" userLabel="agreementStackView">
+                                                                <rect key="frame" x="0.0" y="0.0" width="306" height="20"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[필수] 만 14세 이상입니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LdX-52-wcL">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="284" height="20"/>
+                                                                        <fontDescription key="fontDescription" name="Inter-Regular" family="Inter" pointSize="12"/>
+                                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="uncheck-circle" translatesAutoresizingMaskIntoConstraints="NO" id="E2K-Ky-KIr">
+                                                                        <rect key="frame" x="286" y="0.0" width="20" height="20"/>
+                                                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" secondItem="E2K-Ky-KIr" secondAttribute="height" multiplier="1:1" id="qcC-sr-gyb"/>
+                                                                        </constraints>
+                                                                    </imageView>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="20" id="oR1-Bc-F6p"/>
+                                                                </constraints>
+                                                            </stackView>
+                                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="체크표시를 해주세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nTL-K7-Nwe">
+                                                                <rect key="frame" x="0.0" y="0.0" width="306" height="0.0"/>
+                                                                <fontDescription key="fontDescription" name="Inter-Regular" family="Inter" pointSize="12"/>
+                                                                <color key="textColor" systemColor="systemRedColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow-right" translatesAutoresizingMaskIntoConstraints="NO" id="GTS-fJ-NPV">
+                                                <rect key="frame" x="328" y="745" width="24" height="24"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="24" id="AXr-dq-R7e"/>
+                                                    <constraint firstAttribute="width" secondItem="GTS-fJ-NPV" secondAttribute="height" multiplier="1:1" id="ngn-js-Om8"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="Gbq-p3-qdG" firstAttribute="top" secondItem="2t9-Y6-Qx4" secondAttribute="bottom" constant="22" id="C3u-e1-vj4"/>
+                                            <constraint firstItem="2t9-Y6-Qx4" firstAttribute="centerX" secondItem="jub-5j-cbm" secondAttribute="centerX" id="CBG-x8-Bvt"/>
+                                            <constraint firstItem="2t9-Y6-Qx4" firstAttribute="leading" secondItem="jub-5j-cbm" secondAttribute="leading" constant="44" id="CLf-dW-lSD"/>
+                                            <constraint firstItem="2t9-Y6-Qx4" firstAttribute="top" secondItem="jub-5j-cbm" secondAttribute="top" constant="45" id="M8K-p7-IvT"/>
+                                            <constraint firstItem="Gbq-p3-qdG" firstAttribute="centerX" secondItem="jub-5j-cbm" secondAttribute="centerX" id="Pfm-Br-e4p"/>
+                                            <constraint firstItem="GTS-fJ-NPV" firstAttribute="centerY" secondItem="Gbq-p3-qdG" secondAttribute="centerY" id="hRf-qk-SvU"/>
+                                            <constraint firstItem="Gbq-p3-qdG" firstAttribute="trailing" secondItem="GTS-fJ-NPV" secondAttribute="trailing" constant="12" id="qFW-dd-Tsw"/>
+                                            <constraint firstAttribute="bottom" secondItem="Gbq-p3-qdG" secondAttribute="bottom" constant="120" identifier="signupBtnBottomConstraint" id="t5a-QX-wX6"/>
+                                            <constraint firstItem="Gbq-p3-qdG" firstAttribute="leading" secondItem="jub-5j-cbm" secondAttribute="leading" constant="30" id="yzi-jR-qIe"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="jub-5j-cbm" firstAttribute="leading" secondItem="XeU-sv-Qjc" secondAttribute="leading" id="0MB-O9-wzs"/>
+                                    <constraint firstItem="jub-5j-cbm" firstAttribute="width" secondItem="7xX-fU-WLX" secondAttribute="width" id="XJy-F9-VYX"/>
+                                    <constraint firstItem="jub-5j-cbm" firstAttribute="bottom" secondItem="XeU-sv-Qjc" secondAttribute="bottom" id="cJx-iX-NjM"/>
+                                    <constraint firstItem="jub-5j-cbm" firstAttribute="top" secondItem="XeU-sv-Qjc" secondAttribute="top" id="cYJ-1S-lvO"/>
+                                    <constraint firstItem="jub-5j-cbm" firstAttribute="trailing" secondItem="XeU-sv-Qjc" secondAttribute="trailing" id="rhN-Id-THH"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="XeU-sv-Qjc"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="7xX-fU-WLX"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="EXk-8Q-9Mq" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="JIg-oz-Ft8"/>
+                            <constraint firstItem="EXk-8Q-9Mq" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="KdX-7a-4KA"/>
+                            <constraint firstItem="EXk-8Q-9Mq" firstAttribute="centerY" secondItem="vDu-zF-Fre" secondAttribute="centerY" id="TWE-PP-JCv"/>
+                            <constraint firstItem="EXk-8Q-9Mq" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="g1B-uI-WGh"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="회원 가입" id="lYt-f5-mj8">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="chevron.left" catalog="system" id="Lym-9m-UxG">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <size key="freeformSize" width="394" height="1000"/>
+                    <connections>
+                        <outlet property="agreementErrorLabel" destination="nTL-K7-Nwe" id="m4o-LO-Gju"/>
+                        <outlet property="agreementStackView" destination="ftl-hs-Fo5" id="pgk-dp-EhI"/>
+                        <outlet property="contentView" destination="jub-5j-cbm" id="CVn-8s-ktw"/>
+                        <outlet property="emailInputComponent" destination="J41-VO-tcl" id="5Zw-Mw-I2J"/>
+                        <outlet property="idInputComponent" destination="z3v-UT-Zzi" id="ndE-Dc-BCK"/>
+                        <outlet property="nameInputComponent" destination="XRh-om-qR0" id="TeO-B6-NkD"/>
+                        <outlet property="nicknameInputComponent" destination="6bE-Y5-mxQ" id="QCR-J7-TwX"/>
+                        <outlet property="pwCheckInputComponent" destination="FQr-yO-O1T" id="DYc-Ex-jYU"/>
+                        <outlet property="pwInputComponent" destination="lAu-CT-A4l" id="aua-ew-JVe"/>
+                        <outlet property="signupBtn" destination="Gbq-p3-qdG" id="XM4-Of-gK0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1052.6717557251909" y="-34.507042253521128"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="AzC-5t-Jb1">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="d4u-hJ-c5h" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="v9Z-RO-2Gb">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="Fnc-nt-F4w"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Ac-w7-e1X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="130.53435114503816" y="-34.507042253521128"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="arrow-right" width="24" height="24"/>
+        <image name="chevron.left" catalog="system" width="97" height="128"/>
+        <image name="uncheck-circle" width="20" height="20"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

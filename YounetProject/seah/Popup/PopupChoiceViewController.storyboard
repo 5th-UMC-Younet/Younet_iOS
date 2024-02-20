@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Inter-Bold.ttf">
+            <string>Inter-Bold</string>
+        </array>
+        <array key="Inter-Regular.ttf">
+            <string>Inter-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Popup Choice View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="PopupChoiceViewController" id="Y6W-OH-hqX" customClass="PopupChoiceViewController" customModule="YounetProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zbz-l4-iMs">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <buttonConfiguration key="configuration" style="gray"/>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I4n-f6-v66">
+                                <rect key="frame" x="55" y="352.33333333333331" width="283" height="147.33333333333331"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Tex-3w-b4H">
+                                        <rect key="frame" x="16.666666666666686" y="27.999999999999996" width="250" height="52.666666666666657"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="로그아웃" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GTQ-Fg-eD8">
+                                                <rect key="frame" x="95.333333333333329" y="0.0" width="58.999999999999986" height="20.666666666666668"/>
+                                                <fontDescription key="fontDescription" name="Inter-Bold" family="Inter" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="로그아웃하시겠습니까?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1su-H9-1QL">
+                                                <rect key="frame" x="0.0" y="36.666666666666686" width="250" height="16"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="250" id="xCF-RO-G1I"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Inter-Regular" family="Inter" pointSize="13"/>
+                                                <color key="textColor" red="0.45098036530000002" green="0.45098036530000002" blue="0.45098036530000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="aEl-9U-VeL">
+                                        <rect key="frame" x="0.0" y="112.33333333333337" width="283" height="35"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LtW-hm-Jh9">
+                                                <rect key="frame" x="0.0" y="0.0" width="142" height="35"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="35" id="Qhk-pe-8Go"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="예">
+                                                    <backgroundConfiguration key="background" cornerRadius="0.0"/>
+                                                    <fontDescription key="titleFontDescription" name="Inter-Bold" family="Inter" pointSize="17"/>
+                                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </buttonConfiguration>
+                                            </button>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QrA-wv-tzS" userLabel="Stack Line View">
+                                                <rect key="frame" x="142" y="5" width="1" height="25"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="1" id="ejX-cP-Zhh"/>
+                                                    <constraint firstAttribute="height" constant="25" id="zr7-Vu-7Eq"/>
+                                                </constraints>
+                                            </view>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="43l-Ug-JME">
+                                                <rect key="frame" x="143" y="0.0" width="140" height="35"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="140" id="7Ss-Vp-0kK"/>
+                                                    <constraint firstAttribute="height" constant="35" id="88C-Sc-c4V"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="아니오">
+                                                    <backgroundConfiguration key="background" cornerRadius="0.0"/>
+                                                    <fontDescription key="titleFontDescription" name="Inter-Bold" family="Inter" pointSize="17"/>
+                                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </buttonConfiguration>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.1607553065" green="0.1137417927" blue="0.53724181650000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Tex-3w-b4H" firstAttribute="centerX" secondItem="I4n-f6-v66" secondAttribute="centerX" id="5zK-Yx-G2C"/>
+                                    <constraint firstAttribute="bottom" secondItem="aEl-9U-VeL" secondAttribute="bottom" id="DX0-fE-C8f"/>
+                                    <constraint firstAttribute="height" constant="147.33000000000001" id="JWD-Aa-Z0i"/>
+                                    <constraint firstItem="Tex-3w-b4H" firstAttribute="top" secondItem="I4n-f6-v66" secondAttribute="top" constant="28" id="WOJ-Fh-4fU"/>
+                                    <constraint firstItem="aEl-9U-VeL" firstAttribute="centerX" secondItem="I4n-f6-v66" secondAttribute="centerX" id="kTs-4O-n7O"/>
+                                    <constraint firstItem="aEl-9U-VeL" firstAttribute="width" secondItem="I4n-f6-v66" secondAttribute="width" id="yAg-D7-unp"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" red="0.82442926646706582" green="0.82442926646706582" blue="0.82442926646706582" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="I4n-f6-v66" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="7wW-Yz-gEw"/>
+                            <constraint firstAttribute="trailing" secondItem="Zbz-l4-iMs" secondAttribute="trailing" id="9DB-WT-iJb"/>
+                            <constraint firstItem="Zbz-l4-iMs" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="G7b-fa-9gp"/>
+                            <constraint firstItem="I4n-f6-v66" firstAttribute="width" secondItem="5EZ-qb-Rvc" secondAttribute="width" multiplier="0.720102" id="gXO-xE-8I9"/>
+                            <constraint firstItem="Zbz-l4-iMs" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="ryV-Ml-r8e" userLabel="Button.top = top"/>
+                            <constraint firstItem="I4n-f6-v66" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="vjr-p5-JFV"/>
+                            <constraint firstAttribute="bottom" secondItem="Zbz-l4-iMs" secondAttribute="bottom" id="zKO-Ry-b14" userLabel="bottom = Button.bottom "/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="closeBtn" destination="Zbz-l4-iMs" id="zNW-4J-oyd"/>
+                        <outlet property="confirmBtn" destination="LtW-hm-Jh9" id="ejN-Cb-ZRD"/>
+                        <outlet property="rejectBtn" destination="43l-Ug-JME" id="elq-V9-8gk"/>
+                        <outlet property="textLabel" destination="1su-H9-1QL" id="fiw-jf-Wvr"/>
+                        <outlet property="titleLabel" destination="GTQ-Fg-eD8" id="YYd-vM-4K7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="132" y="-34"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
