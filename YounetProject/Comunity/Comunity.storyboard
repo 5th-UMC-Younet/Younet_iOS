@@ -1611,11 +1611,6 @@
                                     <action selector="backButtonDidtap:" destination="a5t-3v-tA9" eventType="touchUpInside" id="uXZ-0Q-eHP"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bt9-lE-3Yf">
-                                <rect key="frame" x="36" y="405" width="75" height="34.333333333333314"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Id4-kR-eQq"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1624,10 +1619,8 @@
                             <constraint firstItem="84B-J7-hc9" firstAttribute="top" secondItem="Id4-kR-eQq" secondAttribute="top" constant="20" id="B2n-yV-cez"/>
                             <constraint firstItem="84B-J7-hc9" firstAttribute="centerX" secondItem="Xwz-H3-iXQ" secondAttribute="centerX" id="LoE-MM-ugp"/>
                             <constraint firstItem="84B-J7-hc9" firstAttribute="centerX" secondItem="Xwz-H3-iXQ" secondAttribute="centerX" id="R0i-Kv-wDO"/>
-                            <constraint firstItem="Bt9-lE-3Yf" firstAttribute="top" secondItem="yZN-t7-lCR" secondAttribute="bottom" constant="9" id="REa-Cs-Db4"/>
                             <constraint firstItem="g2r-Pw-c5N" firstAttribute="centerY" secondItem="84B-J7-hc9" secondAttribute="centerY" id="Vr3-K0-SOf"/>
                             <constraint firstItem="g2r-Pw-c5N" firstAttribute="leading" secondItem="Id4-kR-eQq" secondAttribute="leading" constant="6" id="wGU-8U-OJ5"/>
-                            <constraint firstItem="Bt9-lE-3Yf" firstAttribute="leading" secondItem="Id4-kR-eQq" secondAttribute="leading" constant="36" id="xMA-DN-umH"/>
                             <constraint firstItem="yZN-t7-lCR" firstAttribute="centerX" secondItem="Xwz-H3-iXQ" secondAttribute="centerX" id="zfY-YQ-lpy"/>
                         </constraints>
                     </view>
