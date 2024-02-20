@@ -19,8 +19,10 @@ class PostPageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         registerXib()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         getAPI()
-        scrollToBottom()
     }
 
     // FeedCell register
@@ -89,17 +91,6 @@ class PostPageViewController: UIViewController {
             return nil
         }
     }
-    
-    func scrollToBottom(){
-        DispatchQueue.main.async {
-            if self.feedData.count > 0 {
-               let ip = IndexPath(row: self.feedData.count-1, section: 0)
-               self.tableView.scrollToRow(at: ip, at: .bottom, animated: true)
-            }
-        }
-        getData()
-    }
-    
 }
 
 extension PostPageViewController : UITableViewDelegate, UITableViewDataSource {
@@ -156,7 +147,6 @@ extension PostPageViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }
-    
     
     //데이터 전달
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

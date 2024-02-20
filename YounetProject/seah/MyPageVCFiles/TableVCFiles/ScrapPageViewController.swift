@@ -18,6 +18,9 @@ class ScrapPageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         registerXib()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         getAPI()
     }
     
@@ -25,15 +28,6 @@ class ScrapPageViewController: UIViewController {
     private func registerXib() {
         let nibName = UINib(nibName: "FeedCell", bundle: nil)
         tableView.register(nibName, forCellReuseIdentifier: "FeedCell")
-    }
-    
-    // 갱신용. 특정 개수 이상 시 아래로 swipe했을 때 갱신
-    @IBAction func more(_ sender: UIButton) {
-        // 0) 현재 페이지 값에 1을 추가한다.
-        self.page += 1
-        
-        // 데이터를 다시 읽어오도록 테이블 뷰를 갱신한다.
-        self.tableView.reloadData()
     }
     
     func tableViewLoad() {
@@ -150,7 +144,6 @@ extension ScrapPageViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }
-    
     
     //데이터 전달
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

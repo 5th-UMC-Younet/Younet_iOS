@@ -9,17 +9,17 @@ import UIKit
 
 class ChatMyPageViewController: UIViewController {
 
-    @IBOutlet weak var profileImage: UIImageView!
-    @IBOutlet weak var realName: UILabel!
-    @IBOutlet weak var university: UILabel!
-    @IBOutlet weak var selfExplain: UILabel!
+    @IBOutlet weak var profileImage: UIImageView! // 실명 프로필이미지
+    @IBOutlet weak var realName: UILabel! // 실명
+    @IBOutlet weak var university: UILabel! // 실명 대학교
+    @IBOutlet weak var selfExplain: UILabel! // 실명 프로필 소개글
     
-    @IBOutlet weak var nickNameProfileImage: UIImageView!
-    @IBOutlet weak var nickName: UILabel!
-    @IBOutlet weak var nationContainer: UIView!
-    @IBOutlet weak var preferNationImage: UIImageView!
-    @IBOutlet weak var preferNation: UILabel!
-    @IBOutlet weak var nickNameSelfExplain: UILabel!
+    @IBOutlet weak var nickNameProfileImage: UIImageView! // 익명 프로필이미지
+    @IBOutlet weak var nickName: UILabel! // 익명 닉네임
+    @IBOutlet weak var nationContainer: UIView! // 선호국가 이미지 컨테이너
+    @IBOutlet weak var preferNationImage: UIImageView! // 선호국가 이미지
+    @IBOutlet weak var preferNation: UILabel! // 선호국가 라벨
+    @IBOutlet weak var nickNameSelfExplain: UILabel! // 익명 프로필 소개글
     
     @IBOutlet weak var nameProfileView: UIView!
     @IBOutlet weak var nickNameProfileView: UIView!
@@ -78,9 +78,11 @@ class ChatMyPageViewController: UIViewController {
                     myPageData.profileText == nil ? (self.nickNameSelfExplain.text = "프로필 소개글") : (self.nickNameSelfExplain.text = myPageData.profileText)
                     
                     // 관심 국가명 및 이미지 세팅
-                    if self.simpleData.string(forKey: "preferNationImage") != nil {
+                    if myPageData.likeCntr != nil {
                         self.preferNation.text = myPageData.likeCntr
-                        self.preferNationImage.image = UIImage(named: self.simpleData.string(forKey: "preferNationImage")!)
+                        if let index = NationSelectionVC().countryList.firstIndex(where: {$0.korName == myPageData.likeCntr}) {
+                            self.preferNationImage.image = UIImage(named: NationSelectionVC().countryList[index].engName)
+                        }
                         self.nationContainer.isHidden = false
                     } else {
                         self.preferNation.text = "관심국가"

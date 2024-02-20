@@ -64,9 +64,11 @@ class OtherUserProfileViewController: UIViewController {
                     otherUserData.profileText == nil ? (self.nickNameSelfExplain.text = "프로필 소개글") : (self.nickNameSelfExplain.text = otherUserData.profileText)
                     
                     // 관심 국가명 및 이미지 세팅
-                    if self.simpleData.string(forKey: "preferNationImage") != nil {
+                    if otherUserData.likeCntr != nil {
                         self.preferNation.text = otherUserData.likeCntr
-                        self.preferNationImage.image = UIImage(named: self.simpleData.string(forKey: "preferNationImage")!)
+                        if let index = NationSelectionVC().countryList.firstIndex(where: {$0.korName == otherUserData.likeCntr}) {
+                            self.preferNationImage.image = UIImage(named: NationSelectionVC().countryList[index].engName)
+                        }
                         self.nationContainer.isHidden = false
                     } else {
                         self.preferNation.text = "관심국가"
@@ -150,6 +152,16 @@ class OtherUserProfileViewController: UIViewController {
     private func registerXib() {
         let nibName = UINib(nibName: "FeedCell", bundle: nil)
         tableView.register(nibName, forCellReuseIdentifier: "FeedCell")
+    }
+    
+    @IBAction func chatButtonDidtap(_ sender: Any) {
+        let chatPopup = PopupChoiceViewController.present(parent: self)
+        chatPopup.titleText = "\(nickName.text!)"
+        chatPopup.labelText = "채팅을 요청하시겠습니까?"
+        chatPopup.confirmDismissed = {
+            let dismissedPopup = PopupViewController.present(parent: self)
+            dismissedPopup.labelText = "\n채팅 요청이 불가한 유저입니다.\n24시간 후 재요청해 주세요.\n"
+        }
     }
     
     @IBAction func backButtonDidtap(_ sender: UIButton) {

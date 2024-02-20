@@ -107,11 +107,15 @@ class MyPageProfileEditViewController: UIViewController{
                     myPageData.profileText == nil ? nil : (self.textViewSample = myPageData.profileText!)
                     self.selfExplainTextView.text = self.textViewSample
                     
+                    
                     // 관심 국가명 및 이미지 세팅
-                    if self.simpleData.string(forKey: "preferNationImage") != nil {
+                    if myPageData.likeCntr != nil {
                         self.preferNationButton.setTitle(myPageData.likeCntr, for: .normal)
-                        self.preferNationButton.setImage(UIImage(named: self.simpleData.string(forKey: "preferNationImage")!), for: .normal)
+                        if let index = NationSelectionVC().countryList.firstIndex(where: {$0.korName == myPageData.likeCntr}) {
+                            self.preferNationButton.setImage(UIImage(named: NationSelectionVC().countryList[index].engName), for: .normal)
+                        }
                     }
+                
                     if myPageData.profilePicture != nil {
                         // url로부터 프로필 이미지 받아오기
                         let url = URL(string: myPageData.profilePicture!)

@@ -15,7 +15,6 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setKeyboard()
-        idTextField.delegate = self
     }
     
     @IBAction func joinBtnDidTap(_ sender: UIButton) {
@@ -103,11 +102,4 @@ class LoginViewController: UIViewController {
         }
     }
     
-}
-
-extension LoginViewController: UITextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
 }

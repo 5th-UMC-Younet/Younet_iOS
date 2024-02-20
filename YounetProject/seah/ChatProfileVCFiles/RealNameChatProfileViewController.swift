@@ -119,13 +119,13 @@ class RealNameChatProfileViewController: UIViewController {
         }
     }
     
+    // 본인인증 버튼 연결
     @IBAction func selfIdentificationButtonDidtap(_ sender: Any) {
-        let identificationVC = UIStoryboard(name: "IdentificationVC", bundle: .main).instantiateViewController(withIdentifier: "identiNaviVC")
-        identificationVC.navigationItem.title = "본인 인증"
-        identificationVC.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name:"Inter-Bold", size:17.0)!]
-        identificationVC.modalTransitionStyle = .crossDissolve
-        identificationVC.modalPresentationStyle = .fullScreen
+        let storyboard = UIStoryboard(name: "IdentificationVC", bundle: .main)
+        guard let identificationVC = storyboard.instantiateViewController(withIdentifier: "IdentificationVC") as? IdentificationVC else { return }
+        //identificationVC.setLeftBarButtonForNum = 1
         present(identificationVC, animated: true)
+        
     }
     
     @IBAction func confirmButtonDidtap(_ sender: UIButton) {

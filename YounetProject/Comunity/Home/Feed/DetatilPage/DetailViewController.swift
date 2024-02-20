@@ -57,12 +57,14 @@ class DetailViewController: UIViewController {
         dismiss(animated: true)
     }
     @IBAction func userNameBtnDidtap(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "OpenChat", bundle: .main)
-        let nextVC = storyboard.instantiateViewController(withIdentifier: "OtherUserProfileViewController") as! OtherUserProfileViewController
-        nextVC.userIdInt = writerUserId!
-        nextVC.modalPresentationStyle = .fullScreen
-        nextVC.modalTransitionStyle = .crossDissolve
-        self.present(nextVC, animated: true)
+        if writerUserId != comunityProfileId {
+            let storyboard = UIStoryboard(name: "OpenChat", bundle: .main)
+            let nextVC = storyboard.instantiateViewController(withIdentifier: "OtherUserProfileViewController") as! OtherUserProfileViewController
+            nextVC.userIdInt = writerUserId!
+            nextVC.modalPresentationStyle = .fullScreen
+            nextVC.modalTransitionStyle = .crossDissolve
+            self.present(nextVC, animated: true)
+        }
     }
     @IBAction func settingButton(_ sender: Any) {
         guard let postSetVC = storyboard?.instantiateViewController(identifier: "PostSetVC") as? PostSetViewController else{
@@ -98,6 +100,14 @@ class DetailViewController: UIViewController {
         let userIdInt: Int? = UserDefaults.standard.integer(forKey: "myUserId")
         if let userId = userIdInt {
             comunityProfileId = userId
+        }
+        
+        let size = CGSize(width: view.frame.width, height: .infinity)
+        let estimatedSize = textView.sizeThatFits(size)
+        textView.constraints.forEach{ (constraint) in
+            if constraint.firstAttribute == .height {
+                constraint.constant = estimatedSize.height
+            }
         }
         
         DispatchQueue.main.async {

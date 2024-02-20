@@ -66,6 +66,7 @@ class IdentificationVC: UIViewController
     {
         super.viewDidLoad()
         self.config()
+        setKeyboard()
     }
     
     private func config()

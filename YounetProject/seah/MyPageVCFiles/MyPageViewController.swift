@@ -119,9 +119,11 @@ class MyPageViewController: UIViewController {
                     myPageData.profileText == nil ? (self.selfExplainLabel.text = "프로필 소개글") : (self.selfExplainLabel.text = myPageData.profileText)
                     
                     // 관심 국가명 및 이미지 세팅
-                    if self.simpleData.string(forKey: "preferNationImage") != nil {
+                    if myPageData.likeCntr != nil {
                         self.preferNationLabel.text = myPageData.likeCntr
-                        self.preferNationImage.image = UIImage(named: self.simpleData.string(forKey: "preferNationImage")!)
+                        if let index = NationSelectionVC().countryList.firstIndex(where: {$0.korName == myPageData.likeCntr}) {
+                            self.preferNationImage.image = UIImage(named: NationSelectionVC().countryList[index].engName)
+                        }
                         self.nationImgContainer.isHidden = false
                     } else {
                         self.preferNationLabel.text = "관심국가"

@@ -181,17 +181,18 @@ class HomeViewController: UIViewController {
                     self!.countryId = i+1
                 }
             }
-            self?.countryName.setTitle(countryInfo?.korName, for: .normal)
-            self?.engCountryName.text = engName
-            self?.countryImg.image = UIImage(named: countryInfo?.engName ?? "")
-            self?.name = countryInfo!.korName
+            
+            if countryInfo != nil {
+                self?.countryName.setTitle(countryInfo?.korName, for: .normal)
+                self?.engCountryName.text = engName
+                self?.countryImg.image = UIImage(named: countryInfo?.engName ?? "")
+                self?.name = countryInfo!.korName
+            }
             
             //countryId 저장
-            print(self?.countryId)
             UserDefaults.standard.setValue(self?.countryId, forKey: "countryId")
             print(UserDefaults.standard.integer(forKey: "countryId"))
             self?.getAPI()
-            
             
         }
         

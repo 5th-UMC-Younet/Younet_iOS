@@ -65,7 +65,7 @@ class SettingViewController: UIViewController {
     
     private func transitionVC() {
         let storyboard = UIStoryboard(name: "Main", bundle: .main)
-        let nextVC = storyboard.instantiateViewController(withIdentifier: "UINavigationController") as! UINavigationController
+        let nextVC = storyboard.instantiateViewController(withIdentifier: "LoginNaviVC") as! UINavigationController
         nextVC.modalPresentationStyle = .fullScreen
         nextVC.modalTransitionStyle = .crossDissolve
         self.present(nextVC, animated: true)

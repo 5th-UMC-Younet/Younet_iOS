@@ -23,7 +23,6 @@ class PwPageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setDesign()
-        setupKeyboardEvent()
     }
     
     private func setDesign() {
