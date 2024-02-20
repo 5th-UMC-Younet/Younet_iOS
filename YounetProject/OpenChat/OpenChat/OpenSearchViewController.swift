@@ -36,13 +36,13 @@ class OpenSearchViewController: UIViewController {
     //MARK: - API
     func getData(_ keyword: String){
         self.keyword = keyword
-        let url = "http://ec2-3-34-112-205.ap-northeast-2.compute.amazonaws.com:8080/community/"
+        let url = "http://ec2-3-34-112-205.ap-northeast-2.compute.amazonaws.com:8080/chat/open/list?search=\(keyword)&pageNo=1"
         AF.request(url, method: .get)
             .validate(statusCode: 200..<300)
-            .responseDecodable(of: [OpenSearchModel].self) {  response in
+            .responseDecodable(of: OpenSearchModel.self) {  response in
                 switch response.result {
                 case .success(let search):
-                    self.searchData.append(contentsOf: search)
+                    self.searchData.append(search)
                     self.tableViewLoad()
                 case .failure(let error):
                     print("OpenSearchError: \(error)")
@@ -52,15 +52,15 @@ class OpenSearchViewController: UIViewController {
 }
 extension OpenSearchViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 7
+        return searchData[0].content.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "OpenSearchCell", for: indexPath) as? OpenSearchCell else{return UITableViewCell()}
-        let search = searchData[indexPath.row]
+        let search = searchData[0].content[indexPath.row]
         cell.titleLabel.text = search.title
-        cell.messageLabel.text = search.message
+        cell.messageLabel.text = search.description
         cell.participantLabel.text = "\(String(describing: search.participants))"
-        let url = URL(string: search.thumbnail!)
+        let url = URL(string: search.thumbnail)
         DispatchQueue.global().async {
             if let data = try? Data(contentsOf: url!) {
                 if let image = UIImage(data: data) {
@@ -79,10 +79,10 @@ extension OpenSearchViewController : UITableViewDelegate, UITableViewDataSource 
 extension OpenSearchViewController : UITextFieldDelegate{
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == self.textField{
-            let keyword = textField.text!
+            let keyword = textField.text
             groupLabel.text = "그룹채팅"
             textField.resignFirstResponder()
-            getData(keyword)
+            getData(keyword!)
         }
         return true
     }
