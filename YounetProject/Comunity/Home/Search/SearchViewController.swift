@@ -24,7 +24,7 @@ class SearchViewController: UIViewController {
         cancelButton.layer.cornerRadius = 5
         
         super.viewDidLoad()
-
+        
     }
     //셀 등록
     private func registerXib() {
@@ -38,13 +38,14 @@ class SearchViewController: UIViewController {
         guard let searchDetailVC = storyboard?.instantiateViewController(identifier: "SearchDetailVC") as? SearchDetailViewController else{
             return
         }
+        self.categoryId = sender.tag
         searchDetailVC.setId((self.countryId, self.categoryId, self.keyword))
         searchDetailVC.modalPresentationStyle = .fullScreen
         present(searchDetailVC, animated: true, completion: nil)
     }
     func setCountryId(_ id: Int) {
-            self.countryId = id
-        }
+        self.countryId = id
+    }
     func tableViewLoad(){
         registerXib()
         tableView.delegate = self
@@ -61,11 +62,36 @@ class SearchViewController: UIViewController {
                 switch response.result {
                 case .success(let search):
                     self.searchData.append(contentsOf: search)
-                    self.tableViewLoad()                    
+                    self.tableViewLoad()
                 case .failure(let error):
                     print("SearchError: \(error)")
                 }
             }
+    }
+    //MARK: - timeCalculate
+    func timeAgo(from dateString: String) -> String? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+        
+        if let date = dateFormatter.date(from: dateString) {
+            let now = Date()
+            let components = Calendar.current.dateComponents([.hour, .minute, .day, .month, .year], from: date, to: now)
+            if let years = components.year, years > 0 {
+                return "\(years)년 전"
+            } else if let months = components.month, months > 0 {
+                return "\(months)달 전"
+            } else if let days = components.day, days > 0 {
+                return "\(days)일 전"
+            } else if let hours = components.hour, hours > 0 {
+                return "\(hours)시간 전"
+            } else if let minutes = components.minute, minutes > 0 {
+                return "\(minutes)분 전"
+            } else {
+                return "방금 전"
+            }
+        } else {
+            return nil
+        }
     }
 }
 extension SearchViewController : UITableViewDelegate, UITableViewDataSource {
@@ -80,9 +106,29 @@ extension SearchViewController : UITableViewDelegate, UITableViewDataSource {
         cell.categoryLabel.text = search.categoryName
         cell.titleLabel1.text = search.postListResultDTOS?.first?.title
         cell.contentLabel1.text = search.postListResultDTOS?.first?.bodySample
-        cell.timeLabel1.text = String(search.postListResultDTOS?.first?.createdAt?.prefix(10) ?? "")
         cell.likeLabel1.text = "\(String(describing: search.postListResultDTOS?.first?.likesCount ?? 0))"
         cell.commentLabel1.text = "\(String(describing: search.postListResultDTOS?.first?.commentsCount ?? 0))"
+        //Image
+        if let urlString = search.postListResultDTOS?.first?.imageSampleUrl, let url = URL(string: urlString) {
+            DispatchQueue.global().async {
+                if let data = try? Data(contentsOf: url) {
+                    if let image = UIImage(data: data) {
+                        DispatchQueue.main.async {
+                            cell.imgView1.image = image
+                        }
+                    }
+                }
+            }
+        } else {
+            cell.imgView1.image = nil // 이미지뷰 초기화
+        }
+        //Time
+        let dateString = search.postListResultDTOS?.first?.createdAt
+        if let timeAgo = timeAgo(from: dateString!) {
+            cell.timeLabel1.text = "\(timeAgo)"
+        } else {
+            print("TimeError")
+        }
         switch(search.categoryName!){
         case "유학생활":
             self.categoryId = 1
@@ -102,15 +148,35 @@ extension SearchViewController : UITableViewDelegate, UITableViewDataSource {
         }
         if search.postListResultDTOS?.count == 2{
             if let secondPost = search.postListResultDTOS?[1] {
-                    cell.titleLabel2.text = secondPost.title
-                    cell.contentLabel2.text = secondPost.bodySample
-                    cell.timeLabel2.text = String(secondPost.createdAt?.prefix(10) ?? "")
-                    cell.likeLabel2.text = "\(secondPost.likesCount ?? 0)"
-                    cell.commentLabel2.text = "\(secondPost.commentsCount ?? 0)"
+                cell.titleLabel2.text = secondPost.title
+                cell.contentLabel2.text = secondPost.bodySample
+                cell.timeLabel2.text = String(secondPost.createdAt?.prefix(10) ?? "")
+                cell.likeLabel2.text = "\(secondPost.likesCount ?? 0)"
+                cell.commentLabel2.text = "\(secondPost.commentsCount ?? 0)"
+                let dateString = search.postListResultDTOS?.first?.createdAt
+                if let timeAgo = timeAgo(from: dateString!) {
+                    cell.timeLabel2.text = "\(timeAgo)"
+                } else {
+                    print("TimeError")
                 }
+                if let urlString = secondPost.imageSampleUrl, let url = URL(string: urlString) {
+                    DispatchQueue.global().async {
+                        if let data = try? Data(contentsOf: url) {
+                            if let image = UIImage(data: data) {
+                                DispatchQueue.main.async {
+                                    cell.imgView2.image = image
+                                }
+                            }
+                        }
+                    }
+                } else {
+                    cell.imgView2.image = nil // 이미지뷰 초기화
+                }
+            }
         }
         
         cell.moreButton.addTarget(self, action: #selector(more(_:)), for: .touchUpInside)
+        cell.moreButton.tag = self.categoryId!
         
         return cell
     }

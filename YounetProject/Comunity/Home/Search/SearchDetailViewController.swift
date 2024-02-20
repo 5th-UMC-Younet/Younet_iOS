@@ -183,16 +183,20 @@ extension SearchDetailViewController : UITableViewDelegate, UITableViewDataSourc
         cell.contentLabel.text = search.bodySample
         cell.likeLabel.text = "좋아요 \(String(describing: search.likesCount!))"
         cell.commentLabel.text = "댓글 \(String(describing: search.commentsCount!))"
+        
         //Image
-        let url = URL(string: search.imageSampleUrl!)
-        DispatchQueue.global().async {
-            if let data = try? Data(contentsOf: url!) {
-                if let image = UIImage(data: data) {
-                    DispatchQueue.main.async {
-                        cell.imageSampleView.image = image
+        if let urlString = search.imageSampleUrl, let url = URL(string: urlString) {
+            DispatchQueue.global().async {
+                if let data = try? Data(contentsOf: url) {
+                    if let image = UIImage(data: data) {
+                        DispatchQueue.main.async {
+                            cell.imageSampleView.image = image
+                        }
                     }
                 }
             }
+        } else {
+            cell.imageSampleView.image = nil // 이미지뷰 초기화
         }
         //Time
         let dateString = search.createdAt
