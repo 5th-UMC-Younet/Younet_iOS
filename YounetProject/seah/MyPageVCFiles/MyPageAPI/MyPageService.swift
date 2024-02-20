@@ -108,13 +108,11 @@ struct MyPageProfileEditService{
             "profileText": profileText
         ]
         let sendText = "\(body)".trimmingCharacters(in: ["[","]"])
-        
-        typealias JSONDictionary = [String : Any]
 
         // 요청하기
         let dataRequest = AF.upload(multipartFormData: { multipartFormData in
             multipartFormData.append("{\(sendText)}".data(using: .utf8)!, withName: "editMypage", mimeType: "application/json")
-            if let image = profilePicture.jpegData(compressionQuality: 1){
+            if let image = profilePicture.jpegData(compressionQuality: 0.5){
                 multipartFormData.append(image, withName: "file", fileName: "changedProfileImage.jpeg", mimeType: "image/jpeg") }
                                      }, to: url,
                                     method: .patch,

@@ -15,6 +15,7 @@ struct DetailModel: Codable {
 struct DetailData: Codable {
     //let authorCommuProfId: Int
     let authorName: String
+    let authorCommuProfId : Int
     let postId: Int
     let postTitle: String
     let likesCount: Int

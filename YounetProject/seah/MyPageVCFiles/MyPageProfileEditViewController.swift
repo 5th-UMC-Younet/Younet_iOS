@@ -187,9 +187,6 @@ extension MyPageProfileEditViewController : UIImagePickerControllerDelegate, UIN
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage{
             let resizedImage = image.resize(newWidth: 300)
             profileImage.setImage(resizedImage, for: .normal)
-            print("\(profileImage.currentImage!)")
-            print("\(resizedImage)")
-
         }
         dismiss(animated: true, completion: nil)
     }

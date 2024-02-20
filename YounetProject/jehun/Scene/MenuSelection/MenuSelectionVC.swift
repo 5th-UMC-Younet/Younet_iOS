@@ -15,6 +15,7 @@ class MenuSelectionVC: UIViewController
     override func viewDidLoad() 
     {
         super.viewDidLoad()
+        checkExpireTime()
         self.config()
     }
     

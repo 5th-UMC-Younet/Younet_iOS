@@ -7,6 +7,7 @@
 
 import Foundation
 import Alamofire
+import UIKit
 
 // MARK: - 타 유저 프로필 조회 API
 struct ChatOtherUserProfileService{
@@ -56,11 +57,8 @@ struct ChatOtherUserProfileService{
 }
 
 // MARK: - 실명 프로필 조회 API
-// 지민이가 만든거 API 새로 추가
 struct RealNameProfileService{
     static let shared = RealNameProfileService()
-    let tk = TokenUtils()
-    
     func RealNameProfile(userId: Int, completion: @escaping (NetworkResult<Any>) -> (Void)) {
         
         let url = APIUrl.realNamePage + "/\(userId)/realProfile"
@@ -88,12 +86,12 @@ struct RealNameProfileService{
     // 상태에 따라 어떤 것을 출력해줄지 결정
     func judgeSignInData(status: Int, data: Data) -> NetworkResult<Any> {
         let decoder = JSONDecoder()
-        guard let decodedData = try? decoder.decode(ChatProfileResponse<ChatOtherUserProfileData>.self, from: data) else { return .pathErr }
+        guard let decodedData = try? decoder.decode(RealNameProfileData.self, from: data) else { return .pathErr }
         switch status {
         case 200:
-            return .success(decodedData.result!)
+            return .success(decodedData)
         case 400..<500:
-            return .requestErr(decodedData.message)
+            return .requestErr(decodedData)
         case 500:
             return .serverErr
         default:
@@ -106,8 +104,6 @@ struct RealNameProfileService{
 // MARK: - 오픈채팅 프로필 조회 API
 struct OpenChatProfileService{
     static let shared = OpenChatProfileService()
-    let tk = TokenUtils()
-    
     func OpenChatProfile(userId: Int, chatRoomId: Int, completion: @escaping (NetworkResult<Any>) -> (Void)) {
         
         let url = APIUrl.realNamePage + "\(chatRoomId)/\(userId)"
@@ -148,4 +144,60 @@ struct OpenChatProfileService{
         }
     }
     
+}
+
+
+struct editRealNameProfileService{
+    let tk = TokenUtils()
+    
+    func editRealNameProfileService(profilePicture: UIImage, profileText: String, completion: @escaping (NetworkResult<Any>) -> (Void)) {
+        
+        let url = APIUrl.realNamePageEdit
+        
+        let header: HTTPHeaders = [
+            "Content-Type":"multipart/form-data",
+            "Authorization": "\(tk.read(APIUrl.url, account: "accessToken")!)"
+        ]
+        let body: [String: Any] = [
+            "profileText": profileText
+        ]
+        let sendText = "\(body)".trimmingCharacters(in: ["[","]"])
+
+        // 요청하기
+        let dataRequest = AF.upload(multipartFormData: { multipartFormData in
+            multipartFormData.append("{\(sendText)}".data(using: .utf8)!, withName: "editProfile", mimeType: "application/json")
+            if let image = profilePicture.jpegData(compressionQuality: 0.5){
+                multipartFormData.append(image, withName: "file", fileName: "changedProfileImage.jpeg", mimeType: "image/jpeg") }
+                                     }, to: url,
+                                    method: .patch,
+                                    headers: header)
+        
+        dataRequest.response {(response) in
+            switch response.result {
+            case .success:
+                guard let statusCode = response.response?.statusCode else { return }
+                guard response.value != nil else { return }
+                // 응답 상태와 정보를 입력으로 하는 judgeSingInData 함수 실행
+                completion(judgeSignInData(status: statusCode))
+                
+            case .failure(let err):
+                print(err.localizedDescription)
+                completion(.networkFail)
+            }
+        }
+        
+    }
+    
+    func judgeSignInData(status: Int) -> NetworkResult<Any> {
+        switch status {
+        case 200:
+            return .success(print("실명프로필 수정 성공"))
+        case 400..<500:
+            return .requestErr(print("실명프로필 수정 실패: 400 ERROR"))
+        case 500:
+            return .serverErr
+        default:
+            return .networkFail
+        }
+    }
 }

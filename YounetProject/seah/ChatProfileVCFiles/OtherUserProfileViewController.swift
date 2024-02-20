@@ -39,10 +39,11 @@ class OtherUserProfileViewController: UIViewController {
         tableView.dataSource = self
     }
     
+    
+    
     private func setDesign() {
         nationContainer.layer.borderColor = UIColor.lightGray.cgColor
         nationContainer.layer.borderWidth = 0.25
-       
     }
     
     func tableViewLoad() {

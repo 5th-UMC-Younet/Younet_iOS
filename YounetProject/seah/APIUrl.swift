@@ -26,6 +26,7 @@ struct APIUrl {
     static let myPage = url + "/mypage/info"
     static let otherUserPage = url + "/user/profile/"
     static let myPageEdit = url + "/mypage/edit"
+    static let realNamePageEdit = url + "/user/profile/edit"
     
     static let reIssue = url + "/auth/reissue"
     

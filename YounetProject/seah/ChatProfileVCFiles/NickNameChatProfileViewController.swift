@@ -20,6 +20,7 @@ class NickNameChatProfileViewController: UIViewController {
     
     var textViewSample = "100자 이하의 소개글"
     let imgPicker = UIImagePickerController()
+    var imageControllerCheck = 0
     let maxTextCount = 100
     
     let simpleData = UserDefaults.standard
@@ -38,6 +39,8 @@ class NickNameChatProfileViewController: UIViewController {
         setTextViewPlaceholder()
         setDefaultData()
         
+        print("\(profileImage.currentImage!)")
+        
         imgPicker.delegate = self
         nicknameTextField.delegate = self
         selfExplainTextView.delegate = self
@@ -48,7 +51,7 @@ class NickNameChatProfileViewController: UIViewController {
             mainStackView.spacing = 50
         }
     }
-    
+
     @IBAction func profileImageBtnDidtap(_ sender: UIButton) {
         imgPicker.sourceType = .photoLibrary
         present(imgPicker, animated: false, completion: nil)
@@ -61,8 +64,8 @@ class NickNameChatProfileViewController: UIViewController {
             if nationSelectionVC.selectedCountry?.korName != nil {
                 self?.preferNationButton.setTitle(nationSelectionVC.selectedCountry?.korName, for:.normal)
                 self?.preferNationButton.setImage(UIImage(named: nationSelectionVC.selectedCountry!.engName), for: .normal)
-        
-                UserDefaults.standard.setValue(nationSelectionVC.selectedCountry?.korName, forKey: "preferNation_temp")
+                
+                self?.likeCntrSaved = nationSelectionVC.selectedCountry!.korName
                 UserDefaults.standard.setValue(nationSelectionVC.selectedCountry!.engName, forKey: "preferNationImage_temp")
             }
         }
@@ -75,7 +78,19 @@ class NickNameChatProfileViewController: UIViewController {
     @IBAction func nickNameTfEditEnd(_ sender: Any) {
         firstLineView.backgroundColor = #colorLiteral(red: 0.8509804606, green: 0.850980401, blue: 0.8509804606, alpha: 1)
     }
-
+    
+    // textView placeholder
+    private func setTextViewPlaceholder() {
+        if selfExplainTextView.text == "" {
+            selfExplainTextView.text = textViewSample
+            selfExplainTextView.textColor = #colorLiteral(red: 0.7725487351, green: 0.7725491524, blue: 0.7803917527, alpha: 1)
+        } else if selfExplainTextView.text == textViewSample {
+            selfExplainTextView.text = ""
+            selfExplainTextView.textColor = UIColor.black
+        }
+    }
+    
+    // MARK: - 서버에서 데이터 받아오기
     private func setDefaultData() {
         MyPageProfileEditService.shared.MyPageEdit { (networkResult) -> (Void) in
             switch networkResult {
@@ -125,20 +140,8 @@ class NickNameChatProfileViewController: UIViewController {
         
     }
     
-    
-    // textView placeholder
-    private func setTextViewPlaceholder() {
-        if selfExplainTextView.text == "" {
-            selfExplainTextView.text = textViewSample
-            selfExplainTextView.textColor = #colorLiteral(red: 0.7725487351, green: 0.7725491524, blue: 0.7803917527, alpha: 1)
-        } else if selfExplainTextView.text == textViewSample {
-            selfExplainTextView.text = ""
-            selfExplainTextView.textColor = UIColor.black
-        }
-    }
-    
+    // MARK: - 확인 버튼: 프로필 수정 후 저장
     @IBAction func confirmButtonDidtap(_ sender: UIButton) {
-        // 확인 버튼 누를 때: 일반 data 저장
         imgSaved = profileImage.currentImage
         if nicknameTextField.text != "" {
             nicknameSaved = nicknameTextField.text!
@@ -149,7 +152,7 @@ class NickNameChatProfileViewController: UIViewController {
             profileTextSaved = textViewSample
         }
         
-        MyPageProfileEditService.shared.MyPageEditPatch(profilePicture: imgSaved!, name: usernameLabel.text! ,nickname: nicknameSaved, likeCntr: likeCntrSaved, profileText: profileTextSaved) { (networkResult) -> (Void) in
+        MyPageProfileEditService.shared.MyPageEditPatch(profilePicture: imgSaved!, name: usernameLabel.text!, nickname: nicknameSaved, likeCntr: likeCntrSaved, profileText: profileTextSaved) { (networkResult) -> (Void) in
             switch networkResult {
             case .success:
                 print("데이터 저장 성공")
@@ -159,10 +162,7 @@ class NickNameChatProfileViewController: UIViewController {
                     self.simpleData.removeObject(forKey: "preferNationImage_temp")
                 }
                 self.dismiss(animated: true, completion: nil)
-            case .requestErr(let message):
-                if let msg = message as? String {
-                    print(msg)
-                }
+            case .requestErr:
                 self.dismiss(animated: true, completion: nil)
             case .pathErr:
                 print("pathErr")
@@ -172,22 +172,21 @@ class NickNameChatProfileViewController: UIViewController {
                 print("networkFail")
             }
         }
-        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func backButtonDidtap(_ sender: UIButton) {
         // 뒤로가기 누를 때: 저장된 임시 data 삭제
-        (simpleData.value(forKey: "preferNation_temp") != nil) ? (simpleData.removeObject(forKey: "preferNation_temp")) : nil
         (simpleData.value(forKey: "preferNationImage_temp") != nil) ? (simpleData.removeObject(forKey: "preferNationImage_temp")) : nil
-        
         dismiss(animated: true, completion: nil)
     }
 }
 
-extension NickNameChatProfileViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+// MARK: - 갤러리에서 이미지 가져오기
+extension NickNameChatProfileViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            profileImage.setImage(image, for: .normal)
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage{
+            let resizedImage = image.resize(newWidth: 400)
+            profileImage.setImage(resizedImage, for: .normal)
         }
         dismiss(animated: true, completion: nil)
     }
@@ -202,7 +201,6 @@ extension NickNameChatProfileViewController : UITextViewDelegate, UITextFieldDel
         UIView.animate(withDuration: 0.3) {
             self.view.window?.frame.origin.y -= 120
         }
-        
     }
     // textView 편집 끝
     func textViewDidEndEditing(_ textView: UITextView) {
@@ -218,17 +216,19 @@ extension NickNameChatProfileViewController : UITextViewDelegate, UITextFieldDel
     
     // TextView 글자수 제한
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-        let currentText = selfExplainTextView.text ?? ""
-        guard let stringRange = Range(range, in: currentText) else { return false }
-        let changedText = currentText.replacingCharacters(in: stringRange, with: text)
+            
+            let currentText = selfExplainTextView.text ?? ""
+            guard let stringRange = Range(range, in: currentText) else { return false }
+            let changedText = currentText.replacingCharacters(in: stringRange, with: text)
+            
+            // 글자수에 맞춰 남은 글자수 label 변경
+            if (maxTextCount - changedText.count) > 0 {
+                textLimitLabel.text = "\(maxTextCount - changedText.count)"
+            } else {
+                textLimitLabel.text = "0"
+            }
+            return changedText.count <= maxTextCount
         
-        // 글자수에 맞춰 남은 글자수 label 변경
-        if (maxTextCount - changedText.count) > 0 {
-            textLimitLabel.text = "\(maxTextCount - changedText.count)"
-        } else {
-            textLimitLabel.text = "0"
-        }
-        return changedText.count <= maxTextCount
     }
     
     // 텍스트 길이에 맞춰서 textView 길이 늘리기

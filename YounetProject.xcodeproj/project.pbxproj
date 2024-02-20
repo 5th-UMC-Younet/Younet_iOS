@@ -599,9 +599,9 @@
 			children = (
 				B34AB8F82B80CEC000A8C808 /* ChatProfileAPI */,
 				9C33BD282B7B842A00497FEC /* NickNameChatProfileViewController.swift */,
+				9C33BD2B2B7B842A00497FEC /* RealNameChatProfileViewController.swift */,
 				9C33BD292B7B842A00497FEC /* ChatMyPageViewController.swift */,
 				9C33BD2A2B7B842A00497FEC /* ReportViewController.swift */,
-				9C33BD2B2B7B842A00497FEC /* RealNameChatProfileViewController.swift */,
 				9C33BD2C2B7B842A00497FEC /* OtherUserProfileViewController.swift */,
 			);
 			path = ChatProfileVCFiles;

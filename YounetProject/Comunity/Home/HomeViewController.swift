@@ -65,6 +65,7 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
     }
     override func viewWillAppear(_ animated: Bool) {
+        checkExpireTime()
         getAPI()
     }
     
@@ -331,6 +332,8 @@ extension HomeViewController : UITableViewDelegate, UITableViewDataSource {
         let date = feed.createdAt
         let commentCount = feed.commentsCount
         let senderData: (Int?, Int?, String?, String?, Int?) = (postId, categoryId, date, name, commentCount)
+
+
         performSegue(withIdentifier: "DetailVC", sender: senderData)
     }
     

@@ -12,6 +12,7 @@ class RealNameChatProfileViewController: UIViewController {
     @IBOutlet weak var textLimitLabel: UILabel!
     @IBOutlet weak var selfExplainTextView: UITextView!
     @IBOutlet weak var underLineView: UIView!
+    @IBOutlet weak var nameLabel: UILabel!
     
     @IBOutlet weak var univButton: UIButton!
     @IBOutlet weak var nationButton: UIButton!
@@ -20,17 +21,20 @@ class RealNameChatProfileViewController: UIViewController {
     @IBOutlet weak var mainStackView: UIStackView!
     @IBOutlet weak var subStackView: UIStackView!
     
-    let textViewSample = "100자 이하의 소개글"
+    var textViewSample = "100자 이하의 소개글"
     let imgPicker = UIImagePickerController()
     let maxTextCount = 100
     var imageControllerCheck = 0
+    
+    var imgSaved = UIImage(named: "ProfileDefault")
+    var profileTextSaved = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setKeyboard()
-        setTextViewPlaceholder()
         setDefaultData()
+        setTextViewPlaceholder()
         
         imgPicker.delegate = self
         selfExplainTextView.delegate = self
@@ -61,17 +65,94 @@ class RealNameChatProfileViewController: UIViewController {
     }
     
     private func setDefaultData() {
-        if ImageFileManager.shared.getSavedImage(named: "profileImage_realName") != nil {
-            profileImage.setImage(ImageFileManager.shared.getSavedImage(named: "profileImage_realName"), for: .normal)
+        //optional binding으로 userId 가져오기
+        let userIdInt: Int? = UserDefaults.standard.integer(forKey: "myUserId")
+        var myUserId = 1
+        if let userId = userIdInt {
+            myUserId = userId
         }
-        imageControllerCheck = 0
         
-        // 서버에서 데이터 받아와서 본교, 유학국, 교환교 버튼 setTitle
+        // 실명 프로필 연결
+        RealNameProfileService.shared.RealNameProfile(userId: myUserId){ (networkResult) -> (Void) in
+            switch networkResult {
+            case .success(let result):
+                if let realNameData = result as? RealNameProfileData {
+                    // 이름 및 프로필 소개글 설정
+                    self.nameLabel.text = realNameData.name
+                    realNameData.profileText == nil ? nil : (self.textViewSample = realNameData.profileText!)
+                    self.selfExplainTextView.text = self.textViewSample
+                    
+                    // 본교 설정
+                    realNameData.mainSkl == nil ? (self.univButton.setTitle("본교", for: .disabled)) : (self.univButton.setTitle(realNameData.mainSkl, for: .disabled))
+                    
+                    if realNameData.hostContr != nil {
+                        self.nationButton.setTitle(realNameData.hostContr, for: .normal)
+                        if let index = NationSelectionVC().countryList.firstIndex(where: {$0.korName == realNameData.hostContr}) {
+                            self.nationButton.setImage(UIImage(named: NationSelectionVC().countryList[index].engName), for: .disabled)
+                        }
+                    }
+                    realNameData.hostSkl == nil ? (self.univButton.setTitle("파견교", for: .disabled)) : (self.exUnivButton.setTitle(realNameData.hostSkl, for: .disabled))
+                    
+                    if realNameData.profilePicture != nil {
+                        // url로부터 프로필 이미지 받아오기
+                        let url = URL(string: realNameData.profilePicture!)
+                        DispatchQueue.global().async { [weak self] in
+                            if let data = try? Data(contentsOf: url!) {
+                                if let image = UIImage(data: data) {
+                                    DispatchQueue.main.async {
+                                        self?.profileImage.setImage(image, for: .normal)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            case .requestErr:
+                print("400 Error")
+            case .pathErr:
+                print("pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        }
+    }
+    
+    @IBAction func selfIdentificationButtonDidtap(_ sender: Any) {
+        let identificationVC = UIStoryboard(name: "IdentificationVC", bundle: .main).instantiateViewController(withIdentifier: "identiNaviVC")
+        identificationVC.navigationItem.title = "본인 인증"
+        identificationVC.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name:"Inter-Bold", size:17.0)!]
+        identificationVC.modalTransitionStyle = .crossDissolve
+        identificationVC.modalPresentationStyle = .fullScreen
+        present(identificationVC, animated: true)
     }
     
     @IBAction func confirmButtonDidtap(_ sender: UIButton) {
-        imageControllerCheck != 0 ? (ImageFileManager.shared.saveImage(image: profileImage.currentImage!, name: "profileImage_realName") { onSuccess in return } ) : nil
-        selfExplainTextView.text != textViewSample ? UserDefaults.standard.setValue(selfExplainTextView.text, forKey: "selfExplain_realName") : nil
+        imgSaved = profileImage.currentImage
+        
+        if selfExplainTextView.text != textViewSample {
+            profileTextSaved = selfExplainTextView.text
+        } else {
+            profileTextSaved = textViewSample
+        }
+        
+        editRealNameProfileService().editRealNameProfileService(profilePicture: imgSaved!, profileText: profileTextSaved) { (networkResult) -> (Void) in
+            switch networkResult {
+            case .success:
+                print("데이터 저장 성공")
+                self.dismiss(animated: true, completion: nil)
+            case .requestErr:
+                self.dismiss(animated: true, completion: nil)
+            case .pathErr:
+                print("pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        }
+        
         dismiss(animated: true, completion: nil)
     }
     
@@ -84,8 +165,8 @@ class RealNameChatProfileViewController: UIViewController {
 extension RealNameChatProfileViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage{
-            profileImage.setImage(image, for: .normal)
-            imageControllerCheck = 1
+            let resizedImage = image.resize(newWidth: 400)
+            profileImage.setImage(resizedImage, for: .normal)
         }
         dismiss(animated: true, completion: nil)
     }

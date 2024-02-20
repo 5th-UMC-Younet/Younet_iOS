@@ -8,6 +8,7 @@
 // UIView and UIViewController Extensions
 
 import UIKit
+import Alamofire
 
 extension UIView {
     // 모서리 둥글게
@@ -84,7 +85,45 @@ extension UIViewController{
         }
     }
     
-    
+    func checkExpireTime() {
+        //매 화면전환마다 호출해서 시간 검사하고 지난경우에 다시 발급받게끔 하는 함수
+        if (Date().timeIntervalSince1970 * 1000) > UserDefaults.standard.double(forKey: "tokenExpireTime") {
+            //토큰 만료시간이 지난 경우 -> refresh 토큰 활용해 토큰 재발급
+            RefreshTokenService.shared.refreshToken(refreshToken: (TokenUtils().read(APIUrl.url, account: "refreshToken"))!){ (networkResult) -> (Void) in
+                switch networkResult {
+                case .success(let result):
+                    // 서버 통한 재발급 성공 시 -> userDefaults에 만료시간 및 토큰 재저장
+                    if let LoginUserData = result as? LoginUserData {
+                        let tk = TokenUtils()
+                        tk.create(APIUrl.url, account: "accessToken", value: LoginUserData.accessToken)
+                        tk.create(APIUrl.url, account: "refreshToken", value: LoginUserData.refreshToken)
+                        UserDefaults.standard.setValue(LoginUserData.accessTokenExpiresIn, forKey: "tokenExpireTime")
+                        print("토큰 만료로 재발급 완료")
+                        print(tk.read(APIUrl.url, account: "accessToken")!)
+                    }
+                case .requestErr:
+                    // 400 오류로 서버 통한 재발급 실패 시 -> 앱 종료 처리
+                    print("requestErr")
+                    print("400 error: 토큰 재발급 실패")
+                    let popupVC = PopupViewController.present(parent: self)
+                    popupVC.labelText = "\n서버 오류로 토큰 재발급에 실패했습니다.\n관리자에게 연락해주세요.\n"
+                    popupVC.onDismissed = { UIApplication.shared.perform(
+                        // suspend로 보낸 후 종료
+                        #selector(NSXPCConnection.suspend))
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                            exit(0)
+                        }
+                    }
+                case .pathErr:
+                    print("pathErr")
+                case .serverErr:
+                    print("serverErr")
+                case .networkFail:
+                    print("networkFail")
+                }
+            }
+        }
+    }
     
 }
 

@@ -26,15 +26,25 @@ class ChatMyPageViewController: UIViewController {
     
     let simpleData = UserDefaults.standard
     let imageData = ImageFileManager.shared
+    var myUserId = 1
     
     override func viewDidLoad() {
         setDesign()
+        let userIdInt: Int? = UserDefaults.standard.integer(forKey: "myUserId")
+        if let userId = userIdInt {
+            myUserId = userId
+        }
         super.viewDidLoad()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         getData()
-        
+        getRealNameData()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        checkExpireTime()
+        getRealNameData()
     }
     
     private func setDesign() {
@@ -54,13 +64,7 @@ class ChatMyPageViewController: UIViewController {
     }
 
     private func getData() {
-        // 실명프로필 별도 API 연결
-        simpleData.string(forKey: "preferNation") == nil ? (nationContainer.isHidden = true) : (nationContainer.isHidden = false)
-
-        imageData.getSavedImage(named: "profileImage_realName") != nil ? profileImage.image = imageData.getSavedImage(named: "profileImage_realName") : nil
-        simpleData.string(forKey: "selfExplain_realName") != nil ? selfExplain.text = simpleData.string(forKey: "selfExplain_realName") : nil
-        // university, realName 서버에서 받아와서 등록
-        
+        // 익명 프로필 연결
         MyPageService.shared.MyPage{ (networkResult) -> (Void) in
             switch networkResult {
             case .success(let result):
@@ -100,7 +104,38 @@ class ChatMyPageViewController: UIViewController {
                 print("networkFail")
             }
         }
-        
+    }
+    
+    private func getRealNameData(){
+        print("실명프로필 연결")
+        // 실명 프로필 연결
+        RealNameProfileService.shared.RealNameProfile(userId: myUserId){ (networkResult) -> (Void) in
+            switch networkResult {
+            case .success(let result):
+                if let realNameData = result as? RealNameProfileData {
+                    // 이름 및 프로필 소개글 설정
+                    self.realName.text = realNameData.name
+                    realNameData.profileText == nil ? (self.selfExplain.text = "프로필 소개글") : (self.selfExplain.text = realNameData.profileText)
+                    
+                    // 본교 설정
+                    realNameData.hostSkl == nil ? (self.university.text = "대학교") : (self.university.text = realNameData.hostSkl)
+                    
+                    if realNameData.profilePicture != nil {
+                        // url로부터 프로필 이미지 받아오기
+                        let url = URL(string: realNameData.profilePicture!)
+                        self.profileImage.load(url: url!)
+                    }
+                }
+            case .requestErr:
+                print("400 Error")
+            case .pathErr:
+                print("pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        }
     }
     
     @IBAction func settingBtnDidtap(_ sender: UIButton) {
