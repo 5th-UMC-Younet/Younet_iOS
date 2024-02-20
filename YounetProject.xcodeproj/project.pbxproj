@@ -144,7 +144,6 @@
 		B34AB9192B80D28000A8C808 /* APIUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34AB8FD2B80CEF500A8C808 /* APIUrl.swift */; };
 		B34AB91A2B80D29000A8C808 /* TokenUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34AB8FE2B80CEF500A8C808 /* TokenUtils.swift */; };
 		B34AB91D2B80D3B700A8C808 /* SignupCustomTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CB351872B4E775000EE36F0 /* SignupCustomTextField.xib */; };
-		B3704FC22B851DEA0045847C /* Comunity-3.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3704FC12B851DEA0045847C /* Comunity-3.storyboard */; };
 		B3704FC42B8522400045847C /* testViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3704FC32B8522400045847C /* testViewController.swift */; };
 		B3742EBA2B84DD1B00B86330 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3742EB92B84DD1B00B86330 /* SplashScreen.storyboard */; };
 		B37F116B2B81FF1B00D655FF /* CustomTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37F116A2B81FF1B00D655FF /* CustomTabBarViewController.swift */; };
@@ -307,7 +306,6 @@
 		B34AB8FE2B80CEF500A8C808 /* TokenUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenUtils.swift; sourceTree = "<group>"; };
 		B34AB9022B80CF2700A8C808 /* LoginDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginDataModel.swift; sourceTree = "<group>"; };
 		B34AB9032B80CF2700A8C808 /* LoginService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
-		B3704FC12B851DEA0045847C /* Comunity-3.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Comunity-3.storyboard"; sourceTree = "<group>"; };
 		B3704FC32B8522400045847C /* testViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = testViewController.swift; path = Post/testViewController.swift; sourceTree = "<group>"; };
 		B3742EB92B84DD1B00B86330 /* SplashScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SplashScreen.storyboard; sourceTree = "<group>"; };
 		B37F116A2B81FF1B00D655FF /* CustomTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarViewController.swift; sourceTree = "<group>"; };
@@ -351,7 +349,6 @@
 				4D83BA902B80B6D200A9F57C /* Post */,
 				4D83BA962B80B6D200A9F57C /* Comunity.storyboard */,
 				B3704FC32B8522400045847C /* testViewController.swift */,
-				B3704FC12B851DEA0045847C /* Comunity-3.storyboard */,
 				4D83BA922B80B6D200A9F57C /* Chat */,
 				4D83BA942B80B6D200A9F57C /* My */,
 				4D83BA972B80B6D200A9F57C /* TabBarController.swift */,
@@ -1012,7 +1009,6 @@
 			files = (
 				B34AB91D2B80D3B700A8C808 /* SignupCustomTextField.xib in Resources */,
 				B3742EBA2B84DD1B00B86330 /* SplashScreen.storyboard in Resources */,
-				B3704FC22B851DEA0045847C /* Comunity-3.storyboard in Resources */,
 				B34AB9182B80D26100A8C808 /* SignupEmailComponent.xib in Resources */,
 				B34AB9172B80D24D00A8C808 /* SignupInputComponent.xib in Resources */,
 				B34AB9162B80D23200A8C808 /* NationSelectionCell.xib in Resources */,

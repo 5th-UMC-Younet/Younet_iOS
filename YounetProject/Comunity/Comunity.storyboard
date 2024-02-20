@@ -1122,7 +1122,7 @@
                 <pageViewController storyboardIdentifier="tablePageVC" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="3gR-aP-9cc" customClass="TablePageViewController" customModule="YounetProject" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="exY-Vv-cxw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3105" y="1824"/>
+            <point key="canvasLocation" x="2756" y="1540"/>
         </scene>
         <!--My Page Profile Edit View Controller-->
         <scene sceneID="hqu-0r-lpK">
