@@ -144,6 +144,7 @@
 		B34AB9192B80D28000A8C808 /* APIUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34AB8FD2B80CEF500A8C808 /* APIUrl.swift */; };
 		B34AB91A2B80D29000A8C808 /* TokenUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34AB8FE2B80CEF500A8C808 /* TokenUtils.swift */; };
 		B34AB91D2B80D3B700A8C808 /* SignupCustomTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CB351872B4E775000EE36F0 /* SignupCustomTextField.xib */; };
+		B3742EBA2B84DD1B00B86330 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3742EB92B84DD1B00B86330 /* SplashScreen.storyboard */; };
 		B37F116B2B81FF1B00D655FF /* CustomTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37F116A2B81FF1B00D655FF /* CustomTabBarViewController.swift */; };
 		B3F34B522B7CA2BF0077B547 /* KakaoSDKAuth in Frameworks */ = {isa = PBXBuildFile; productRef = B3F34B512B7CA2BF0077B547 /* KakaoSDKAuth */; };
 		B3F34B542B7CA2BF0077B547 /* KakaoSDKUser in Frameworks */ = {isa = PBXBuildFile; productRef = B3F34B532B7CA2BF0077B547 /* KakaoSDKUser */; };
@@ -305,6 +306,7 @@
 		B34AB8FE2B80CEF500A8C808 /* TokenUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenUtils.swift; sourceTree = "<group>"; };
 		B34AB9022B80CF2700A8C808 /* LoginDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginDataModel.swift; sourceTree = "<group>"; };
 		B34AB9032B80CF2700A8C808 /* LoginService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
+		B3742EB92B84DD1B00B86330 /* SplashScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SplashScreen.storyboard; sourceTree = "<group>"; };
 		B37F116A2B81FF1B00D655FF /* CustomTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -732,6 +734,7 @@
 				9C6B45342B47D9340068FA95 /* SceneDelegate.swift */,
 				9C6B45362B47D9340068FA95 /* ViewController.swift */,
 				9C33BD1E2B7B842A00497FEC /* LaunchScreen.storyboard */,
+				B3742EB92B84DD1B00B86330 /* SplashScreen.storyboard */,
 				B34A9D9B2B73B65800EA6686 /* Main.storyboard */,
 				9C6B453B2B47D9350068FA95 /* Assets.xcassets */,
 				9C6B45402B47D9350068FA95 /* Info.plist */,
@@ -1004,6 +1007,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B34AB91D2B80D3B700A8C808 /* SignupCustomTextField.xib in Resources */,
+				B3742EBA2B84DD1B00B86330 /* SplashScreen.storyboard in Resources */,
 				B34AB9182B80D26100A8C808 /* SignupEmailComponent.xib in Resources */,
 				B34AB9172B80D24D00A8C808 /* SignupInputComponent.xib in Resources */,
 				B34AB9162B80D23200A8C808 /* NationSelectionCell.xib in Resources */,
@@ -1332,10 +1336,11 @@
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Camera Permission Request";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = SplashScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1364,10 +1369,11 @@
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Camera Permission Request";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = SplashScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
