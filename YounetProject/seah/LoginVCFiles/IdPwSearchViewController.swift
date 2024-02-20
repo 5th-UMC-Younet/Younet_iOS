@@ -91,7 +91,7 @@ class IdPwSearchViewController: UIViewController {
         })
         
         /*let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let newVC = storyboard.instantiateViewController(withIdentifier: "LoginVC")
+        let newVC = storyboard.instantiateViewController(withIdentifier: "LoginNaviVC")
         newVC.modalTransitionStyle = .crossDissolve
         newVC.modalPresentationStyle = .fullScreen
         self.present(newVC, animated: true, completion: nil)*/

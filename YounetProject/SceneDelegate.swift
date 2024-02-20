@@ -45,7 +45,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                         print("requestErr")
                         print("400 error: 토큰 재발급 실패")
                         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                        let startVC = storyboard.instantiateViewController(withIdentifier: "LoginVC") as? LoginViewController
+                        let startVC = storyboard.instantiateViewController(withIdentifier: "LoginNaviVC") as? UINavigationController
                         self.window?.rootViewController = startVC
                     case .pathErr:
                         print("pathErr")
@@ -59,7 +59,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         } else {
             // 토큰 만료시간이 저장되지 않은 경우(로그아웃, 회원탈퇴, 최초 로그인인 경우) -> 미로그인 처리(로그인 페이지로 이동)
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let startVC = storyboard.instantiateViewController(withIdentifier: "LoginVC") as? LoginViewController
+            let startVC = storyboard.instantiateViewController(withIdentifier: "LoginNaviVC") as? UINavigationController
             window?.rootViewController = startVC
         }
 

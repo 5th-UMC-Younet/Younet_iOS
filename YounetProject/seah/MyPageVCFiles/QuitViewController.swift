@@ -54,7 +54,7 @@ class QuitViewController: UIViewController {
     
     private func transitionVC() {
         let nextSB = UIStoryboard(name: "Main", bundle: nil)
-        guard let nextVC = nextSB.instantiateViewController(withIdentifier: "LoginVC") as? LoginViewController else { return }
+        guard let nextVC = nextSB.instantiateViewController(withIdentifier: "LoginNaviVC") as? UINavigationController else { return }
         nextVC.modalPresentationStyle = .fullScreen
         nextVC.modalTransitionStyle = .crossDissolve
         self.present(nextVC, animated: true, completion: nil)

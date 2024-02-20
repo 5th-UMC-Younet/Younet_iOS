@@ -20,7 +20,7 @@
         <!--Navigation Controller-->
         <scene sceneID="hxW-hM-cq9">
             <objects>
-                <navigationController id="wV1-hy-N5t" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="LoginNaviVC" id="wV1-hy-N5t" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="byj-rA-WzH">
                         <rect key="frame" x="0.0" y="50" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
