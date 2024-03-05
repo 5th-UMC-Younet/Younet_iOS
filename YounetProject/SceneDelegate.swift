@@ -15,6 +15,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let _ = (scene as? UIWindowScene) else { return }
         
+        /*
         // 분기 처리를 통한 로그인 유지 구현
         if UserDefaults.standard.string(forKey: "tokenExpireTime") != nil {
             if (Date().timeIntervalSince1970 * 1000) < UserDefaults.standard.double(forKey: "tokenExpireTime") {
@@ -61,7 +62,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let startVC = storyboard.instantiateViewController(withIdentifier: "LoginNaviVC") as? UINavigationController
             window?.rootViewController = startVC
-        }
+        }*/
 
     }
 

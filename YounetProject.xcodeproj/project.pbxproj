@@ -149,6 +149,8 @@
 		B37F116B2B81FF1B00D655FF /* CustomTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37F116A2B81FF1B00D655FF /* CustomTabBarViewController.swift */; };
 		B3F34B522B7CA2BF0077B547 /* KakaoSDKAuth in Frameworks */ = {isa = PBXBuildFile; productRef = B3F34B512B7CA2BF0077B547 /* KakaoSDKAuth */; };
 		B3F34B542B7CA2BF0077B547 /* KakaoSDKUser in Frameworks */ = {isa = PBXBuildFile; productRef = B3F34B532B7CA2BF0077B547 /* KakaoSDKUser */; };
+		B3F3B36F2B95A87200C349DF /* myChatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3F3B36E2B95A87200C349DF /* myChatCell.xib */; };
+		B3F3B3712B95A88500C349DF /* yourChatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3F3B3702B95A88500C349DF /* yourChatCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -309,6 +311,8 @@
 		B3704FC32B8522400045847C /* testViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = testViewController.swift; path = Post/testViewController.swift; sourceTree = "<group>"; };
 		B3742EB92B84DD1B00B86330 /* SplashScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SplashScreen.storyboard; sourceTree = "<group>"; };
 		B37F116A2B81FF1B00D655FF /* CustomTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarViewController.swift; sourceTree = "<group>"; };
+		B3F3B36E2B95A87200C349DF /* myChatCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = myChatCell.xib; sourceTree = "<group>"; };
+		B3F3B3702B95A88500C349DF /* yourChatCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = yourChatCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -467,6 +471,8 @@
 				4D83BAB62B80B6DD00A9F57C /* OpenSearchViewController.swift */,
 				4D83BAB72B80B6DD00A9F57C /* OpenChatModel.swift */,
 				4D83BAB82B80B6DD00A9F57C /* OpenSearchCell.xib */,
+				B3F3B36E2B95A87200C349DF /* myChatCell.xib */,
+				B3F3B3702B95A88500C349DF /* yourChatCell.xib */,
 				4D83BAB92B80B6DD00A9F57C /* OpenRequestViewController.swift */,
 				4D83BABA2B80B6DD00A9F57C /* OpenChatCell.swift */,
 				4D83BABB2B80B6DD00A9F57C /* OpenSearchCell.swift */,
@@ -1007,6 +1013,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3F3B3712B95A88500C349DF /* yourChatCell.xib in Resources */,
 				B34AB91D2B80D3B700A8C808 /* SignupCustomTextField.xib in Resources */,
 				B3742EBA2B84DD1B00B86330 /* SplashScreen.storyboard in Resources */,
 				B34AB9182B80D26100A8C808 /* SignupEmailComponent.xib in Resources */,
@@ -1037,6 +1044,7 @@
 				4D2F06A72B82355F000E2A46 /* ReplyCell.xib in Resources */,
 				9C33BD542B7B842A00497FEC /* LaunchScreenImage.png in Resources */,
 				9C4EDA892B47F2AE00BFDC48 /* SignupVC.storyboard in Resources */,
+				B3F3B36F2B95A87200C349DF /* myChatCell.xib in Resources */,
 				9C4EDA7F2B47EF8C00BFDC48 /* Inter-Bold.ttf in Resources */,
 				9CB4A8C62B6A3AC800521184 /* PopupTemplateVC.storyboard in Resources */,
 				9CB4A8C42B6A3AB600521184 /* NationSelectionVC.storyboard in Resources */,
@@ -1254,7 +1262,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = Younet;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -1313,7 +1321,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = Younet;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -1343,6 +1351,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1376,6 +1385,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
